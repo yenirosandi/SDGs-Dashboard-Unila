@@ -5,7 +5,9 @@ Route::get('/', function () {
 });
 
 //back-end:admin
-Route::get('/login', 'AdminController@login');
+Route::get('/login', function () {
+    return view('admin/login');
+});
 Route::get('/dashboard', 'AdminController@index');
 // Route::get('/profil', 'AdminController@show');
 //
