@@ -34,84 +34,128 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         <div class="mosh-portfolio">
             <!-- Single gallery Item Start -->
             <div class="single_gallery_item gd">
-                <img src="{{url('frontend/mosh/img/portfolio-img/1.jpg')}}" alt="">
+                <img src="{{url('img/sdgs/3.png')}}" alt="">
                 <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
+                        <h4>Good Health and Well Being</h4>
+                        <a href="#">Goal 3</a>
                     </div>
                 </div>
             </div>
             <!-- Single gallery Item Start -->
             <div class="single_gallery_item bi">
-                <img src="{{url('frontend/mosh/img/portfolio-img/2.jpg')}}" alt="">
+                <img src="{{url('img/sdgs/4.png')}}" alt="">
                 <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
+                        <h4>Quality Education</h4>
+                        <a href="#">Goal 4</a>
                     </div>
                 </div>
             </div>
             <!-- Single gallery Item Start -->
             <div class="single_gallery_item gd bi">
-                <img src="{{url('frontend/mosh/img/portfolio-img/3.jpg')}}" alt="">
+                <img src="{{url('img/sdgs/5.png')}}" alt="">
                 <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
+                        <h4>Gender Equality</h4>
+                        <a href="#">Goal 5</a>
                     </div>
                 </div>
             </div>
             <!-- Single gallery Item Start -->
             <div class="single_gallery_item pho">
-                <img src="{{url('frontend/mosh/img/portfolio-img/4.jpg')}}" alt="">
+                <img src="{{url('img/sdgs/8.png')}}" alt="">
                 <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
+                        <h4>Decent Work and Economic Growth</h4>
+                        <a href="#">Goal 8</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single gallery Item Start -->
+            <div class="single_gallery_item gd">
+                <img src="{{url('img/sdgs/9.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4>Industry, Innovation, and Infrastructure</h4>
+                        <a href="#">Goal 9</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single gallery Item Start -->
+            <div class="single_gallery_item gd bi">
+                <img src="{{url('img/sdgs/11.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4>Sustainable Cities and Communities</h4>
+                        <a href="#">Goal 11</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Single gallery Item Start -->
+            <div class="single_gallery_item bi">
+                <img src="{{url('img/sdgs/10.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4>Reduce Inequalities</h4>
+                        <a href="#">Goal 10</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single gallery Item Start -->
+            <div class="single_gallery_item pho">
+                <img src="{{url('img/sdgs/12.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4>Responsible Consumption and Production</h4>
+                        <a href="#">Goal 12</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Single gallery Item Start -->
+            <div class="single_gallery_item gd bi">
+                <img src="{{url('img/sdgs/17.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4></h4>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+          <!-- Single gallery Item Start -->
+          <div class="single_gallery_item gd">
+                <img src="{{url('img/sdgs/13.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4></h4>
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </div>
+                        <!-- Single gallery Item Start -->
+                        <div class="single_gallery_item bi">
+                <img src="{{url('img/sdgs/16.png')}}" alt="">
+                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+                    <div class="port-hover-text text-center">
+                        <h4></h4>
+                        <a href="#"></a>
                     </div>
                 </div>
             </div>
             <!-- Single gallery Item Start -->
             <div class="single_gallery_item pho">
-                <img src="{{url('frontend/mosh/img/portfolio-img/5.jpg')}}" alt="">
+                <img src="{{url('img/sdgs/sds.png')}}" alt="">
                 <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
+                        <h4></h4>
+                        <a href="#"></a>
                     </div>
                 </div>
             </div>
-            <!-- Single gallery Item Start -->
-            <div class="single_gallery_item wd pc">
-                <img src="{{url('frontend/mosh/img/portfolio-img/6.jpg')}}" alt="">
-                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
-                    <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single gallery Item Start -->
-            <div class="single_gallery_item wd">
-                <img src="{{url('frontend/mosh/img/portfolio-img/7.jpg')}}" alt="">
-                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
-                    <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Single gallery Item Start -->
-            <div class="single_gallery_item pc">
-                <img src="{{url('frontend/mosh/img/portfolio-img/8.jpg')}}" alt="">
-                <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
-                    <div class="port-hover-text text-center">
-                        <h4>DFR Corp. Branding</h4>
-                        <a href="#">Brand Identity</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
     <!-- ***** Portfolio Area End ***** -->
