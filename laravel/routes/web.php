@@ -16,12 +16,4 @@ Route::get('/dashboard', 'AdminController@index');
 // Route::get('/master_sub_indikator', 'sdgsIndiSub@show');
 // Route::get('/indikator_pencapai/an_SDGs', 'sdgsIndiCapai@show');
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
-?>
-
-
-
-//Front end location//
-
 ?>
