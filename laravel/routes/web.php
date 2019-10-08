@@ -1,8 +1,7 @@
 <?php
 //front-end:free user
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 //back-end:admin
 Route::get('/login', function () {
@@ -24,3 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Front end location//
+
+?>
