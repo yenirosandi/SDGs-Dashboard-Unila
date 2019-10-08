@@ -5,9 +5,13 @@
 @section('content')
 
 
-<main role="main" style="background-color:#D3D3D3; padding: 50px;">
+<main role="main" style="background-color:#D3D3D3; padding: 40px;">
 
-<div class="container" style=" border-radius: 60px; padding: 100px; background: #FFFFFF">
+<div class="container" style=" border-radius: 30px; padding: 50px 80px 80px 80px; background: #FFFFFF;   box-shadow: 5px 10px 18px #888888;
+}">
+
+
+SUSTAINABLE DEVELOPMENT GOALS <hr>
       <!-- ***** Preloader Start ***** -->
       <div id="preloader">
         <div class="mosh-preloader"></div>

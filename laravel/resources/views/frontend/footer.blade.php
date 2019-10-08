@@ -4,7 +4,7 @@
         <p class="float-right">
           <a href="#">Back to top</a>
         </p>
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a style="color:#fabd16">SDGs Dashboard</a> All rights reserved |  <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.unila.ac.id/" target="_blank">Lampung University</a>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a style="color:#fabd16">SDGs Dashboard</a> All rights reserved | by <a href="https://www.unila.ac.id/" target="_blank">Lampung University</a>
  
       </div>
     </footer>
