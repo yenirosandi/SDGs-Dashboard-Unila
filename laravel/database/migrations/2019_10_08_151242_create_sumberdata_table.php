@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTMGoalsTable extends Migration
+class CreateSumberdataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTMGoalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_m_goals', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('t_m_sumberdatas', function (Blueprint $table) {
+            $table->bigIncrements('id_m_sumberdata');
+            $table->string('sumberdata');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateTMGoalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_m_goals');
+        Schema::dropIfExists('sumberdata');
     }
 }
