@@ -14,7 +14,8 @@ class CreateGoalsTable extends Migration
     public function up()
     {
         Schema::create('t_goals', function (Blueprint $table) {
-            $table->integer('id_goal');
+            $table->integer('id_goal')->unsigned();
+            $table->primary('id_goal');
             $table->string('nama_goal');
             $table->string('deskripsi_goal');
             $table->string('gambar');
