@@ -22,8 +22,8 @@ class CreateMasterIndikatorTable extends Migration
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
-        // Schema::table('t_m_indikator', function (Blueprint $table) {
-        //   $table->foreign('id_goal')
+        // Schema::table('t_m_indikators', function (Blueprint $table) {
+        //   $table->foreign('fk_id_goal')
         //     ->references('id_goal')->on('t_goals')
         //     ->onDelete('cascade')->onUpdate('cascade');
         // });
@@ -36,6 +36,6 @@ class CreateMasterIndikatorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('master_indikator');
+        Schema::dropIfExists('t_m_indikators');
     }
 }

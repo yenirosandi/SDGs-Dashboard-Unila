@@ -1,14 +1,27 @@
 <?php
+
 //front-end:free user
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
 //back-end:admin
-Route::get('/login', function () {
-    return view('admin/login');
+
+Auth::routes();
+
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+        // Route::resource('admin', 'AdminController');
+        // Route::get('/dashboard', 'AdminController@index');
 });
 
-Route::get('/dashboard', 'AdminController@index');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
 // Route::get('/profil', 'AdminController@show');
 //
 // Route::get('/sdg/{id}', 'sdgsController@show');

@@ -27,6 +27,6 @@ class CreateSumberdataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sumberdata');
+        Schema::dropIfExists('t_m_sumberdatas');
     }
 }

@@ -28,6 +28,6 @@ class CreateTrendTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trend');
+        Schema::dropIfExists('t_trends');
     }
 }
