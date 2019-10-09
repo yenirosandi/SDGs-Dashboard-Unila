@@ -69,13 +69,12 @@
                                         {{ __('Klik Disini!') }}
                                     </a>
                                 @endif</h3>
-            </form>
-    			</div>
+                    </form>
+    		    </div>
         </div>
       </div>
-  </body>
+      </div>
+</body>
 </html>
-
-
 
 @endsection

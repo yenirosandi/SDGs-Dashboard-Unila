@@ -10,11 +10,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'admin']], function(){
-        Route::get('/', function () {
-            return view('frontend.home');
-        });
-        Route::resource('admin', 'AdminController');
+Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+        // Route::resource('admin', 'AdminController');
         // Route::get('/dashboard', 'AdminController@index');
 });
 
