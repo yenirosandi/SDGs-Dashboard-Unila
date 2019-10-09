@@ -16,7 +16,10 @@ class CreateMasterIndikatorTable extends Migration
         Schema::create('t_m_indikator', function (Blueprint $table) {
             $table->bigIncrements('id_indikator');
             $table->string('indikator');
-            // $table->integer('fk_id_goal')->unsigned();
+            $table->string('fk_id_goal',4);
+            $table->foreign('fk_id_goal')
+                ->references('id_goal')->on('t_goals')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
         // Schema::table('t_m_indikators', function (Blueprint $table) {
