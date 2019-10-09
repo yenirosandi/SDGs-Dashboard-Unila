@@ -13,7 +13,7 @@ class CreateSumberdataTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_m_sumberdatas', function (Blueprint $table) {
+        Schema::create('t_m_sumberdata', function (Blueprint $table) {
             $table->bigIncrements('id_m_sumberdata');
             $table->string('sumberdata');
             $table->timestamps();
