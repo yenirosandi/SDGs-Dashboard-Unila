@@ -1,0 +1,78 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class GoalsTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('t_goals')->insert([
+          [
+            'id_goal'=>''sdg3;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg4;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg5;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg8;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg9;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg10;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg11;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg12;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg13;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg16;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+          [
+            'id_goal'=>''sdg17;
+            'nama_goal'=>
+            'deskripsi_goal'=>
+            'gambar'=>
+          ],
+        ]);
+    }
+}

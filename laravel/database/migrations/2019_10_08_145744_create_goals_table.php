@@ -14,10 +14,10 @@ class CreateGoalsTable extends Migration
     public function up()
     {
         Schema::create('t_goals', function (Blueprint $table) {
-            $table->integer('id_goal')->unsigned();
+            $table->string('id_goal',4);
             $table->primary('id_goal');
             $table->string('nama_goal');
-            $table->string('deskripsi_goal');
+            $table->text('deskripsi_goal');
             $table->string('gambar');
         });
     }
