@@ -12,15 +12,16 @@ Auth::routes();
 
 Route::group(['prefix'=>'admin', 'middleware'=>['auth', 'admin']], function(){
         Route::get('/', function () {
-            return view('admin.dashboard');
+            return view('frontend.home');
         });
-        Route::get('/dashboard', 'AdminController@index');
+        Route::resource('admin', 'AdminController');
+        // Route::get('/dashboard', 'AdminController@index');
 });
 
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-// Route::get('/dashboard', 'AdminController@index');
+
 // Route::get('/profil', 'AdminController@show');
 //
 // Route::get('/sdg/{id}', 'sdgsController@show');
