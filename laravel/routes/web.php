@@ -25,7 +25,7 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 // Route::get('/profil', 'AdminController@show');
 //
 // Route::get('/sdg/{id}', 'sdgsController@show');
-// Route::get('/master_indikator', 'sdgsIndiMaster@show');
+Route::get('/master_indikator', 'sdgsIndiMasterController@index');
 // Route::get('/master_sub_indikator', 'sdgsIndiSub@show');
 // Route::get('/indikator_pencapai/an_SDGs', 'sdgsIndiCapai@show');
 
