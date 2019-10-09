@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGoalsTable extends Migration
+class AddAdminColumnToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateGoalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_goals', function (Blueprint $table) {
-            $table->integer('id_goal');
-            $table->string('nama_goal');
-            $table->string('deskripsi_goal');
-            $table->string('gambar');
+        Schema::table('users', function (Blueprint $table) {
+            $table->tinyInteger('admin')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateGoalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_goals');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('admin');
+        });
     }
 }

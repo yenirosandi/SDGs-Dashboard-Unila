@@ -25,6 +25,27 @@
    
   </div>
 
+                  <ul class="main_nav">
+              
+                      <li class="nav-link dropdown">  
+                      <!-- <a href="#">Register or Login</a></div> -->
+                                     <!-- ini untuk pengkondisian klau sudah login dia akan seperti di bawah ini menunya -->
+                                     <?php
+                              if (Auth::check())  { ?>
+                                  <a class="nav-link dropdown-toggle fa fa-user-circle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                      <a class="dropdown-item" href="">{{Auth::user()->name}}</a>
+                                      <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
+                                  </div>
+                                </li>
+
+
+                          <?php }
+                              else {?>
+                                  <div class="login_button">
+                                    <a href="{{url('/login')}}">Login</a></li>  </div>
+                              <?php  } ?>
+                                      
 
 </nav>
 <img src="{{url('frontend/gambar/list.png')}}" alt="">

@@ -16,14 +16,14 @@ class CreateMasterIndikatorTable extends Migration
         Schema::create('t_m_indikators', function (Blueprint $table) {
             $table->bigIncrements('id_indikator');
             $table->string('indikator');
-            $table->integer('fk_id_goal')->unsigned();
+            // $table->integer('fk_id_goal')->unsigned();
             $table->timestamps();
         });
-        Schema::table('t_m_indikators', function (Blueprint $table) {
-          $table->foreign('fk_id_goal')
-            ->references('id_goal')->on('t_goals')
-            ->onDelete('cascade')->onUpdate('cascade');
-        });
+        // Schema::table('t_m_indikators', function (Blueprint $table) {
+        //   $table->foreign('fk_id_goal')
+        //     ->references('id_goal')->on('t_goals')
+        //     ->onDelete('cascade')->onUpdate('cascade');
+        // });
     }
 
     /**
@@ -33,6 +33,6 @@ class CreateMasterIndikatorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('master_indikator');
+        Schema::dropIfExists('t_m_indikators');
     }
 }
