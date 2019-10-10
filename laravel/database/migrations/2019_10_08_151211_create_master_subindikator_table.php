@@ -32,6 +32,6 @@ class CreateMasterSubindikatorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('master_subindikator');
+        Schema::dropIfExists('t_m_subindikator');
     }
 }

@@ -38,6 +38,6 @@ class CreatePencapaianTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pencapaian');
+        Schema::dropIfExists('t_pencapaian');
     }
 }
