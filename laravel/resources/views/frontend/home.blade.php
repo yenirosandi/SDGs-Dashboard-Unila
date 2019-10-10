@@ -41,6 +41,8 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                     <div class="port-hover-text text-center">
                         <h4>"{{$goal->id_goal}}"</h4>
                         <a href="#">Goal 3</a>
+                        <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary">
+         klik</a>
                     </div>
                 </div>
             </div>

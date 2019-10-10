@@ -12,6 +12,8 @@ class Goals_model extends Model
                             'deskripsi_goal',
                             'gambar'
 ];
+public $incrementing = false;
+
 
 }
 
