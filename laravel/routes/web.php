@@ -6,6 +6,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+Route::get('/goalDetail/{id}','HomeController@detail');
+
+
+
 //back-end:admin
 
 Auth::routes();
