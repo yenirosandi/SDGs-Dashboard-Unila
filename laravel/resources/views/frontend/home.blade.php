@@ -7,8 +7,7 @@
 
 <main role="main" style="background-color:#D3D3D3; padding: 40px;">
 
-<div class="container" style=" border-radius: 30px; padding: 50px 80px 80px 80px; background: #FFFFFF;   box-shadow: 5px 10px 18px #888888;
-}">
+<div class="container" style=" border-radius: 30px; padding: 50px 80px 80px 80px; background: #FFFFFF;   box-shadow: 5px 10px 18px #888888;">
 
 
 SUSTAINABLE DEVELOPMENT GOALS <hr>
@@ -34,18 +33,20 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
             <!-- Single gallery Item Start -->
             @forelse($goals as $goal) 
             <div class="single_gallery_item gd">
-            <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary">
-                <img src="{{$goal->gambar}}" alt="">
-            </a>    
-            <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
+            <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary ">
+             <img src="{{$goal->gambar}}" alt="">
+             </a>     
+            <!-- <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
+                    <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary">
+ 
                         <h4>"{{$goal->id_goal}}"</h4>
                         <a href="#">Goal 3</a>
-                        <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary">
-         klik</a>
-                    </div>
+                          </a>     
+        
                 </div>
-            </div>
+                </div> -->
+            </div> 
             @empty
                     <h3>Nothing</h3>
             @endforelse
