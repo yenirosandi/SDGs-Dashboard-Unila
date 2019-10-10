@@ -23,8 +23,9 @@ Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 //Master Indikator
 Route::get('/master_indikator', 'sdgsIndiMasterController@index');
-Route::get('/master_indikator/edit/{id_indikator}', 'sdgsIndiMasterController@edit');
-Route::get('/master_indikator/hapus', 'sdgsIndiMasterController@delete');
+Route::post('master_indikator/tambah', 'sdgsIndiMasterController@store')
+// Route::get('/master_indikator/edit/{id_indikator}', 'sdgsIndiMasterController@edit');
+// Route::get('/master_indikator/hapus', 'sdgsIndiMasterController@delete');
 
 // Route::get('/profil', 'AdminController@show');
 // Route::get('/sdg/{id}', 'sdgsController@show');

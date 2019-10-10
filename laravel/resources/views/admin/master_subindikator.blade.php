@@ -1,8 +1,8 @@
 @extends('layout.master_admin')
 
-@section('title','Master Indikator SDGs')
-@section('Judul','Master Indikator')
-@section('JudulDesc','Ini adalah halaman master indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
+@section('title','Master Sub-Indikator SDGs')
+@section('Judul','Master Sub-Indikator')
+@section('JudulDesc','Ini adalah halaman master sub-indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
 @section('content')
   <!-- Form -->
   <div class="card shadow mb-4">
@@ -12,13 +12,13 @@
     <div class="card-body">
       <div class="card-body">
         <div class="table-responsive">
-          <form method="POST" class="form-horizontal" action="/master_indikator/tambah">
+          <form class="form-horizontal" action="/action_page.php">
             <div class="form-group">
               <label class="control-label" for="goal">Goal ke:</label>
-              <div class="col-sm-2">
+              <div class="col-sm-8">
                 <select class="form-control" name="goal">
                   @foreach($goals as $data_goals)
-                    <option value="{{$data_goals->nama_goal}}">SDG {{$data_goals->id_goal}}</option>
+                    <option value="{{$data_goals->nama_goal}}">SGD {{$data_goals->id_goal}}</option>
                   @endforeach
                 </select>
               </div>
@@ -26,7 +26,7 @@
             <div class="form-group">
               <label class="control-label col-sm-2" for="indikator">Indikator:</label>
               <div class="col-sm-8">
-                <input name="indikator" type="text" class="form-control" id="indikator">
+                <input value="8"type="text" class="form-control" id="indikator" name="indikator" disable>
               </div>
             </div>
             <div class="form-group">

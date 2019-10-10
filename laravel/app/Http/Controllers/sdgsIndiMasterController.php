@@ -13,4 +13,17 @@ class sdgsIndiMasterController extends Controller
     $master_indikator=Indikator_model::all();
     return view('admin.master_indikator',['master_indikator'=>$master_indikator, 'goals'=>$goals]);
   }
+  public function store(Request $request)
+  {
+    $this->validate($request. [
+      'goal'=>'required',
+      'indikator'=> 'required'
+    ]);
+
+    Indikator_model::create([
+      'goal' => $request->fk_id_goal,
+      'indikator' => $request->indikator
+    ]);
+    return redirect('/master_indikator');
+  }
 }
