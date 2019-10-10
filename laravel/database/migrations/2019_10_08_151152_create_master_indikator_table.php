@@ -14,7 +14,7 @@ class CreateMasterIndikatorTable extends Migration
     public function up()
     {
         Schema::create('t_m_indikator', function (Blueprint $table) {
-            $table->bigIncrements('id_indikator');
+            $table->increments('id_indikator');
             $table->string('indikator');
             $table->string('fk_id_goal',4);
             $table->foreign('fk_id_goal')

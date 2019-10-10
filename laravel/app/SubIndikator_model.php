@@ -11,7 +11,7 @@ class SubIndikator_model extends Model
     protected $fillable = ['subindikator',
                             'waktu_pengambilan',
                             'fk_id_indikator',
-                            'fk_id_m_sumberdata',
+                            'fk_id_m_sumberdata'
 
 ];
 
