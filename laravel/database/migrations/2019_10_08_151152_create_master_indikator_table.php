@@ -16,7 +16,7 @@ class CreateMasterIndikatorTable extends Migration
         Schema::create('t_m_indikator', function (Blueprint $table) {
             $table->increments('id_indikator');
             $table->string('indikator');
-            $table->string('fk_id_goal',4);
+            $table->integer('fk_id_goal')->unsigned();
             $table->foreign('fk_id_goal')
                 ->references('id_goal')->on('t_goals')
                 ->onDelete('cascade')->onUpdate('cascade');

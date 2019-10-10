@@ -16,7 +16,7 @@ class CreatePencapaianTable extends Migration
         Schema::create('t_pencapaian', function (Blueprint $table) {
             $table->bigIncrements('id_pencapaian');
             $table->integer('tahun');
-            $table->string('fk_id_goal',5);
+            $table->integer('fk_id_goal')->unsigned();
             $table->foreign('fk_id_goal')
                   ->references('id_goal')->on('t_goals')
                   ->onDelete('cascade')->onUpdate('cascade');
