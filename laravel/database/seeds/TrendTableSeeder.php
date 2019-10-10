@@ -41,8 +41,8 @@ class TrendTableSeeder extends Seeder
                 'simbol_trend'  		=> 'img/sdgs/trend not yet.png',
                 'keterangan'		    => 'trend not yet',
  
-            ],
-        ]
+            ]
+            ]);
 
     }
 }
