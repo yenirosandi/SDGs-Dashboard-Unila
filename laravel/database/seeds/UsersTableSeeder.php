@@ -24,8 +24,7 @@ class UsersTableSeeder extends Seeder
                'remember_token'	=> NULL,
                'created_at'      => \Carbon\Carbon::now(),
                'updated_at'      => \Carbon\Carbon::now()
-             ],
-
+             ]
          ]);
      }
  }
