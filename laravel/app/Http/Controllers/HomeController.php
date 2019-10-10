@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Goals_model;//tambahan
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;//
+use Illuminate\Support\Facades\DB;//n
 
 class HomeController extends Controller
 {
