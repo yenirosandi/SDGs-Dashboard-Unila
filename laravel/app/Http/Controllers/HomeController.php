@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function detailGoal($id){
         //$products=Products_model::findOrFail($id);
-        $goals= DB::table('t_goals')->where('id_goal', $id)->get();//sintaks ini bakalan gak kefound karena pake DB::table jadinya tambahin use ya di atas
-        return view('frontend.goal_detail', compact('goals'));
+        $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();//sintaks ini bakalan gak kefound karena pake DB::table jadinya tambahin use ya di atas
+        return view('frontend.goal_detail', compact('goal_detail'));
     }
 }
