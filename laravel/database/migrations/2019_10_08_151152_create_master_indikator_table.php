@@ -36,6 +36,6 @@ class CreateMasterIndikatorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_m_indikators');
+        Schema::dropIfExists('t_m_indikator');
     }
 }
