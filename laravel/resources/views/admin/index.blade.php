@@ -6,7 +6,7 @@
 
 @section('content')
     @forelse($goals as $goal)
-    <a href="{{url('goalDetail', $goal->id_goal)}}">
+    <a href="{{url('admin/goalDetail', $goal->id_goal)}}">
      <img src="{{$goal->gambar}}" alt="" width="15%">
      </a>
     @empty
