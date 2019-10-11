@@ -3,7 +3,7 @@
 //front-end:free user
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/goalDetail/{id}','HomeController@detailGoal');
 
 
 //back-end:admin
