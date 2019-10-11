@@ -17,9 +17,10 @@ class sdgsSubIndikatorController extends Controller
     public function index()
     {
         $no=1;
-        $fk_indikator=Indikator_model::all();
+        $fk_id_indikator=Indikator_model::all();
         $fk_sumberdata=Sumberdata_model::all();
-        return view('admin.master_sub_indikator',['no'=>$no, 'fk_indikator'=>$fk_indikator, 'fk_sumberdata'=>$fk_sumberdata]);
+        $sub=SubIndikator_model::all();
+        return view('admin.master_sub_indikator',['no'=>$no, 'sub'=>$sub,'fk_id_indikator'=>$fk_id_indikator, 'fk_sumberdata'=>$fk_sumberdata]);
  
     }
 

@@ -62,11 +62,11 @@
                     </label>
               </div>
               <div class="form-group">
-              <label class="control-label col-sm-8" for="fk_indikator">Indikator:</label>
+              <label class="control-label col-sm-8" for="fk_id_indikator">Indikator:</label>
               <div class="col-sm-4">
-                <select class="form-control" name="fk_indikator">
+                <select class="form-control" name="fk_id_indikator">
                 <option value="">-- Pilih Indikator --</option> 
-                  @foreach($fk_indikator as $fk_indikators)
+                  @foreach($fk_id_indikator as $fk_id_indikators)
                     <option value="{{$fk_indikators->indikator}}">{{$fk_indikators->indikator}}</option>
                   @endforeach
                 </select>
