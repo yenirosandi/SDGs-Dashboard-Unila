@@ -3,23 +3,20 @@
 //front-end:free user
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/goalDetail/{id}','HomeController@detailGoal');
 
 
 //back-end:admin
 Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::get('/', 'AdminController@index');
-  Route::get('/sdgs/{id}','AdminController@detailGoal');
   Route::get('/goalDetail/{id}','AdminController@detailGoal');
 
-    // Route::get('/', function () {
-    //     return view('admin.index');
-    // });
-
-    //Master Indikator
+  //Indikator
   Route::resource('master_indikator','sdgsIndiMasterController');
   Route::resource('master_sub_indikator','sdgsSubIndikatorController');
+  Route::resource('pencapaian_indikator_SDGs','sdgsCapaianIndiController');
+
 });
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

@@ -116,7 +116,7 @@
             <span>Master Sub Indikator</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/indikator_pencapaian_SDGs">
+          <a class="nav-link" href="/admin/pencapaian_indikator_SDGs">
             <img src="{{asset('img/sdgs/admin_indi_capai.png')}}" alt="Pencapaian Indikator" width="20px">
             <span>Pencapaian Indikator</span></a>
         </li>
