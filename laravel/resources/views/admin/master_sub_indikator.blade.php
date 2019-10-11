@@ -67,7 +67,7 @@
                 <select class="form-control" name="fk_id_indikator">
                 <option value="">-- Pilih Indikator --</option> 
                   @foreach($fk_id_indikator as $fk_id_indikators)
-                    <option value="{{$fk_indikators->indikator}}">{{$fk_indikators->indikator}}</option>
+                    <option value="{{$fk_id_indikators->indikator}}">{{$fk_id_indikators->indikator}}</option>
                   @endforeach
                 </select>
               </div>
@@ -105,10 +105,10 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>No.</th>
+              <!-- <th>No.</th>
               <th>Goal</th>
               <th>Indikator</th>
-              <th>Aksi</th>
+              <th>Aksi</th> -->
             </tr>
           </thead>
           <tbody>
