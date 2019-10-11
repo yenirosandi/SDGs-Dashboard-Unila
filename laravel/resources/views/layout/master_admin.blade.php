@@ -106,17 +106,17 @@
         </div>
         <!-- Indikator -->
         <li class="nav-item">
-          <a class="nav-link" href="master_indikator">
+          <a class="nav-link" href="/admin/master_indikator">
             <img src="{{asset('img/sdgs/admin_indi_master.png')}}" alt="SDG3" width="20px">
             <span>Master Indikator</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="master_sub_indikator">
+          <a class="nav-link" href="/admin/master_sub_indikator">
             <img src="{{asset('img/sdgs/admin_indi_sub.png')}}" alt="Master Sub Indikator" width="20px">
             <span>Master Sub Indikator</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="indikator_pencapaian_SDGs">
+          <a class="nav-link" href="/admin/indikator_pencapaian_SDGs">
             <img src="{{asset('img/sdgs/admin_indi_capai.png')}}" alt="Pencapaian Indikator" width="20px">
             <span>Pencapaian Indikator</span></a>
         </li>
@@ -129,12 +129,12 @@
         </div>
         <!-- User -->
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/admin/profil">
             <img src="{{asset('img/sdgs/admin_profil.png')}}" alt="profil" width="20px">
             <span>Profil</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/admin/logout">
             <img src="{{asset('img/sdgs/admin_logout.png')}}" alt="logout" width="20px">
             <span>Logout</span></a>
         </li>
