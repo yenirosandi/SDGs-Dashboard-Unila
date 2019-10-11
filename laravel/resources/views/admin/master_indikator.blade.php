@@ -12,21 +12,22 @@
     <div class="card-body">
       <div class="card-body">
         <div class="table-responsive">
-          <form method="POST" class="form-horizontal" action="/master_indikator/tambah">
+          <form method="POST" class="form-horizontal" action="{{url('/admin/master_indikator')}}">
+            @csrf
             <div class="form-group">
-              <label class="control-label" for="goal">Goal ke:</label>
-              <div class="col-sm-2">
+              <label class="control-label col-sm-8" for="goal">Goal ke:</label>
+              <div class="col-sm-4">
                 <select class="form-control" name="goal">
                   @foreach($goals as $data_goals)
-                    <option value="{{$data_goals->nama_goal}}">SDG {{$data_goals->id_goal}}</option>
+                    <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
                   @endforeach
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="indikator">Indikator:</label>
+              <label class="control-label col-sm-8" for="indikator">Indikator:</label>
               <div class="col-sm-8">
-                <input name="indikator" type="text" class="form-control" id="indikator">
+                <input name="indikator" type="text" class="form-control" id="indikator" required>
               </div>
             </div>
             <div class="form-group">
@@ -59,17 +60,18 @@
           <tbody>
             @foreach($master_indikator as $data_master)
             <tr>
-              <?php $no=1; ?>
               <th>{{$no}}<?php $no++; ?></th>
-              <th>{{$data_master->fk_id_goal}}</th>
+              <th>SDG {{$data_master->fk_id_goal}}</th>
               <th>{{$data_master->indikator}}</th>
               <th>
-                <a href="/master_indikator/edit/{{$data_master->id_indikator}}" class="btn btn-warning btn-circle btn-sm">
+                <a href="{{route('master_indikator.update', $data_master->id_indikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>
                 </a>
-                <a href="/master_indikator/hapus/{{$data_master->id_indikator}}" class="btn btn-danger btn-circle btn-sm">
-                  <i class="fas fa-trash"></i>
-                </a>
+                <form action="{{route('master_indikator.destroy',$data_master->id_indikator)}}" method="put">
+                  <button class="btn btn-danger btn-circle btn-sm" type="submit">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
               </th>
             </tr>
             @endforeach

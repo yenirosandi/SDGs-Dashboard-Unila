@@ -17,14 +17,16 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
         return view('admin.index');
     });
     //Master Indikator
-    // Route::resource('master_indikator','sdgsIndiMasterController');
+    Route::resource('master_indikator','sdgsIndiMasterController');
   });
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-//Master Indikator
-Route::get('/master_indikator', 'sdgsIndiMasterController@index');
-Route::post('master_indikator/tambah', 'sdgsIndiMasterController@store')
+// //Master Indikator
+// Route::get('/master_indikator', 'sdgsIndiMasterController@index');
+// Route::post('/master_indikator/tambah', 'sdgsIndiMasterController@store')
 // Route::get('/master_indikator/edit/{id_indikator}', 'sdgsIndiMasterController@edit');
+// Route::get('/master_indikator/edit/{id_indikator}/update', 'sdgsIndiMasterController@update');
+
 // Route::get('/master_indikator/hapus', 'sdgsIndiMasterController@delete');
 
 // Route::get('/profil', 'AdminController@show');

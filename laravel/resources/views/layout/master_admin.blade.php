@@ -9,10 +9,10 @@
     <meta name="author" content="">
     <title>@yield('title')</title>
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
   </head>
   <body id="page-top">
     <!-- Page Wrapper -->
@@ -22,7 +22,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
           <div class="sidebar-brand-icon rotate-n-0">
-            <img src="img/sdgs/sdgs.png" alt="UNILA SDGs Center" width="50px">
+            <img src="{{asset('img/sdgs/sdgs.png')}}" alt="UNILA SDGs Center" width="50px">
           </div>
           <div class="sidebar-brand-text mx-3">Dashboard SDGs Unila</div>
         </a>
@@ -44,57 +44,57 @@
         <!-- SDGs Goals -->
         <li class="nav-item">
           <a class="nav-link" href="/sdg/3">
-            <img src="img/sdgs/sdg3.png" alt="SDG3" width="20px">
+            <img src="{{asset('img/sdgs/sdg3.png')}}" alt="SDG3" width="20px">
             <span>SDG 3</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/4">
-            <img src="img/sdgs/sdg4.png" alt="SDG4" width="20px">
+            <img src="{{asset('img/sdgs/sdg4.png')}}" alt="SDG4" width="20px">
             <span>SDG 4</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/5">
-            <img src="img/sdgs/sdg5.png" alt="SDG5" width="20px">
+            <img src="{{asset('img/sdgs/sdg5.png')}}" alt="SDG5" width="20px">
             <span>SDG 5</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/8">
-            <img src="img/sdgs/sdg8.png" alt="SDG8" width="20px">
+            <img src="{{asset('img/sdgs/sdg8.png')}}" alt="SDG8" width="20px">
             <span>SDG 8</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/9">
-            <img src="img/sdgs/sdg9.png" alt="SDG9" width="20px">
+            <img src="{{asset('img/sdgs/sdg9.png')}}" alt="SDG9" width="20px">
             <span>SDG 9</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/10">
-            <img src="img/sdgs/sdg10.png" alt="SDG10" width="20px">
+            <img src="{{asset('img/sdgs/sdg10.png')}}" alt="SDG10" width="20px">
             <span>SDG 10</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/11">
-            <img src="img/sdgs/sdg11.png" alt="SDG11" width="20px">
+            <img src="{{asset('img/sdgs/sdg11.png')}}" alt="SDG11" width="20px">
             <span>SDG 11</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/12">
-            <img src="img/sdgs/sdg12.png" alt="SDG12" width="20px">
+            <img src="{{asset('img/sdgs/sdg12.png')}}" alt="SDG12" width="20px">
             <span>SDG 12</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/13">
-            <img src="img/sdgs/sdg13.png" alt="SDG13" width="20px">
+            <img src="{{asset('img/sdgs/sdg13.png')}}" alt="SDG13" width="20px">
             <span>SDG 13</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/16">
-            <img src="img/sdgs/sdg16.png" alt="SDG16" width="20px">
+            <img src="{{asset('img/sdgs/sdg16.png')}}" alt="SDG16" width="20px">
             <span>SDG 16</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sdg/17">
-            <img src="img/sdgs/sdg17.png" alt="SDG17" width="20px">
+            <img src="{{asset('img/sdgs/sdg17.png')}}" alt="SDG17" width="20px">
             <span>SDG 17</span></a>
         </li>
 
@@ -107,17 +107,17 @@
         <!-- Indikator -->
         <li class="nav-item">
           <a class="nav-link" href="master_indikator">
-            <img src="img/sdgs/admin_indi_master.png" alt="SDG3" width="20px">
+            <img src="{{asset('img/sdgs/admin_indi_master.png')}}" alt="SDG3" width="20px">
             <span>Master Indikator</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="master_sub_indikator">
-            <img src="img/sdgs/admin_indi_sub.png" alt="Master Sub Indikator" width="20px">
+            <img src="{{asset('img/sdgs/admin_indi_sub.png')}}" alt="Master Sub Indikator" width="20px">
             <span>Master Sub Indikator</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="indikator_pencapaian_SDGs">
-            <img src="img/sdgs/admin_indi_capai.png" alt="Pencapaian Indikator" width="20px">
+            <img src="{{asset('img/sdgs/admin_indi_capai.png')}}" alt="Pencapaian Indikator" width="20px">
             <span>Pencapaian Indikator</span></a>
         </li>
 
@@ -130,12 +130,12 @@
         <!-- User -->
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="img/sdgs/admin_profil.png" alt="profil" width="20px">
+            <img src="{{asset('img/sdgs/admin_profil.png')}}" alt="profil" width="20px">
             <span>Profil</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <img src="img/sdgs/admin_logout.png" alt="logout" width="20px">
+            <img src="{{asset('img/sdgs/admin_logout.png')}}" alt="logout" width="20px">
             <span>Logout</span></a>
         </li>
         <!-- Divider -->

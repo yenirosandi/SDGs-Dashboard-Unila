@@ -7,23 +7,52 @@ use App\Indikator_model;
 use App\Goals_model;
 class sdgsIndiMasterController extends Controller
 {
+  public function create()
+  {
+    return view('master_indikator');
+  }
+
   public function index()
   {
+    $no=1;
     $goals=Goals_model::all();
     $master_indikator=Indikator_model::all();
-    return view('admin.master_indikator',['master_indikator'=>$master_indikator, 'goals'=>$goals]);
+    return view('admin.master_indikator',['no'=>$no, 'master_indikator'=>$master_indikator, 'goals'=>$goals]);
   }
+
   public function store(Request $request)
   {
-    $this->validate($request. [
-      'goal'=>'required',
-      'indikator'=> 'required'
-    ]);
+    $id_goal=$request->goal;
+    $indikator=$request->indikator;
 
-    Indikator_model::create([
-      'goal' => $request->fk_id_goal,
-      'indikator' => $request->indikator
-    ]);
-    return redirect('/master_indikator');
+    $master=new \App\Indikator_model;
+    $master->fk_id_goal=$id_goal;
+    $master->indikator=$indikator;
+    $master->save();
+    return redirect('/admin/master_indikator');
+  }
+
+  public function edit($id_indikator)
+  {
+    $master_indikator= \App\Indikator_model::find($id_indikator);
+    $goals=Goals_model::all();
+    return view('admin.master_indikator_edit',compact('master_indikator','id_indikator','goals'));
+  }
+
+  public function update(Request $request, $id_indikator)
+  {
+    $master= \App\Indikator_model::find($id_indikator);
+    $master->fk_id_goal=$request->get('goal');
+    $master->indikator=$request->get('indikator');
+    $master->save();
+    return redirect('master_indikator')
+      ->with('success','Data telah diubah');
+  }
+
+  public function destroy($id_indikator)
+  {
+    $master= \App\Indikator_model::where('id_indikator',$id_indikator);
+    $master->delete();
+    return redirect('/admin/master_indikator')->with('success','Data buku telah dihapus');
   }
 }

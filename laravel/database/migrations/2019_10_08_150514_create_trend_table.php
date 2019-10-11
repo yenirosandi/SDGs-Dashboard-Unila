@@ -17,7 +17,6 @@ class CreateTrendTable extends Migration
             $table->increments('id_trend');
             $table->string('simbol_trend');
             $table->string('keterangan');
-            $table->timestamps();
         });
     }
 

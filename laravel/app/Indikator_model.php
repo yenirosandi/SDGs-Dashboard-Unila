@@ -11,5 +11,6 @@ class Indikator_model extends Model
     protected $fillable = ['indikator',
                             'fk_id_goal',
 ];
+    public $timestamps=true;
 
 }
