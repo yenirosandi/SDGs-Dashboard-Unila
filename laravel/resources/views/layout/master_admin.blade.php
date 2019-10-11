@@ -43,57 +43,57 @@
         </div>
         <!-- SDGs Goals -->
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/3">
+          <a class="nav-link" href="/admin/goalDetail/3">
             <img src="{{asset('img/sdgs/sdg3.png')}}" alt="SDG3" width="20px">
             <span>SDG 3</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/4">
+          <a class="nav-link" href="/admin/goalDetail/4">
             <img src="{{asset('img/sdgs/sdg4.png')}}" alt="SDG4" width="20px">
             <span>SDG 4</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/5">
+          <a class="nav-link" href="/admin/goalDetail/5">
             <img src="{{asset('img/sdgs/sdg5.png')}}" alt="SDG5" width="20px">
             <span>SDG 5</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/8">
+          <a class="nav-link" href="/admin/goalDetail/8">
             <img src="{{asset('img/sdgs/sdg8.png')}}" alt="SDG8" width="20px">
             <span>SDG 8</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/9">
+          <a class="nav-link" href="/admin/goalDetail/9">
             <img src="{{asset('img/sdgs/sdg9.png')}}" alt="SDG9" width="20px">
             <span>SDG 9</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/10">
+          <a class="nav-link" href="/admin/goalDetail/10">
             <img src="{{asset('img/sdgs/sdg10.png')}}" alt="SDG10" width="20px">
             <span>SDG 10</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/11">
+          <a class="nav-link" href="/admin/goalDetail/11">
             <img src="{{asset('img/sdgs/sdg11.png')}}" alt="SDG11" width="20px">
             <span>SDG 11</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/12">
+          <a class="nav-link" href="/admin/goalDetail/12">
             <img src="{{asset('img/sdgs/sdg12.png')}}" alt="SDG12" width="20px">
             <span>SDG 12</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/13">
+          <a class="nav-link" href="/admin/goalDetail/13">
             <img src="{{asset('img/sdgs/sdg13.png')}}" alt="SDG13" width="20px">
             <span>SDG 13</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/16">
+          <a class="nav-link" href="/admin/goalDetail/16">
             <img src="{{asset('img/sdgs/sdg16.png')}}" alt="SDG16" width="20px">
             <span>SDG 16</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sdg/17">
+          <a class="nav-link" href="/admin/goalDetail/17">
             <img src="{{asset('img/sdgs/sdg17.png')}}" alt="SDG17" width="20px">
             <span>SDG 17</span></a>
         </li>
