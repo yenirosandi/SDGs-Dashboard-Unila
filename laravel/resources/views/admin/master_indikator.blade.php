@@ -64,11 +64,13 @@
               <th>SDG {{$data_master->fk_id_goal}}</th>
               <th>{{$data_master->indikator}}</th>
               <th>
-                <a href="{{route('master_indikator.update', $data_master->id_indikator)}}" class="btn btn-warning btn-circle btn-sm">
+                <a href="{{route('master_indikator.edit', $data_master->id_indikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>
                 </a>
-                <form action="{{route('master_indikator.destroy',$data_master->id_indikator)}}" method="put">
-                  <button class="btn btn-danger btn-circle btn-sm" type="submit">
+                <form action="{{route('master_indikator.destroy',$data_master->id_indikator)}}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('delete') }}  
+                <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
                     <i class="fas fa-trash"></i>
                   </button>
                 </form>

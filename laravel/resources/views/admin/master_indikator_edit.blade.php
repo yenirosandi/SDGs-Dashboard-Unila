@@ -12,8 +12,9 @@
     <div class="card-body">
       <div class="card-body">
         <div class="table-responsive">
-          <form method="PUT" class="form-horizontal" action="{{action('sdgsIndiMasterController@update',$id_indikator)}}">
-            @csrf
+          <form method="post" class="form-horizontal" action="{{route('master_indikator.update',$master_indikator->id_indikator)}}">
+          {{ csrf_field() }}
+        {{ method_field('put') }}
             <div class="form-group">
               <label class="control-label col-sm-8" for="goal">Goal ke:</label>
               <div class="col-sm-4">

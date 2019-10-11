@@ -34,25 +34,39 @@ class sdgsIndiMasterController extends Controller
 
   public function edit($id_indikator)
   {
-    $master_indikator= \App\Indikator_model::find($id_indikator);
+    $master_indikator= \App\Indikator_model::findOrFail($id_indikator);
     $goals=Goals_model::all();
     return view('admin.master_indikator_edit',compact('master_indikator','id_indikator','goals'));
   }
 
   public function update(Request $request, $id_indikator)
   {
-    $master= \App\Indikator_model::find($id_indikator);
-    $master->fk_id_goal=$request->get('goal');
-    $master->indikator=$request->get('indikator');
-    $master->save();
-    return redirect('master_indikator')
+    // $master= \App\Indikator_model::find($id_indikator);
+    // $master->fk_id_goal=$request->get('goal');
+    // $master->indikator=$request->get('indikator');
+    // $master->save();
+    Indikator_model::find($id_indikator)->update([
+      'fk_id_goal'=>$request->get('goal'),
+      'indikator'=>$request->get('indikator'),
+
+
+    ]);
+
+    return redirect()->route('master_indikator.index')
       ->with('success','Data telah diubah');
   }
+
+
+  public function show($id)
+  {
+      //
+  }
+
 
   public function destroy($id_indikator)
   {
     $master= \App\Indikator_model::where('id_indikator',$id_indikator);
     $master->delete();
-    return redirect('/admin/master_indikator')->with('success','Data buku telah dihapus');
+    return redirect('/admin/master_indikator')->with('success','Data telah dihapus');
   }
 }
