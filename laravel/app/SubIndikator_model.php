@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubIndikator_model extends Model
 {
-    protected $table = 't_m_subindkator';
+    protected $table = 't_m_subindikator';
     protected $primaryKey='id_m_subindikator';
     protected $fillable = ['subindikator',
                             'waktu_pengambilan',
