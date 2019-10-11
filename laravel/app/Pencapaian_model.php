@@ -18,7 +18,8 @@ class Pencapaian_model extends Model
                             'berkas'
 
 ];
-
+    public $timestamps=true;
+    
     public function goal(){
         return $this->belongsTo(Goals_model::class,'fk_id_goal','id_goal');
     }

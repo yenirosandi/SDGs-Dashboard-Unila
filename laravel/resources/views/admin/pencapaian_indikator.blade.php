@@ -1,8 +1,8 @@
 @extends('layout.master_admin')
 
-@section('title','Master Sub-Indikator SDGs')
-@section('Judul','Master Sub-Indikator')
-@section('JudulDesc','Ini adalah halaman master sub-indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
+@section('title','Pencapaian Indikator SDGs')
+@section('Judul','Pencapaian Indikator SDGs')
+@section('JudulDesc','Ini adalah halaman pencapaian indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
 @section('content')
   <!-- Form -->
   <div class="card shadow mb-4">
@@ -13,20 +13,6 @@
       <div class="card-body">
         <div class="table-responsive">
           <form class="form-horizontal" action="/action_page.php">
-
-            <div class="col-sm-10">
-              <select style="padding:10px;" name="tahun" id="year"></select>
-              <script>
-                var start = 1900;
-                var end = new Date().getFullYear();
-                var options = "";
-                for(var year = start ; year <=end; year++){
-                options += "<option>"+ year +"</option>";
-                }
-                document.getElementById("year").innerHTML = options;
-              </script>
-            </div>
-
             <div class="form-group">
               <label class="control-label" for="goal">Goal ke:</label>
               <div class="col-sm-8">
@@ -37,7 +23,6 @@
                 </select>
               </div>
             </div>
-
             <div class="form-group">
               <label class="control-label col-sm-2" for="indikator">Indikator:</label>
               <div class="col-sm-8">
@@ -58,7 +43,7 @@
   <!-- Table -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Tabel Dokter</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Tabel Pencapaian Indikator</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
