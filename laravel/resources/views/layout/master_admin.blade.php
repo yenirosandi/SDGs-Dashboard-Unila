@@ -20,7 +20,7 @@
       <!-- Sidebar -->
       <ul class="navbar-nav bg-white sidebar sidebar-light accordion" id="accordionSidebar">
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
           <div class="sidebar-brand-icon rotate-n-0">
             <img src="{{asset('img/sdgs/sdgs.png')}}" alt="UNILA SDGs Center" width="50px">
           </div>
@@ -30,7 +30,7 @@
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="/admin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
         </li>

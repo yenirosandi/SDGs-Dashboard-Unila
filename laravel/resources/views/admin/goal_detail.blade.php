@@ -7,10 +7,9 @@
 @section('content')
     @forelse($goals as $goal)
     <a href="{{url('goalDetail', $goal->id_goal)}}">
-     <img src="{{$goal->gambar}}" alt="" width="15%">
+     <img src="{{$goal->gambar}}" alt="" width="20%">
      </a>
     @empty
             <h3>Nothing</h3>
     @endforelse
-    <img src="{{asset('img/sdgs/sds.PNG')}}" alt="SDGs" width="15%">
 @endsection

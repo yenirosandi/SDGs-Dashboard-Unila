@@ -13,12 +13,16 @@ Route::get('/goalDetail/{id}','HomeController@detailGoal');
 //back-end:admin
 Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
-    Route::get('/', function () {
-        return view('admin.index');
-    });
+  Route::get('/', 'AdminController@index');
+  Route::get('/sdgs/{id}','AdminController@detailGoal');
+
+    // Route::get('/', function () {
+    //     return view('admin.index');
+    // });
+
     //Master Indikator
-    Route::resource('master_indikator','sdgsIndiMasterController');
-  });
+  Route::resource('master_indikator','sdgsIndiMasterController');
+});
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 // //Master Indikator
