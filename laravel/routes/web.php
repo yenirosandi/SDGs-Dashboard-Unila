@@ -22,6 +22,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
     //Master Indikator
   Route::resource('master_indikator','sdgsIndiMasterController');
+  Route::resource('master_sub_indikator','sdgsSubIndikatorController');
 });
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
