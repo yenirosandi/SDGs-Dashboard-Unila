@@ -105,10 +105,11 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <!-- <th>No.</th>
-              <th>Goal</th>
+              <th>No.</th>
               <th>Indikator</th>
-              <th>Aksi</th> -->
+              <th>Sub Indikator</th>
+              <th>Sumber Data</th>
+              <th>Waktu Pengambilan</th>
             </tr>
           </thead>
           <tbody>
