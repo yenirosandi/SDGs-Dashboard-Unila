@@ -16,6 +16,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::resource('master_indikator','sdgsIndiMasterController');
   Route::resource('master_sub_indikator','sdgsSubIndikatorController');
   Route::resource('pencapaian_indikator_SDGs','sdgsCapaianIndiController');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 
 });
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
