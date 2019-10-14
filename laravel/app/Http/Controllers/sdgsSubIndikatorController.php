@@ -17,10 +17,10 @@ class sdgsSubIndikatorController extends Controller
     public function index()
     {
         $no=1;
-        $fk_id_indikator=Indikator_model::all();
-        $fk_sumberdata=Sumberdata_model::all();
-        $sub=SubIndikator_model::all();
-        return view('admin.master_sub_indikator',['no'=>$no, 'sub'=>$sub,'fk_id_indikator'=>$fk_id_indikator, 'fk_sumberdata'=>$fk_sumberdata]);
+        $fk_id_indikators=Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
+        $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
+        $sub=SubIndikator_model::get();
+        return view('admin.master_sub_indikator',['no'=>$no, 'sub'=>$sub,'fk_id_indikators'=>$fk_id_indikators, 'fk_sumberdatas'=>$fk_sumberdatas]);
  
     }
 
@@ -31,7 +31,9 @@ class sdgsSubIndikatorController extends Controller
      */
     public function create()
     {
-        return view('master_sub_indikator');
+        $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
+        $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
+        return view('admin.master_sub_indikator', compact('fk_id_indikators', 'fk_sumberdatas'));
         
     }
 
@@ -56,9 +58,9 @@ class sdgsSubIndikatorController extends Controller
         $check->fk_id_m_sumberdata = $request->fk_id_m_sumberdata;
         $check->save();
 
-        alert()->success('Berhasil.','Data telah ditambahkan!');
+        // alert()->success('Berhasil.','Data telah ditambahkan!');
 
-        return redirect()->route('master_sub_indikator.index');
+        return redirect()->route('master_sub_indikator.index')->with('message','Data telah ditambahkan!');
     }
 
     /**
@@ -114,9 +116,9 @@ class sdgsSubIndikatorController extends Controller
 
             $edit_waktu_pengambilan=SubIndikator_model::findOrFail($id_m_subindikator);
            
-            alert()->success('Berhasil.','Data telah diubah!');
+            // alert()->success('Berhasil.','Data telah diubah!');
 
-            return redirect()->route('master_sub_indikator.index');
+            return redirect()->route('master_sub_indikator.index')->with('message','Data telah diubah!');
     
     }
 
@@ -129,8 +131,8 @@ class sdgsSubIndikatorController extends Controller
     public function destroy($id_m_subindikator)
     {
         SubIndikator_model::find($id_m_subindikator)->delete();
-        alert()->success('Berhasil.','Data telah dihapus!');
-        return redirect()->route('master_sub_indikator.index');
+        // alert()->success('Berhasil.','Data telah dihapus!');
+        return redirect()->route('master_sub_indikator.index')->with('message','Data telah dihapus!');
  
     }
 }

@@ -66,18 +66,18 @@
               <div class="col-sm-4">
                 <select class="form-control" name="fk_id_indikator">
                 <option value="">-- Pilih Indikator --</option> 
-                  @foreach($fk_id_indikator as $fk_id_indikators)
-                    <option value="{{$fk_id_indikators->indikator}}">{{$fk_id_indikators->indikator}}</option>
+                  @foreach($fk_id_indikators as $id=>$fk_id_indikator)
+                    <option value="{{$id}}">{{$fk_id_indikator}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
-              <label class="control-label col-sm-8" for="fk_indikator">Sumber Data:</label>
+              <label class="control-label col-sm-8" for="fk_id_m_sumberdata">Sumber Data:</label>
               <div class="col-sm-4">
-                <select class="form-control" name="fk_sumberdata">
+                <select class="form-control" name="fk_id_m_sumberdata">
                 <option value="">-- Pilih Sumber Data --</option> 
-                  @foreach($fk_sumberdata as $fk_sumberdatas)
-                    <option value="{{$fk_sumberdatas->sumberdata}}">{{$fk_sumberdatas->sumberdata}}</option>
+                  @foreach($fk_sumberdatas as $id=>$fk_sumberdata)
+                    <option value="{{$id}}">{{$fk_sumberdata}}</option>
                   @endforeach
                 </select>
               </div>
