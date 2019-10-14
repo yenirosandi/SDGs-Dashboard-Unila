@@ -110,10 +110,42 @@
               <th>Sub Indikator</th>
               <th>Sumber Data</th>
               <th>Waktu Pengambilan</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-           
+           @foreach ($datas as $data)
+           <tr>
+             <td>
+                  {{$no}} <?php $no++;?>
+             </td>
+             <td>
+               {{$data->indikator->indikator}}
+             </td>
+             <td>
+               {{$data->subindikator}}
+             </td>
+             <td>
+               {{$data->sumberdata->sumberdata}}
+             </td>
+             <td>
+               {{$data->waktu_pengambilan}}
+             </td>
+             <td>
+                <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <form action="{{route('master_sub_indikator.destroy',$data->id_m_subindikator)}}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('delete') }}  
+                <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+           </tr>
+           @endforeach
+
           </tbody>
         </table>
       </div>
