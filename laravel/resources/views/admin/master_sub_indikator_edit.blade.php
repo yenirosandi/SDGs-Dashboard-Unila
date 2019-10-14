@@ -5,7 +5,7 @@
 @section('JudulDesc','Ini adalah halaman master indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
 @section('content')
   <!-- Form -->
-  <div class="card shadow mb-4">
+  <!-- <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Indikator</h6>
     </div>
@@ -36,7 +36,7 @@
                 <button type="submit" class="btn btn-primary">Tambahkan</button>
               </div>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

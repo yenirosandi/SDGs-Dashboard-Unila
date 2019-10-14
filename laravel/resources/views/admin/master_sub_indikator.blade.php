@@ -66,18 +66,18 @@
               <div class="col-sm-4">
                 <select class="form-control" name="fk_id_indikator">
                 <option value="">-- Pilih Indikator --</option> 
-                  @foreach($fk_id_indikator as $fk_id_indikators)
-                    <option value="{{$fk_id_indikators->indikator}}">{{$fk_id_indikators->indikator}}</option>
+                  @foreach($fk_id_indikators as $id=>$fk_id_indikator)
+                    <option value="{{$id}}">{{$fk_id_indikator}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
-              <label class="control-label col-sm-8" for="fk_indikator">Sumber Data:</label>
+              <label class="control-label col-sm-8" for="fk_id_m_sumberdata">Sumber Data:</label>
               <div class="col-sm-4">
-                <select class="form-control" name="fk_sumberdata">
+                <select class="form-control" name="fk_id_m_sumberdata">
                 <option value="">-- Pilih Sumber Data --</option> 
-                  @foreach($fk_sumberdata as $fk_sumberdatas)
-                    <option value="{{$fk_sumberdatas->sumberdata}}">{{$fk_sumberdatas->sumberdata}}</option>
+                  @foreach($fk_sumberdatas as $id=>$fk_sumberdata)
+                    <option value="{{$id}}">{{$fk_sumberdata}}</option>
                   @endforeach
                 </select>
               </div>
@@ -105,14 +105,47 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <!-- <th>No.</th>
-              <th>Goal</th>
+              <th>No.</th>
               <th>Indikator</th>
-              <th>Aksi</th> -->
+              <th>Sub Indikator</th>
+              <th>Sumber Data</th>
+              <th>Waktu Pengambilan</th>
+              <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-           
+           @foreach ($datas as $data)
+           <tr>
+             <td>
+                  {{$no}} <?php $no++;?>
+             </td>
+             <td>
+               {{$data->indikator->indikator}}
+             </td>
+             <td>
+               {{$data->subindikator}}
+             </td>
+             <td>
+               {{$data->sumberdata->sumberdata}}
+             </td>
+             <td>
+               {{$data->waktu_pengambilan}}
+             </td>
+             <td>
+                <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">
+                  <i class="fas fa-edit"></i>
+                </a>
+                <form action="{{route('master_sub_indikator.destroy',$data->id_m_subindikator)}}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('delete') }}  
+                <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+           </tr>
+           @endforeach
+
           </tbody>
         </table>
       </div>

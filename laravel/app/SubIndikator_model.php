@@ -15,10 +15,16 @@ class SubIndikator_model extends Model
 
 ];
 
-// public function indikator(){
-//     return $this->belongsTo(Indikator_model::class,'fk_id_indikator','id_indikator');
-// }
+public function indikator(){
+    return $this->belongsTo(Indikator_model::class,'fk_id_indikator','id_indikator');
+}
 public function sumberdata(){
     return $this->belongsTo(Sumberdata_model::class,'fk_id_m_sumberdata','id_m_sumberdata');
 }
+
+public function getFacingsAttribute()
+{
+  return explode(',', $this->waktu_pengambilan);//gakguna ini sebernernya ehhe
+}
+
 }
