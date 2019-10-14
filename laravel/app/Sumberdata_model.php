@@ -11,4 +11,6 @@ class Sumberdata_model extends Model
     protected $fillable = ['sumberdata',
 
 ];
+public $timestamps=true;
+
 }

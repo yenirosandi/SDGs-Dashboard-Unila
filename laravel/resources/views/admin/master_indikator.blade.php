@@ -5,7 +5,7 @@
 @section('JudulDesc','Ini adalah halaman master indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
 @section('content')
   <!-- Form -->
-  <div class="card shadow mb-4">
+  <div class="card shadow mb-4 w-50">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Indikator</h6>
     </div>
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
               <label class="control-label col-sm-8" for="indikator">Indikator:</label>
-              <div class="col-sm-8">
+              <div class="col-sm-10">
                 <input name="indikator" type="text" class="form-control" id="indikator" required>
               </div>
             </div>
@@ -66,13 +66,13 @@
               <th>
                 <a href="{{route('master_indikator.edit', $data_master->id_indikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>
-                </a>
+                </a> Ubah
                 <form action="{{route('master_indikator.destroy',$data_master->id_indikator)}}" method="post">
                 {{ csrf_field() }}
-                {{ method_field('delete') }}  
+                {{ method_field('delete') }}
                 <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
                     <i class="fas fa-trash"></i>
-                  </button>
+                  </button> Hapus
                 </form>
               </th>
             </tr>

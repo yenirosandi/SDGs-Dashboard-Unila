@@ -120,6 +120,11 @@
             <img src="{{asset('img/sdgs/admin_indi_capai.png')}}" alt="Pencapaian Indikator" width="20px">
             <span>Pencapaian Indikator</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/sumber_data">
+            <img src="{{asset('img/sdgs/admin_sumberdata.png')}}" alt="Sumber Data" width="20px">
+            <span>Sumber Data</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">

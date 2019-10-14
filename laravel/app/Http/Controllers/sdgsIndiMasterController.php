@@ -9,7 +9,7 @@ class sdgsIndiMasterController extends Controller
 {
   public function create()
   {
-    return view('master_indikator');
+    return view('admin.master_indikator');
   }
 
   public function index()
