@@ -96,8 +96,6 @@ class sdgsSubIndikatorController extends Controller
         // $finds = SubIndikator_model::where('id_m_subindikator',0)->first();
         $waktu_pengambilan= explode(", ", $finds->waktu_pengambilan);
 
-
-
         return view('admin.master_sub_indikator_edit', compact('edit_subindikator','fk_id_indikators','fk_sumberdatas','edit_fk_indikators', 'edit_fk_sumberdatas', 'getId','waktu_pengambilan'));
  
         
