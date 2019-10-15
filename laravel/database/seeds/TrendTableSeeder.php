@@ -4,11 +4,6 @@ use Illuminate\Database\Seeder;
 
 class TrendTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         DB::table('t_trends')->insert([
@@ -40,7 +35,6 @@ class TrendTableSeeder extends Seeder
                 'id_trend'  			=> 5,
                 'simbol_trend'  		=> 'img/sdgs/trend not yet.png',
                 'keterangan'		    => 'trend not yet',
-
             ]
             ]);
 

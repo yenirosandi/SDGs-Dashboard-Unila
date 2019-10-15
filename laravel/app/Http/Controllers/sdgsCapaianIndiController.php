@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Goals_model;
+use App\Pencapaian_model;
 use App\Indikator_model;
 use App\SubIndikator_model;
 use App\Sumberdata_model;
 use App\Trend_model;
-use App\Pencapaian_model;
 
 class sdgsCapaianIndiController extends Controller
 {
@@ -32,36 +32,49 @@ class sdgsCapaianIndiController extends Controller
 
   public function store(Request $request)
   {
-    $tahun=$tahun->tahun;
+    $tahun=$request->tahun;
     $id_goal=$request->goal;
     $id_indikator=$request->indikator;
-    $id_sub=
-    $id_trend=
-    $nilai=
-    $keterangan=
-    $berkas=
+    $id_sub=$request->sub;
+    $id_trend=$request->trend;
+    $nilai=$request->nilai;
+    $keterangan=$request->keterangan;
+    $berkas=$request->berkas;
 
-
-
-    $pencapaian=new \App\Indikator_model;
+    $pencapaian=new \App\Pencapaian_model;
     $pencapaian->fk_id_goal=$id_goal;
-    $pencapaian->indikator=$indikator;
+    $pencapaian->fk_id_indikator=$id_indikator;
+    $pencapaian->fk_id_m_subindikator=$id_sub;
+    $pencapaian->fk_id_trend=$id_trend;
+    $pencapaian->nilai=$nilai;
+    $pencapaian->keterangan=$keterangan;
+    $pencapaian->berkas=$berkas;
     $pencapaian->save();
     return redirect('/admin/pencapaian_indikator');
   }
 
   public function edit($id_pencapaian)
   {
-    $pencapaian_indikator= \App\Indikator_model::findOrFail($id_pencapaian);
+    $pencapaian= \App\Pencapaian_model::findOrFail($id_pencapaian);
     $goals=Goals_model::all();
-    return view('admin.pencapaian_indikator_edit',compact('pencapaian_indikator','id_pencapaian','goals'));
+    $master=Pencapaian_model::all();
+    $sub=SubIndikator_model::all();
+    $trends=Trend_model::all();
+    return view('admin.pencapaian_indikator_edit',
+        compact('pencapaian','id_pencapaian','goals','master','sub','trends'));
   }
 
   public function update(Request $request, $id_pencapaian)
   {
-    Indikator_model::find($id_pencapaian)->update([
+    Pencapaian_model::find($id_pencapaian)->update([
       'fk_id_goal'=>$request->get('goal'),
-      'indikator'=>$request->get('indikator'),
+      'fk_id_indikator'=>$request->get('indikator'),
+      'fk_id_m_subindikator'=>$request->get('indikator'),
+      'fk_id_trend'=>$request->get('indikator'),
+      'nilai'=>$request->get('indikator'),
+      'keterangan'=>$request->get('indikator'),
+      'berkas'=>$request->get('indikator'),
+
     ]);
     return redirect()->route('pencapaian_indikator.index')
       ->with('success','Data telah diubah');
@@ -69,7 +82,7 @@ class sdgsCapaianIndiController extends Controller
 
   public function destroy($id_pencapaian)
   {
-    $pencapaian= \App\Indikator_model::where('id_pencapaian',$id_pencapaian);
+    $pencapaian= \App\Pencapaian_model::where('id_pencapaian',$id_pencapaian);
     $pencapaian->delete();
     return redirect('/admin/pencapaian_indikator')->with('success','Data telah dihapus');
   }
