@@ -15,15 +15,14 @@
         <form method="POST" class="form-horizontal" action="{{url('/admin/pencapaian_indikator')}}">
           @csrf
           <div class="form-group">
-            <label class="control-label col-sm-8" for="goal">Tahun:</label>
+            <label class="control-label col-sm-8" for="tahun">Tahun:</label>
             <div class="col-sm-4">
               <select class="form-control"name="tahun">
                 <option value="">Pilih tahun</option>
                   <?php
-                   $thn_skr = date('Y');
-                   for ($x = $thn_skr; $x >= 2010; $x--) {
+                   for ($tahun = $thn_skr; $tahun >= 2010; $tahun--) {
                   ?>
-                  <option value="{{$x}}"><?php echo $x ?></option>
+                  <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                 <?php } ?>
               </select>
             </div><br>
@@ -36,7 +35,7 @@
                 @endforeach
               </select>
             </div><br>
-            <label class="control-label col-sm-8" for="goal">Indikator master:</label>
+            <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-6">
               <select class="form-control" name="indikator">
                 <option value="">Pilih indikator</option>
@@ -45,9 +44,9 @@
                 @endforeach
               </select>
             </div><br>
-            <label class="control-label col-sm-8" for="goal">Sub-indikator master:</label>
+            <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
             <div class="col-sm-6">
-              <select class="form-control" name="indikator">
+              <select class="form-control" name="sub">
                 <option value="">Pilih sub-indikator</option>
                 @foreach($sub as $data_sub)
                   <option value="{{$data_sub->id_m_subindikator}}">{{$data_sub->subindikator}}</option>
@@ -59,7 +58,7 @@
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-pencil-alt prefix"></i>
                 <label for="form22">Nilai</label>
-                <textarea id="form22" class="md-textarea form-control" rows="3"></textarea>
+                <textarea name="nilai" id="form22" class="md-textarea form-control" rows="3"></textarea>
               </div>
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
@@ -71,12 +70,12 @@
             <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
               <i class="fas fa-pencil-alt prefix"></i>
               <label for="form22">Keterangan</label>
-              <textarea id="form22" class="md-textarea form-control" rows="2"></textarea>
+              <textarea name="keterangan" id="form22" class="md-textarea form-control" rows="2"></textarea>
             </div>
           </div>
-          <label class="control-label col-sm-8" for="goal">Trend:</label>
+          <label class="control-label col-sm-8" for="trend">Trend:</label>
           <div class="col-sm-4">
-            <select class="form-control" name="indikator">
+            <select class="form-control" name="trend">
               <option value="">Pilih pencapaian</option>
               @foreach($trends as $data_tren)
                 <option value="{{$data_tren->id_trend}}">{{$data_tren->keterangan}}</option>

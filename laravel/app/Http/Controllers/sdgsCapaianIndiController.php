@@ -20,6 +20,8 @@ class sdgsCapaianIndiController extends Controller
   public function index()
   {
     $no=1;
+    $thn_skr = date('Y');
+
     $capai=Pencapaian_model::all();
     $goals=Goals_model::all();
     $master=Indikator_model::all();
@@ -27,7 +29,7 @@ class sdgsCapaianIndiController extends Controller
     $trends=Trend_model::all();
 
     return view('admin.pencapaian_indikator',
-    ['no'=>$no, 'goals'=>$goals, 'master'=>$master, 'sub'=>$sub, 'trends'=>$trends, 'capai'=> $capai]);
+    ['thn_skr'=>$thn_skr,'no'=>$no, 'goals'=>$goals, 'master'=>$master, 'sub'=>$sub, 'trends'=>$trends, 'capai'=> $capai]);
   }
 
   public function store(Request $request)
@@ -39,16 +41,17 @@ class sdgsCapaianIndiController extends Controller
     $id_trend=$request->trend;
     $nilai=$request->nilai;
     $keterangan=$request->keterangan;
-    $berkas=$request->berkas;
+    // $berkas=$request->berkas;
 
     $pencapaian=new \App\Pencapaian_model;
+    $pencapaian->tahun=$tahun;
     $pencapaian->fk_id_goal=$id_goal;
     $pencapaian->fk_id_indikator=$id_indikator;
     $pencapaian->fk_id_m_subindikator=$id_sub;
     $pencapaian->fk_id_trend=$id_trend;
     $pencapaian->nilai=$nilai;
     $pencapaian->keterangan=$keterangan;
-    $pencapaian->berkas=$berkas;
+    // $pencapaian->berkas=$berkas;
     $pencapaian->save();
     return redirect('/admin/pencapaian_indikator');
   }

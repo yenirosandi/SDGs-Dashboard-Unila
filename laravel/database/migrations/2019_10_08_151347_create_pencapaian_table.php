@@ -33,8 +33,8 @@ class CreatePencapaianTable extends Migration
                   ->references('id_trend')->on('t_trends')
                   ->onDelete('cascade')->onUpdate('cascade');
             $table->string('nilai');
-            $table->string('keterangan');
-            $table->string('berkas');
+            $table->string('keterangan')->nullable();
+            $table->string('berkas')->nullable();
 
             // $table->foreign('fk_id_goal','fk_goal_pencapaian')->references('id_goal')->on('t_goals')->onDelete('cascade')->onUpdate('cascade');
             // $table->foreign('fk_id_indikator','fk_master_pencapaian')->references('id_indikator')->on('t_m_indikator')->onDelete('cascade')->onUpdate('cascade');
