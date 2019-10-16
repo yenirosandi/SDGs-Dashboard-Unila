@@ -104,6 +104,7 @@
         <thead>
           <tr>
             <th>No.</th>
+            <th>Tahun</th>
             <th>Goal</th>
             <th>Indikator</th>
             <th>Sub Indikator</th>
@@ -118,10 +119,11 @@
         <tbody>
           @foreach($capai as $data)
           <tr>
-            <th>{{$no}}<?php $no++; ?></th>
-            <th>SDG {{$data->id_goal}}</th>
-            <th>{{$data->indikator}}</th>
-            <th>{{$data->subindikator}}</th>
+            <td>{{$no}}<?php $no++; ?></td>
+            <td>{{$data->tahun}}</td>
+            <td>SDG {{$data->id_goal}}</td>
+            <td>{{$data->indikator}}</td>
+            <td>{{$data->subindikator}}</td>
             @foreach($sub as $data_sub)
               @if($data->id_m_subindikator==$data_sub->id_m_subindikator)
                <th>{{$data_sub->sumberdata}}</th>

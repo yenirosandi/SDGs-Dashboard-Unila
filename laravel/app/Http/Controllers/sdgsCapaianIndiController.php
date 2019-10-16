@@ -70,21 +70,25 @@ class sdgsCapaianIndiController extends Controller
 
   public function edit($id_pencapaian)
   {
+    $pencapaian_id=Pencapaian_model::all();
+    $pencapaian=Pencapaian_model::findOrFail($id_pencapaian);
     $thn_skr = date('Y');
-    $pencapaian= \App\Pencapaian_model::findOrFail($id_pencapaian);
-    $goals=Goals_model::all();
-    $master=Pencapaian_model::all();
-    $sub=SubIndikator_model::all();
-    $trends=Trend_model::all();
-    $data=DB::table('t_pencapaian')
-      ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-      ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-      ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-      ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
-      ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
-      ->get();
+
+    $fk_goal=Goals_model::all();
+    $fk_trend=Trend_model::all();
+    $fk_master=Indikator_model::all();
+    $fk_sub=SubIndikator_model::all();
+    $fk_editgoals=Goals_model::findOrFail($pencapaian->fk_id_goal);
+    $fk_edittrends=Trend_model::findOrFail($pencapaian->fk_id_trend);
+    $fk_editmaster=Indikator_model::findOrFail($pencapaian->fk_id_indikator);
+    $fk_editsub=SubIndikator_model::findOrFail($pencapaian->fk_id_m_subindikator);
+
     return view('admin.pencapaian_indikator_edit',
-        compact('data','thn_skr','pencapaian','id_pencapaian','goals','master','sub','trends'));
+        compact('thn_skr','pencapaian','pencapaian_id',
+                'fk_goal','fk_editgoals',
+                'fk_trend','fk_edittrends',
+                'fk_master','fk_editmaster',
+                'fk_sub','fk_editsub'));
   }
 
   public function update(Request $request, $id_pencapaian)
@@ -92,11 +96,12 @@ class sdgsCapaianIndiController extends Controller
     Pencapaian_model::find($id_pencapaian)->update([
       'fk_id_goal'=>$request->get('goal'),
       'fk_id_indikator'=>$request->get('indikator'),
-      'fk_id_m_subindikator'=>$request->get('indikator'),
-      'fk_id_trend'=>$request->get('indikator'),
-      'nilai'=>$request->get('indikator'),
-      'keterangan'=>$request->get('indikator'),
-      'berkas'=>$request->get('indikator'),
+      'fk_id_m_subindikator'=>$request->get('sub'),
+      'fk_id_trend'=>$request->get('trend'),
+      'tahun'=>$request->get('tahun'),
+      'nilai'=>$request->get('nilai'),
+      'keterangan'=>$request->get('keterangan')
+      // 'berkas'=>$request->get('indikator'),
 
     ]);
     return redirect()->route('pencapaian_indikator.index')
