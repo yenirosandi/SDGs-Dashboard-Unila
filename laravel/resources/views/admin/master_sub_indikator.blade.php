@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="subindikator">Sub Indikator:</label>
+              <label class="control-label col-sm-10" for="subindikator">Sub Indikator:</label>
               <div class="col-sm-10">
                 <input value=""type="text" class="form-control" id="subindikator" name="subindikator" disable>
               </div>
@@ -43,7 +43,7 @@
             </div>
           </div>
             <div class="form-group">
-              <label class="control-label col-sm-2" for="waktu_pengambilan">Waktu Pengambilan:</label>
+              <label class="control-label col-sm-10" for="waktu_pengambilan">Waktu Pengambilan:</label>
               <div class="col-sm-8">
                     <label class="form-check-inline">
                         <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jan" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Jan
