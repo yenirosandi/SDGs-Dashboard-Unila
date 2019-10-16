@@ -12,7 +12,7 @@
   <div class="card-body">
     <div class="card-body">
       <div class="table-responsive">
-        <form method="POST" class="form-horizontal" action="{{url('/admin/pencapaian_indikator')}}">
+        <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
           @csrf
           <div class="form-group">
             <label class="control-label col-sm-8" for="tahun">Tahun:</label>
@@ -49,7 +49,7 @@
               <select class="form-control" name="sub">
                 <option value="">Pilih sub-indikator</option>
                 @foreach($sub as $data_sub)
-                  <option value="{{$data_sub->id_m_subindikator}}">{{$data_sub->subindikator}}</option>
+                  <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
                 @endforeach
               </select>
             </div><br>
@@ -106,20 +106,36 @@
             <th>No.</th>
             <th>Goal</th>
             <th>Indikator</th>
+            <th>Sub Indikator</th>
+            <th>Sumber Data</th>
+            <th>Nilai</th>
+            <th>Keterangan</th>
+            <!-- <th>Berkas</th> -->
+            <th>Trend</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
-          @foreach($capai as $data_master)
+          @foreach($capai as $data)
           <tr>
             <th>{{$no}}<?php $no++; ?></th>
-            <th>SDG {{$data_master->fk_id_goal}}</th>
-            <th>{{$data_master->indikator}}</th>
+            <th>SDG {{$data->id_goal}}</th>
+            <th>{{$data->indikator}}</th>
+            <th>{{$data->subindikator}}</th>
+            @foreach($sub as $data_sub)
+              @if($data->id_m_subindikator==$data_sub->id_m_subindikator)
+               <th>{{$data_sub->sumberdata}}</th>
+              @endif
+            @endforeach
+            <th>{{$data->nilai}}</th>
+            <th>{{$data->keterangan}}</th>
+            <!-- <th>{{$data->berkas}}</th> -->
+            <th>{{$data->keterangan_trend}}</th>
             <th>
-              <a href="{{route('pencapaian_indikator.edit', $data_master->id_indikator)}}" class="btn btn-warning btn-circle btn-sm">
+              <a href="{{route('pencapaian_indikator.edit', $data->id_pencapaian)}}" class="btn btn-warning btn-circle btn-sm">
                 <i class="fas fa-edit"></i>
               </a> Ubah
-              <form action="{{route('pencapaian_indikator.destroy',$data_master->id_indikator)}}" method="post">
+              <form action="{{route('pencapaian_indikator.destroy',$data->id_pencapaian)}}" method="post">
               {{ csrf_field() }}
               {{ method_field('delete') }}
               <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">

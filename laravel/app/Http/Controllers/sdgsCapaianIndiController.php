@@ -9,6 +9,7 @@ use App\Indikator_model;
 use App\SubIndikator_model;
 use App\Sumberdata_model;
 use App\Trend_model;
+use Illuminate\Support\Facades\DB;//n
 
 class sdgsCapaianIndiController extends Controller
 {
@@ -22,10 +23,21 @@ class sdgsCapaianIndiController extends Controller
     $no=1;
     $thn_skr = date('Y');
 
-    $capai=Pencapaian_model::all();
+    // $capai=Pencapaian_model::all();
+    $capai=DB::table('t_pencapaian')
+      ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+      ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+      ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+      ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+      ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
+      ->get();
     $goals=Goals_model::all();
     $master=Indikator_model::all();
-    $sub=SubIndikator_model::all();
+    // $sub=SubIndikator_model::all();
+    $sub=DB::table('t_m_subindikator')
+      ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+      ->select('t_m_subindikator.*','t_m_sumberdata.*')
+      ->get();
     $trends=Trend_model::all();
 
     return view('admin.pencapaian_indikator',
