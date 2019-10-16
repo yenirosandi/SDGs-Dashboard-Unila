@@ -266,6 +266,12 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Page Heading -->
+
+            <ol class="breadcrumb">
+            <li class="active">
+                <i class="fa fa-dashboard"></i> {{ date('d M Y')}} / @yield('title_breadcrumb')
+            </li>
+            </ol>
             <h1 class="h3 mb-2 text-gray-800">@yield('Judul')</h1>
             <p class="mb-4">@yield('JudulDesc')</a>.</p>
             <br>
