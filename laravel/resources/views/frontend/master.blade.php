@@ -29,7 +29,11 @@
 
    
       @include('frontend.navbar')
-
+        <ol class="breadcrumb">
+            <li class="active">
+                <i class="fa fa-dashboard"></i> {{ date('d M Y')}} / @yield('title_breadcrumb')
+            </li>
+        </ol>
    <!-- <div class="container"> -->
       @yield('content')
 

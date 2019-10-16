@@ -4,6 +4,8 @@
 
 @section('content')
 
+@section('title_breadcrumb','Home')	
+
 
 <main role="main" style="background-color:#D3D3D3; padding: 40px;">
 
