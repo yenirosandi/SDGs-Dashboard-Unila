@@ -70,13 +70,21 @@ class sdgsCapaianIndiController extends Controller
 
   public function edit($id_pencapaian)
   {
+    $thn_skr = date('Y');
     $pencapaian= \App\Pencapaian_model::findOrFail($id_pencapaian);
     $goals=Goals_model::all();
     $master=Pencapaian_model::all();
     $sub=SubIndikator_model::all();
     $trends=Trend_model::all();
+    $data=DB::table('t_pencapaian')
+      ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+      ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+      ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+      ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+      ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
+      ->get();
     return view('admin.pencapaian_indikator_edit',
-        compact('pencapaian','id_pencapaian','goals','master','sub','trends'));
+        compact('data','thn_skr','pencapaian','id_pencapaian','goals','master','sub','trends'));
   }
 
   public function update(Request $request, $id_pencapaian)
