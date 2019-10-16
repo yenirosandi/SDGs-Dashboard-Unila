@@ -19,8 +19,17 @@
               <label class="control-label col-sm-8" for="goal">Goal ke:</label>
               <div class="col-sm-4">
                 <select class="form-control" name="goal">
-                  @foreach($goals as $data_goals)
-                    <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
+                  @foreach($goals as $key=>$value)
+                  <?php
+                  if ($key!=0) {
+                    $id_goal=DB::table('t_goals')->select('id_goal','nama_goal')->where('id_goal',$key)->get();
+                      if(count($id_goal)>0){
+                        foreach ($id_goal as $data_goal){?>
+                          <option value="{{$data_goal->id_goal}}"{{$edit_id_goal->id_goal==$data_goal->id_goal?' selected':''}}>{{$data_goal->nama_goal}}</option>
+                        <?php }
+                    }
+                  }
+                  ?>
                   @endforeach
                 </select>
               </div>
