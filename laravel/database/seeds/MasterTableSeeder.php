@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+
 class MasterTableSeeder extends Seeder
 {
     public function run()

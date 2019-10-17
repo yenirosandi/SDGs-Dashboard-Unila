@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    
+    <link rel="icon" href="{{asset('frontend/gambar/sdgs.png')}}">
+
   </head>
   <body id="page-top">
     <!-- Page Wrapper -->
@@ -116,15 +119,16 @@
             <span>Master Sub Indikator</span></a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="/admin/sumber_data">
+            <img src="{{asset('img/sdgs/admin_sumberdata.png')}}" alt="Sumber Data" width="20px">
+            <span>Master Sumber Data</span></a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="/admin/pencapaian_indikator">
             <img src="{{asset('img/sdgs/admin_indi_capai.png')}}" alt="Pencapaian Indikator" width="20px">
             <span>Pencapaian Indikator</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admin/sumber_data">
-            <img src="{{asset('img/sdgs/admin_sumberdata.png')}}" alt="Sumber Data" width="20px">
-            <span>Sumber Data</span></a>
-        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider">
