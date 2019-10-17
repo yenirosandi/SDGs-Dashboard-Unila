@@ -35,10 +35,11 @@ class sdgsIndiMasterController extends Controller
   public function edit($id_indikator)
   {
     $master_indikator= Indikator_model::findOrFail($id_indikator);
-    $goals=Goals_model::all();
+    // $goals=Goals_model::all();
+    $fk_id_goals= Goals_model::pluck('nama_goal', 'id_goal');
     $edit_id_goal=Goals_model::findOrFail($master_indikator->fk_id_goal);
     return view('admin.master_indikator_edit',
-           compact('master_indikator','goals','edit_id_goal'));
+           compact('master_indikator','fk_id_goals','edit_id_goal'));
   }
 
   public function update(Request $request, $id_indikator)
@@ -48,7 +49,7 @@ class sdgsIndiMasterController extends Controller
     // $master->indikator=$request->get('indikator');
     // $master->save();
     Indikator_model::find($id_indikator)->update([
-      'fk_id_goal'=>$request->get('goal'),
+      'fk_id_goal'=>$request->get('fk_id_goal'),
       'indikator'=>$request->get('indikator'),
 
 

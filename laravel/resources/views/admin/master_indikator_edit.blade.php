@@ -16,13 +16,13 @@
           {{ csrf_field() }}
           {{ method_field('put') }}
             <div class="form-group">
-              <label class="control-label col-sm-8" for="goal">Goal ke:</label>
+              <label class="control-label col-sm-8" for="fk_id_goal">Goal ke:</label>
               <div class="col-sm-4">
-                <select class="form-control" name="goal">
-                  @foreach($goals as $key=>$value)
+                <select class="form-control" name="fk_id_goal">
+                  @foreach($fk_id_goals as $key=>$value)
                   <?php
                   if($key!=0){
-                      $indi_fk_goal=DB::table('t_goals')->select('t_goals.*')->where('id_goal',$key)->get();
+                      $indi_fk_goal=DB::table('t_goals')->select('id_goal', 'id_goal')->where('id_goal',$key)->get();
                       if(count($indi_fk_goal)>0){
                           foreach ($indi_fk_goal as $data){?>
                               <option value="{{$data->id_goal}}"{{$edit_id_goal->id_goal==$data->id_goal?' selected':''}}>SDG {{$data->id_goal}}</option>
@@ -30,7 +30,7 @@
                     }
                   }
                   ?>
-                  @endforeach
+                  @endforeach                
                 </select>
               </div>
             </div>
