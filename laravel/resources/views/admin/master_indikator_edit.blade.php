@@ -21,12 +21,12 @@
                 <select class="form-control" name="goal">
                   @foreach($goals as $key=>$value)
                   <?php
-                  if ($key!=0) {
-                    $id_goal=DB::table('t_goals')->select('id_goal','nama_goal')->where('id_goal',$key)->get();
-                      if(count($id_goal)>0){
-                        foreach ($id_goal as $data_goal){?>
-                          <option value="{{$data_goal->id_goal}}"{{$edit_id_goal->id_goal==$data_goal->id_goal?' selected':''}}>SDG {{$data_goal->id_goal}}</option>
-                        <?php }
+                  if($key!=0){
+                      $indi_fk_goal=DB::table('t_goals')->select('t_goals.*')->where('id_goal',$key)->get();
+                      if(count($indi_fk_goal)>0){
+                          foreach ($indi_fk_goal as $data){?>
+                              <option value="{{$data->id_goal}}"{{$edit_id_goal->id_goal==$data->id_goal?' selected':''}}>SDG {{$data->id_goal}}</option>
+                      <?php }
                     }
                   }
                   ?>

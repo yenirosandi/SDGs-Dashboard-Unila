@@ -12,16 +12,29 @@
   <div class="card-body">
     <div class="card-body">
       <div class="table-responsive">
-        <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
-          @csrf
+        <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.update',$pencapaian->id_pencapaian)}}">
+          {{ csrf_field() }}
+          {{ method_field('put') }}
           <div class="form-group">
             <label class="control-label col-sm-8" for="tahun">Tahun:</label>
             <div class="col-sm-4">
               <select class="form-control"name="tahun">
-                <option value="">Pilih tahun</option>
-                  <?php
-                   for ($tahun = $thn_skr; $tahun >= 2010; $tahun--) {
-                  ?>
+                <!-- @foreach($pencapaian_id as $key=>$value)
+                    <?php
+                    if($key!=0){
+                        $pencapaian_fk=DB::table('t_pencapaian')->select('t_pencapaian.*')->where('tahun',$key)->get();
+                        if(count($pencapaian_fk)>0){
+                            foreach ($pencapaian_fk as $capai_tahun){?>
+                              <option value="{{$capai_tahun->tahun}}"{{$pencapaian->tahun==$capai_tahun->tahun?' selected':''}}>SDG {{$capai_tahun->tahun}}</option>
+                              <?php for ($tahun = $thn_skr; $tahun >= 2010; $tahun--)?>
+                              <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
+                        <?php }
+                        }
+                    }
+                    ?>
+                @endforeach -->
+                  <option type="number"value="{{$pencapaian->tahun}}">{{$pencapaian->tahun}}</option>
+                  <?php for ($tahun = $thn_skr; $tahun >= 2010; $tahun--) {?>
                   <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                 <?php } ?>
               </select>
@@ -29,28 +42,56 @@
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
             <div class="col-sm-4">
               <select class="form-control" name="goal">
-                <option value="">Pilih goal</option>
-                @foreach($goals as $data_goals)
-                  <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
+                @foreach($fk_goal as $key=>$value)
+                    <?php
+                    if($key!=0){
+                        $pencapaian_fk_goal=DB::table('t_goals')->select('id_goal','nama_goal')->where('id_goal',$key)->get();
+                        if(count($pencapaian_fk_goal)>0){
+                            foreach ($pencapaian_fk_goal as $capai_indi){?>
+                              <option value="{{$capai_indi->id_goal}}"{{$fk_editgoals->id_goal==$capai_indi->id_goal?' selected':''}}>SDG {{$capai_indi->nama_goal}}</option>
+                        <?php }
+                      }
+                    }
+                    ?>
                 @endforeach
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-6">
               <select class="form-control" name="indikator">
-                <option value="">Pilih indikator</option>
-                @foreach($master as $data_indi)
-                  <option value="{{$data_indi->id_indikator}}">{{$data_indi->indikator}}</option>
-                @endforeach
+                  @foreach($fk_master as $key=>$value)
+                      <?php
+                      if($key!=0){
+                          $pencapaian_fk_master=DB::table('t_m_indikator')->select('id_indikator','indikator')->where('id_indikator',$key)->get();
+                          if(count($pencapaian_fk_master)>0){
+                              foreach ($pencapaian_fk_master as $capai_indi_master){?>
+                                <option value="{{$capai_indi_master->id_indikator}}"{{$fk_editmaster->id_indikator==$capai_indi_master->id_indikator?' selected':''}}> {{$capai_indi_master->indikator}} </option>
+                          <?php }
+                          }
+                      }
+                      ?>
+                  @endforeach
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
             <div class="col-sm-6">
               <select class="form-control" name="sub">
-                <option value="">Pilih sub-indikator</option>
-                @foreach($sub as $data_sub)
-                  <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
-                @endforeach
+                  @foreach($fk_sub as $key=>$value)
+                      <?php
+                      if($key!=0){
+                          $pencapaian_fk_sub=DB::table('t_m_subindikator')
+                            ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+                            ->select('t_m_subindikator.*','t_m_sumberdata.*')
+                            ->where('id_m_subindikator',$key)
+                            ->get();
+                          if(count($pencapaian_fk_sub)>0){
+                              foreach ($pencapaian_fk_sub as $capai_indi_sub){?>
+                                <option value="{{$capai_indi_sub->id_m_subindikator}}"{{$fk_editsub->id_m_subindikator==$capai_indi_sub->id_m_subindikator?' selected':''}}> {{$capai_indi_sub->subindikator}}-{{$capai_indi_sub->sumberdata}}</option>
+                          <?php }
+                          }
+                      }
+                      ?>
+                  @endforeach
               </select>
             </div><br>
             <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
@@ -67,15 +108,23 @@
           <label class="control-label col-sm-8" for="trend">Trend:</label>
           <div class="col-sm-4">
             <select class="form-control" name="trend">
-              <option value="">Pilih pencapaian</option>
-              @foreach($trends as $data_tren)
-                <option value="{{$data_tren->id_trend}}">{{$data_tren->keterangan}}</option>
+              @foreach($fk_trend as $key=>$value)
+                  <?php
+                  if($key!=0){
+                      $pencapaian_fk_trend=DB::table('t_trends')->select('t_trends.*')->where('id_trend',$key)->get();
+                      if(count($pencapaian_fk_trend)>0){
+                          foreach ($pencapaian_fk_trend as $capai_indi_trend){?>
+                            <option value="{{$capai_indi_trend->id_trend}}"{{$fk_edittrends->id_trend==$capai_indi_trend->id_trend?' selected':''}}> {{$capai_indi_trend->keterangan}} </option>
+                      <?php }
+                      }
+                  }
+                  ?>
               @endforeach
             </select>
           </div><br>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Tambahkan</button>
+              <button type="submit" class="btn btn-primary">Ubah</button>
             </div>
           </div>
         </form>

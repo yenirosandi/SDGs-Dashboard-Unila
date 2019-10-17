@@ -10,7 +10,8 @@ class Indikator_model extends Model
     protected $primaryKey='id_indikator';
     protected $fillable = ['indikator',
                             'fk_id_goal',
-];
-    public $timestamps=true;
+                          ];
+    public $timestamps = true;
+
 
 }

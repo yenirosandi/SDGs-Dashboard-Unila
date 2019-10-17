@@ -35,9 +35,10 @@ class sdgsIndiMasterController extends Controller
   public function edit($id_indikator)
   {
     $master_indikator= Indikator_model::findOrFail($id_indikator);
-    $goals= Goals_model::pluck ('nama_goal', 'id_goal');//inisupaya atribut di model ini tidak muncul semua
+    $goals=Goals_model::all();
     $edit_id_goal=Goals_model::findOrFail($master_indikator->fk_id_goal);
-    return view('admin.master_indikator_edit',compact('master_indikator','goals','edit_id_goal'));
+    return view('admin.master_indikator_edit',
+           compact('master_indikator','goals','edit_id_goal'));
   }
 
   public function update(Request $request, $id_indikator)
