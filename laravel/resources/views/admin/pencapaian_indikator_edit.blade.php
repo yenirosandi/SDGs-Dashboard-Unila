@@ -48,9 +48,9 @@
                         $pencapaian_fk_goal=DB::table('t_goals')->select('id_goal','nama_goal')->where('id_goal',$key)->get();
                         if(count($pencapaian_fk_goal)>0){
                             foreach ($pencapaian_fk_goal as $capai_indi){?>
-                              <option value="{{$capai_indi->id_goal}}"{{$fk_editgoals->id_goal==$capai_indi->id_goal?' selected':''}}>SDG {{$capai_indi->id_goal}}</option>
+                              <option value="{{$capai_indi->id_goal}}"{{$fk_editgoals->id_goal==$capai_indi->id_goal?' selected':''}}>SDG {{$capai_indi->nama_goal}}</option>
                         <?php }
-                        }
+                      }
                     }
                     ?>
                 @endforeach

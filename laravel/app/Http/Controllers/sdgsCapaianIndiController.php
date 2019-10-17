@@ -82,7 +82,7 @@ class sdgsCapaianIndiController extends Controller
     $fk_edittrends=Trend_model::findOrFail($pencapaian->fk_id_trend);
     $fk_editmaster=Indikator_model::findOrFail($pencapaian->fk_id_indikator);
     $fk_editsub=SubIndikator_model::findOrFail($pencapaian->fk_id_m_subindikator);
-
+    // DD($fk_goal);
     return view('admin.pencapaian_indikator_edit',
         compact('thn_skr','pencapaian','pencapaian_id',
                 'fk_goal','fk_editgoals',
