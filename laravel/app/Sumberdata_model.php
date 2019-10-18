@@ -8,9 +8,8 @@ class Sumberdata_model extends Model
 {
     protected $table = 't_m_sumberdata';
     protected $primaryKey='id_m_sumberdata';
-    protected $fillable = ['sumberdata',
+    protected $fillable = ['sumberdata',];
 
-];
-public $timestamps=true;
+    public $timestamps=true;
 
 }

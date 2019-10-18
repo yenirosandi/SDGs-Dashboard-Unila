@@ -124,6 +124,9 @@
              </td>
              <td>
                {{$data->subindikator}}
+             </td>
+             <td>
+              {{$data->sumberdata->sumberdata}}</td>
              <td>
                {{$data->waktu_pengambilan}}
              </td>

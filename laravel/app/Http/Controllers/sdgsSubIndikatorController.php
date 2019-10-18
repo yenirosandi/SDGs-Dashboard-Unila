@@ -20,8 +20,9 @@ class sdgsSubIndikatorController extends Controller
         $fk_id_indikators=Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
         $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
         $datas=SubIndikator_model::get();
-        return view('admin.master_sub_indikator',['no'=>$no, 'datas'=>$datas,'fk_id_indikators'=>$fk_id_indikators, 'fk_sumberdatas'=>$fk_sumberdatas]);
- 
+        return view('admin.master_sub_indikator', compact('no', 'fk_id_indikators', 'fk_sumberdatas', 'datas'));
+        // return view('admin.master_sub_indikator',['no'=>$no, 'datas'=>$datas,'fk_id_indikators'=>$fk_id_indikators, 'fk_sumberdatas'=>$fk_sumberdatas]);
+
     }
 
     /**

@@ -9,8 +9,8 @@ class SumberdataTableSeeder extends Seeder
     {
       $date = Carbon::now();
       $createdDate = clone($date);
-      \App\Sumberdata_model::insert([
-      // DB::table('t_m_indikator')->insert([
+      // \App\Sumberdata_model::insert([
+      DB::table('t_m_sumberdata')->insert([
         [
           'sumberdata' => 'Fakultas Kedokteran',
           'created_at' => $createdDate,
