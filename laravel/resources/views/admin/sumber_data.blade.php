@@ -1,7 +1,7 @@
 @extends('layout.master_admin')
 
-@section('title','Sumber Data')
-@section('Judul','Sumber Data')
+@section('title','Master Sumber Data')
+@section('Judul','Master Sumber Data')
 @section('JudulDesc','Ini adalah halaman sumber data dimana admin dapat melihat, menambah, memperbarui, dan menghapus data sumber data yang telah terdaftar.')
 @section('content')
   <!-- Form -->

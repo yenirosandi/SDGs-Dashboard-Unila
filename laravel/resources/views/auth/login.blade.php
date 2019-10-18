@@ -1,5 +1,7 @@
 @extends('frontend.master')
 
+@section('title_breadcrumb','Login')	
+
 @section('content')
 
 <!DOCTYPE HTML>

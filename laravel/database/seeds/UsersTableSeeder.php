@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         \App\User::insert([
              [
                'id'  			=> 1,
-               'name'  			=> 'Admin SDGs Center Unila',
+               'nama'  			=> 'Admin SDGs Center Unila',
                'username'		=> 'admin123',
                'nip'		    => '123456789011234567',
                'jabatan'	    => 'Pegawai',
