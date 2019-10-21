@@ -5,7 +5,7 @@
 @section('JudulDesc','Ini adalah halaman master sub-indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data sub indikator.')
 @section('content')
   <!-- Form -->
-  <div class="card shadow mb-4 w-50">
+  <div class="card shadow mb-4 w-75">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Sub Indikator</h6>
     </div>
@@ -15,8 +15,8 @@
           <form class="form-horizontal" method="POST" action="{{ route('master_sub_indikator.store') }}">
           @csrf
             <div class="form-group">
-              <label class="control-label col-sm-8" for="fk_id_indikator">Indikator:</label>
-              <div class="col-sm-4">
+              <label class="control-label col-sm-10" for="fk_id_indikator">Indikator:</label>
+              <div class="col-sm-10">
                 <select class="form-control" name="fk_id_indikator">
                   <option value="">-- Pilih Indikator --</option>
                   @foreach($fk_id_indikators as $id=>$fk_id_indikator)
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
             <label class="control-label col-sm-8" for="fk_id_m_sumberdata">Sumber Data:</label>
-            <div class="col-sm-4">
+            <div class="col-sm-10">
               <select class="form-control" name="fk_id_m_sumberdata">
               <option value="">-- Pilih Sumber Data --</option>
                 @foreach($fk_sumberdatas as $id=>$fk_sumberdata)

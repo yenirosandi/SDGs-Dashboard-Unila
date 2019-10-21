@@ -5,7 +5,7 @@
 @section('JudulDesc','Ini adalah halaman edit master sub-indikator dimana terdapat form untuk memperbarui data master sub-indikator.')
 @section('content')
    <!-- Form -->
-   <div class="card shadow mb-4 w-50">
+   <div class="card shadow mb-4 w-75">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Sub Indikator</h6>
     </div>
@@ -17,7 +17,7 @@
             {{ method_field('put') }}
             <div class="form-group">
               <label class="control-label col-sm-8" for="fk_id_indikator">Indikator: </label>
-              <div class="col-sm-4">
+              <div class="col-sm-10">
                   <select name="fk_id_indikator" class="form-control">
                   @foreach($fk_id_indikators as $key=>$value)
                       <?php

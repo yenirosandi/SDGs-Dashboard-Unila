@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(TrendTableSeeder::class);
         $this->call(MasterTableSeeder::class);
-        $this->call(SubTableSeeder::class);
+        // $this->call(SubTableSeeder::class);
         $this->call(SumberdataTableSeeder::class);
 
     }

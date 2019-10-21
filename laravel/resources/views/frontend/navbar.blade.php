@@ -34,7 +34,7 @@
                               if (Auth::check())  { ?>
                                   <a class="nav-link dropdown-toggle fa fa-user-circle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                   <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                      <a class="dropdown-item" href="">{{Auth::user()->name}}</a>
+                                      <a class="dropdown-item" href="">{{Auth::user()->nama}}</a>
                                       <a class="dropdown-item" href="{{url('/admin')}}">Kelola Dashboard</a>
                                       <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
                                   </div>

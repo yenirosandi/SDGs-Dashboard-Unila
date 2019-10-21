@@ -36,7 +36,7 @@
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
-            <div class="col-sm-6">
+            <div class="col-sm-10">
               <select class="form-control" name="indikator">
                 <option value="">Pilih indikator</option>
                 @foreach($master as $data_indi)
@@ -45,7 +45,7 @@
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
-            <div class="col-sm-6">
+            <div class="col-sm-10">
               <select class="form-control" name="sub">
                 <option value="">Pilih sub-indikator</option>
                 @foreach($sub as $data_sub)

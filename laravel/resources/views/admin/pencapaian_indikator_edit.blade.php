@@ -1,8 +1,8 @@
 @extends('layout.master_admin')
 
-@section('title','Pencapaian Indikator SDGs')
-@section('Judul','Pencapaian Indikator')
-@section('JudulDesc','Ini adalah halaman pencapaian indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data Pencapaian.')
+@section('title','Edit Pencapaian Indikator SDGs')
+@section('Judul','Edit Pencapaian Indikator')
+@section('JudulDesc','Ini adalah halaman edit pencapaian indikator dimana admin dapat memperbarui data Pencapaian.')
 @section('content')
 <!-- Form -->
 <div class="card shadow mb-4 w-75">
@@ -57,7 +57,7 @@
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
-            <div class="col-sm-6">
+            <div class="col-sm-10">
               <select class="form-control" name="indikator">
                   @foreach($fk_id_indikators as $key=>$value)
                       <?php
@@ -74,7 +74,7 @@
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
-            <div class="col-sm-6">
+            <div class="col-sm-10">
               <select class="form-control" name="sub">
                   @foreach($fk_id_m_subindikators as $key=>$value)
                       <?php
