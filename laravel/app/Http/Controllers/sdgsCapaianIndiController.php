@@ -31,6 +31,7 @@ class sdgsCapaianIndiController extends Controller
       ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
       ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
       ->get();
+    // $goals=DB :: table('t_goals')->pluck('nama_goal','id_goal');
     $goals=Goals_model::all();
     $master=Indikator_model::all();
     // $sub=SubIndikator_model::all();
@@ -40,8 +41,24 @@ class sdgsCapaianIndiController extends Controller
       ->get();
     $trends=Trend_model::all();
 
-    return view('admin.pencapaian_indikator',
+    return view('admin/pencapaian_indikator',
     ['thn_skr'=>$thn_skr,'no'=>$no, 'goals'=>$goals, 'master'=>$master, 'sub'=>$sub, 'trends'=>$trends, 'capai'=> $capai]);
+  }
+
+  public function getIndiList(Request $request)
+  {
+    $indis=DB :: table("t_m_indikator")
+          ->where("fk_id_goal", $request->fk_id_goal)
+          ->pluck("indikator", "id_indikator");
+          return response()->json($indis);
+  }
+
+  public function getSubIndiList(Request $request)
+  {
+    $subs=DB :: table("t_m_subindikator")
+          ->where("fk_id_indikator", $request->fk_id_indikator)
+          ->pluck("subindikator", "id_m_subindikator");
+          return response()->json($subs);
   }
 
   public function store(Request $request)
