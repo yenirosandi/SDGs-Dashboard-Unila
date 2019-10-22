@@ -59,49 +59,6 @@
                 </select>
               </div>
             </div>
-            
-            <div class="form-group">
-              <label class="control-label col-sm-8" for="waktu_pengambilan">Waktu Pengambilan:</label>
-              <div class="col-sm-8">
-                  <label class="form-check-inline">
-                    <input type="checkbox" name="waktu_pengambilan[]" value="jan" {{in_array("jan", $waktu_pengambilan)? "checked":""  }}>Jan
-                    </label>
-                    <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="feb" {{in_array("feb", $waktu_pengambilan)? "checked":""  }}>Feb
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="mar" {{in_array("mar", $waktu_pengambilan)? "checked":""  }}>Mar
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="apr" {{in_array("apr", $waktu_pengambilan)? "checked":""  }}>Apr
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="mei" {{in_array("mei", $waktu_pengambilan)? "checked":""  }}>Mei
-                      </label>
-                        <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="jun" {{in_array("jun", $waktu_pengambilan)? "checked":""  }}>Jun
-                      </label>
-                      <label class="form-check-inline">
-                        <input type="checkbox" name="waktu_pengambilan[]" value="jul" {{in_array("jul", $waktu_pengambilan)? "checked":""  }}>Jul
-                        </label>
-                        <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="ags" {{in_array("ags", $waktu_pengambilan)? "checked":""  }}>Ags
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="sep" {{in_array("sep", $waktu_pengambilan)? "checked":""  }}>Sep
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="okt" {{in_array("okt", $waktu_pengambilan)? "checked":""  }}>Okt
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="nov" {{in_array("nov", $waktu_pengambilan)? "checked":""  }}>Nov
-                      </label>
-                      <label class="form-check-inline">
-                      <input type="checkbox" name="waktu_pengambilan[]" value="des" {{in_array("des", $waktu_pengambilan)? "checked":""  }}>Des
-                      </label>
-              </div>
-            </div>
-            <br>
               <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Ubah</button>
