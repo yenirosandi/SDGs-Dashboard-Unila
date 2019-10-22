@@ -77,18 +77,93 @@
               </div>
             </div>
             <hr><br>
-            <center>
+
+            <!-- MODAL -->
             <div class="col-sm-10">
               <div class="form-row">
+
                 <div class="col-sm-5 md-form amber-textarea active-amber-textarea">
-                  <a href="/admin/editprofil" class="btn btn-primary">Edit Profil</button></a>
+                  <center>
+                  <a href="/admin/editprofil" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Edit Profil</a>
+                </center>
+                <!-- Modal Profil -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                      <!-- Modal content profil-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Edit Profil</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="" action="#" method="post">
+                            <div class="form-group">
+                              <label class="control-label col-sm-8" for="nip">NIP:</label>
+                              <div class="col-sm-10">
+                                <input value="" name="nip" type="text" class="form-control" required>
+                              </div><br>
+                              <label class="control-label col-sm-8" for="nama">Nama:</label>
+                              <div class="col-sm-10">
+                                <input value="" name="nama" type="text" class="form-control" required>
+                              </div><br>
+                              <label class="control-label col-sm-8" for="username">Username:</label>
+                              <div class="col-sm-10">
+                                <input value="" name="username" type="text" class="form-control" required>
+                              </div><br>
+                              <label class="control-label col-sm-8" for="jabatan">Jabatan:</label>
+                              <div class="col-sm-10">
+                                <input value="" name="jabatan" type="text" class="form-control" required>
+                              </div><br>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
                 <div class="col-sm-5 md-form amber-textarea active-amber-textarea">
-                  <a href="/admin/editpassword" class="btn btn-primary pull-right">Edit Password</a>
+                  <center>
+                  <a href="/admin/editpassword" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalPass">Edit Password</a>
+                </center>
+
+                  <div class="modal fade" id="myModalPass" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content Password-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h4 class="modal-title">Edit Password</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="" action="#" method="post">
+                            <div class="form-group">
+                              <label class="control-label col-sm-8" for="passbaru">Password Baru:</label>
+                              <div class="col-sm-10">
+                                <input value="" name="passbaru" type="text" class="form-control" required>
+                              </div><br>
+                              <label class="control-label col-sm-8" for="passlama">Password Lama:</label>
+                              <div class="col-sm-10">
+                                <input value="" name="passlama" type="text" class="form-control" required>
+                              </div><br>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
               </div><br>
             </div>
-          </center>
+
           </div>
         </div>
       </div>
