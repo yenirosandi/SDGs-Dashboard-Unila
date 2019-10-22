@@ -93,7 +93,6 @@
       </div>
     </div>
   </div>
-</div>
 
   <!-- Table -->
   <div class="card shadow mb-4">
@@ -109,7 +108,7 @@
               <th>Indikator</th>
               <th>Sub Indikator</th>
               <th>Sumber Data</th>
-              <th>Waktu Pengambilan</th>
+              <!-- <th>Waktu Pengambilan</th> -->
               <th>Aksi</th>
             </tr>
           </thead>
@@ -127,9 +126,9 @@
              </td>
              <td>
               {{$data->sumberdata->sumberdata}}</td>
-             <td>
+             <!-- <td>
                {{$data->waktu_pengambilan}}
-             </td>
+             </td> -->
              <td>
                 <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>

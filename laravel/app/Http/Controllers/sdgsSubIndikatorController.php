@@ -65,8 +65,8 @@ class sdgsSubIndikatorController extends Controller
                             'fk_sumberdatas',
                             'edit_fk_indikators',
                             'edit_fk_sumberdatas',
-                            'getId',
-                            // 'waktu_pengambilan'
+                            // 'waktu_pengambilan',
+                            'getId'
                             ));
 
 
