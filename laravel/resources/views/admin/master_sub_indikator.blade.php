@@ -44,7 +44,7 @@
           </div>
             <div class="form-group">
               <label class="control-label col-sm-10" for="waktu_pengambilan">Waktu Pengambilan:</label>
-              <div class="col-sm-8">
+              <div class="col-sm-6">
                     <label class="form-check-inline">
                         <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jan" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Jan
                     </label>
@@ -108,27 +108,27 @@
               <th>Indikator</th>
               <th>Sub Indikator</th>
               <th>Sumber Data</th>
-              <!-- <th>Waktu Pengambilan</th> -->
+              <th>Waktu Pengambilan</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-           @foreach ($datas as $data)
+           @foreach ($join as $data)
            <tr>
              <td>
-                  {{$no}} <?php $no++;?>
+                {{$no}} <?php $no++;?>
              </td>
              <td>
-               {{$data->indikator->indikator}}
+               {{$data->indikator}}
              </td>
              <td>
                {{$data->subindikator}}
              </td>
              <td>
-              {{$data->sumberdata->sumberdata}}</td>
-             <!-- <td>
+              {{$data->sumberdata}}</td>
+             <td>
                {{$data->waktu_pengambilan}}
-             </td> -->
+             </td>
              <td>
                 <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>

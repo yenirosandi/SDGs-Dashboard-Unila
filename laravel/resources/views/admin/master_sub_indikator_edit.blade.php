@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
               <label class="control-label col-sm-8" for="waktu_pengambilan">Waktu Pengambilan:</label>
-              <div class="col-sm-8">
+              <div class="col-sm-6">
                 <label class="form-check-inline">
                   <input type="checkbox" name="waktu_pengambilan[]" value="jan" {{in_array("jan", $waktu_pengambilan)? "checked":""  }}>Jan
                 </label>

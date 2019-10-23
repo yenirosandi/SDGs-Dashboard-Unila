@@ -6,16 +6,23 @@ use Illuminate\Http\Request;
 use App\Indikator_model;
 use App\SubIndikator_model;
 use App\Sumberdata_model;
+use Illuminate\Support\Facades\DB;//n
+
 
 class sdgsSubIndikatorController extends Controller
 {
     public function index()
     {
         $no=1;
+        $join=DB::table('t_m_subindikator')
+          ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+          ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+          ->select('t_m_indikator.*','t_m_subindikator.*','t_m_sumberdata.*')
+          ->get();
         $fk_id_indikators=Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
         $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
         $datas=SubIndikator_model::get();
-        return view('admin.master_sub_indikator', compact('no', 'fk_id_indikators', 'fk_sumberdatas', 'datas'));
+        return view('admin.master_sub_indikator', compact('no', 'fk_id_indikators', 'fk_sumberdatas', 'datas','join'));
     }
 
     public function create()
