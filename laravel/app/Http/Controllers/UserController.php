@@ -15,89 +15,53 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.profil');
+      $data=User::all();
+      return view('admin.profil', compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $data = User::findOrFail($id);
-
-        return view('admin.profil', compact('data'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+      $data=User::findOrFail($id);
+      return view('admin.profil', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
+      User::find($id)->update([
+        'nama' =>$request->get('nama'),
+        'username' =>$request->get('username'),
+        'nip'=>$request->get('nip'),
+        'jabatan'=>$request->get('jabatan'),
+        'updated_at' => \Carbon\Carbon::now()
+      ]);
+      return redirect()->route('profil.index')
+        ->with('success','Data telah diubah');
         //  //TAMABHANNEEE
         //  $user_data = User::findOrFail($id);
 
-        //  if($request->file('gambar')) 
+        //  if($request->file('gambar'))
         //  {
         //      $file = $request->file('gambar');
         //      $dt = Carbon::now();
         //      $acak  = $file->getClientOriginalExtension();
-        //      $fileName = rand(11111,99999).'-'.$dt->format('Y-m-d-H-i-s').'.'.$acak; 
+        //      $fileName = rand(11111,99999).'-'.$dt->format('Y-m-d-H-i-s').'.'.$acak;
         //      $request->file('gambar')->move("images/user", $fileName);
         //      $user_data->gambar = $fileName;
         //  }
- 
+
         //  $user_data->name = $request->input('name');
         //  $user_data->email = $request->input('email');
         //  if($request->input('password')) {
         //  $user_data->admin = $request->input('admin');
         //  }
- 
+
         //  if($request->input('password')) {
         //      $user_data->password= bcrypt(($request->input('password')));
-         
+
         //  }
- 
+
         //  $user_data->update();
- 
+
         //  Session::flash('message', 'Berhasil diubah!');
         //  Session::flash('message_type', 'success');
         //  // return redirect()->to('user'); //akan ke-back ke sini

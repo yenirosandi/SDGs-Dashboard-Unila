@@ -33,13 +33,13 @@
                 <th style="text-align:center; vertical-align:middle;" colspan="2">Realisasi Pencapaian</th>
               </tr>
               <tr>
-                <th style="text-align:center; vertical-align:middle;" >2017</th>
                 <th style="text-align:center; vertical-align:middle;" >2018</th>
+                <th style="text-align:center; vertical-align:middle;" >2019</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td>
+                <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
               </tr>
             </tbody>
           </table>

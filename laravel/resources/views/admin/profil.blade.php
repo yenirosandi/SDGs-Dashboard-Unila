@@ -96,7 +96,9 @@
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
-                          <form class="" action="#" method="post">
+                          <form class="" action="{{route('profil.update', Auth::user()->id)}}" method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('put') }}
                             <div class="form-group">
                               <label class="control-label col-sm-8" for="nip">NIP:</label>
                               <div class="col-sm-10">
@@ -115,15 +117,15 @@
                                 <input value="{{Auth::user()->jabatan}}" name="jabatan" type="text" class="form-control" required>
                               </div><br>
                             </div>
-                          </form>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary" data-dismiss="modal">Ubah</button>
                         </div>
-                      </div>
+                    </div>
                     </div>
                   </div>
                 </div>
+              </form>
 
                 <div class="col-sm-5 md-form amber-textarea active-amber-textarea">
                   <center>
@@ -144,11 +146,11 @@
                             <div class="form-group">
                               <label class="control-label col-sm-8" for="passbaru">Password Baru:</label>
                               <div class="col-sm-10">
-                                <input value="" name="passbaru" type="text" class="form-control" required>
+                                <input value="" name="passbaru" type="password" class="form-control" required>
                               </div><br>
                               <label class="control-label col-sm-8" for="passlama">Password Lama:</label>
                               <div class="col-sm-10">
-                                <input value="" name="passlama" type="text" class="form-control" required>
+                                <input value="" name="passlama" type="password" class="form-control" required>
                               </div><br>
                             </div>
                           </form>
