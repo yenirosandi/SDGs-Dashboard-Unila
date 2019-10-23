@@ -22,8 +22,11 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   // // Route::put('/pencapaian_indikator/update  ','sdgsCapaianIndiController@update');
   // Route::delete('/pencapaian_indikator.destroy ','sdgsCapaianIndiController@destroy')->name('pencapaian_indikator.destroy');
   // Route::get('pencapaian_indikator.edit ','sdgsCapaianIndiController@edit')->name('pencapaian_indikator.edit');
-  Route::get('get-indi-list','sdgsCapaianIndiController@getIndiList');
-  Route::get('get-subindi-list','sdgsCapaianIndiController@getSubIndiList');
+  // Route::get('get-indi-list','sdgsCapaianIndiController@getIndiList');
+  // Route::get('get-subindi-list','sdgsCapaianIndiController@getSubIndiList');
+
+  Route::get('pencapaian_indikator/getIndiList/{param}','sdgsCapaianIndiController@getIndi');
+  Route::get('pencapaian_indikator/getSubIndiList/{param}','sdgsCapaianIndiController@getSubIndi');
 
   // Route::get('pencapaian_indikator','sdgsCapaianIndiController@findIndiName');
 

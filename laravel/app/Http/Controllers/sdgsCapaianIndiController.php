@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use Response;
 use App\Goals_model;
 use App\Pencapaian_model;
 use App\Indikator_model;
@@ -45,21 +47,63 @@ class sdgsCapaianIndiController extends Controller
     ['thn_skr'=>$thn_skr,'no'=>$no, 'goals'=>$goals, 'master'=>$master, 'sub'=>$sub, 'trends'=>$trends, 'capai'=> $capai]);
   }
 
-  public function getIndiList(Request $request)
+  // public function getIndiList(Request $request)
+  // {
+  //   $indis=DB :: table("t_m_indikator")
+  //         ->where("fk_id_goal", $request->fk_id_goal)
+  //         ->pluck("indikator", "id_indikator");
+  //         return response()->json($indis);
+  // }
+
+  // public function getSubIndiList(Request $request)
+  // {
+  //   $subs=DB :: table("t_m_subindikator")
+  //         ->where("fk_id_indikator", $request->fk_id_indikator)
+  //         ->pluck("subindikator", "id_m_subindikator");
+  //         return response()->json($subs);
+  // }
+  public function getIndi($param)
   {
-    $indis=DB :: table("t_m_indikator")
-          ->where("fk_id_goal", $request->fk_id_goal)
-          ->pluck("indikator", "id_indikator");
-          return response()->json($indis);
+    //GET THE ACCOUNT BASED ON TYPE
+    $indis=Indikator_model::where('fk_id_goal', '=', $param)->get();
+
+     //CREATE AN ARRAY 
+
+     $options = array();      
+
+     foreach ($indis as $arrayForEach) {
+
+               $options += array($arrayForEach->id_indikator => $arrayForEach->indikator);                
+
+           }
+
+     
+
+     return Response::json($options);
+
   }
 
-  public function getSubIndiList(Request $request)
+  public function getSubIndi($param)
   {
-    $subs=DB :: table("t_m_subindikator")
-          ->where("fk_id_indikator", $request->fk_id_indikator)
-          ->pluck("subindikator", "id_m_subindikator");
-          return response()->json($subs);
+        //GET THE ACCOUNT BASED ON TYPE
+
+        $subs =  SubIndikator_model::where('fk_id_indikator','=',$param)->get();
+
+        //CREATE AN ARRAY 
+
+        $options = array();      
+
+        foreach ($subs as $arrayForEach) {
+
+                  $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator);                
+
+              }
+
+        
+
+        return Response::json($options);
   }
+
 
   public function store(Request $request)
   {
