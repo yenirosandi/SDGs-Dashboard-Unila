@@ -100,19 +100,19 @@
                             <div class="form-group">
                               <label class="control-label col-sm-8" for="nip">NIP:</label>
                               <div class="col-sm-10">
-                                <input value="" name="nip" type="text" class="form-control" required>
+                                <input value="{{Auth::user()->nip}}" name="nip" type="text" class="form-control" required>
                               </div><br>
                               <label class="control-label col-sm-8" for="nama">Nama:</label>
                               <div class="col-sm-10">
-                                <input value="" name="nama" type="text" class="form-control" required>
+                                <input value="{{Auth::user()->nama}}" name="nama" type="text" class="form-control" required>
                               </div><br>
                               <label class="control-label col-sm-8" for="username">Username:</label>
                               <div class="col-sm-10">
-                                <input value="" name="username" type="text" class="form-control" required>
+                                <input value="{{Auth::user()->username}}" name="username" type="text" class="form-control" required>
                               </div><br>
                               <label class="control-label col-sm-8" for="jabatan">Jabatan:</label>
                               <div class="col-sm-10">
-                                <input value="" name="jabatan" type="text" class="form-control" required>
+                                <input value="{{Auth::user()->jabatan}}" name="jabatan" type="text" class="form-control" required>
                               </div><br>
                             </div>
                           </form>

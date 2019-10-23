@@ -30,7 +30,7 @@ class sdgsSubIndikatorController extends Controller
     {
         $check = new SubIndikator_model;
         $check->subindikator = $request->subindikator;
-        // $check->waktu_pengambilan = implode(", ",$request->waktu_pengambilan);
+        $check->waktu_pengambilan = implode(", ",$request->waktu_pengambilan);
         $check->fk_id_indikator = $request->fk_id_indikator;
         $check->fk_id_m_sumberdata = $request->fk_id_m_sumberdata;
         $check->save();
@@ -58,14 +58,14 @@ class sdgsSubIndikatorController extends Controller
 
         $getId= $id_m_subindikator;
         $finds = SubIndikator_model::where('id_m_subindikator', $id_m_subindikator)->first();
-        // $waktu_pengambilan= explode(", ", $finds->waktu_pengambilan);
+        $waktu_pengambilan= explode(", ", $finds->waktu_pengambilan);
         return view('admin.master_sub_indikator_edit',
                     compact ('edit_subindikators',
                             'fk_id_indikators',
                             'fk_sumberdatas',
                             'edit_fk_indikators',
                             'edit_fk_sumberdatas',
-                            // 'waktu_pengambilan',
+                            'waktu_pengambilan',
                             'getId'
                             ));
 
@@ -76,12 +76,12 @@ class sdgsSubIndikatorController extends Controller
     {
         SubIndikator_model::find($id_m_subindikator)->update([
             'subindikator' => $request->get('subindikator'),
-            // 'waktu_pengambilan'=>  implode(", " , $request->waktu_pengambilan),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
+            'waktu_pengambilan'=>  implode(", " , $request->waktu_pengambilan),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
              'fk_id_indikator' => $request->get('fk_id_indikator'),
             'fk_id_m_sumberdata' => $request->get('fk_id_m_sumberdata'),
             ]);
 
-            // $edit_waktu_pengambilan=SubIndikator_model::findOrFail($id_m_subindikator);
+            $edit_waktu_pengambilan=SubIndikator_model::findOrFail($id_m_subindikator);
             return redirect()->route('master_sub_indikator.index')->with('message','Data telah diubah!');
     }
 

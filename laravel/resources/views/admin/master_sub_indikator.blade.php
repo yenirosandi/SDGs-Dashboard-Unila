@@ -42,7 +42,7 @@
               </select>
             </div>
           </div>
-            <!-- <div class="form-group">
+            <div class="form-group">
               <label class="control-label col-sm-10" for="waktu_pengambilan">Waktu Pengambilan:</label>
               <div class="col-sm-8">
                     <label class="form-check-inline">
@@ -81,7 +81,7 @@
                     <label class="form-check-inline">
                         <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Des" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Des
                     </label>
-              </div><br> -->
+              </div><br>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Tambahkan</button>

@@ -16,9 +16,10 @@ class CreateMasterSubindikatorTable extends Migration
         Schema::create('t_m_subindikator', function (Blueprint $table) {
             $table->Increments('id_m_subindikator');
             $table->string('subindikator');
-            // $table->string('waktu_pengambilan')->nullable();
+            $table->string('waktu_pengambilan')->nullable();
             $table->integer('fk_id_indikator')->unsigned();
-            $table->integer('fk_id_m_sumberdata')->unsigned()->nullable(); //bingung
+            $table->integer('fk_id_m_sumberdata')->unsigned();
+            $table->integer('fk_id_m_sumberdata')->nullable(); //bingung
             $table->foreign('fk_id_indikator')
                   ->references('id_indikator')->on('t_m_indikator')
                   ->onDelete('cascade')->onUpdate('cascade');
