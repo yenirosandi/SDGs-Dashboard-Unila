@@ -37,11 +37,11 @@ $(document).ready(function(){
 
                 $('#slindi').empty();
 
-                $('#slindi').append('<option>Select Indi</option>');
+                $('#slindi').append('<option>Pilih Indikator</option>');
 
                 $('#slsub').empty();
 
-                $('#slsub').append('<option>NA</option>');
+                $('#slsub').append('<option>Pilih Sub Indikator</option>');
 
                 $.each(temp, function(key, obj) {
 

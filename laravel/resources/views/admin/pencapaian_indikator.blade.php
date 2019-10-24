@@ -33,7 +33,7 @@
             <div class="col-sm-4">
               <select id="slgoal" class="form-control" name="goal">
                 <!-- <option value="">Pilih goal</option> -->
-                <option value="" >Select</option>
+                <option value="" >Pilih Goal</option>
                 @foreach($goals as $data_goals)
                   <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
                 @endforeach
@@ -42,13 +42,13 @@
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-10">
               <select id="slindi" class="form-control" name="indikator">
-              <option value="">NA</option>
+              <option value="">Pilih Indikator</option>
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
             <div class="col-sm-10">
               <select id="slsub" class="form-control" name="sub">
-              <option value="">NA</option>
+              <option value="">Pilih Sub Indikator</option>
               </select>
             </div><br>
             <div class="col-sm-12">
@@ -151,7 +151,5 @@
   </div>
 </div>
 <br>
-<!-- <script type="text/javascript" src='{{URL::asset("js/jquery-1.12.4.min.js")}}'></script> -->
 
-<script type="text/javascript" src='{{asset("js/csc.js")}}'></script>
 @endsection
