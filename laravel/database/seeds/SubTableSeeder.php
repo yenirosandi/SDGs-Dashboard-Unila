@@ -47,7 +47,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kolaborasi dengan istitusi kesehatan lokal/global untuk meningkatkan kesehatan dan kesejahteraan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 3,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -55,7 +55,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Program penjangkauan di masyarakat setempat untuk meningkatkan kesehatan dan kesejahteraan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 3,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -63,7 +63,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Layanan gratis untuk kesehatan seksual dan reproduksi untuk mahasiswa',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 3,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -71,7 +71,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Dukungan kesehatan mental gratis untuk mahamahasiswa dan staf',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 3,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -79,7 +79,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Akses komunitas/masyarakat ke fasilitas olahraga universitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 3,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -87,7 +87,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah penelitian yang dilihat atau diunduh',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 4,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -95,7 +95,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah penelitian yang termasuk dalam 10% dari jurnal yang telah didefinisikan oleh Citescore',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 4,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -103,7 +103,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 4,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -111,7 +111,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah lulusan dengan kualifikasi mengajar',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 5,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -119,7 +119,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Akses ke sumber daya pendidikan bagi mereka yang tidak belajar di universitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 6,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -127,7 +127,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kegiatan pendidikan yang terbuka untuk umum, seperti kuliah atau kursus pendidikan khusus',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 6,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -135,7 +135,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Acara pendidikan yang menyediakan pelatihan kejuruan bagi mereka yang tidak belajar di universitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 6,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -143,7 +143,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kegiatan penjangkauan pendidikan di komunitas lokal, termasuk sekolah',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 6,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -151,7 +151,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan untuk memastikan bahwa kegiatan ini terbuka untuk umum',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 6,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -159,7 +159,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi dari mahasiswa generasi pertama',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 7,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -167,7 +167,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi dari total hasil penelitian yang ditulis oleh perempuan di universitas ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 8,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -175,7 +175,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi dari makalah tentang kesetaraan gender dalam 10% jurnal teratas yang didefinisikan oleh Citescore',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 8,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -183,14 +183,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 8,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Proporsi dari mahasiswa perempuan generasi pertama ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 9,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -198,14 +198,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Tracking application,tingkat penerimaan  dan penyelesaian untuk siswa perempuan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 10,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Mempertimbangkan masalah regional ketika mengembangkan kebijakan tentang partisipasi perempuan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 10,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -213,14 +213,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Penyediaan skema akses perempuan yang sesuai, seperti mentoring',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 10,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Encouraging applications di daerah dimana perempuan under-represented',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 10,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -228,14 +228,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi akademisi perempuan senior',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 11,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Proporsi perempuan yang menerima gelar',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 12,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -243,14 +243,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan non-diskriminasi terhadap perempuan ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Kebijakan non-diskriminasi terhadap waria/transgender',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -258,14 +258,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan maternitas/maternity dan paternity yang mendukung partisipasi perempuan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Fasilitas pengasuhan anak yang mudah diakses mahasiswa',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -273,14 +273,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Fasilitas pengasuhan anak yang mudah diakses staff',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Skema mentoring perempuan dengan partisipasi luas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -288,14 +288,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Tingkat kelulusan perempuan, dengan rencana aksi yang sesuai',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Kebijakan melindungi mereka yang melaporkan diskriminasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 13,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -303,14 +303,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah penelitian yang termasuk dalam 10% dari jurnal yang telah didefinisikan oleh Citescore',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 14,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 14,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -318,14 +318,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Pembayaran upah untuk staf dan pengajar',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Pengakuan hak serikat dan pekerja',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -333,14 +333,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan tentang diskriminasi di tempat kerja ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Kebijakan menentang perbudakan moderen, kerja paksa, perdagangan manusia, dan pekerja anak-anak',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -348,14 +348,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jaminan standar yang sama untuk tenanga outsourcing',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Kebijakan seputar pay scale equity dan gender pay gaps',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -363,14 +363,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Komitmen untuk melacak dan mengatasi masalah seputar pay scale equity dan gender pay gaps',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Proses bagi karyawan untuk mengajukan banding atas keputusan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 15,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -378,14 +378,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi siswa yang mengambil penempatan kerja',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 16,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Proporsi karyawan dengan kontrak aman/tetap',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 17,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -393,14 +393,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Penelitian relevan dengan industri, inovasi, dan infrastruktur',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 18,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Paten yang mengutip penelitian',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 19,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -408,14 +408,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'University spin-off',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 20,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Pendapatan penelitian dari industri',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 21,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -423,14 +423,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah dalam 10 persen jurnal teratas sebagaimana didefinisikan oleh Citescore ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 22,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Field-weighted citation index of papers produced by the university',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 22,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -438,14 +438,14 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah Publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 22,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
           'subindikator'      => 'Mahasiswa generasi pertama (first generation students)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 23,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -453,7 +453,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Siswa dari negara berkembang',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 24,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -461,7 +461,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi siswa penyandang cacat',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 25,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -469,7 +469,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi karyawan penyandang cacat',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 25,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -477,7 +477,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan penerimaan non-diskriminatif',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -485,7 +485,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Aplikasi pelacakan dan tingkat penerimaan kelompok yang kurang terwakili (under-represented group)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -493,7 +493,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan program untuk merekrut dari kelompok yang kurang terwakili  (under-represented group)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -501,7 +501,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan anti-diskriminasi dan anti-pelecehan untuk staf dan siswa',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -509,7 +509,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Keberadaan keanekaragaman dan kesetaraan komite atau petugas ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -517,7 +517,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan bimbingan atau program dukungan lain yang ditujukan untuk siswa dan staf dari kelompok yang kurang terwakili (under-represented group)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -525,7 +525,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan kesadaran lintas budaya atau kampanye pelatihan (training campaigns)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 26,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -533,7 +533,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah dalam 10 persen jurnal teratas sebagaimana didefinisikan oleh Citescore ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 27,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -541,7 +541,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Field-weighted citation index of papers produced by the university ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 27,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -549,7 +549,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 27,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -557,7 +557,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Akses publik ke gedung-gedung penting di universitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 28,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -565,7 +565,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Akses publik ke perpustakaan universitas ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 28,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -573,7 +573,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Akses publik ke museum dan koleksi universitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 28,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -581,7 +581,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Akses publik ke ruang dan monumen yang signifikan di dalam universitas ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 28,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -589,7 +589,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menyediakan acara artistik untuk anggota masyarakat, seperti konser',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 28,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -597,7 +597,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Merekam dan melestarikan warisan lokal ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 28,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -605,7 +605,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Pengeluaran untuk seni dan warisan ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 29,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -613,7 +613,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Target sekitar komuter berkelanjutan ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -621,7 +621,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Mempromosikan Komuter Berkelanjutan ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -629,7 +629,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Mendorong telecommuting, kerja jarak jauh atau minggu kerja padat ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -637,7 +637,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menyediakan perumahan yang terjangkau bagi siswa ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -645,7 +645,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menyediakan perumahan yang terjangkau untuk staf ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -653,7 +653,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan prioritas kepada pejalan kaki di kampus ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -661,7 +661,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Bekerja dengan pihak berwenang setempat dalam masalah perencanaan, termasuk penyediaan perumahan yang terjangkau bagi penduduk lokal ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -669,7 +669,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Membangun ke standar yang berkelanjutan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -677,7 +677,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menggunakan kembali situs brownfield(opposite lahan hijau) /(bekas2 industri)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 30,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -685,7 +685,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah dalam 10 persen jurnal teratas sebagaimana didefinisikan oleh Citescore ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 31,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -693,7 +693,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Field-weighted citation index of papers produced by the university ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 31,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -701,7 +701,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 31,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -709,7 +709,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan sumber etis barang (legal/ilegal)',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -717,7 +717,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan tentang pembuangan limbah berbahaya yang tepat ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -725,7 +725,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan meminimalkan limbah yang dikirim ke TPA / memaksimalkan daur ulang ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -733,7 +733,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan meminimalkan penggunaan plastik',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -741,7 +741,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan meminimalkan penggunaan barang sekali pakai ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -749,7 +749,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Bukti bahwa kebijakan ini juga berlaku untuk layanan outsourcing ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -757,7 +757,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Bukti bahwa kebijakan ini juga berlaku untuk pemasok outsourcing ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 32,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -765,7 +765,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi limbah yang didaur ulang ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 33,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -773,7 +773,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi limbah yang tidak dikirim ke TPA ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 33,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -781,7 +781,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Publikasi laporan keberlanjutan',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 34,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -789,7 +789,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah dalam 10 persen jurnal teratas sebagaimana didefinisikan oleh Citescore ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 35,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -797,7 +797,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Field-weighted citation index of papers produced by the university ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 35,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -805,7 +805,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 35,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -813,7 +813,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Penggunaan energi rendah karbon ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 36,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -821,7 +821,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan pendidikan lokal tentang dampak perubahan iklim ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 37,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -829,7 +829,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menghasilkan rencana aksi iklim universitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 37,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -837,7 +837,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Bekerja dengan pemerintah lokal atau nasional untuk menangani perencanaan perubahan iklim ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 37,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -845,7 +845,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menginformasikan dan mendukung pemerintah tentang masalah yang terkait dengan perubahan iklim',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 37,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -853,7 +853,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Bekerja sama dengan LSM tentang perubahan iklim',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 37,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -861,7 +861,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi makalah dalam 10 persen jurnal teratas sebagaimana didefinisikan oleh Citescore ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 38,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -869,7 +869,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Field-weighted citation index of papers produced by the university ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 38,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -877,7 +877,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 38,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -885,7 +885,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Representasi yang dipilih pada badan pengelola universitas ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -893,7 +893,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Pengakuan perhimpunan siswa',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -901,7 +901,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan untuk melibatkan pemangku kepentingan/ stakeholderuniversitas',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -909,7 +909,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Badan partisipatif yang mencakup penduduk lokal',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -917,7 +917,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan pada kejahatan terorganisir dan korupsi ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -925,7 +925,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Kebijakan yang menjamin kebebasan akademik',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -933,7 +933,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Publikasi data keuangan universitas ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 39,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -941,7 +941,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan saran ahli kepada pemerintah ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 40,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -949,7 +949,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Memberikan penjangkauan kepada pemerintah pusat dan daerah ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 40,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -957,7 +957,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menghasilkan penelitian atas permintaan pemerintah atau yang langsung digunakan oleh pemerintah ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 40,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -965,7 +965,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Menyediakan platform netral untuk diskusi topik yang menantang ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 40,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -973,7 +973,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi lulusan dalam penegakan hukum dan sipil ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 41,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -981,7 +981,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Proporsi publikasi akademik dengan co-author dari negara lain',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 42,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -989,7 +989,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Jumlah publikasi yang terkait dengan 11 SDG ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 42,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -997,7 +997,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Pengembangan kebijakan dengan pemerintah atau LSM',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 43,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1005,7 +1005,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Mempromosikan dialog lintas sektoral dengan pemerintah atau LSM',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 43,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1013,7 +1013,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Berkolaborasi secara internasional untuk mengambil data terkait SDG ',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 43,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1021,7 +1021,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Bekerja secara internasional untuk mempromosikan best practice di sekitar SDGs',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 43,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1029,7 +1029,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Mendukung pendidikan LSM sehubungan dengan SDG',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 43,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1037,7 +1037,7 @@ class SubTableSeeder extends Seeder
           'subindikator'      => 'Publikasi laporan SDG',
           'waktu_pengambilan' => '',
           'fk_id_indikator'   => 44,
-          'fk_id_m_sumberdata'=> null,
+          'fk_id_m_sumberdata'=> 1,
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ]
