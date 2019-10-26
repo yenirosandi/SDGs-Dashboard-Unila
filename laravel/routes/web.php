@@ -27,6 +27,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
   Route::get('pencapaian_indikator/getIndiList/{param}','sdgsCapaianIndiController@getIndi');
   Route::get('pencapaian_indikator/getSubIndiList/{param}','sdgsCapaianIndiController@getSubIndi');
+  
+  Route::get('pencapaian_indikator/{id_pencapaian}/edit/getIndiList/{param}','sdgsCapaianIndiController@getIndi');
+  Route::get('pencapaian_indikator/{id_pencapaian}/edit/getSubIndiList/{param}','sdgsCapaianIndiController@getSubIndi');
 
   // Route::get('pencapaian_indikator','sdgsCapaianIndiController@findIndiName');
 
