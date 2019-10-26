@@ -33,7 +33,7 @@ class sdgsSumberDataController extends Controller
   public function edit($id_m_sumberdata)
   {
     $sumber= \App\Sumberdata_model::findOrFail($id_m_sumberdata);
-    return view('admin.sumber_data_edit',compact('sumber','id_m_subindikator'));
+    return view('admin.sumber_data_edit',compact('sumber'));
   }
 
   public function update(Request $request, $id_m_sumberdata)
