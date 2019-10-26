@@ -38,9 +38,57 @@
               </tr>
             </thead>
             <tbody>
+            @foreach($indikator as $indi)
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
+                <td colspan="6">{{$indi->indikator}}</td>
               </tr>
+              @foreach($sub as $subIndi)
+              <tr>
+                <td>{{$no}}</td>
+                <td>
+                    @if($indi->id_indikator==$subIndi->fk_id_indikator)
+                      {{$subIndi->subindikator}}
+                    @else {{$null}}
+                    @endif
+                </td>
+                <td>{{$subIndi->sumberdata}}</td>
+                <?php
+                $tahun=2017;
+                $data=DB::table('t_pencapaian')
+                  ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+                  ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+                  ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+                  ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+                  ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
+                  ->where('id_goal', '=', $id)
+                  ->where('tahun','=', $tahun)
+                  ->get();
+                $tahun=2017;
+                foreach ($data as $data_capaian){?>
+                <td>
+                  @if($indi->id_indikator==$subIndi->fk_id_indikator)
+                    {{$data_capaian->nilai}}
+                  @else {{$null}}
+                  @endif
+                </td>
+                <?php $tahun++; ?>
+                <td>
+                  @if($indi->id_indikator==$subIndi->fk_id_indikator)
+                    {{$data_capaian->nilai}}
+                  @else {{$null}}
+                  @endif
+                </td>
+                <?php $tahun++; ?>
+                @if($indi->id_indikator==$subIndi->fk_id_indikator)
+                  {{$data_capaian->nilai}}
+                @else {{$null}}
+                @endif
+              </tr>
+            <?php } ?>
+              <?php $no++; ?>
+              @endforeach
+            @endforeach
             </tbody>
           </table>
         </div>
