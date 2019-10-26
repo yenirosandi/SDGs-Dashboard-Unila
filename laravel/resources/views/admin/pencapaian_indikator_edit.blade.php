@@ -41,7 +41,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
             <div class="col-sm-4">
-              <select class="form-control" name="goal">
+              <select id="slgoal" class="form-control" name="goal">
                 @foreach($fk_id_goals as $key=>$value)
                     <?php
                     if($key!=0){
@@ -58,7 +58,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-10">
-              <select class="form-control" name="indikator">
+              <select id="slindi" class="form-control" name="indikator">
                   @foreach($fk_id_indikators as $key=>$value)
                       <?php
                       if($key!=0){
@@ -75,7 +75,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
             <div class="col-sm-10">
-              <select class="form-control" name="sub">
+              <select  id="slsub" class="form-control" name="sub">
                   @foreach($fk_id_m_subindikators as $key=>$value)
                       <?php
                       if($key!=0){

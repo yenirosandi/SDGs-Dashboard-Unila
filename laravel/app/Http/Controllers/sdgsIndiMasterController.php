@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Indikator_model;
 use App\Goals_model;
+use RealRashid\SweetAlert\Facades\Alert;
+
 class sdgsIndiMasterController extends Controller
 {
   public function create()
@@ -17,6 +19,10 @@ class sdgsIndiMasterController extends Controller
     $no=1;
     $goals=Goals_model::all();
     $master_indikator=Indikator_model::all();
+    
+    // if(session ('success_message') ){
+    //   Alert::success('Berhasil!', session('success_message'));
+    // }di controller.php
     return view('admin.master_indikator',['no'=>$no, 'master_indikator'=>$master_indikator, 'goals'=>$goals]);
   }
 
@@ -29,7 +35,9 @@ class sdgsIndiMasterController extends Controller
     $master->fk_id_goal=$id_goal;
     $master->indikator=$indikator;
     $master->save();
-    return redirect('/admin/master_indikator');
+        // alert()->success('Berhasil.','Data telah disimpan!');
+        return redirect('/admin/master_indikator')->withSuccessMessage('Data telah disimpan!');
+
   }
 
   public function edit($id_indikator)
@@ -54,9 +62,9 @@ class sdgsIndiMasterController extends Controller
 
 
     ]);
+    // alert()->success('Berhasil.','Data telah diubah!');
+    return redirect()->route('master_indikator.index')->withSuccessMessage('Data telah diubah!');
 
-    return redirect()->route('master_indikator.index')
-      ->with('success','Data telah diubah');
   }
 
 
@@ -70,6 +78,7 @@ class sdgsIndiMasterController extends Controller
   {
     $master= \App\Indikator_model::where('id_indikator',$id_indikator);
     $master->delete();
-    return redirect('/admin/master_indikator')->with('success','Data telah dihapus');
+    // alert()->success('Berhasil.','Data telah dihapus!');
+    return redirect('/admin/master_indikator')->withSuccessMessage('Data telah dihapus!');
   }
 }

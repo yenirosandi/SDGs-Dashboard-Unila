@@ -12,6 +12,8 @@ use App\SubIndikator_model;
 use App\Sumberdata_model;
 use App\Trend_model;
 use Illuminate\Support\Facades\DB;//n
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class sdgsCapaianIndiController extends Controller
 {
@@ -126,7 +128,7 @@ class sdgsCapaianIndiController extends Controller
     $pencapaian->keterangan=$keterangan;
     // $pencapaian->berkas=$berkas;
     $pencapaian->save();
-    return redirect('/admin/pencapaian_indikator');
+    return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah disimpan!');
   }
 
   public function edit($id_pencapaian)
@@ -166,6 +168,7 @@ class sdgsCapaianIndiController extends Controller
                 'edit_fk_id_m_subindikators'));
   }
 
+
   public function update(Request $request, $id_pencapaian)
   {
     Pencapaian_model::find($id_pencapaian)->update([
@@ -179,14 +182,13 @@ class sdgsCapaianIndiController extends Controller
       // 'berkas'=>$request->get('indikator'),
 
     ]);
-    return redirect()->route('pencapaian_indikator.index')
-      ->with('success','Data telah diubah');
+    return redirect()->route('pencapaian_indikator.index')->withSuccessMessage('Data telah diubah!');
   }
 
   public function destroy($id_pencapaian)
   {
     $pencapaian= \App\Pencapaian_model::where('id_pencapaian',$id_pencapaian);
     $pencapaian->delete();
-    return redirect('/admin/pencapaian_indikator')->with('success','Data telah dihapus');
+    return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah dihapus!');
   }
   }

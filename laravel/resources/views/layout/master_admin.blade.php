@@ -270,6 +270,7 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Page Heading -->
+            @include('sweetalert::alert')
 
             <ol class="breadcrumb">
             <li class="active">

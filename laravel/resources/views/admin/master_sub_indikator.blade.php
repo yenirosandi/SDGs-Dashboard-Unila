@@ -5,6 +5,13 @@
 @section('JudulDesc','Ini adalah halaman master sub-indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data sub indikator.')
 @section('content')
   <!-- Form -->
+
+
+  <div class="col-lg-12">
+                  @if (Session::has('message'))
+                  <div class="alert alert-{{ Session::get('message_type') }}" id="waktu2" style="margin-top:10px;">{{ Session::get('message') }}</div>
+                  @endif
+  </div>
   <div class="card shadow mb-4 w-75">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Sub Indikator</h6>
