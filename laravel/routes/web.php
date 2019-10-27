@@ -35,7 +35,12 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
   Route::resource('sumber_data','sdgsSumberDataController');
 
-  Route::resource('profil', 'UserController');
+  // Route::resource('profil', 'UserController');
+  Route::get('profil', ['as' => 'profil.index', 'uses' => 'UserController@index']);
+
+  Route::get('profil/{user}',  ['as' => 'profil.edit', 'uses' => 'UserController@edit']);
+Route::put('profil/{user}/update',  ['as' => 'profil.update', 'uses' => 'UserController@update']);
+
 
   Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
