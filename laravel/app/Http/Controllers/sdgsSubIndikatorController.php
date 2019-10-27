@@ -7,6 +7,8 @@ use App\Indikator_model;
 use App\SubIndikator_model;
 use App\Sumberdata_model;
 use Illuminate\Support\Facades\DB;//n
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 
 class sdgsSubIndikatorController extends Controller
@@ -44,7 +46,7 @@ class sdgsSubIndikatorController extends Controller
 
         // alert()->success('Berhasil.','Data telah ditambahkan!');
 
-        return redirect()->route('master_sub_indikator.index')->with('message','Data telah ditambahkan!');
+        return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah disimpan!');
     }
 
     public function show($id)
@@ -89,12 +91,18 @@ class sdgsSubIndikatorController extends Controller
             ]);
 
             $edit_waktu_pengambilan=SubIndikator_model::findOrFail($id_m_subindikator);
-            return redirect()->route('master_sub_indikator.index')->with('message','Data telah diubah!');
+            
+            // alert()->success('Berhasil.','Data telah diubah!');
+            
+            return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah diubah!');
     }
 
     public function destroy($id_m_subindikator)
     {
         SubIndikator_model::find($id_m_subindikator)->delete();
-        return redirect()->route('master_sub_indikator.index')->with('message','Data telah dihapus!');
+
+        alert()->success('Berhasil.','Data telah dihapus!');
+
+        return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah dihapus!');
     }
 }

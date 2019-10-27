@@ -4,6 +4,9 @@
 @section('Judul','Pencapaian Indikator')
 @section('JudulDesc','Ini adalah halaman pencapaian indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data Pencapaian.')
 @section('content')
+
+
+
 <!-- Form -->
 <div class="card shadow mb-4 w-75">
   <div class="card-header py-3">
@@ -28,8 +31,9 @@
             </div><br>
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
             <div class="col-sm-4">
-              <select class="form-control" name="goal">
-                <option value="">Pilih goal</option>
+              <select id="slgoal" class="form-control" name="goal">
+                <!-- <option value="">Pilih goal</option> -->
+                <option value="" >Pilih Goal</option>
                 @foreach($goals as $data_goals)
                   <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
                 @endforeach
@@ -37,20 +41,14 @@
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-10">
-              <select class="form-control" name="indikator">
-                <option value="">Pilih indikator</option>
-                @foreach($master as $data_indi)
-                  <option value="{{$data_indi->id_indikator}}">{{$data_indi->indikator}}</option>
-                @endforeach
+              <select id="slindi" class="form-control" name="indikator">
+              <option value="">Pilih Indikator</option>
               </select>
             </div><br>
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
             <div class="col-sm-10">
-              <select class="form-control" name="sub">
-                <option value="">Pilih sub-indikator</option>
-                @foreach($sub as $data_sub)
-                  <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
-                @endforeach
+              <select id="slsub" class="form-control" name="sub">
+              <option value="">Pilih Sub Indikator</option>
               </select>
             </div><br>
             <div class="col-sm-12">
@@ -153,4 +151,5 @@
   </div>
 </div>
 <br>
+
 @endsection

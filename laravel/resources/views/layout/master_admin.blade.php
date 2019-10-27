@@ -270,6 +270,7 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- Page Heading -->
+            @include('sweetalert::alert')
 
             <ol class="breadcrumb">
             <li class="active">
@@ -318,6 +319,8 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
     <!-- <script src="http://www.codermen.com/js/jquery.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+      <script type="text/javascript" src='{{asset("js/csc.js")}}'></script>
+
   </body>
 </html>

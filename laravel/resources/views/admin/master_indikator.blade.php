@@ -5,6 +5,14 @@
 @section('JudulDesc','Ini adalah halaman master indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
 @section('content')
   <!-- Form -->
+
+  @if (session('success_message'))
+  <div class="alert alert-{{ Session::get('message_type') }}" id="waktu2" style="margin-top:10px;">{{ Session::get('message') }}</div>
+  <!-- <div class "alert alert-success">
+    {{session ('success_message')}}
+  </div> -->
+  @endif
+
   <div class="card shadow mb-4 w-50">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Indikator</h6>
