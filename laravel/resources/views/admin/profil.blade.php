@@ -88,41 +88,12 @@
                 </center>
                
                 </div>
-              </form>
+              
 
                 <div class="col-sm-5 md-form amber-textarea active-amber-textarea">
                   <center>
-                  <a href="/admin/editpassword" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalPass">Edit Password</a>
+                  <a href="{{route('changePassword')}}"class="btn btn-primary pull-right">Edit Password</a>
                 </center>
-
-                  <div class="modal fade" id="myModalPass" role="dialog">
-                    <div class="modal-dialog">
-
-                      <!-- Modal content Password-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h4 class="modal-title">Edit Password</h4>
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                          <form class="" action="#" method="post">
-                            <div class="form-group">
-                              <label class="control-label col-sm-8" for="passbaru">Password Baru:</label>
-                              <div class="col-sm-10">
-                                <input value="" name="passbaru" type="password" class="form-control" required>
-                              </div><br>
-                              <label class="control-label col-sm-8" for="passlama">Password Lama:</label>
-                              <div class="col-sm-10">
-                                <input value="" name="passlama" type="password" class="form-control" required>
-                              </div><br>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-
                     </div>
                   </div>
                 </div>

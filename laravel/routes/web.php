@@ -16,14 +16,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::resource('master_indikator','sdgsIndiMasterController');
   Route::resource('master_sub_indikator','sdgsSubIndikatorController');
   Route::resource('pencapaian_indikator','sdgsCapaianIndiController');
-  // Route::get('/pencapaian_indikator','sdgsCapaianIndiController@index');
-  // // Route::get('/pencapaian_indikator/show  ','sdgsCapaianIndiController@show');
-  // Route::post('pencapaian_indikator.store   ','sdgsCapaianIndiController@store')->name('pencapaian_indikator.store');
-  // // Route::put('/pencapaian_indikator/update  ','sdgsCapaianIndiController@update');
-  // Route::delete('/pencapaian_indikator.destroy ','sdgsCapaianIndiController@destroy')->name('pencapaian_indikator.destroy');
-  // Route::get('pencapaian_indikator.edit ','sdgsCapaianIndiController@edit')->name('pencapaian_indikator.edit');
-  // Route::get('get-indi-list','sdgsCapaianIndiController@getIndiList');
-  // Route::get('get-subindi-list','sdgsCapaianIndiController@getSubIndiList');
 
   Route::get('pencapaian_indikator/getIndiList/{param}','sdgsCapaianIndiController@getIndi');
   Route::get('pencapaian_indikator/getSubIndiList/{param}','sdgsCapaianIndiController@getSubIndi');
@@ -41,6 +33,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::get('profil/{user}',  ['as' => 'profil.edit', 'uses' => 'UserController@edit']);
 Route::put('profil/{user}/update',  ['as' => 'profil.update', 'uses' => 'UserController@update']);
 
+Route::get('/changePassword','UserController@showChangePasswordForm');
+Route::post('/changePassword','UserController@changePassword')->name('changePassword');
 
   Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
