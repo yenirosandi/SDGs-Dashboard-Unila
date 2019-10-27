@@ -19,6 +19,10 @@ class CreateMasterSubindikatorTable extends Migration
             $table->string('waktu_pengambilan')->nullable();
             $table->integer('fk_id_indikator')->unsigned();
             $table->integer('fk_id_m_sumberdata')->unsigned()->nullable();
+            $table->integer('fk_id_goal')->unsigned();
+            $table->foreign('fk_id_goal')
+                ->references('id_goal')->on('t_goals')
+                ->onDelete('cascade')->onUpdate('cascade');
             // $table->dropUnique('fk_id_m_sumberdata'); //bingung
             $table->foreign('fk_id_indikator')
                   ->references('id_indikator')->on('t_m_indikator')
