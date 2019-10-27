@@ -107,18 +107,28 @@ class UserController extends Controller
         return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
       }
 
-      if(!(strcmp($request->get('new-password'), $request->get('new-password-confirm'))) == 0)
-      {
-          //New password and confirm password are not same
-        return redirect()->back()->with("error","New Password should be same as your confirmed password. Please retype new password.");
-      }
+      // if(!(strcmp($request->get('new-password'), $request->get('new-password-confirm'))) == 0)
+      // {
+      //     //New password and confirm password are not same
+      //   return redirect()->back()->with("error","New Password should be same as your confirmed password. Please retype new password.");
+      // }
 
-      //Change Password
-      $user = Auth::user();
-      $user->password = bcrypt($request->get('new-password'));
-      $user->save();
+      // //Change Password
+      // $user = Auth::user();
+      // $user->password = bcrypt($request->get('new-password'));
+      // $user->save();
        
-      return redirect()->back()->with("success","Password changed successfully !");
+      // return redirect()->back()->with("success","Password changed successfully !");
+      $validatedData = $request->validate([
+        'current-password' => 'required',
+        'new-password' => 'required|string|min:6|confirmed',
+    ]);
+    //Change Password
+    $user = Auth::user();
+    $user->password = bcrypt($request->get('new-password'));
+    $user->save();
+    return redirect()->back()->with("success","Password changed successfully !");
+
        
     }
 
