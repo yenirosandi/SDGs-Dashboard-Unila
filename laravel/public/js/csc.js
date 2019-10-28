@@ -60,7 +60,8 @@ $(document).ready(function(){
         $("#slindi").change(function() {
 
 
-            $.getJSON(host + "/getSubIndiList/" + $("#slindi option:selected").val(), function(data) {
+            // $.getJSON(host + "/getSubIndiList/" + $("#slindi option:selected").val(), function(data) {
+                $.getJSON($("#slindi").data("urlreq")  + "/" + $("#slindi option:selected").val(), function(data) {
 
                 //console.log(data);
 

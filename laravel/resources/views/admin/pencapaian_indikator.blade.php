@@ -31,7 +31,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
             <div class="col-sm-4">
-              <select id="slgoal" class="form-control" name="goal">
+              <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
                 <!-- <option value="">Pilih goal</option> -->
                 <option value="" >Pilih Goal</option>
                 @foreach($goals as $data_goals)
@@ -41,7 +41,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-10">
-              <select id="slindi" class="form-control" name="indikator">
+              <select id="slindi" class="form-control" name="indikator" data-urlreq="{{ route('get.list.capaian.subindi') }}">
               <option value="">Pilih Indikator</option>
               </select>
             </div><br>

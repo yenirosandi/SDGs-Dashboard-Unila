@@ -60,15 +60,18 @@
             <div class="col-sm-10">
               <select id="slindi" class="form-control" name="indikator">
                   @foreach($fk_id_indikators as $key=>$value)
+                  <option value="{{$value->id_indikator}}"{{$value->id_indikator==$edit_pencapaian->fk_id_indikator?'selected':''}}> {{$value->indikator}} </option>
                       <?php
+                      /*
                       if($key!=0){
                           $pencapaian_fk_indi=DB::table('t_m_indikator')->select('id_indikator','indikator')->where('id_indikator',$key)->get();
                           if(count($pencapaian_fk_indi)>0){
                               foreach ($pencapaian_fk_indi as $capai_indi_master){?>
                                 <option value="{{$capai_indi_master->id_indikator}}"{{$edit_fk_id_indikators->id_indikator==$capai_indi_master->id_indikator?' selected':''}}> {{$capai_indi_master->indikator}} </option>
+                                <option value="{{$capai_indi_master->id_indikator}}"{{$edit_fk_id_indikators->id_indikator==$capai_indi_master->id_indikator?' selected':''}}> {{$capai_indi_master->indikator}} </option>
                           <?php }
                           }
-                      }
+                    */
                       ?>
                   @endforeach
               </select>

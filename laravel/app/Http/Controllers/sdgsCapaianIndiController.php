@@ -148,10 +148,11 @@ class sdgsCapaianIndiController extends Controller
 
     $edit_pencapaian= Pencapaian_model::findOrFail($id_pencapaian);
     $thn_skr = date('Y');
-  
+    $fk_id_goal= Goals_model::all();
     $fk_id_goals= Goals_model::pluck('nama_goal', 'id_goal');
     $fk_id_trends= Trend_model::pluck('keterangan', 'id_trend');
-    $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
+    $fk_id_indikators= Indikator_model::where('fk_id_goal', $edit_pencapaian->fk_id_goal)->get();
+    // $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator')->where('fk_id_goal', '=', $edit_pencapaian->fk_id_goal)->get();
     $fk_id_m_subindikators= Subindikator_model::pluck('subindikator', 'id_m_subindikator');
     $edit_fk_id_goals=Goals_model::findOrFail($edit_pencapaian->fk_id_goal);
     $edit_fk_id_trends=Trend_model::findOrFail($edit_pencapaian->fk_id_trend);
@@ -159,13 +160,14 @@ class sdgsCapaianIndiController extends Controller
     $edit_fk_id_m_subindikators=SubIndikator_model::findOrFail($edit_pencapaian->fk_id_m_subindikator);
 
 
-
+    // dd ($fk_id_goal);
+    // return $edit_pencapaian;
     return view('admin.pencapaian_indikator_edit',
         compact('thn_skr','edit_pencapaian','fk_id_goals',
                 'fk_id_trends','fk_id_indikators',
                 'fk_id_m_subindikators','edit_fk_id_goals',
                 'edit_fk_id_trends','edit_fk_id_indikators',
-                'edit_fk_id_m_subindikators'));
+                'edit_fk_id_m_subindikators', 'fk_id_goal'));
   }
 
 

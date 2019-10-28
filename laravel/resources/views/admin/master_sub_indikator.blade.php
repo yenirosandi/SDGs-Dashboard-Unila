@@ -22,6 +22,18 @@
           <form class="form-horizontal" method="POST" action="{{ route('master_sub_indikator.store') }}">
           @csrf
             <div class="form-group">
+              <label class="control-label col-sm-8" for="fk_id_goal">Goal ke:</label>
+                <div class="col-sm-4">
+                  <select id="slgoal" class="form-control" name="fk_id_goal">
+                    <!-- <option value="">Pilih goal</option> -->
+                    <option value="" >Pilih Goal</option>
+                    @foreach($goals as $data_goals)
+                      <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
+                    @endforeach
+                  </select>
+                </div>
+            </div>
+            <div class="form-group">
               <label class="control-label col-sm-10" for="fk_id_indikator">Indikator:</label>
               <div class="col-sm-10">
                 <select class="form-control" name="fk_id_indikator">
@@ -112,6 +124,7 @@
           <thead>
             <tr>
               <th>No.</th>
+              <th>Goal</th>
               <th>Indikator</th>
               <th>Sub Indikator</th>
               <th>Sumber Data</th>
@@ -124,6 +137,11 @@
            <tr>
              <td>
                 {{$no}} <?php $no++;?>
+             </td>
+             
+            <td>
+              SDG {{$data->id_goal}}
+
              </td>
              <td>
                {{$data->indikator}}

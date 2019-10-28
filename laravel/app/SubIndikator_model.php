@@ -9,13 +9,17 @@ class SubIndikator_model extends Model
     protected $table = 't_m_subindikator';
     protected $primaryKey='id_m_subindikator';
     protected $fillable = ['subindikator',
-                            'waktu_pengambilan',
+                            'waktu_pengambilan',  
                             'fk_id_goal',
                             'fk_id_indikator',
-                            'fk_id_m_sumberdata'
+                            'fk_id_m_sumberdata',
+
+
 
 ];
-
+public function goal(){
+    return $this->belongsTo(Goals_model::class,'fk_id_goal','id_goal');
+}
 public function indikator(){
     return $this->belongsTo(Indikator_model::class,'fk_id_indikator','id_indikator');
 }
