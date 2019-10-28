@@ -1,5 +1,4 @@
 @extends('layout.master_admin')
-
 @section('title','Edit Master Sub-Indikator SDGs')
 @section('Judul','Edit Master Sub-Indikator')
 @section('JudulDesc','Ini adalah halaman edit master sub-indikator dimana terdapat form untuk memperbarui data master sub-indikator.')
