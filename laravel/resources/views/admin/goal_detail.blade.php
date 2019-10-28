@@ -51,22 +51,22 @@
                 <td>{{$no}}</td>
                 <td>
                   {{$data_sub->subindikator}}
-                  <?php $subid=$data_sub->id_m_subindikator; ?>
                 </td>
                 @if($data_sub->fk_id_indikator==$data_sub->id_indikator)
                   <td>{{$data_sub->sumberdata}}</td>
                 @endif
                 <!-- Buat nilai pencapaian -->
                 @foreach($data_capai as $capai)
-                  @for ($thn_capai=2017; $thn_capai <= $tahun_now; $thn_capai++)
-                    @if ($thn_capai==$capai->tahun && $subid==$capai->fk_id_m_subindikator)
-                      <td> {{$capai->nilai}} </td>
-                    @elseif ($thn_capai==$capai->tahun && $subid!=$capai->fk_id_m_subindikator)
-                      <td> {{$null}} </td>
+                <?php $tahun=2017; ?>
+                  @for ($tahun; $tahun<=$tahun_now; $tahun++)
+                    @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
+                      <td>{{$capai->nilai}}</td>
+                    @else {{$null}}
                     @endif
                   @endfor
                 @endforeach
               </tr>
+
               <?php $no++; ?>
             @endforeach
             </tbody>
