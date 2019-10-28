@@ -40,10 +40,11 @@ class sdgsSubIndikatorController extends Controller
         $check = new SubIndikator_model;
         $check->subindikator = $request->subindikator;
         $check->waktu_pengambilan = implode(", ",$request->waktu_pengambilan);
+        $check->fk_id_goal = $request->fk_id_goal;
         $check->fk_id_indikator = $request->fk_id_indikator;
         $check->fk_id_m_sumberdata = $request->fk_id_m_sumberdata;
+        $check->fk_id_goal = $request->fk_id_goal;
         $check->save();
-
         // alert()->success('Berhasil.','Data telah ditambahkan!');
 
         return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah disimpan!');

@@ -10,6 +10,7 @@ class SubIndikator_model extends Model
     protected $primaryKey='id_m_subindikator';
     protected $fillable = ['subindikator',
                             'waktu_pengambilan',
+                            'fk_id_goal',
                             'fk_id_indikator',
                             'fk_id_m_sumberdata'
 
