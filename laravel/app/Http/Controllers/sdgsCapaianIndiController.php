@@ -153,7 +153,7 @@ class sdgsCapaianIndiController extends Controller
     $fk_id_trends= Trend_model::pluck('keterangan', 'id_trend');
     $fk_id_indikators= Indikator_model::where('fk_id_goal', $edit_pencapaian->fk_id_goal)->get();
     // $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator')->where('fk_id_goal', '=', $edit_pencapaian->fk_id_goal)->get();
-    $fk_id_m_subindikators= Subindikator_model::pluck('subindikator', 'id_m_subindikator');
+    $fk_id_m_subindikators= Subindikator_model::where('fk_id_indikator', $edit_pencapaian->fk_id_indikator)->get();
     $edit_fk_id_goals=Goals_model::findOrFail($edit_pencapaian->fk_id_goal);
     $edit_fk_id_trends=Trend_model::findOrFail($edit_pencapaian->fk_id_trend);
     $edit_fk_id_indikators=Indikator_model::findOrFail($edit_pencapaian->fk_id_indikator);

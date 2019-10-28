@@ -58,7 +58,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
             <div class="col-sm-10">
-              <select id="slindi" class="form-control" name="indikator">
+              <select id="slindi" class="form-control" name="indikator" data-urlreq="{{ route('get.list.capaian.subindi') }}">
                   @foreach($fk_id_indikators as $key=>$value)
                   <option value="{{$value->id_indikator}}"{{$value->id_indikator==$edit_pencapaian->fk_id_indikator?'selected':''}}> {{$value->indikator}} </option>
                       <?php
@@ -80,23 +80,11 @@
             <div class="col-sm-10">
               <select  id="slsub" class="form-control" name="sub">
                   @foreach($fk_id_m_subindikators as $key=>$value)
-                      <?php
-                      if($key!=0){
-                          $pencapaian_fk_sub=DB::table('t_m_subindikator')
-                            ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-                            ->select('t_m_subindikator.*','t_m_sumberdata.*')
-                            ->where('id_m_subindikator',$key)
-                            ->get();
-                          if(count($pencapaian_fk_sub)>0){
-                              foreach ($pencapaian_fk_sub as $capai_indi_sub){?>
-                                <option value="{{$capai_indi_sub->id_m_subindikator}}"{{$edit_fk_id_m_subindikators->id_m_subindikator==$capai_indi_sub->id_m_subindikator?' selected':''}}> {{$capai_indi_sub->subindikator}}-{{$capai_indi_sub->sumberdata}}</option>
-                          <?php }
-                          }
-                      }
-                      ?>
+                  <option value="{{$value->id_m_subindikator}}"{{$value->id_m_subindikator==$edit_pencapaian->fk_id_m_subindikator?' selected':''}}> {{$value->subindikator}}</option>
                   @endforeach
               </select>
             </div><br>
+
             <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
               <i class="fas fa-pencil-alt prefix"></i>
               <label for="form22">Nilai</label>
