@@ -24,7 +24,7 @@
             <div class="form-group">
               <label class="control-label col-sm-8" for="fk_id_goal">Goal ke:</label>
                 <div class="col-sm-4">
-                  <select id="slgoal" class="form-control" name="fk_id_goal">
+                  <select id="slgoal" class="form-control" name="fk_id_goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
                     <!-- <option value="">Pilih goal</option> -->
                     <option value="" >Pilih Goal</option>
                     @foreach($goals as $data_goals)
@@ -36,11 +36,9 @@
             <div class="form-group">
               <label class="control-label col-sm-10" for="fk_id_indikator">Indikator:</label>
               <div class="col-sm-10">
-                <select class="form-control" name="fk_id_indikator">
-                  <option value="">-- Pilih Indikator --</option>
-                  @foreach($fk_id_indikators as $id=>$fk_id_indikator)
-                  <option value="{{$id}}">{{$fk_id_indikator}}</option>
-                  @endforeach
+                <select id="slindi" class="form-control" name="fk_id_indikator">
+                  <option value="">Pilih Indikator</option>
+
                 </select>
               </div>
             </div>

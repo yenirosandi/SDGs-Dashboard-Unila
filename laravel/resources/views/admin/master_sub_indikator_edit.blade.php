@@ -1,4 +1,5 @@
 @extends('layout.master_admin')
+
 @section('title','Edit Master Sub-Indikator SDGs')
 @section('Judul','Edit Master Sub-Indikator')
 @section('JudulDesc','Ini adalah halaman edit master sub-indikator dimana terdapat form untuk memperbarui data master sub-indikator.')
@@ -18,7 +19,8 @@
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
             <div class="col-sm-4">
               <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
-                @foreach($fk_id_goals as $key=>$value)
+              <option value="" >Pilih Goal</option>
+              @foreach($fk_id_goals as $key=>$value)
                     <?php
                     if($key!=0){
                         $pencapaian_fk_goal=DB::table('t_goals')->select('id_goal','id_goal')->where('id_goal',$key)->get();
@@ -31,25 +33,16 @@
                     ?>
                 @endforeach
               </select>
+              </select>
             </div><br>
             
             <div class="form-group">
-              <label class="control-label col-sm-8" for="fk_id_indikator">Indikator: </label>
+              <label class="control-label col-sm-8" for="indikator">Indikator: </label>
               <div class="col-sm-10">
-                  <select name="fk_id_indikator" class="form-control">
+                 <select id="slindi" class="form-control" name="indikator" data-urlreq="{{ route('get.list.capaian.subindi') }}">
                   @foreach($fk_id_indikators as $key=>$value)
-                      <?php
-                      if($key!=0){
-                          $sub_fk_id_indikators=DB::table('t_m_indikator')->select('id_indikator','indikator')->where('id_indikator',$key)->get();
-                          if(count($sub_fk_id_indikators)>0){
-                              foreach ($sub_fk_id_indikators as $sub_fk_id_indikator){?>
-                                  <option value="{{$sub_fk_id_indikator->id_indikator}}"{{$edit_fk_indikators->id_indikator==$sub_fk_id_indikator->id_indikator?' selected':''}}> {{$sub_fk_id_indikator->indikator}}</option>
-                          <?php }
-                          }
-                      }
-                      ?>
-                  @endforeach
-                </select>
+                  <option value="{{$value->id_indikator}}"{{$value->id_indikator==$edit_pencapaian->fk_id_indikator?'selected':''}}> {{$value->indikator}} </option>
+                 </select>
               </div>
             </div>
             <div class="form-group">
@@ -123,7 +116,7 @@
               <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Ubah</button>
               </div>
-            </div>
+              </div>
           </form>
         </div>
       </div>
