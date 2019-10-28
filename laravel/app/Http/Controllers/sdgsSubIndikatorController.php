@@ -84,7 +84,7 @@ class sdgsSubIndikatorController extends Controller
         $fk_id_goals= Goals_model::pluck('nama_goal', 'id_goal');
         $edit_fk_indikators=Indikator_model::findOrFail($edit_subindikators->fk_id_indikator);
         $edit_fk_sumberdatas=Sumberdata_model::findOrFail($edit_subindikators->fk_id_m_sumberdata);
-        $edit_fk_id_goals=Goals_model::findOrFail($edit_pencapaian->fk_id_goal);
+        $edit_fk_id_goals=Goals_model::findOrFail($edit_subindikators->fk_id_goal);
 
 
         $sumberdatas=Sumberdata_model::all();
