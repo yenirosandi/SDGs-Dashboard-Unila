@@ -23,7 +23,7 @@
               <select class="form-control"name="tahun">
                 <option value="">Pilih tahun</option>
                   <?php
-                   for ($tahun = $thn_skr; $tahun >= 2010; $tahun--) {
+                   for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
                   ?>
                   <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                 <?php } ?>

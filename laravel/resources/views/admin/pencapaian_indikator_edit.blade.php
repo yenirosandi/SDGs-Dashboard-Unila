@@ -41,7 +41,7 @@
             </div><br>
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
             <div class="col-sm-4">
-              <select id="slgoal" class="form-control" name="goal">
+              <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
                 @foreach($fk_id_goals as $key=>$value)
                     <?php
                     if($key!=0){

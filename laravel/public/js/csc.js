@@ -6,8 +6,9 @@ $(document).ready(function(){
 
    $("#slgoal").change(function() {
 
-
-            $.getJSON(host + "/getIndiList/" + $("#slgoal option:selected").val(), function(data) {
+   // + "/" + $("#slgoal option:selected").val()
+            console.log($("#slgoal").data("urlreq"));
+            $.getJSON($("#slgoal").data("urlreq")  + "/" + $("#slgoal option:selected").val(), function(data) {
 
              //console.log(data);            
 
