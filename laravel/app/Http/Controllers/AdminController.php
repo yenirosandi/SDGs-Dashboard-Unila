@@ -17,31 +17,45 @@ class AdminController extends Controller
     public function detailGoal($id){
       $no=1;
       $tahun=2017;
+      $tahun_now=date('Y');
       $null='-';
-      // $data=DB::table('t_pencapaian')
-      //   ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-      //   ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-      //   ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-      //   ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
-      //   ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
-      //   ->where('id_goal', '=', $id)
-      //   ->where('tahun','=', $tahun)
-      //   ->get();
-      $indikator=DB::table('t_m_indikator')
-        ->select('t_m_indikator.*')
-        ->where('fk_id_goal',$id)
-        ->get();
-        // DD($indikator);
-      $sub=DB::table('t_m_subindikator')
+      $indikator='';
+      $kolomtahun=$tahun_now-$tahun;
+      $kolomindi=$kolomtahun+4;
+      $data=DB::table('t_m_subindikator')
+        ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
         ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-        ->select('t_m_subindikator.*','t_m_sumberdata.*')
+        ->where('t_m_subindikator.fk_id_goal', $id)
+        // ->where('t_m_subindikator.fk_id_indikator','=','t_m_indikator.id_indikator')
         ->get();
-      // DD($sub);
+        // DD($data);
+
+        $data_capai=DB::table('t_pencapaian')
+          ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+          ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+          ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+          ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
+          ->where('t_pencapaian.fk_id_goal', '=', $id)
+          // ->where('tahun','=', $tahun_capai)
+          ->orderBy('t_pencapaian.fk_id_m_subindikator')
+          ->get();
+          // DD($data_capai);
 
       //$products=Products_model::findOrFail($id);
       $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();//sintaks ini bakalan gak kefound karena pake DB::table jadinya tambahin use ya di atas
       return view('admin.goal_detail',
-        compact('id','null','tahun','indikator','no','sub','goal_detail'));
+        compact('id',
+          'kolomindi',
+          'kolomtahun',
+          'data',
+          'null',
+          'tahun',
+          'indikator',
+          'tahun_now',
+          'data_capai',
+          'no',
+          'sub',
+          'goal_detail'));
     }
 
     public function store(Request $request)
