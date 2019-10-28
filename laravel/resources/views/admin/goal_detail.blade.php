@@ -29,12 +29,12 @@
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
-                <th style="text-align:center; vertical-align:middle;" rowspan="2">Baseline (2017)</th>
+                <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th>
                 <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahun}}">Realisasi Pencapaian</th>
               </tr>
               <tr>
                 @for ($thn=2018; $thn <= $tahun_now; $thn++)
-                  <th style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
+                  <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
                 @endfor
               </tr>
             </thead>
@@ -57,18 +57,25 @@
                 @endif
                 <!-- Buat nilai pencapaian -->
                 @foreach($data_capai as $capai)
-                <?php $tahun=2017; ?>
-                  @for ($tahun; $tahun<=$tahun_now; $tahun++)
+                  <?php $tahun=2017; ?>
+                  @while($tahun<=$tahun_now)
                     @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
                       <td>{{$capai->nilai}}</td>
-                    @else {{$null}}
+                      <td>
+                        <img src="/{{$capai->simbol_trend}}" alt="" height="25px" width="20px">
+                      </td>
+                    @else
+                      <!-- <td>{{$null}}</td> -->
                     @endif
-                  @endfor
+                    <?php $tahun++ ?>
+                  @endwhile
+                @endforeach
+                <?php $no++; ?>
                 @endforeach
               </tr>
 
-              <?php $no++; ?>
-            @endforeach
+
+
             </tbody>
           </table>
         </div>
