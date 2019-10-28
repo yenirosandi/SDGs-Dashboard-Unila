@@ -11,18 +11,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- js -->
-    <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.js"> </script>
+    <script src="{{asset('js/jquery-2.1.1.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.js')}}"> </script>
 
     <!-- CSS -->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/> -->
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('frontend/mosh/style.css')}}" rel="stylesheet">
+
+
     <!--static chart-->
   </head>
-  <body>
+  <main role="main"  padding: 40px;">
     <div class="login-page">
         <div class="login-main">
-        	 <div class="login-head">
+        	    <div class="login-head">
     				<h1>LOGIN</h1>
     			</div>
     			<div class="login-block">
@@ -65,8 +68,10 @@
                                 </div>
                             </div>
                         </div>
-    					<input type="submit" name="Login" value="Login">
-              <h3>Lupa password? @if (Route::has('password.request'))
+                        
+                        
+                        <input type="submit" name="Login" value="Login">
+                                    <h3>Lupa password? @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Klik Disini!') }}
                                     </a>
@@ -74,9 +79,8 @@
                     </form>
     		    </div>
         </div>
-      </div>
-      </div>
-</body>
+    </div>
+</main>
 </html>
 
 @endsection

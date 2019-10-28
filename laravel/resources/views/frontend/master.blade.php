@@ -38,7 +38,7 @@
       @yield('content')
 
       @include('frontend.footer')
-      </div>
+      
 
 
     <!-- Bootstrap core JavaScript

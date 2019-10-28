@@ -1,3 +1,4 @@
+<link href="{{asset('frontend/mosh/style.css')}}" rel="stylesheet">
 
   <footer class="text-muted">
       <div class="container">
