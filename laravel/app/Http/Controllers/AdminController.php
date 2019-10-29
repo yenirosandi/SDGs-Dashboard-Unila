@@ -54,7 +54,7 @@ class AdminController extends Controller
           'tahun_now',
           'data_capai',
           'no',
-          'sub',
+          // 'sub',
           'goal_detail'));
     }
 
