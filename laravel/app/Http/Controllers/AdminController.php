@@ -18,8 +18,8 @@ class AdminController extends Controller
       $no=1;
       $tahun=2017;
       $tahun_now=date('Y');
-      $null='-';
       $indikator='';
+      $subindi='';
       $kolomtahun=$tahun_now-$tahun+2;
       $kolomindi=$kolomtahun+5;
       $data=DB::table('t_m_subindikator')
@@ -47,8 +47,9 @@ class AdminController extends Controller
         compact('id',
           'kolomindi',
           'kolomtahun',
+          'subindi',
           'data',
-          'null',
+          // 'null',
           'tahun',
           'indikator',
           'tahun_now',

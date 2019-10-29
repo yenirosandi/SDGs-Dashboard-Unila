@@ -48,10 +48,14 @@
                 <?php $indikator=$data_sub->indikator; ?>
               </tr>
               <tr>
-                <td>{{$no}}</td>
-                <td>
-                  {{$data_sub->subindikator}}
-                </td>
+                @if($data_sub->subindikator!=$subindi)
+                  <td>{{$no}}</td>
+                  <?php $no++; ?>
+                  <td>{{$data_sub->subindikator}}</td>
+                @else<td style="background-color:#f5f5f5;" colspan="2"></td>
+                @endif
+                <?php $subindi=$data_sub->subindikator; ?>
+
                 @if($data_sub->fk_id_indikator==$data_sub->id_indikator)
                   <td>{{$data_sub->sumberdata}}</td>
                 @endif
@@ -70,7 +74,6 @@
                     <?php $tahun++ ?>
                   @endwhile
                 @endforeach
-                <?php $no++; ?>
                 @endforeach
               </tr>
 
