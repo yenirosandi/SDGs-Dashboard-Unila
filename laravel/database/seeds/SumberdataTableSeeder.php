@@ -77,17 +77,7 @@ class SumberdataTableSeeder extends Seeder
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'MOU',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'LP3M',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'Kemahasiswaan',
+          'sumberdata' => 'BAAK',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
@@ -97,27 +87,17 @@ class SumberdataTableSeeder extends Seeder
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'BAK',
+          'sumberdata' => 'UPT TIK',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'PUSKOM',
+          'sumberdata' => 'Puslitbang Wanita, Anak dan Pembangunan',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'Pusat Studi Wanita',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'Kepegawaian, Akademik dan Struktural',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'SIAKAD',
+          'sumberdata' => 'Biro Kepegawaian',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
@@ -127,62 +107,47 @@ class SumberdataTableSeeder extends Seeder
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'Kepegawaian Akademik/Non-Akademik',
+          'sumberdata' => 'Unila:Kepegawaian Akademik/Non-Akademik',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'Sentra HAKI Unila',
+          'sumberdata' => 'Sentra HAKI',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'Sentra Inkubator Unila',
+          'sumberdata' => 'Sentra Inovasi dan Inkubator Bisnis',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'BAAK',
+          'sumberdata' => 'UPT Perpustakaan',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'IT Unila',
+          'sumberdata' => 'SPI',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'Pengabdian Masyarakat Unila',
+          'sumberdata' => 'SDGs Center',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
-          'sumberdata' => 'BPI',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'Dewan Riset Daerah (DRD)',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'Pemerintah Daerab',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'Tenaga Ahli',
-          'created_at' => $createdDate,
-          'updated_at' => $createdDate
-        ],
-        [
-          'sumberdata' => 'Kuliah Umum',
+          'sumberdata' => 'see',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ],
         [
           'sumberdata' => 'Universitas Lampung',
+          'created_at' => $createdDate,
+          'updated_at' => $createdDate
+        ],
+        [
+          'sumberdata' => 'Wakil Rektor 4',
           'created_at' => $createdDate,
           'updated_at' => $createdDate
         ]
