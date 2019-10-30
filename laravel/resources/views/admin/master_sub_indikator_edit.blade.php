@@ -33,7 +33,6 @@
                     ?>
                 @endforeach
               </select>
-              </select>
             </div><br>
             
             <div class="form-group">
