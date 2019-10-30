@@ -94,7 +94,7 @@ $(document).ready(function(){
                 $.each(temp, function(key, obj) {
 
                     $('#slsub').append('<option value="' + obj.k +'">' + obj.v + '</option>');           
-
+                    console.log(obj);
                 });            
 
             });

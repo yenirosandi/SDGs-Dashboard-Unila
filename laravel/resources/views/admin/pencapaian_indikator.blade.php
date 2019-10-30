@@ -48,9 +48,10 @@
             <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
             <div class="col-sm-10">
               <select id="slsub" class="form-control" name="sub">
-              <option value="">Pilih Sub Indikator</option>
+                <option value="">Pilih Sub Indikator</option>
               </select>
             </div><br>
+
             <div class="col-sm-12">
             <div class="form-row">
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">

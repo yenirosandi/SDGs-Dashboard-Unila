@@ -89,15 +89,21 @@ class sdgsCapaianIndiController extends Controller
   {
         //GET THE ACCOUNT BASED ON TYPE
 
-        $subs =  SubIndikator_model::where('fk_id_indikator','=',$param)->get();
+        // $subs =  SubIndikator_model::where('fk_id_indikator','=',$param)->get();
 
+        $subs=DB::table('t_m_subindikator')
+        ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+        ->select('t_m_subindikator.*','t_m_sumberdata.*')
+        ->where('fk_id_indikator','=',$param)->get();
         //CREATE AN ARRAY 
-
+      //   @foreach($sub as $data_sub)
+      //   <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
+      // @endforeach
         $options = array();      
 
         foreach ($subs as $arrayForEach) {
 
-                  $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator);                
+                  $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator . " - " . $arrayForEach->sumberdata);                
 
               }
 

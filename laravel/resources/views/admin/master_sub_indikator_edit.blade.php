@@ -17,7 +17,7 @@
             {{ method_field('put') }}
             <div class="form-group">
             <label class="control-label col-sm-8" for="goal">Goal ke:</label>
-            <div class="col-sm-4">
+              <div class="col-sm-4">
               <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
               <option value="" >Pilih Goal</option>
               @foreach($fk_id_goals as $key=>$value)
@@ -33,8 +33,9 @@
                     ?>
                 @endforeach
               </select>
-            </div><br>
-            
+              </div>
+            </div>
+          
             <div class="form-group">
               <label class="control-label col-sm-8" for="indikator">Indikator: </label>
               <div class="col-sm-10">
@@ -62,7 +63,7 @@
                               foreach ($sub_fk_sumberdatas as $sub_fk_sumberdata){?>
                                   <option value="{{$sub_fk_sumberdata->id_m_sumberdata}}"{{$edit_fk_sumberdatas->id_m_sumberdata==$sub_fk_sumberdata->id_m_sumberdata?' selected':''}}> {{$sub_fk_sumberdata->sumberdata}}</option>
                           <?php }
-                          }
+                        }
                       }
                       ?>
                   @endforeach
@@ -121,5 +122,5 @@
       </div>
     </div>
   </div>
-<br>
+  
 @endsection

@@ -69,7 +69,8 @@
                         <img src="/{{$capai->simbol_trend}}" alt="" height="25px" width="20px">
                       </td>
                     @else
-                      <!-- <td>{{$null}}</td> -->
+                    
+                    
                     @endif
                     <?php $tahun++ ?>
                   @endwhile
