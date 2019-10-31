@@ -11,6 +11,7 @@ Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::get('/', 'AdminController@index');
   Route::get('/goalDetail/{id}','AdminController@detailGoal');
+  Route::get('/goalDetail/indi/{id_indi}','AdminController@linkGrafikIndi')->name('grafikIndi');
 
   //Indikator
   Route::resource('master_indikator','sdgsIndiMasterController');

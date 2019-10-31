@@ -1,15 +1,6 @@
 <html>
     <!-- // Menyiapkan data untuk chart -->
-<?php
-        $categories =[];
-?>
-        @foreach ($data_capai as $data_persub){
-        $categories[]= $data_persub->tahun;
-        }
 
-
-        @endforeach
-        
       <!-- // dd(json_encode($categories));    -->
       
 
@@ -36,12 +27,14 @@ Highcharts.chart('grafikGoal', {
     },
     xAxis: {
         categories: {!!json_encode($categories)!!} ,
-        crosshair: true
+        // categories:[' atu', 'dua'] ,
+        crosshair: true,
+    
     },
     yAxis: {
         min: 0,
         title: {
-            text: 'Rainfall (mm)'
+            text: 'Total'
         }
     },
     tooltip: {
@@ -59,24 +52,20 @@ Highcharts.chart('grafikGoal', {
         }
     },
     series: [{
-        name: 'Tokyo',
-        data: [49.9, 71.5]
+        name: '2017',
+        data: [49.9]
 
     }, {
-        name: 'New York',
-        data: [83.6, 78.8]
+        name: '2018',
+        data: [83.6]
 
     }, {
-        name: 'London',
-        data: [48.9, 38.8]
+        name: '2019',
+        data: [48.9]
 
-    }, {
-        name: 'Berlin',
-        data: [42.4, 33.2]
-
-    }]
+    }]  
 });
-
+  
 </script>
 
 </html>

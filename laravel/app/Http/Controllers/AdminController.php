@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Goals_model;//tambahan
+use App\Indikator_model;
+use App\Pencapaian_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;//n
 
@@ -14,6 +16,62 @@ class AdminController extends Controller
       return view('admin.index', compact('goals'));
     }
 
+    public function  linkGrafikIndi($id_indi)
+    {
+
+
+//       $subindi= DB::table('t_pencapaian')
+//       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+//       ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
+//       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+//       ->groupBy('subindikator')
+//       ->get();
+
+//       $tahun= DB::table('t_pencapaian')
+//       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+//       ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
+//       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+//       ->groupBy('subindikator', 'tahun')
+//       ->orderBy('tahun')
+//       ->get();
+// // dd($tahun);
+
+//       // $indi=Pencapaian_model::find($id_indi);
+
+//       $categories =[];
+//       $data =[];
+//       $name=[];
+    
+//       foreach ($subindi as $data_persub){
+//       $categories[]= $data_persub->tahun;
+//       // $data[]= $indi->subindikator()->wherePivot('fk_id_m_subindikator', $data_persub->id_indi)->first();
+//       }
+//       foreach ($tahun as $data_persub){
+//       $name[]= $data_persub->tahun;
+//       $nilai[]=$data_persub->nilai;
+//       }
+//       // dd($data);
+
+// $viewer = View::select(DB::raw("SUM(numberofview) as count"))
+// ->orderBy("created_at")
+// ->groupBy(DB::raw("year(created_at)"))
+// ->get()->toArray();
+// $viewer = array_column($viewer, 'count');
+
+// $click = Click::select(DB::raw("SUM(numberofclick) as count"))
+// ->orderBy("created_at")
+// ->groupBy(DB::raw("year(created_at)"))
+// ->get()->toArray();
+// $click = array_column($click, 'count');
+// return view('highchart')
+//     ->with('viewer',json_encode($viewer,JSON_NUMERIC_CHECK))
+//     ->with('click',json_encode($click,JSON_NUMERIC_CHECK));
+    
+//      return view('admin.detail_grafik_indi', compact(
+//                               'categories', 'name'));
+//     }
+
+
     public function detailGoal($id){
       $no=1;
       $tahun=2017;
@@ -21,6 +79,7 @@ class AdminController extends Controller
       $indikator='';
       $subindi='';
       $kolomtahun=$tahun_now-$tahun+2;
+      // dd($kolomtahun);
       $kolomindi=$kolomtahun+5;
       $data=DB::table('t_m_subindikator')
         ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
@@ -41,7 +100,8 @@ class AdminController extends Controller
           ->get();
           // DD($data_capai);
 
-      //$products=Products_model::findOrFail($id);
+
+          
       $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();//sintaks ini bakalan gak kefound karena pake DB::table jadinya tambahin use ya di atas
       return view('admin.goal_detail',
         compact('id',

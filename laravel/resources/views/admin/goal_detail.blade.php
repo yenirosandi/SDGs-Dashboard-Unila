@@ -19,7 +19,14 @@
       <div class="card-body">
         <h4>Grafik</h4>
         <hr>
-        Grafik <img width="10%" src="/{{$goal->gambar}}">
+
+          <div class="row">
+
+
+              <img width="300px" height ="300px" src="/{{$goal->gambar}}">
+          </div>
+
+
         <br><br><br>
         <h4>Tabel</h4>
         <div class="table-responsive">
@@ -43,7 +50,7 @@
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}</th>
+                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}"><a href="{{route('grafikIndi', $data_sub->id_indikator )}}" >{{$data_sub->indikator}}</a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator; ?>
               </tr>
@@ -51,6 +58,7 @@
                 @if($data_sub->subindikator!=$subindi)
                   <td>{{$no}}</td>
                   <?php $no++; ?>
+
                   <td>{{$data_sub->subindikator}}</td>
                 @else<td style="background-color:#f5f5f5;" colspan="2"></td>
                 @endif
@@ -89,4 +97,6 @@
   </div>
 
   @endforeach
+
+
 @endsection
