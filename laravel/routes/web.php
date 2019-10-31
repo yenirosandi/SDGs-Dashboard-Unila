@@ -20,13 +20,17 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
   Route::get('pencapaian_indikator/getIndiList/{param?}','sdgsCapaianIndiController@getIndi')->name('get.list.capaian.indikator');
   Route::get('pencapaian_indikator/getSubIndiList/{param?}','sdgsCapaianIndiController@getSubIndi')->name('get.list.capaian.subindi');
-  
+
   Route::get('pencapaian_indikator/{id_pencapaian}/edit/getIndiList/{param}','sdgsCapaianIndiController@getIndi');
   Route::get('pencapaian_indikator/{id_pencapaian}/edit/getSubIndiList/{param}','sdgsCapaianIndiController@getSubIndi');
 
   // Route::get('pencapaian_indikator','sdgsCapaianIndiController@findIndiName');
 
   Route::resource('sumber_data','sdgsSumberDataController');
+
+  Route::get('form_pengajuan','formPengajuanController@index');
+  Route::get('/form_pengajuan/{id_m_sumberdata}','formPengajuanController@downloadPDF');
+
 
   // Route::resource('profil', 'UserController');
   Route::get('profil', ['as' => 'profil.index', 'uses' => 'UserController@index']);

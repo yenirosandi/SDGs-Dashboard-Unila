@@ -128,6 +128,11 @@
             <img src="{{asset('img/sdgs/admin_indi_capai.png')}}" alt="Pencapaian Indikator" width="20px">
             <span>Pencapaian Indikator</span></a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/admin/form_pengajuan">
+            <i style="color: #fcdc26;" class="fas fa-fw fa-clipboard-list"></i>
+            <span>Form Pengajuan</span></a>
+        </li>
 
 
         <!-- Divider -->
