@@ -31,7 +31,7 @@ class formPengajuanController extends Controller
       ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
       ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
       ->select('t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_m_sumberdata.*')
-      ->groupBy('fk_id_m_sumberdata')
+      ->where('fk_id_m_sumberdata', $id_m_sumberdata)
       ->orderby('t_m_subindikator.fk_id_goal','asc')
       ->get();
       // DD($join);
