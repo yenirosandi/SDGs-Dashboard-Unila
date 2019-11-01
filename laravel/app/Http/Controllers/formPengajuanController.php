@@ -40,7 +40,7 @@ class formPengajuanController extends Controller
         ->select('t_m_subindikator.*','t_m_sumberdata.*')
         ->where('fk_id_goal', $goal)
         ->count();
-        // DD($count);
+        // DD($sumberdata);
 
       $count2=DB::table('t_m_subindikator')
         ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')

@@ -20,37 +20,37 @@ class AdminController extends Controller
     {
 
 
-//       $subindi= DB::table('t_pencapaian')
-//       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-//       ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
-//       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
-//       ->groupBy('subindikator')
-//       ->get();
+      $subindi= DB::table('t_pencapaian')
+      ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+      ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
+      ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+      ->groupBy('subindikator')
+      ->get();
 
-//       $tahun= DB::table('t_pencapaian')
-//       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-//       ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
-//       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
-//       ->groupBy('subindikator', 'tahun')
-//       ->orderBy('tahun')
-//       ->get();
-// // dd($tahun);
+      $tahun= DB::table('t_pencapaian')
+      ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+      ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
+      ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+      ->groupBy('subindikator', 'tahun')
+      ->orderBy('tahun')
+      ->get();
+// dd($tahun);
 
-//       // $indi=Pencapaian_model::find($id_indi);
+      // $indi=Pencapaian_model::find($id_indi);
 
-//       $categories =[];
-//       $data =[];
-//       $name=[];
+      $categories =[];
+      $data =[];
+      $name=[];
     
-//       foreach ($subindi as $data_persub){
-//       $categories[]= $data_persub->tahun;
-//       // $data[]= $indi->subindikator()->wherePivot('fk_id_m_subindikator', $data_persub->id_indi)->first();
-//       }
-//       foreach ($tahun as $data_persub){
-//       $name[]= $data_persub->tahun;
-//       $nilai[]=$data_persub->nilai;
-//       }
-//       // dd($data);
+      foreach ($subindi as $data_persub){
+      $categories[]= $data_persub->subindikator;
+      // $data[]= $indi->subindikator()->wherePivot('fk_id_m_subindikator', $data_persub->id_indi)->first();
+      }
+    //   foreach ($tahun as $data_persub){
+    //   $name[]= $data_persub->tahun;
+    //   $nilai[]=$data_persub->nilai;
+    //   }
+      // dd($data);
 
 // $viewer = View::select(DB::raw("SUM(numberofview) as count"))
 // ->orderBy("created_at")
@@ -67,9 +67,9 @@ class AdminController extends Controller
 //     ->with('viewer',json_encode($viewer,JSON_NUMERIC_CHECK))
 //     ->with('click',json_encode($click,JSON_NUMERIC_CHECK));
     
-//      return view('admin.detail_grafik_indi', compact(
-//                               'categories', 'name'));
-//     }
+     return view('admin.detail_grafik_indi', compact(
+                              'categories', 'name'));
+    }
 
 
     public function detailGoal($id){

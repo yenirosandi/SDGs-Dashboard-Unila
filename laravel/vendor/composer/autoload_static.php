@@ -385,13 +385,6 @@ class ComposerStaticInite618e910f4646e09a409b3433dbd0abc
     );
 
     public static $prefixesPsr0 = array (
-        'U' => 
-        array (
-            'UpdateHelper\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/kylekatarnls/update-helper/src',
-            ),
-        ),
         'S' => 
         array (
             'Sabberworm\\CSS' => 
@@ -433,6 +426,7 @@ class ComposerStaticInite618e910f4646e09a409b3433dbd0abc
         'App\\Http\\Controllers\\GoalsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GoalsController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\formPengajuanController' => __DIR__ . '/../..' . '/app/Http/Controllers/formPengajuanController.php',
         'App\\Http\\Controllers\\sdgsCapaianIndiController' => __DIR__ . '/../..' . '/app/Http/Controllers/sdgsCapaianIndiController.php',
         'App\\Http\\Controllers\\sdgsIndiMasterController' => __DIR__ . '/../..' . '/app/Http/Controllers/sdgsIndiMasterController.php',
         'App\\Http\\Controllers\\sdgsSubIndikatorController' => __DIR__ . '/../..' . '/app/Http/Controllers/sdgsSubIndikatorController.php',
@@ -4181,10 +4175,6 @@ class ComposerStaticInite618e910f4646e09a409b3433dbd0abc
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'TrendTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TrendTableSeeder.php',
-        'UpdateHelper\\ComposerPlugin' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/ComposerPlugin.php',
-        'UpdateHelper\\NotUpdateInterfaceInstanceException' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/NotUpdateInterfaceInstanceException.php',
-        'UpdateHelper\\UpdateHelper' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelper.php',
-        'UpdateHelper\\UpdateHelperInterface' => __DIR__ . '/..' . '/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelperInterface.php',
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
