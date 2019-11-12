@@ -65,7 +65,6 @@ Highcharts.chart('grafikGoal', {
 
     }]  
 });
-  
 </script>
 
 </html>
