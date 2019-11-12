@@ -4,8 +4,9 @@
 @section('Judul','Edit Master Sub-Indikator')
 @section('JudulDesc','Ini adalah halaman edit master sub-indikator dimana terdapat form untuk memperbarui data master sub-indikator.')
 @section('content')
-   <!-- Form -->
-   <div class="card shadow mb-4 w-75">
+  
+ <!-- Form -->
+ <div class="card shadow mb-4 w-75">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Sub Indikator</h6>
     </div>
@@ -35,16 +36,16 @@
               </select>
               </div>
             </div>
-          
             <div class="form-group">
               <label class="control-label col-sm-8" for="indikator">Indikator: </label>
               <div class="col-sm-10">
                  <select id="slindi" class="form-control" name="indikator" data-urlreq="{{ route('get.list.capaian.subindi') }}">
                   @foreach($fk_id_indikators as $key=>$value)
-                  <option value="{{$value->id_indikator}}"{{$value->id_indikator==$edit_pencapaian->fk_id_indikator?'selected':''}}> {{$value->indikator}} </option>
-                 </select>
+                  <option value="{{$value->id_indikator}}"{{$value->id_indikator==$edit_subindikators->fk_id_indikator?'selected':''}}> {{$value->indikator}} </option>
+                  @endforeach
+                </select>
               </div>
-            </div>
+            </div>   
             <div class="form-group">
               <label class="control-label col-sm-10" for="subindikator">Sub Indikator:</label>
               <div class="col-sm-10">

@@ -6,7 +6,9 @@ use App\Goals_model;//tambahan
 use App\Indikator_model;
 use App\Pencapaian_model;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;//n
+use Illuminate\Support\Facades\DB;
+use Response;
+
 
 class AdminController extends Controller
 {
@@ -26,6 +28,7 @@ class AdminController extends Controller
       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
       ->groupBy('subindikator')
       ->get();
+        // DD($subindi);
 
       $tahun= DB::table('t_pencapaian')
       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
@@ -38,14 +41,19 @@ class AdminController extends Controller
 
       // $indi=Pencapaian_model::find($id_indi);
 
-      $categories =[];
+      $categories=[];
       $data =[];
       $name=[];
     
       foreach ($subindi as $data_persub){
       $categories[]= $data_persub->subindikator;
+      $data[]= $data_persub->nilai;
+      $name[]= $data_persub->tahun;
       // $data[]= $indi->subindikator()->wherePivot('fk_id_m_subindikator', $data_persub->id_indi)->first();
       }
+      // dd(Response::json($categories));
+      // $d=Response::json($categories);
+
     //   foreach ($tahun as $data_persub){
     //   $name[]= $data_persub->tahun;
     //   $nilai[]=$data_persub->nilai;
@@ -68,7 +76,7 @@ class AdminController extends Controller
 //     ->with('click',json_encode($click,JSON_NUMERIC_CHECK));
     
      return view('admin.detail_grafik_indi', compact(
-                              'categories', 'name'));
+                              'categories', 'name', 'data'));
     }
 
 

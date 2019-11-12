@@ -14,4 +14,17 @@ class Indikator_model extends Model
     public $timestamps = true;
 
 
+
+      /**
+     * Method One To Many 
+     */
+    public function subindikator()
+    {
+    	return $this->hasMany(SubIndikator_model::class);
+    }
+
+    public function pencapaian()
+    {
+    	return $this->hasMany(Pencapaian_model::class);
+    }
 }

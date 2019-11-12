@@ -78,7 +78,8 @@ class sdgsSubIndikatorController extends Controller
     public function edit($id_m_subindikator)
     {
         $edit_subindikators=SubIndikator_model::findOrFail($id_m_subindikator);
-        $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
+        // $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
+        $fk_id_indikators= Indikator_model::where('fk_id_goal', $edit_subindikators->fk_id_goal)->get();
         $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
         $fk_id_goal= Goals_model::all();
         $fk_id_goals= Goals_model::pluck('nama_goal', 'id_goal');
@@ -111,9 +112,9 @@ class sdgsSubIndikatorController extends Controller
         SubIndikator_model::find($id_m_subindikator)->update([
             'subindikator' => $request->get('subindikator'),
             'waktu_pengambilan'=>  implode(", " , $request->waktu_pengambilan),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
-             'fk_id_indikator' => $request->get('fk_id_indikator'),
+             'fk_id_indikator' => $request->get('indikator'),
             'fk_id_m_sumberdata' => $request->get('fk_id_m_sumberdata'),
-            'fk_id_goal'=>$request->get('goal'),
+            'fk_id_goal'=>$request->get('goal')
 
             ]);
 
@@ -122,6 +123,7 @@ class sdgsSubIndikatorController extends Controller
             // alert()->success('Berhasil.','Data telah diubah!');
             
             return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah diubah!');
+            
     }
 
     public function destroy($id_m_subindikator)

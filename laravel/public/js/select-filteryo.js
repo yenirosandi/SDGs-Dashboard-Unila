@@ -42,7 +42,7 @@ $(document).ready(function(){
 
                 $('#slsub').empty();
 
-                $('#slsub').append('<option>Pilih Sub Indikator</option>');
+                // $('#slsub').append('<option>Pilih Sub Indikator</option>');
 
                 $.each(temp, function(key, obj) {
 

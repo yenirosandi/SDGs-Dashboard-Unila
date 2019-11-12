@@ -15,7 +15,12 @@
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
     <link rel="icon" href="{{asset('frontend/gambar/sdgs.png')}}">
+<style>
+.nav-item :hover {
 
+background-color:#8ecfed;
+}
+</style>
   </head>
   <body id="page-top">
     <!-- Page Wrapper -->
