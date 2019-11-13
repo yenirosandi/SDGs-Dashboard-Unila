@@ -8,7 +8,7 @@
 
               <div id="grafikGoal"class="col-md-8 col-xs-12 panel">
 
-              </div>
+      </div>
 
 
 
@@ -45,10 +45,10 @@ plotOptions: {
 },
 
 series: [
-//     {
-//     // name: {!!json_encode($categories)!!},
-//     // data:  [1900,2675,3900]
-// },
+    {
+    name: {!!json_encode($categories)!!},
+    data:  [1900,2675,3900]
+},
  {
     name: 'Manufacturing',
     data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]

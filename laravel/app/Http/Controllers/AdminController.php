@@ -26,7 +26,8 @@ class AdminController extends Controller
       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
       ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
-      ->groupBy('subindikator')
+      // ->groupBy(DB::raw('YEAR(tahun)'))
+      // ->orderBy(DB::raw('YEAR(tahun)'))
       ->get();
         // DD($subindi);
 
@@ -41,9 +42,10 @@ class AdminController extends Controller
 
       // $indi=Pencapaian_model::find($id_indi);
 
-      $categories=[];
+      // $categories=[];
       $data =[];
       $name=[];
+       
     
       foreach ($subindi as $data_persub){
       $categories[]= $data_persub->subindikator;
@@ -58,23 +60,8 @@ class AdminController extends Controller
     //   $name[]= $data_persub->tahun;
     //   $nilai[]=$data_persub->nilai;
     //   }
-      // dd($data);
+      // dd($categories);
 
-// $viewer = View::select(DB::raw("SUM(numberofview) as count"))
-// ->orderBy("created_at")
-// ->groupBy(DB::raw("year(created_at)"))
-// ->get()->toArray();
-// $viewer = array_column($viewer, 'count');
-
-// $click = Click::select(DB::raw("SUM(numberofclick) as count"))
-// ->orderBy("created_at")
-// ->groupBy(DB::raw("year(created_at)"))
-// ->get()->toArray();
-// $click = array_column($click, 'count');
-// return view('highchart')
-//     ->with('viewer',json_encode($viewer,JSON_NUMERIC_CHECK))
-//     ->with('click',json_encode($click,JSON_NUMERIC_CHECK));
-    
      return view('admin.detail_grafik_indi', compact(
                               'categories', 'name', 'data'));
     }
@@ -110,7 +97,7 @@ class AdminController extends Controller
 
 
           
-      $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();//sintaks ini bakalan gak kefound karena pake DB::table jadinya tambahin use ya di atas
+      $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
       return view('admin.goal_detail',
         compact('id',
           'kolomindi',
