@@ -1,7 +1,7 @@
 <html>
     <!-- // Menyiapkan data untuk chart -->
 
-      <!-- // dd(json_encode($categories));    -->
+      <!-- // dd(json_encode($dataGrafik));    -->
       
 
        <div class="row">
@@ -44,24 +44,29 @@ plotOptions: {
     }
 },
 
-series: [
-    {
-    name: {!!json_encode($categories)!!},
-    data:  [1900,2675,3900]
-},
- {
-    name: 'Manufacturing',
-    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-}, {
-    name: 'Sales & Distribution',
-    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-}, {
-    name: 'Project Development',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-}, {
-    name: 'Other',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-}],
+series: {!! json_encode($dataGrafik) !!},
+
+//
+//series: [
+
+  //  {
+  //  name: {!!json_encode($dataGrafik)!!},
+//    data:  [1900,2675,3900]
+//},
+//  {
+//     name: 'Manufacturing',
+//     data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+// }, {
+//     name: 'Sales & Distribution',
+//     data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+// }, {
+//     name: 'Project Development',
+//     data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+// }, {
+//     name: 'Other',
+//     data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+// }
+//],
 
 responsive: {
     rules: [{

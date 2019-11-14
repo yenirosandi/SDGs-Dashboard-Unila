@@ -46,13 +46,16 @@ class AdminController extends Controller
       $data =[];
       $name=[];
        
-    
-      foreach ($subindi as $data_persub){
-      $categories[]= $data_persub->subindikator;
-      $data[]= $data_persub->nilai;
-      $name[]= $data_persub->tahun;
-      // $data[]= $indi->subindikator()->wherePivot('fk_id_m_subindikator', $data_persub->id_indi)->first();
+      $dataGrafik = [];
+      foreach ($subindi as $key => $data_persub){
+        $dataGrafik[$key]['name'] = $data_persub->subindikator;
+        $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
+      //$categories[]= $data_persub->subindikator;
+      //$data[]= $data_persub->nilai;
+      //$name[]= $data_persub->tahun;
       }
+
+      
       // dd(Response::json($categories));
       // $d=Response::json($categories);
 
@@ -60,10 +63,10 @@ class AdminController extends Controller
     //   $name[]= $data_persub->tahun;
     //   $nilai[]=$data_persub->nilai;
     //   }
-      // dd($categories);
+   // return json_encode($dataGrafik);
 
      return view('admin.detail_grafik_indi', compact(
-                              'categories', 'name', 'data'));
+                              'dataGrafik', 'name', 'data'));
     }
 
 
