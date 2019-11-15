@@ -24,16 +24,16 @@
 Highcharts.chart('grafikGoal', {
 
 title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
+		text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
 },
 
 subtitle: {
-    text: 'Source: thesolarfoundation.com'
+    text: 'Indikator {!! json_encode($indi) !!}'
 },
 
 yAxis: {
     title: {
-        text: 'Number of Employees'
+        text: 'Nilai'
     }
 },
 legend: {
@@ -70,7 +70,7 @@ responsive: {
 
 });
 
-  
+
 
 </script>
 
