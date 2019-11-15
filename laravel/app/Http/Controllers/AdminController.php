@@ -26,8 +26,6 @@ class AdminController extends Controller
       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
       ->select('t_pencapaian.*','t_m_subindikator.*')
       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
-      // ->groupBy(DB::raw('YEAR(tahun)'))
-      // ->orderBy(DB::raw('YEAR(tahun)'))
       ->get();
         // DD($subindi);
 
@@ -47,32 +45,38 @@ class AdminController extends Controller
       // dd($sub);
 
       // $categories=[];
-      $data =[];
-      $name=[];
-      
-      // $dataGrafik = [];
-      // foreach ($sub as $key => $data_persub){
-      //   $dataGrafik[$key]['name'] = $data_persub->subindikator;
-      //   // $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
-      //   $dataGrafik[$key]['data']= Pencapaian_model::where('fk_id_indikator', '=', $id_indi)->pluck('nilai')->get();
-
-      // }
-      $dataGrafik = [];
+      $data = [];
+      $name = [];
+      $data_pencapaian= [];
       $nilai= [];
+      $dataGrafik = [];
       foreach ($sub as $key => $data_persub){
         $dataGrafik[$key]['name'] = $data_persub->subindikator;
-        $dataGrafik[$key]['data'] = $nilai;
-        foreach ($subindi as $key => $value){
-
-          if($data_persub->id_m_subindikator == $value->fk_id_m_subindikator){
-            $nilai[]=(int)$value->nilai;
-          }
+        // $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
+        $data_pencapaian=Pencapaian_model::where('fk_id_indikator', '=', $id_indi)->get();
+        foreach ($data_pencapaian as $index => $value){
+              if($data_persub->id_m_subindikator == $value->fk_id_m_subindikator){
+               $nilai=array_merge($nilai, [$value->nilai]);
+              }
+        $dataGrafik[$key]['data']= $nilai;
         }
+
+      }  
       
-      }
+      
+      // $dataGrafik = [];
+      // $nilai= [];
+      // foreach ($sub as $key => $data_persub){
+      //   $dataGrafik[$key]['name'] = $data_persub->subindikator;
+      //   $dataGrafik[$key]['data'] = $nilai;
+      //   foreach ($subindi as $key => $value){
 
-
-dd($dataGrafik);
+      //     if($data_persub->id_m_subindikator == $value->fk_id_m_subindikator){
+      //       $nilai[]=(int)$value->nilai;
+      //     }
+      //   }
+      
+// dd($dataGrafik);
 
       // dd(Response::json($categories));
       // $d=Response::json($categories);
@@ -84,7 +88,7 @@ dd($dataGrafik);
    // return json_encode($dataGrafik);
 
      return view('admin.detail_grafik_indi', compact(
-                              'dataGrafik', 'name', 'data'));
+                              'dataGrafik', 'name', 'data', 'data_pencapaian'));
     }
 
 
