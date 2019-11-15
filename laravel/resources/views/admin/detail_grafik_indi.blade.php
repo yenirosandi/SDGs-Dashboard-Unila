@@ -1,18 +1,25 @@
 <html>
-    <!-- // Menyiapkan data untuk chart -->
-
-      <!-- // dd(json_encode($dataGrafik));    -->
-      
+<style>
+#grafikGoal {
+	min-width: 310px;
+	max-width: 1000px;
+	height: 400px;
+	margin: 0 auto
+}</style>
 
        <div class="row">
 
-              <div id="grafikGoal"class="col-md-8 col-xs-12 panel">
+              <div id="grafikGoal">
 
       </div>
 
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 <script>
 Highcharts.chart('grafikGoal', {
 
@@ -40,38 +47,16 @@ plotOptions: {
         label: {
             connectorAllowed: false
         },
-        pointStart: 2010
+        pointStart: 2017
     }
 },
 
 series: {!! json_encode($dataGrafik) !!},
 
-//
-//series: [
-
-  //  {
-  //  name: {!!json_encode($dataGrafik)!!},
-//    data:  [1900,2675,3900]
-//},
-//  {
-//     name: 'Manufacturing',
-//     data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-// }, {
-//     name: 'Sales & Distribution',
-//     data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-// }, {
-//     name: 'Project Development',
-//     data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-// }, {
-//     name: 'Other',
-//     data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-// }
-//],
-
 responsive: {
     rules: [{
         condition: {
-            maxWidth: 500
+            maxWidth: 1000
         },
         chartOptions: {
             legend: {
@@ -84,7 +69,9 @@ responsive: {
 }
 
 });
+
   
+
 </script>
 
 

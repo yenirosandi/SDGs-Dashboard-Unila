@@ -40,22 +40,28 @@ class AdminController extends Controller
       ->get();
 // dd($tahun);
 
-      // $indi=Pencapaian_model::find($id_indi);
+      $sub=  DB::table('t_m_subindikator')
+      ->select('t_m_subindikator.*')
+      ->where('t_m_subindikator.fk_id_indikator', '=', $id_indi)
+      ->get();
+      // dd($sub);
 
       // $categories=[];
       $data =[];
       $name=[];
        
       $dataGrafik = [];
-      foreach ($subindi as $key => $data_persub){
+      foreach ($sub as $key => $data_persub){
         $dataGrafik[$key]['name'] = $data_persub->subindikator;
-        $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
-      //$categories[]= $data_persub->subindikator;
-      //$data[]= $data_persub->nilai;
-      //$name[]= $data_persub->tahun;
+        // $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
+        foreach($subindi as $key => $grafik){
+          $dataGrafik[$key]['data'] = $grafik->nilai;
+          }
       }
 
       
+// dd($dataGrafik);
+
       // dd(Response::json($categories));
       // $d=Response::json($categories);
 
