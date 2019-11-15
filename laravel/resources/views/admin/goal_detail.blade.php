@@ -74,11 +74,13 @@
                     @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
                       <td>{{$capai->nilai}}</td>
                       <td>
-                        <img src="/{{$capai->simbol_trend}}" alt="" height="25px" width="20px">
+                        <center>
+                          {!!$capai->simbol_trend!!}
+                        </center>
                       </td>
                     @else
-                    
-                    
+
+
                     @endif
                     <?php $tahun++ ?>
                   @endwhile
@@ -98,6 +100,6 @@
 
   @endforeach
 
-  
+
 
 @endsection
