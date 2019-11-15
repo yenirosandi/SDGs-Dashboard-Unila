@@ -49,21 +49,6 @@ class sdgsCapaianIndiController extends Controller
     ['thn_skr'=>$thn_skr,'no'=>$no, 'goals'=>$goals, 'master'=>$master, 'sub'=>$sub, 'trends'=>$trends, 'capai'=> $capai]);
   }
 
-  // public function getIndiList(Request $request)
-  // {
-  //   $indis=DB :: table("t_m_indikator")
-  //         ->where("fk_id_goal", $request->fk_id_goal)
-  //         ->pluck("indikator", "id_indikator");
-  //         return response()->json($indis);
-  // }
-
-  // public function getSubIndiList(Request $request)
-  // {
-  //   $subs=DB :: table("t_m_subindikator")
-  //         ->where("fk_id_indikator", $request->fk_id_indikator)
-  //         ->pluck("subindikator", "id_m_subindikator");
-  //         return response()->json($subs);
-  // }
   public function getIndi($param)
   {
     //GET THE ACCOUNT BASED ON TYPE

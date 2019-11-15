@@ -25,7 +25,8 @@ class AdminController extends Controller
       $sub=  DB::table('t_m_subindikator')
       ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
       ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-      ->select('t_m_subindikator.*','t_goals.nama_goal','t_m_indikator.indikator')
+      ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+      ->select('t_m_subindikator.*','t_goals.nama_goal','t_m_indikator.indikator', 't_m_sumberdata.*')
       ->where('t_m_subindikator.fk_id_indikator', '=', $id_indi)
       ->orderBy('t_m_subindikator.id_m_subindikator')
       ->get();
@@ -82,7 +83,7 @@ class AdminController extends Controller
         foreach ($pencapaian as $key2 => $value) {
             $nilai[]=(int)$value->nilai;
         }
-        $dataGrafik[$key]['name'] = $data_persub->subindikator;
+        $dataGrafik[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik[$key]['data'] = $nilai;
         // DD($nilai);
       }
