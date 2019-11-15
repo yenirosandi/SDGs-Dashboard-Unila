@@ -56,8 +56,9 @@ class AdminController extends Controller
         $data_pencapaian=Pencapaian_model::where('fk_id_indikator', '=', $id_indi)->get();
         foreach ($data_pencapaian as $index => $value){
               if($data_persub->id_m_subindikator == $value->fk_id_m_subindikator){
-               $nilai=array_merge($nilai, [$value->nilai]);
+               $nilai=array_merge($nilai, [(int) $value->nilai]);
               }
+              //$nilai = [rand(0,99), rand(0,99)];
         $dataGrafik[$key]['data']= $nilai;
         }
 
@@ -76,7 +77,8 @@ class AdminController extends Controller
       //     }
       //   }
       
-// dd($dataGrafik);
+dd($dataGrafik);
+//return json_encode($dataGrafik);
 
       // dd(Response::json($categories));
       // $d=Response::json($categories);
