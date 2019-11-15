@@ -47,11 +47,11 @@ plotOptions: {
         label: {
             connectorAllowed: false
         },
-        pointStart: 2017
+        pointStart:2017
     }
 },
 
-series: {!! json_encode($dataGrafik) !!},
+series: {!!json_encode($dataGrafik)!!},
 
 responsive: {
     rules: [{

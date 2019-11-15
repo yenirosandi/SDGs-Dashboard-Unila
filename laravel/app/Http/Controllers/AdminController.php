@@ -24,7 +24,7 @@ class AdminController extends Controller
 
       $subindi= DB::table('t_pencapaian')
       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-      ->select('t_pencapaian.nilai','t_pencapaian.tahun','t_m_subindikator.subindikator', 't_m_subindikator.fk_id_indikator')
+      ->select('t_pencapaian.*','t_m_subindikator.*')
       ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
       // ->groupBy(DB::raw('YEAR(tahun)'))
       // ->orderBy(DB::raw('YEAR(tahun)'))
@@ -49,18 +49,30 @@ class AdminController extends Controller
       // $categories=[];
       $data =[];
       $name=[];
-       
+      
+      // $dataGrafik = [];
+      // foreach ($sub as $key => $data_persub){
+      //   $dataGrafik[$key]['name'] = $data_persub->subindikator;
+      //   // $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
+      //   $dataGrafik[$key]['data']= Pencapaian_model::where('fk_id_indikator', '=', $id_indi)->pluck('nilai')->get();
+
+      // }
       $dataGrafik = [];
+      $nilai= [];
       foreach ($sub as $key => $data_persub){
         $dataGrafik[$key]['name'] = $data_persub->subindikator;
-        // $dataGrafik[$key]['data'] = [rand(1,100),rand(1,100),rand(1,100),rand(1,100)];
-        foreach($subindi as $key => $grafik){
-          $dataGrafik[$key]['data'] = $grafik->nilai;
+        $dataGrafik[$key]['data'] = $nilai;
+        foreach ($subindi as $key => $value){
+
+          if($data_persub->id_m_subindikator == $value->fk_id_m_subindikator){
+            $nilai[]=(int)$value->nilai;
           }
+        }
+      
       }
 
-      
-// dd($dataGrafik);
+
+dd($dataGrafik);
 
       // dd(Response::json($categories));
       // $d=Response::json($categories);
