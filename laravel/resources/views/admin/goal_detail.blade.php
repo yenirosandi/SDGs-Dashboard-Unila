@@ -50,7 +50,7 @@
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}"><a href="{{route('grafikIndi', $data_sub->id_indikator )}}" >{{$data_sub->indikator}}</a></th>
+                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafikIndi', $data_sub->id_indikator )}}"> <span style="background-color:cadetblue  ;width:30px; height:30px"><img src="{{url('img/profits.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator; ?>
               </tr>
@@ -68,7 +68,15 @@
                   <td>{{$data_sub->sumberdata}}</td>
                 @endif
                 <!-- Buat nilai pencapaian -->
+
+
+                <style>
+                  td:empty{background:grey;} /* style css3 untuk kolom kosong */
+                </style>
+
+
                 @foreach($data_capai as $capai)
+
                   <?php $tahun=2017; ?>
                   @while($tahun<=$tahun_now)
                     @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)

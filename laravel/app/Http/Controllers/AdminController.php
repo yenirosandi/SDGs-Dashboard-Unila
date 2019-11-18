@@ -82,6 +82,9 @@ class AdminController extends Controller
         // DD($pencapaian);
         foreach ($pencapaian as $key2 => $value) {
             $nilai[]=(int)$value->nilai;
+            $nilai[]=(string)$value->nilai;
+
+
         }
         $dataGrafik[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik[$key]['data'] = $nilai;

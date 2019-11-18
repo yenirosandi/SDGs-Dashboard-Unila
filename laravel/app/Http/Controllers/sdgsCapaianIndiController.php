@@ -64,11 +64,12 @@ class sdgsCapaianIndiController extends Controller
 
            }
 
-     
 
-     return Response::json($options);
 
-  }
+     return Response::json($options); 
+
+  }    
+  
 
   public function getSubIndi($param)
   {
@@ -80,6 +81,8 @@ class sdgsCapaianIndiController extends Controller
         ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
         ->select('t_m_subindikator.*','t_m_sumberdata.*')
         ->where('fk_id_indikator','=',$param)->get();
+        // dd($subs);
+
         //CREATE AN ARRAY 
       //   @foreach($sub as $data_sub)
       //   <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
@@ -97,6 +100,27 @@ class sdgsCapaianIndiController extends Controller
         return Response::json($options);
   }
 
+
+  public function getNilaiTahunLalu($param)
+  {
+
+    $tahun= DB::table('t_pencapaian')
+    ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+    ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+    ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+    ->select('t_pencapaian.*','t_m_subindikator.*')
+    ->where('tahun','=',$param)
+    ->get();
+
+    return json_encode($tahun);
+  }
+
+
+  
+  public function show($id)
+  {
+      //
+  }
 
   public function store(Request $request)
   {
@@ -124,19 +148,6 @@ class sdgsCapaianIndiController extends Controller
 
   public function edit($id_pencapaian)
   {
-    // $pencapaian_id=Pencapaian_model::all();
-    // $pencapaian=Pencapaian_model::findOrFail($id_pencapaian);
-    // $thn_skr = date('Y');
-
-    // $fk_goal=Goals_model::all();
-    // $fk_trend=Trend_model::all();
-    // $fk_master=Indikator_model::all();
-    // $fk_sub=SubIndikator_model::all();
-    // $fk_editgoals=Goals_model::findOrFail($pencapaian->fk_id_goal);
-    // $fk_edittrends=Trend_model::findOrFail($pencapaian->fk_id_trend);
-    // $fk_editmaster=Indikator_model::findOrFail($pencapaian->fk_id_indikator);
-    // $fk_editsub=SubIndikator_model::findOrFail($pencapaian->fk_id_m_subindikator);
-
     $edit_pencapaian= Pencapaian_model::findOrFail($id_pencapaian);
     $thn_skr = date('Y');
     $fk_id_goal= Goals_model::all();
@@ -175,7 +186,7 @@ class sdgsCapaianIndiController extends Controller
       // 'berkas'=>$request->get('indikator'),
 
     ]);
-    return redirect()->route('pencapaian_indikator.index')->withSuccessMessage('Data telah diubah!');
+    return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah diubah!');
   }
 
   public function destroy($id_pencapaian)

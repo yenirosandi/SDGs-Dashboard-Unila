@@ -110,6 +110,7 @@
       </div>
     </div>
   </div>
+  </div>
 
   <!-- Table -->
   <div class="card shadow mb-4">
@@ -155,13 +156,13 @@
              <td>
                 <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>
-                </a>
+                </a>Ubah
                 <form action="{{route('master_sub_indikator.destroy',$data->id_m_subindikator)}}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
                 <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
                     <i class="fas fa-trash"></i>
-                  </button>
+                  </button> Hapus
                 </form>
               </td>
            </tr>

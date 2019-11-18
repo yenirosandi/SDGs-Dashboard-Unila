@@ -49,4 +49,6 @@
                                       
 
 </nav>
-<img src="{{url('frontend/gambar/list.png')}}" alt="">
+<!-- <div class="container"> -->
+<img src="{{url('frontend/gambar/list.png')}}" style="width:10000px"alt="">
+<!-- </div> -->

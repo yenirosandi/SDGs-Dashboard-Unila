@@ -9,22 +9,28 @@ Route::get('/goalDetail/{id}','HomeController@detailGoal');
 //back-end:admin
 Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
+  Route::resource('/', 'AdminController');
   Route::get('/', 'AdminController@index');
-  Route::get('/goalDetail/{id}','AdminController@detailGoal');
+  Route::get('/goalDetail/{id}','AdminController@detailGoal')->name('goal');
   Route::get('/goalDetail/indi/{id_indi}','AdminController@linkGrafikIndi')->name('grafikIndi');
 
   //Indikator
   Route::resource('master_indikator','sdgsIndiMasterController');
   Route::resource('master_sub_indikator','sdgsSubIndikatorController');
-  Route::resource('pencapaian_indikator','sdgsCapaianIndiController');
+ 
+//  Route::resource('pencapaian_indikator','sdgsCapaianIndiController');
 
   Route::get('pencapaian_indikator/getIndiList/{param?}','sdgsCapaianIndiController@getIndi')->name('get.list.capaian.indikator');
   Route::get('pencapaian_indikator/getSubIndiList/{param?}','sdgsCapaianIndiController@getSubIndi')->name('get.list.capaian.subindi');
 
-  // Route::get('pencapaian_indikator/{id_pencapaian}/edit/getIndiList/{param}','sdgsCapaianIndiController@getIndi');
-  // Route::get('pencapaian_indikator/{id_pencapaian}/edit/getSubIndiList/{param}','sdgsCapaianIndiController@getSubIndi');
+  Route::get('pencapaian_indikator', 'sdgsCapaianIndiController@index');
 
-  // Route::get('pencapaian_indikator','sdgsCapaianIndiController@findIndiName');
+  Route::get('pencapaian_indikator/{id_pencapaian}',  ['as' => 'pencapaian_indikator.edit', 'uses' => 'sdgsCapaianIndiController@edit']);
+  Route::put('pencapaian_indikator/{id_pencapaian}/update',  ['as' => 'pencapaian_indikator.update', 'uses' => 'sdgsCapaianIndiController@update']);
+  Route::post('pencapaian_indikator',  ['as' => 'pencapaian_indikator.store', 'uses' => 'sdgsCapaianIndiController@store']);
+  Route::delete('pencapaian_indikator/{id_pencapaian}',  ['as' => 'pencapaian_indikator.destroy', 'uses' => 'sdgsCapaianIndiController@destroy']);
+
+  Route::get('pencapaian_indikator/nilaiTahunLalu','sdgsCapaianIndiController@getNilaiTahunLalu')->name('getNS');
 
   Route::resource('sumber_data','sdgsSumberDataController');
 
@@ -37,10 +43,10 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::get('profil', ['as' => 'profil.index', 'uses' => 'UserController@index']);
 
   Route::get('profil/{user}',  ['as' => 'profil.edit', 'uses' => 'UserController@edit']);
-Route::put('profil/{user}/update',  ['as' => 'profil.update', 'uses' => 'UserController@update']);
+  Route::put('profil/{user}/update',  ['as' => 'profil.update', 'uses' => 'UserController@update']);
 
-Route::get('/changePassword','UserController@showChangePasswordForm');
-Route::post('/changePassword','UserController@changePassword')->name('changePassword');
+  Route::get('/changePassword','UserController@showChangePasswordForm');
+  Route::post('/changePassword','UserController@changePassword')->name('changePassword');
 
   Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

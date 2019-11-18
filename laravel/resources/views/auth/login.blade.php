@@ -20,9 +20,10 @@
     <link href="{{asset('frontend/mosh/style.css')}}" rel="stylesheet">
 
 
-    <!--static chart-->
+
   </head>
-  <main role="main"  padding: 40px;">
+  <main role="main"  padding: 40px;>
+
     <div class="login-page">
         <div class="login-main">
         	    <div class="login-head">
@@ -47,8 +48,8 @@
                         <!-- <input type="password" name="password" class="lock" placeholder="Password" required> -->
                         
 
-                            <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                            <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" autofocus>
+                           
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,3 +85,4 @@
 </html>
 
 @endsection
+
