@@ -66,6 +66,7 @@ class AdminController extends Controller
       
       //accu nih
       $dataGrafik = [];
+      $pt=0;
       foreach ($sub as $key => $data_persub){
         $nilai=[];
         $goal=$data_persub->nama_goal;
@@ -74,14 +75,21 @@ class AdminController extends Controller
         $subdata=$data_persub->id_m_subindikator;
         $tahun=2017;
         $pencapaian= DB::table('t_pencapaian')
-        ->select('t_pencapaian.*')
+        ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+        ->select('t_pencapaian.*', 't_trends.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->get();
         // DD($pencapaian);
         foreach ($pencapaian as $key2 => $value) {
+          if($data_persub->isian=='Angka'){
             $nilai[]=(int)$value->nilai;
+          }
+          else {
+            $nilai[]=$value->poin+$pt;
+            $pt=$value->poin+$pt;
+          }
 
 
         }

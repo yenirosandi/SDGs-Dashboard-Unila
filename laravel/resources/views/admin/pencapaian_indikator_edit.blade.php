@@ -66,7 +66,7 @@
                       <?php
                       /*
                       if($key!=0){
-                          $pencapaian_fk_indi=DB::table('t_m_indikator')->select('id_indikator','indikator')->where('id_indikator',$key)->get();
+                          $pencapaian_fk_indi=DB::table('t_m_indikator')adm->select('id_indikator','indikator')->where('id_indikator',$key)->get();
                           if(count($pencapaian_fk_indi)>0){
                               foreach ($pencapaian_fk_indi as $capai_indi_master){?>
                                 <option value="{{$capai_indi_master->id_indikator}}"{{$edit_fk_id_indikators->id_indikator==$capai_indi_master->id_indikator?' selected':''}}> {{$capai_indi_master->indikator}} </option>
