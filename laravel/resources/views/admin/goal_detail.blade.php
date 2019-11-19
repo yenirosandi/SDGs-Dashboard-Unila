@@ -1,4 +1,3 @@
-@section('content')
 @extends('layout.master_admin')
 @foreach  ($goal_detail as $goal)
   @section('title')
@@ -7,10 +6,17 @@
   @section('Judul')
     SDGs {!!$goal->id_goal!!}:{!!$goal->nama_goal!!}
   @stop
+  @section('title_breadcrumb')
+  SDGs {!!$goal->id_goal!!}
+
+  @stop
+
     <!-- @section('Judul','SDGs {{$goal->id_goal}}:{{$goal->nama_goal}}') -->
   @section('JudulDesc')
     {!!$goal->deskripsi_goal!!}
   @stop
+@section('content')
+
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Form Master Indikator SDG {!!$goal->id_goal!!}</h6>

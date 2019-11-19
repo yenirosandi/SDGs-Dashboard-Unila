@@ -4,6 +4,8 @@
 @section('Judul','Master Sumber Data')
 @section('JudulDesc','Ini adalah halaman sumber data dimana admin dapat melihat, menambah, memperbarui, dan menghapus data sumber data yang telah terdaftar.')
 @section('content')
+@section('title_breadcrumb','Sumber Data')
+
   <!-- Form -->
   <div class="card shadow mb-4 w-50">
     <div class="card-header py-3">

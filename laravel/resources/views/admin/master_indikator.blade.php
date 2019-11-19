@@ -4,6 +4,8 @@
 @section('Judul','Master Indikator')
 @section('JudulDesc','Ini adalah halaman master indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data master.')
 @section('content')
+@section('title_breadcrumb','Indikator')
+
   <!-- Form -->
 
   @if (session('success_message'))

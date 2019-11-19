@@ -1,5 +1,5 @@
 @extends('layout.master_admin')
-
+@section('title_breadcrumb','Home')	
 @section('title','Dashboard Admin')
 @section('Judul','SDGs: Universitas Lampung')
 @section('JudulDesc','Terdapat 11 SDGs yang harus diperhatikan dalam suatu universitas, diantaranya:')

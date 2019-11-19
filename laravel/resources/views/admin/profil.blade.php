@@ -4,6 +4,8 @@
 @section('Judul','Profil')
 @section('JudulDesc','Profil Admin')
 @section('content')
+@section('title_breadcrumb','Profil')
+
   <!-- Form -->
   <div class="card shadow mb-4 w-50">
     <div class="card-header py-3">
