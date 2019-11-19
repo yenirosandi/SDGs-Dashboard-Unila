@@ -17,6 +17,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 1,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -26,6 +27,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 1,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -35,6 +37,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 1,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -44,6 +47,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 2,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -53,6 +57,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -62,6 +67,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -71,6 +77,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -80,6 +87,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -89,6 +97,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -98,6 +107,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -107,6 +117,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 12,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -116,6 +127,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -125,6 +137,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 4,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -134,6 +147,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 4,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -143,6 +157,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 4,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -152,6 +167,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 5,
           'fk_id_m_sumberdata'=> 4,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -161,6 +177,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 6,
           'fk_id_m_sumberdata'=> 10,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -170,6 +187,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 6,
           'fk_id_m_sumberdata'=> 10,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -179,6 +197,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 6,
           'fk_id_m_sumberdata'=> 10,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -188,6 +207,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 6,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -197,6 +217,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 6,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -206,6 +227,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 7,
           'fk_id_m_sumberdata'=> 14,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -215,6 +237,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 7,
           'fk_id_m_sumberdata'=> 15,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -224,6 +247,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 4,
           'fk_id_indikator'   => 7,
           'fk_id_m_sumberdata'=> 16,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -233,6 +257,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 8,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -242,6 +267,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 8,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -251,6 +277,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 8,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -260,6 +287,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 9,
           'fk_id_m_sumberdata'=> 14,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -269,6 +297,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 9,
           'fk_id_m_sumberdata'=> 15,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -278,6 +307,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 9,
           'fk_id_m_sumberdata'=> 16,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -287,6 +317,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 10,
           'fk_id_m_sumberdata'=> 26,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -295,6 +326,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 10,
           'fk_id_m_sumberdata'=> 17,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -304,6 +336,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 10,
           'fk_id_m_sumberdata'=> 17,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -312,6 +345,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 10,
           'fk_id_m_sumberdata'=> 17,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -321,6 +355,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 11,
           'fk_id_m_sumberdata'=> 18,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -329,6 +364,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 12,
           'fk_id_m_sumberdata'=> 18,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -338,6 +374,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -346,6 +383,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -355,6 +393,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -363,6 +402,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -372,6 +412,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -380,6 +421,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 17,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -389,6 +431,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 17,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -397,6 +440,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 5,
           'fk_id_indikator'   => 13,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -406,6 +450,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 14,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -414,6 +459,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 14,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -423,6 +469,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -431,6 +478,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -440,6 +488,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -448,6 +497,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -457,6 +507,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -465,6 +516,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -474,6 +526,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -482,6 +535,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 15,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -491,6 +545,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 16,
           'fk_id_m_sumberdata'=> 19,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -499,6 +554,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 8,
           'fk_id_indikator'   => 17,
           'fk_id_m_sumberdata'=> 20,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -508,6 +564,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 9,
           'fk_id_indikator'   => 18,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -516,6 +573,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 9,
           'fk_id_indikator'   => 19,
           'fk_id_m_sumberdata'=> 21,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -525,6 +583,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 9,
           'fk_id_indikator'   => 22,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -534,6 +593,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 9,
           'fk_id_indikator'   => 21,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -543,6 +603,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 9,
           'fk_id_indikator'   => 21,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -552,6 +613,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 9,
           'fk_id_indikator'   => 21,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -561,6 +623,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 22,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -569,6 +632,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 22,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -578,6 +642,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 22,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],[
@@ -586,6 +651,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 23,
           'fk_id_m_sumberdata'=> 14,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -595,6 +661,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 24,
           'fk_id_m_sumberdata'=> 14,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -604,6 +671,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 25,
           'fk_id_m_sumberdata'=> 14,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -613,6 +681,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 25,
           'fk_id_m_sumberdata'=> 18,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -622,6 +691,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -631,6 +701,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -640,6 +711,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -649,6 +721,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -658,6 +731,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -667,6 +741,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -676,6 +751,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -685,6 +761,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -694,6 +771,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 10,
           'fk_id_indikator'   => 26,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -703,6 +781,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 27,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -712,6 +791,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 27,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -721,6 +801,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 27,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -730,6 +811,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 28,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -739,6 +821,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 28,
           'fk_id_m_sumberdata'=> 23,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -748,6 +831,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 28,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -757,6 +841,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 28,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -766,6 +851,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 28,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -775,6 +861,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 28,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -784,6 +871,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 29,
           'fk_id_m_sumberdata'=> 27,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -793,6 +881,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -802,6 +891,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -811,6 +901,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -820,6 +911,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -829,6 +921,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -838,6 +931,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -847,6 +941,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -856,6 +951,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -865,6 +961,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 11,
           'fk_id_indikator'   => 30,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -874,6 +971,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 31,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -883,6 +981,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 31,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -892,6 +991,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 31,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -901,6 +1001,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -910,6 +1011,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -919,6 +1021,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 24,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -928,6 +1031,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -937,6 +1041,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -946,6 +1051,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -955,6 +1061,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -964,6 +1071,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -973,6 +1081,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 32,
           'fk_id_m_sumberdata'=> 1,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -982,6 +1091,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 33,
           'fk_id_m_sumberdata'=> 27,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -991,6 +1101,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 33,
           'fk_id_m_sumberdata'=> 27,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1000,6 +1111,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 12,
           'fk_id_indikator'   => 34,
           'fk_id_m_sumberdata'=> 27,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1009,6 +1121,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 35,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1018,6 +1131,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 35,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1027,6 +1141,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 35,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1036,6 +1151,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 36,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1045,6 +1161,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 37,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1054,6 +1171,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 37,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1063,6 +1181,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 37,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1072,6 +1191,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 37,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1081,6 +1201,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 13,
           'fk_id_indikator'   => 37,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1090,6 +1211,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 38,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1099,6 +1221,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 38,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1108,6 +1231,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 38,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1117,6 +1241,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1126,6 +1251,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 12,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1135,6 +1261,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1144,6 +1271,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1153,6 +1281,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 9,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1162,6 +1291,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 10,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1171,6 +1301,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 39,
           'fk_id_m_sumberdata'=> 11,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1180,6 +1311,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 18,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1189,6 +1321,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1198,6 +1331,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 28,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1207,6 +1341,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 28,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1216,6 +1351,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1225,6 +1361,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1234,6 +1371,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 40,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1243,6 +1381,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 16,
           'fk_id_indikator'   => 41,
           'fk_id_m_sumberdata'=> 3,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1252,6 +1391,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 42,
           'fk_id_m_sumberdata'=> 13,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1261,6 +1401,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 42,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1270,6 +1411,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 43,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1279,6 +1421,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 43,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1288,6 +1431,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 43,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Angka',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1297,6 +1441,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 43,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1306,6 +1451,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 43,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ],
@@ -1315,6 +1461,7 @@ class SubTableSeeder extends Seeder
           'fk_id_goal'        => 17,
           'fk_id_indikator'   => 44,
           'fk_id_m_sumberdata'=> 25,
+          'isian'             => 'Teks',
           'created_at'        => $createdDate,
           'updated_at'        => $createdDate
         ]

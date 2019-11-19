@@ -9,7 +9,7 @@ class Trend_model extends Model
     protected $table = 't_trends';
     protected $primaryKey='id_trend';
     protected $fillable = ['simbol_trend',
-                           'keterangan',
+                           'keterangan','poin',
 
 ];
 }

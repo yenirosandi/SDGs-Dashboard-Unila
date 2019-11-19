@@ -13,6 +13,7 @@ class SubIndikator_model extends Model
                             'fk_id_goal',
                             'fk_id_indikator',
                             'fk_id_m_sumberdata',
+                            'isian',
 
 
 

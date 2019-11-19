@@ -75,42 +75,63 @@
               <label class="control-label col-sm-8" for="waktu_pengambilan">Waktu Pengambilan:</label>
               <div class="col-sm-6">
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="jan" {{in_array("jan", $waktu_pengambilan)? "checked":""  }}>Jan
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Jan" {{in_array("Jan", $waktu_pengambilan)? "checked":""  }}>Jan
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="feb" {{in_array("feb", $waktu_pengambilan)? "checked":""  }}>Feb
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Feb" {{in_array("Feb", $waktu_pengambilan)? "checked":""  }}>Feb
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="mar" {{in_array("mar", $waktu_pengambilan)? "checked":""  }}>Mar
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Mar" {{in_array("Mar", $waktu_pengambilan)? "checked":""  }}>Mar
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="apr" {{in_array("apr", $waktu_pengambilan)? "checked":""  }}>Apr
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Apr" {{in_array("Apr", $waktu_pengambilan)? "checked":""  }}>Apr
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="mei" {{in_array("mei", $waktu_pengambilan)? "checked":""  }}>Mei
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Mei" {{in_array("Mei", $waktu_pengambilan)? "checked":""  }}>Mei
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="jun" {{in_array("jun", $waktu_pengambilan)? "checked":""  }}>Jun
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Jun" {{in_array("Jun", $waktu_pengambilan)? "checked":""  }}>Jun
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="jul" {{in_array("jul", $waktu_pengambilan)? "checked":""  }}>Jul
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Jul" {{in_array("Jul", $waktu_pengambilan)? "checked":""  }}>Jul
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="ags" {{in_array("ags", $waktu_pengambilan)? "checked":""  }}>Ags
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Ags" {{in_array("Ags", $waktu_pengambilan)? "checked":""  }}>Ags
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="sep" {{in_array("sep", $waktu_pengambilan)? "checked":""  }}>Sep
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Sep" {{in_array("Sep", $waktu_pengambilan)? "checked":""  }}>Sep
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="okt" {{in_array("okt", $waktu_pengambilan)? "checked":""  }}>Okt
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Okt" {{in_array("Okt", $waktu_pengambilan)? "checked":""  }}>Okt
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="nov" {{in_array("nov", $waktu_pengambilan)? "checked":""  }}>Nov
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Nov" {{in_array("Nov", $waktu_pengambilan)? "checked":""  }}>Nov
                 </label>
                 <label class="form-check-inline">
-                  <input type="checkbox" name="waktu_pengambilan[]" value="des" {{in_array("des", $waktu_pengambilan)? "checked":""  }}>Des
+                  <input type="checkbox" name="waktu_pengambilan[]" value="Des" {{in_array("Des", $waktu_pengambilan)? "checked":""  }}>Des
                 </label>
               </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <label class="control-label col-sm-8" for="waktu_pengambilan">Jenis Isian:</label>
+              <!-- <div class="col-sm-6">
+                <label class="form-check-inline">
+                  <input type="radio" name="isian[]" value="Angka" {{in_array("Angka", $waktu_pengambilan)? "checked":""  }}>Angka
+                </label>
+                <label class="form-check-inline">
+                  <input type="radio" name="isian[]" value="Teks" {{in_array("Teks", $waktu_pengambilan)? "checked":""  }}>Teks
+                </label>
+              </div> -->
+              <div class="col-sm-6">
+                <label class="form-check-inline">        
+              @if ($edit_subindikators->isian == 'Angka')
+                  <input type="radio" name="isian" value="Angka" checked> Angka<br>
+                  <input type="radio" name="isian" value="Teks"> Teks
+                @else
+                <input type="radio" name="isian" value="Angka" > Angka<br>
+                  <input type="radio" name="isian" value="Teks"checked> Teks
+                @endif           
             </div>
             <br>
               <div class="form-group">

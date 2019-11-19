@@ -31,12 +31,18 @@ class sdgsSubIndikatorController extends Controller
         return view('admin.master_sub_indikator', compact('no', 'fk_id_indikators', 'fk_sumberdatas', 'datas','join', 'goals'));
     }
 
-    public function create()
-    {
-        $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
-        $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
-        return view('admin.master_sub_indikator', compact('fk_id_indikators', 'fk_sumberdatas'));
+    // public function create()
+    // {
+    //     // $fk_id_indikators= Indikator_model::pluck ('indikator', 'id_indikator');
+    //     // $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
+    //     // return view('admin.master_sub_indikator', compact('fk_id_indikators', 'fk_sumberdatas'));
+    //     return view('admin.master_sub_indikator');
+    // }
 
+    protected function create()
+    {
+
+        return view('admin.master_sub_indikator');
     }
 
     public function store(Request $request)
@@ -47,6 +53,7 @@ class sdgsSubIndikatorController extends Controller
         $check->fk_id_goal = $request->fk_id_goal;
         $check->fk_id_indikator = $request->fk_id_indikator;
         $check->fk_id_m_sumberdata = $request->fk_id_m_sumberdata;
+        $check->isian =implode(", ",$request->isian);  
 
         $check->save();
         // $subindikator=$request->subindikator;
@@ -94,6 +101,8 @@ class sdgsSubIndikatorController extends Controller
         $getId= $id_m_subindikator;
         $finds = SubIndikator_model::where('id_m_subindikator', $id_m_subindikator)->first();
         $waktu_pengambilan= explode(", ", $finds->waktu_pengambilan);
+        $isian= explode(", ", $finds->isian);
+        // dd($isian);
         return view('admin.master_sub_indikator_edit',
                     compact ('edit_subindikators',
                             'fk_id_indikators',
@@ -101,7 +110,7 @@ class sdgsSubIndikatorController extends Controller
                             'edit_fk_indikators',
                             'edit_fk_sumberdatas',
                             'waktu_pengambilan',
-                            'getId'
+                            'getId','isian'
                             ));
 
 
@@ -114,7 +123,10 @@ class sdgsSubIndikatorController extends Controller
             'waktu_pengambilan'=>  implode(", " , $request->waktu_pengambilan),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
              'fk_id_indikator' => $request->get('indikator'),
             'fk_id_m_sumberdata' => $request->get('fk_id_m_sumberdata'),
-            'fk_id_goal'=>$request->get('goal')
+            'fk_id_goal'=>$request->get('goal'),
+            // 'isian'=>  implode(", " , $request->isian),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
+            'isian'=>  $request->get('isian'),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
+
 
             ]);
 

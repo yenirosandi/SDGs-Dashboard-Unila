@@ -59,6 +59,7 @@
               </select>
             </div>
           </div>
+          <br>
             <div class="form-group">
               <label class="control-label col-sm-10" for="waktu_pengambilan">Waktu Pengambilan:</label>
               <div class="col-sm-6">
@@ -66,45 +67,57 @@
                         <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jan" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Jan
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Feb" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Feb
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Feb" @if(is_array(old('waktu_pengambilan')) && in_array(2, old('waktu_pengambilan'))) checked @endif> Feb
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Mar" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Mar
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Mar" @if(is_array(old('waktu_pengambilan')) && in_array(3, old('waktu_pengambilan'))) checked @endif> Mar
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Apr" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Apr
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Apr" @if(is_array(old('waktu_pengambilan')) && in_array(4, old('waktu_pengambilan'))) checked @endif> Apr
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Mei" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Mei
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Mei" @if(is_array(old('waktu_pengambilan')) && in_array(5, old('waktu_pengambilan'))) checked @endif> Mei
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jun" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Jun
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jun" @if(is_array(old('waktu_pengambilan')) && in_array(6, old('waktu_pengambilan'))) checked @endif> Jun
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jul" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Jul
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Jul" @if(is_array(old('waktu_pengambilan')) && in_array(7, old('waktu_pengambilan'))) checked @endif> Jul
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Ags" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Ags
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Ags" @if(is_array(old('waktu_pengambilan')) && in_array(8, old('waktu_pengambilan'))) checked @endif> Ags
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Sep" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Sep
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Sep" @if(is_array(old('waktu_pengambilan')) && in_array(9, old('waktu_pengambilan'))) checked @endif> Sep
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Okt" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Okt
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Okt" @if(is_array(old('waktu_pengambilan')) && in_array(10, old('waktu_pengambilan'))) checked @endif> Okt
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Nov" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Nov
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Nov" @if(is_array(old('waktu_pengambilan')) && in_array(11, old('waktu_pengambilan'))) checked @endif> Nov
                     </label>
                     <label class="form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Des" @if(is_array(old('waktu_pengambilan')) && in_array(1, old('waktu_pengambilan'))) checked @endif> Des
+                        <input class="form-check-input" type="checkbox" name="waktu_pengambilan[]" value="Des" @if(is_array(old('waktu_pengambilan')) && in_array(12, old('waktu_pengambilan'))) checked @endif> Des
                     </label>
-              </div><br>
+              </div>
+              <br>
+              <div class="form-group">
+              <label class="control-label col-sm-10" for="isian">Jenis Isian:</label>
+              <div class="col-sm-6">
+                    <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="isian[]" value="Angka" @if(is_array(old('isian')) && in_array(1, old('isian'))) checked @endif> Angka
+                    </label>
+                    <label class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="isian[]" value="Teks" @if(is_array(old('isian')) && in_array(2, old('isian'))) checked @endif> Teks
+                    </label>
+              </div>
+              </div>
+              <br>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Tambahkan</button>
               </div>
             </div>
-
           </form>
         </div>
       </div>
@@ -128,6 +141,7 @@
               <th>Sub Indikator</th>
               <th>Sumber Data</th>
               <th>Waktu Pengambilan</th>
+              <th>Isian</th>
               <th>Aksi</th>
             </tr>
           </thead>
@@ -152,6 +166,9 @@
               {{$data->sumberdata}}</td>
              <td>
                {{$data->waktu_pengambilan}}
+             </td>
+             <td>
+               {{$data->isian}}
              </td>
              <td>
                 <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">

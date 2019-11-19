@@ -30,6 +30,8 @@ class CreateMasterSubindikatorTable extends Migration
             $table->foreign('fk_id_m_sumberdata')
                   ->references('id_m_sumberdata')->on('t_m_sumberdata')
                   ->onDelete('cascade')->onUpdate('cascade');
+            $table->string('isian')->nullable();
+
 
             // $table->unique(['id_m_subindikator', 'fk_id_indikator']);
 
