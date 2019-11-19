@@ -7,11 +7,6 @@
 @section('title_breadcrumb','Home')	
 
 
-<main role="main" style="background-color:#D3D3D3; padding: 40px;">
-
-<div class="container" style=" border-radius: 30px; padding: 50px 80px 80px 80px; background: #FFFFFF;   box-shadow: 5px 10px 18px #888888;">
-
-
 SUSTAINABLE DEVELOPMENT GOALS <hr>
       <!-- ***** Preloader Start ***** -->
       <div id="preloader">
@@ -22,12 +17,11 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
     <section class="mosh-portfolio-area section_padding_100_0 clearfix">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <!-- <div class="col-12">
                     <div class="section-heading text-center">
-                        <p>Our Work</p>
-                        <h2>Disini Grafik</h2>
+
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 

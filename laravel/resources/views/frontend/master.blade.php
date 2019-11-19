@@ -34,6 +34,10 @@
                 <i class="fa fa-dashboard"></i> {{ date('d M Y')}} / @yield('title_breadcrumb')
             </li>
         </ol>
+        <main role="main" style="background-color:#D3D3D3; padding: 40px;">
+
+        <div class="container" style=" border-radius: 30px; padding: 50px 50px 50px 50px; background: #FFFFFF;   box-shadow: 5px 10px 18px #888888;">
+
    <!-- <div class="container"> -->
       @yield('content')
 
