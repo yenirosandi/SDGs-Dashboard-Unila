@@ -47,27 +47,35 @@ class HomeController extends Controller
 
       //accu nih
       $dataGrafik = [];
+      $pt=0;
       foreach ($sub as $key => $data_persub){
         $nilai=[];
+        $tahun=[];
         $goal=$data_persub->nama_goal;
         $indi=$data_persub->indikator;
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
-        $tahun=2017;
+        // $tahun=2017;
         $pencapaian= DB::table('t_pencapaian')
         ->select('t_pencapaian.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->groupBy('tahun')
         ->get();
         // DD($pencapaian);
         foreach ($pencapaian as $key2 => $value) {
+          if($data_persub->isian=='Angka'){
             $nilai[]=(int)$value->nilai;
-
-
+          }
+          else {
+            $nilai[]=$value->poin+$pt;
+            $pt=$value->poin+$pt;
+          }
         }
         $dataGrafik[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik[$key]['data'] = $nilai;
+        $dataGrafik[$key]['categories'] = $tahun;
         // DD($nilai);
       }
       // dd($dataGrafik);

@@ -94,7 +94,7 @@
 
                 <div class="col-sm-5 md-form amber-textarea active-amber-textarea">
                   <center>
-                  <a href="{{route('changePassword')}}"class="btn btn-primary pull-right">Edit Password</a>
+                  <a href="{{route('password.edit')}}"class="btn btn-primary pull-right">Edit Password</a>
                 </center>
                     </div>
                   </div>

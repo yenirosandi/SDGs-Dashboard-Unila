@@ -13,7 +13,7 @@
         padding: 7px;
 		  }
 	  </style>
-    <img src="http://sdgcenter.unila.ac.id/wp-content/uploads/2019/04/LOGO.png" width="20%">
+    <img src="{{url('img/logo-sdgsunila.png')}}" width="20%">
     <br>
     <h4>SUMBER DATA: {{$sumberdata->sumberdata}}</h4>
     Berikut adalah list data metrik SDGs untuk sumber data dari {{$sumberdata->sumberdata}}:

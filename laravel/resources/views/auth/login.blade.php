@@ -33,17 +33,22 @@
                     <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                        <div class="form-group row">    
-                            <!-- <input type="text" name="username" placeholder="nip/username" required> -->
-                            <input id="email" type="email" placeholder="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <div class="form-group row">
+                            <!-- <label for="login" class="col-sm-4 col-form-label text-md-right">
+                                {{ __('Username or Email') }}
+                            </label> -->
+                        
+                                <input id="login" type="text" placeholder="Username / Email"
+                                    class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
+                                    name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
+                        
+                                @if ($errors->has('username') || $errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('username') ?: $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
 
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                         </div>
-
                         <div class="form-group row">   
                         <!-- <input type="password" name="password" class="lock" placeholder="Password" required> -->
                         
@@ -58,7 +63,7 @@
                         </div>
                         
                         
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
@@ -69,14 +74,14 @@
                                 </div>
                             </div>
                         </div>
-                        
+                         -->
                         
                         <input type="submit" name="Login" value="Login">
-                                    <h3>Lupa password? @if (Route::has('password.request'))
+                                    <!-- <h3>Lupa password? @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Klik Disini!') }}
-                                    </a>
-                                @endif</h3>
+                                    </a> -->
+                                <!-- @endif</h3> -->
                     </form>
     		    </div>
         </div>

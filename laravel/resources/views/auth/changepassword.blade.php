@@ -25,7 +25,7 @@
             </div>
             @endif
 
-            <form class="form-horizontal" method="POST" action="{{ route('changePassword') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('password.edit') }}">
             {{ csrf_field() }}
             
             <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">

@@ -1,12 +1,26 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GoalsTableSeeder extends Seeder
 {
     public function run()
     {
         DB::table('t_goals')->insert([
+          [
+            'id_goal'=>'1',
+            'nama_goal'=>'Menghapus Kemiskinan',
+            'deskripsi_goal'=>'Goal 1 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki salah satu tujuan utama MDGs, 
+            kembali ditetapkan sebagai tujuan utama dalam TPB. Selain karena kemiskinan dan kelaparan masih sebagai problem dunia, penghapusan kemiskinan diarahkan untuk menjamin keberlanjutan capaian MDGs. ',
+            'gambar'=>'img/sdgs/1.png',
+          ],
+          [
+            'id_goal'=>'2',
+            'nama_goal'=>'Mengakhiri Kelaparan',
+            'deskripsi_goal'=>'Goal 2 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan menghilangkan kelaparan, mencapai ketahanan pangan dan gizi yang baik, serta meningkatkan pertanian berkelanjutan',
+            'gambar'=>'img/sdgs/2.png',
+          ],
           [
             'id_goal'=>'3',
             'nama_goal'=>'Kesehatan yang Baik dan Kesejahteraan',
@@ -27,6 +41,18 @@ class GoalsTableSeeder extends Seeder
             'deskripsi_goal'=>'Goal 5 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan mencapai kesetaraan gender dan memberdayakan semua perempuan dan anak perempuan.
                                SDGs dalam universitas berfokus pada penelitian universitas tentang studi gender, kebijakan mereka tentang kesetaraan gender dan komitmen mereka untuk merekrut dan mempromosikan perempuan. SDG ini bukan berarti mengungkapkan secara eksplisit mendukung perempuan, namun kita tidak bisa berharap untuk mengembangkan dunia secara berkelanjutan jika kebutuhan lebih dari separuh populasinya tidak terpenuhi.',
             'gambar'=>'img/sdgs/5.png',
+          ],
+          [
+            'id_goal'=>'6',
+            'nama_goal'=>'Akses Air Bersih dan Sanitasi',
+            'deskripsi_goal'=>'Goal 6 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan menjamin ketersediaan serta pengelolaan air bersih dan sanitasi yang berkelanjutan untuk semua.',
+            'gambar'=>'img/sdgs/6.png',
+          ],
+          [
+            'id_goal'=>'7',
+            'nama_goal'=>'Energi Bersih dan Terjangkau',
+            'deskripsi_goal'=>'Goal 7 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan menjamin akses energi yang terjangkau, andal, berkelanjutan, dan modern untuk semua lapisan masyarakat.',
+            'gambar'=>'img/sdgs/7.png',
           ],
           [
             'id_goal'=>'8',
@@ -69,6 +95,18 @@ class GoalsTableSeeder extends Seeder
             'deskripsi_goal'=>'Goal 13 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan mengambil aksi segera untuk memerangi perubahan iklim dan dampaknya karena perubahan iklim adalah tantangan global yang memengaruhi setiap orang.
                                SDGs dalam universitas berfokus pada mengeksplorasi penelitian universitas tentang perubahan iklim, penggunaan energi dan persiapan untuk menghadapi konsekuensi dari perubahan iklim.',
             'gambar'=>'img/sdgs/13.png',
+          ],
+          [
+            'id_goal'=>'14',
+            'nama_goal'=>'Menjaga Ekosistem Laut',
+            'deskripsi_goal'=>'Goal 14 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan melestarikan dan memanfaatkan secara berkelanjutan sumber daya kelautan dan samudera untuk pembangunan berkelanjutan.',
+            'gambar'=>'img/sdgs/14.png',
+          ],
+          [
+            'id_goal'=>'15',
+            'nama_goal'=>'Menjaga Ekosistem Darat',
+            'deskripsi_goal'=>'Goal 15 dalam Tujuan Pembangunan Berkelanjutan (TPB) atau yang dikenal dengan sebutan SDGs memiliki tujuan melindungi, merestorasi dan meningkatkan pemanfaatan berkelanjutan eksosistem daratan, mengelola hutan secara lestari, menghentikan penggurunan, memulihkan degradasi lahan, serta menghentikan kehilangan keanekargaman hayati.',
+            'gambar'=>'img/sdgs/15.png',
           ],
           [
             'id_goal'=>'16',

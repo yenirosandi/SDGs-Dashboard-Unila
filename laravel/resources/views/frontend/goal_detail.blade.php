@@ -50,7 +50,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafikIndi', $data_sub->id_indikator )}}"> <span style="background-color:cadetblue  ;width:30px; height:30px"><img src="{{url('img/profits.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
+                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafik', $data_sub->id_indikator )}}"> <span style="background-color:cadetblue  ;width:30px; height:30px"><img src="{{url('img/profits.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator; ?>
               </tr>
