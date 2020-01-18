@@ -90,7 +90,8 @@ class HomeController extends Controller
       $tahun_now=date('Y');
       $indikator='';
       $subindi='';
-      $kolomtahun=$tahun_now-$tahun+2;
+      $kurang=$tahun_now-$tahun;
+      $kolomtahun=$kurang+$kurang;
       // dd($kolomtahun);
       $kolomindi=$kolomtahun+5;
       $data=DB::table('t_m_subindikator')

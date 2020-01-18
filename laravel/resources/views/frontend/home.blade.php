@@ -8,22 +8,10 @@
 
 
 SUSTAINABLE DEVELOPMENT GOALS <hr>
-      <!-- ***** Preloader Start ***** -->
-      <div id="preloader">
-        <div class="mosh-preloader"></div>
-    </div>
+
 
     <!-- ***** Portfolio Area Start ***** -->
     <section class="mosh-portfolio-area section_padding_100_0 clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="col-12">
-                    <div class="section-heading text-center">
-
-                    </div>
-                </div> -->
-            </div>
-        </div>
 
         <div class="mosh-portfolio">
             <!-- Single gallery Item Start -->
