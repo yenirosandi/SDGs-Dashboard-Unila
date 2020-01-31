@@ -29,7 +29,7 @@
           <div class="row">
 
 
-              <img width="300px" height ="300px" src="/{{$goal->gambar}}">
+              <img width="35%"; max-width: 300px; height: auto; src="/{{$goal->gambar}}">
           </div>
 
 

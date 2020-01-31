@@ -19,6 +19,12 @@ class AdminController extends Controller
       return view('admin.index', compact('goals'));
     }
 
+    // public function navbar($id_goal)
+    // {
+    //   $goals= Goals_model::all();
+    //   return view('layout.master_admin', compact('goals'));
+    // }
+
     public function  linkGrafikIndi($id_indi)
     {
 
@@ -109,7 +115,9 @@ class AdminController extends Controller
       $tahun_now=date('Y');
       $indikator='';
       $subindi='';
-      $kolomtahun=$tahun_now-$tahun+2;
+      $kurang=$tahun_now-$tahun;
+      $kolomtahun=$kurang+$kurang;
+      // $kolomtahun=$tahun_now-$tahun+2;
       // dd($kolomtahun);
       $kolomindi=$kolomtahun+5;
       $data=DB::table('t_m_subindikator')

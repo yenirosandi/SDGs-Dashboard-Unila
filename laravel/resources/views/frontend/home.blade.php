@@ -9,14 +9,11 @@
 
 SUSTAINABLE DEVELOPMENT GOALS <hr>
 
-
-    <!-- ***** Portfolio Area Start ***** -->
-    <section class="mosh-portfolio-area section_padding_100_0 clearfix">
-
         <div class="mosh-portfolio">
-            <!-- Single gallery Item Start -->
+
             @forelse($goals as $goal) 
             <div class="single_gallery_item gd">
+
             <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary ">
              <img src="{{$goal->gambar}}" alt="">
              </a>     
@@ -30,15 +27,16 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         
                 </div>
                 </div> -->
+            
             </div> 
+
             @empty
                     <h3>Nothing</h3>
             @endforelse
-           
+            <img src="{{asset('img/sdgs/sds.png')}}" alt="">
 
         </div>
-    </section>
-    <!-- ***** Portfolio Area End ***** -->
+
 
 </main>
 

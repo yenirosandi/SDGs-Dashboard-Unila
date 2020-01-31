@@ -19,9 +19,9 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 <img src="/{{$goal->gambar}}" style="width:225px; height:225px;"class="card-img">
             </div>
         </div>
-      
-        <div class="col-md-8 col-md-offset-1"> 
-         <h2><?php echo ucwords($goal->nama_goal); ?></h2>
+        <div style="width: 0px; height: 225px; border: 1px #000 solid;"></div>
+        <div class="col-md-8 col-md-offset-1">
+            <h2><?php echo ucwords($goal->nama_goal); ?></h2>
             <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}}</p>
         </div>
 

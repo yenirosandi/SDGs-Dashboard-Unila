@@ -19,6 +19,7 @@ class CreateGoalsTable extends Migration
             $table->string('nama_goal');
             $table->longtext('deskripsi_goal');
             $table->string('gambar');
+            $table->string('icon');
         });
     }
 

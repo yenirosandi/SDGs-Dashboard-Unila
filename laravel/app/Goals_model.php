@@ -10,7 +10,7 @@ class Goals_model extends Model
     protected $primaryKey='id_goal';
     protected $fillable = ['nama_goal',
                             'deskripsi_goal',
-                            'gambar'
+                            'gambar', 'icon'
 ];
 public $incrementing = false;
 

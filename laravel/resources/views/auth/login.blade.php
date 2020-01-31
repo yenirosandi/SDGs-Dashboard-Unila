@@ -147,9 +147,6 @@
         <form method="POST" action="{{ route('login') }}" class="login-form">
         @csrf
 
-        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-
                         <div class="form-group row">
                                 <input id="login" type="text" placeholder="Username / Email"
                                     class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
@@ -164,7 +161,6 @@
                         </div> 
                         <div class="form-group row">   
                         <!-- <input type="password" name="password" class="lock" placeholder="Password" required> -->
-                        
 
                             <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" autofocus>
                            
