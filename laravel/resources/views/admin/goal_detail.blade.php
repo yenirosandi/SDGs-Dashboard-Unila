@@ -19,7 +19,7 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Form Master Indikator SDG {!!$goal->id_goal!!}</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Data SDG {!!$goal->id_goal!!}</h6>
     </div>
     <div class="card-body">
       <div class="card-body">
@@ -56,7 +56,7 @@
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafikIndi', $data_sub->id_indikator )}}"> <span style="background-color:cadetblue  ;width:30px; height:30px"><img src="{{url('img/profits.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
+                    <th style="background-color:#e8f1ff;" colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafikIndi', $data_sub->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/bars-chart.png')}}" style="width:20px;" alt="">)</span></a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator; ?>
               </tr>
@@ -82,7 +82,6 @@
 
 
                 @foreach($data_capai as $capai)
-
                   <?php $tahun=2017; ?>
                   @while($tahun<=$tahun_now)
                     @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
@@ -93,15 +92,13 @@
                         </center>
                       </td>
                     @else
-
-
                     @endif
                     <?php $tahun++ ?>
                   @endwhile
-                @endforeach
-                @endforeach
-              </tr>
 
+              </tr>
+              @endforeach
+              @endforeach
 
 
             </tbody>
