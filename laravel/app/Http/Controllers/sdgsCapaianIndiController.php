@@ -124,25 +124,57 @@ class sdgsCapaianIndiController extends Controller
 
   public function store(Request $request)
   {
-    $tahun=$request->tahun;
-    $id_goal=$request->goal;
-    $id_indikator=$request->indikator;
-    $id_sub=$request->sub;
-    $id_trend=$request->trend;
-    $nilai=$request->nilai;
-    $keterangan=$request->keterangan;
-    // $berkas=$request->berkas;
 
-    $pencapaian=new \App\Pencapaian_model;
-    $pencapaian->tahun=$tahun;
-    $pencapaian->fk_id_goal=$id_goal;
-    $pencapaian->fk_id_indikator=$id_indikator;
-    $pencapaian->fk_id_m_subindikator=$id_sub;
-    $pencapaian->fk_id_trend=$id_trend;
-    $pencapaian->nilai=$nilai;
-    $pencapaian->keterangan=$keterangan;
-    // $pencapaian->berkas=$berkas;
-    $pencapaian->save();
+    $messages = [
+      'required' => ':attribute harus diisi.',
+      // 'tahun.required' => 'Tahun data pencapaian harus dipilih',
+      // 'fk_id_goal.required' => 'Goal harus dipilih',
+      // 'fk_id_indikator.required' => 'Indikator harus dipilih',
+      // 'fk_id_m_subindikator.required' => 'Sub Indikator harus dipilih',
+      // 'nilai.required' => 'Nilai harus diisi',
+      // 'fk_id_trend.required' => 'Trend harus dipilih',
+      'min' => ':attribute harus diisi minimal :min',
+      'max' => ':attribute harus diisi maksimal :max ',
+    ];
+   
+  $this->validate($request,[
+      'tahun' => 'required',
+      'goal' => 'required',
+      'indikator' => 'required',
+      'sub'=> 'required',
+      'nilai' => 'required',
+      'trend'=> 'required'
+
+  ],$messages);
+
+  Pencapaian_model::create([
+    'tahun' => $request->get('tahun'),
+    'fk_id_goal' => $request->get('goal'),
+    'fk_id_indikator' => $request->get('indikator'),
+    'fk_id_m_subindikator' => $request->get('sub'),
+    'fk_id_trend' => $request->get('trend'),
+    'nilai' => $request->get('nilai'),
+    'keterangan' => $request->get('keterangan'),
+]);
+    // $tahun=$request->tahun;
+    // $id_goal=$request->goal;
+    // $id_indikator=$request->indikator;
+    // $id_sub=$request->sub;
+    // $id_trend=$request->trend;
+    // $nilai=$request->nilai;
+    // $keterangan=$request->keterangan;
+    // // $berkas=$request->berkas;
+
+    // $pencapaian=new \App\Pencapaian_model;
+    // $pencapaian->tahun=$tahun;
+    // $pencapaian->fk_id_goal=$id_goal;
+    // $pencapaian->fk_id_indikator=$id_indikator;
+    // $pencapaian->fk_id_m_subindikator=$id_sub;
+    // $pencapaian->fk_id_trend=$id_trend;
+    // $pencapaian->nilai=$nilai;
+    // $pencapaian->keterangan=$keterangan;
+    // // $pencapaian->berkas=$berkas;
+    // $pencapaian->save();
     return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah disimpan!');
   }
 
@@ -175,6 +207,22 @@ class sdgsCapaianIndiController extends Controller
 
   public function update(Request $request, $id_pencapaian)
   {
+
+      $messages = [
+        'required' => ':attribute harus diisi.',
+        'min' => ':attribute harus diisi minimal :min',
+        'max' => ':attribute harus diisi maksimal :max ',
+    ];
+    
+    $this->validate($request,[
+      'tahun' => 'required',
+      'goal' => 'required',
+      'indikator' => 'required',
+      'sub'=> 'required',
+      'nilai' => 'required',
+      'trend'=> 'required'
+    ],$messages);
+
     Pencapaian_model::find($id_pencapaian)->update([
       'fk_id_goal'=>$request->get('goal'),
       'fk_id_indikator'=>$request->get('indikator'),

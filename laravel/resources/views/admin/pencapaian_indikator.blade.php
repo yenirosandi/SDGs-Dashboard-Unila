@@ -16,6 +16,19 @@
   <div class="card-body">
     <div class="card-body">
       <div class="table-responsive">
+
+      <!-- {{-- menampilkan error validasi --}} -->
+                            @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+
+        
         <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
           @csrf
           <div class="form-group">
@@ -57,20 +70,20 @@
             <div class="form-row">
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-pencil-alt prefix"></i>
-                <label for="form22">Nilai</label>
-                <textarea name="nilai" id="form22" class="md-textarea form-control" rows="3"></textarea>
+                <label for="nilai">Nilai</label>
+                <textarea name="nilai" id="nilai" class="md-textarea form-control" rows="3" >{{ old('nilai') }}</textarea>
               </div>
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
-                <label for="form22">Nilai Sebelumnya</label>
-                <textarea id="form22" class="md-textarea form-control" rows="3" disabled ></textarea>
+                <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
+                <textarea id="nilai_sebelumnya" class="md-textarea form-control" rows="3" disabled ></textarea>
               </div>
             </div>
             </div><br>
             <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
               <i class="fas fa-pencil-alt prefix"></i>
-              <label for="form22">Keterangan</label>
-              <textarea name="keterangan" id="form22" class="md-textarea form-control" rows="2"></textarea>
+              <label for="keterangan">Keterangan</label>
+              <textarea name="keterangan" id="keterangan" class="md-textarea form-control" rows="2" >{{ old('keterangan') }}</textarea>
             </div>
           </div>
           <label class="control-label col-sm-8" for="trend">Trend:</label>

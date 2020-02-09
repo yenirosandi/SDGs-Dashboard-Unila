@@ -13,6 +13,16 @@
     <div class="card-body">
       <div class="card-body">
         <div class="table-responsive">
+                                  <!-- {{-- menampilkan error validasi --}} -->
+                                  <!-- @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif -->
           <form method="post" class="form-horizontal" action="{{route('master_sub_indikator.update',$edit_subindikators->id_m_subindikator)}}">
             {{ csrf_field() }}
             {{ method_field('put') }}
@@ -49,7 +59,7 @@
             <div class="form-group">
               <label class="control-label col-sm-10" for="subindikator">Sub Indikator:</label>
               <div class="col-sm-10">
-                <input value="{{$edit_subindikators->subindikator}}" name="subindikator" type="text" class="form-control" required>
+                <input value="{{$edit_subindikators->subindikator}}" name="subindikator" type="text" class="form-control" required oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
               </div>
             </div>
             <div class="form-group">
