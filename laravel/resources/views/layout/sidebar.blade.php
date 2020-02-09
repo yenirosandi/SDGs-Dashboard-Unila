@@ -15,7 +15,7 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
         </li>
-                          
+
         <!-- Divider -->
         <hr class="sidebar-divider">
         <!-- Heading -->
@@ -23,13 +23,13 @@
           SDGs
         </div>
         <!-- SDGs Goals -->
-          <?php 
+          <?php
           $goals=DB::table('t_goals')->get();
         ?>
         @foreach($goals as $goal)
         <li class="nav-item">
           <a class="nav-link" href="{{url('admin/goalDetail', $goal->id_goal)}}">
-            <img src="{{$goal->icon}}" alt=" SDG {{$goal->id_goal}}" width="20px">
+            <img src="{{asset($goal->icon)}}" alt=" SDG {{$goal->id_goal}}" width="20px">
             <span>SDG {{$goal->id_goal}}</span></a>
         </li>
         @endforeach
