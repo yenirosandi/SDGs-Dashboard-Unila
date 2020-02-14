@@ -95,10 +95,10 @@
                     @endif
                     <?php $tahun++ ?>
                   @endwhile
-
+                  @endforeach
+                  @endforeach
               </tr>
-              @endforeach
-              @endforeach
+
 
 
             </tbody>

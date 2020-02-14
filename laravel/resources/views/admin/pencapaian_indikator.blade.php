@@ -3,36 +3,39 @@
 @section('title','Pencapaian Indikator SDGs')
 @section('Judul','Pencapaian Indikator')
 @section('JudulDesc','Ini adalah halaman pencapaian indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data Pencapaian.')
-
+@section('content')
 @section('title_breadcrumb','Pencapaian')
 
-@section('content')
+
 
 <!-- Form -->
 <div class="card shadow mb-4 w-75">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Form Pencapaian Indikator</h6>
-    </div>
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Form Pencapaian Indikator</h6>
+  </div>
+  <div class="card-body">
     <div class="card-body">
-        <div class="card-body">
-            <div class="table-responsive">
+      <div class="table-responsive">
+
       <!-- {{-- menampilkan error validasi --}} -->
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+                            @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+
+
         <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
-            @csrf
-            <div class="form-group">
-                <label class="control-label col-sm-8" for="tahun">Tahun:</label>
-                    <div class="col-sm-4">
-                        <select id="tahun" class="form-control"name="tahun">
-                        <option value="">Pilih tahun</option>
+          @csrf
+          <div class="form-group">
+            <label class="control-label col-sm-8" for="tahun">Tahun:</label>
+            <div class="col-sm-4">
+              <select class="form-control"name="tahun">
+                <option value="">Pilih tahun</option>
                   <?php
                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
                   ?>
@@ -73,7 +76,7 @@
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
                 <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
-                <h1 id="nilai_sebelumnya">0</h1>
+                <textarea id="nilai_sebelumnya" class="md-textarea form-control" rows="3" disabled ></textarea>
               </div>
             </div>
             </div><br>
