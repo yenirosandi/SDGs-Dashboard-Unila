@@ -28,7 +28,7 @@
                             </div>
                             @endif
 
-        
+
         <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
           @csrf
           <div class="form-group">
@@ -75,15 +75,10 @@
               </div>
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
-<<<<<<< HEAD
                 <label for="form22">Nilai Sebelumnya</label>
                 <textarea id="nilai_sebelumnya" nama="nilai_sebelumnya" class="md-textarea form-control" rows="3" disabled >
 
                 </textarea>
-=======
-                <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
-                <textarea id="nilai_sebelumnya" class="md-textarea form-control" rows="3" disabled ></textarea>
->>>>>>> 910c8b4108726c5f0a721e8f92006c167db9082d
               </div>
             </div>
             </div><br>
