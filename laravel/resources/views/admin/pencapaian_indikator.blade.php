@@ -21,7 +21,7 @@
           <div class="form-group">
             <label class="control-label col-sm-8" for="tahun">Tahun:</label>
             <div class="col-sm-4">
-              <select class="form-control"name="tahun">
+              <select id="sltahun" class="form-control"name="tahun" data-urlreq="{{ route('get.list.capaian.nilaiSebelumnya') }}">
                 <option value="">Pilih tahun</option>
                   <?php
                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
@@ -63,7 +63,9 @@
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
                 <label for="form22">Nilai Sebelumnya</label>
-                <textarea id="form22" class="md-textarea form-control" rows="3" disabled ></textarea>
+                <textarea id="nilai_sebelumnya" nama="nilai_sebelumnya" class="md-textarea form-control" rows="3" disabled >
+
+                </textarea>
               </div>
             </div>
             </div><br>

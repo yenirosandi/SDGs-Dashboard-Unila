@@ -22,11 +22,14 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   //Indikator
   Route::resource('master_indikator','sdgsIndiMasterController');
   Route::resource('master_sub_indikator','sdgsSubIndikatorController');
- 
+
 //  Route::resource('pencapaian_indikator','sdgsCapaianIndiController');
 
   Route::get('pencapaian_indikator/getIndiList/{param?}','sdgsCapaianIndiController@getIndi')->name('get.list.capaian.indikator');
   Route::get('pencapaian_indikator/getSubIndiList/{param?}','sdgsCapaianIndiController@getSubIndi')->name('get.list.capaian.subindi');
+// Dicoba-coba YENI (baru)
+  Route::get('pencapaian_indikator/nilaiSebelumnya/{tahun?}/{sub?}','sdgsCapaianIndiController@getNilaiSebelumnya')->name('get.list.capaian.nilaiSebelumnya');
+
 
   Route::get('pencapaian_indikator', 'sdgsCapaianIndiController@index');
 
@@ -44,7 +47,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
 
   // Route::resource('profil', 'UserController');
-  
+
   Route::get('profil', ['as' => 'profil.index', 'uses' => 'UserController@index']);
 
   Route::get('profil/ubahprofil/{user}',  ['as' => 'profil.edit', 'uses' => 'UserController@edit']);

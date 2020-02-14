@@ -53,53 +53,46 @@ class sdgsCapaianIndiController extends Controller
   {
     //GET THE ACCOUNT BASED ON TYPE
     $indis=Indikator_model::where('fk_id_goal', '=', $param)->get();
+     //CREATE AN ARRAY
 
-     //CREATE AN ARRAY 
-
-     $options = array();      
-
-     foreach ($indis as $arrayForEach) {
-
-               $options += array($arrayForEach->id_indikator => $arrayForEach->indikator);                
-
-           }
-
-
-
-     return Response::json($options); 
-
-  }    
-  
+    $options = array();
+    foreach ($indis as $arrayForEach) {
+        $options += array($arrayForEach->id_indikator => $arrayForEach->indikator);
+    }
+    return Response::json($options);
+  }
 
   public function getSubIndi($param)
   {
         //GET THE ACCOUNT BASED ON TYPE
-
-        // $subs =  SubIndikator_model::where('fk_id_indikator','=',$param)->get();
-
         $subs=DB::table('t_m_subindikator')
         ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
         ->select('t_m_subindikator.*','t_m_sumberdata.*')
         ->where('fk_id_indikator','=',$param)->get();
-        // dd($subs);
 
-        //CREATE AN ARRAY 
-      //   @foreach($sub as $data_sub)
-      //   <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
-      // @endforeach
-        $options = array();      
-
+        $options = array();
         foreach ($subs as $arrayForEach) {
-
-                  $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator . " - " . $arrayForEach->sumberdata);                
-
-              }
-
-        
-
+            $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator . " - " . $arrayForEach->sumberdata);
+        }
         return Response::json($options);
   }
 
+  public function getNilaiSebelumnya($tahun, $sub)
+  {
+        $tahunsebelum=$tahun-1;
+        $capai=DB::table('t_pencapaian')
+        ->join('t_pencapaian','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+        ->select('t_pencapaian.*','t_m_subindikator.*')
+        ->where('fk_id_m_subindikator','=',$sub)
+        ->where('tahun','=', $tahunsebelum)
+        ->get();
+
+        $options = array();
+        foreach ($capai as $arrayForEach) {
+            $options += array($arrayForEach->id_pencapaian => $arrayForEach->nilai . "(" . $arrayForEach->tahun.")" );
+        }
+        return Response::json($options);
+  }
 
   public function getNilaiTahunLalu($param)
   {
@@ -116,7 +109,7 @@ class sdgsCapaianIndiController extends Controller
   }
 
 
-  
+
   public function show($id)
   {
       //
