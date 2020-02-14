@@ -47,33 +47,29 @@ class sdgsSubIndikatorController extends Controller
 
     public function store(Request $request)
     {
-        $check = new SubIndikator_model;
-        $check->subindikator = $request->subindikator;
-        $check->waktu_pengambilan = implode(", ",$request->waktu_pengambilan);        
-        $check->fk_id_goal = $request->fk_id_goal;
-        $check->fk_id_indikator = $request->fk_id_indikator;
-        $check->fk_id_m_sumberdata = $request->fk_id_m_sumberdata;
-        $check->isian =implode(", ",$request->isian);  
+        $messages = [
+            'required' => ':attribute harus diisi.',
+            'min' => ':attribute harus diisi minimal :min',
+            'max' => ':attribute harus diisi maksimal :max ',
+          ];
 
-        $check->save();
-        // $subindikator=$request->subindikator;
-        // $id_goal=$request->goal;
-        // $id_indikator=$request->indikator;
-        // $id_sumber=$request->sumberdata;
-        // $waktu_pengambilan=$request->waktu_pengambilan;
-        // // $berkas=$request->berkas;
-    
-        // $check=new \App\SubIndikator_model;
+          $this->validate($request,[
+            'fk_id_goal' => 'required',
+            'fk_id_indikator' => 'required', 
+            'subindikator' => 'required',
+            'fk_id_m_sumberdata'=> 'required',
+            'isian' => 'required'
 
-        // $check->fk_id_goal=$id_goal;
-        // $check->fk_id_indikator=$id_indikator;        
-        // $check->subindikator=$subindikator;
-        // $check->fk_id_m_sumberdata=$id_sumber;
-        // $check->waktu_pengambilan=implode(", ",$waktu_pengambilan);       
-        // // $pencapaian->berkas=$berkas;
-        // $check->save();
-        // alert()->success('Berhasil.','Data telah ditambahkan!');
-
+        ],$messages);
+      
+        SubIndikator_model::create([
+          'fk_id_goal' => $request->get('fk_id_goal'),
+          'fk_id_indikator' => $request->get('fk_id_indikator'),
+        'subindikator' => $request->get('subindikator'),
+        'fk_id_m_sumberdata' => $request->get('fk_id_m_sumberdata'),
+          'waktu_pengambilan' => implode(",", $request->get('waktu_pengambilan')),
+          'isian' =>  implode(",", $request->get('isian')),
+      ]);
         return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah disimpan!');
     }
 
@@ -120,7 +116,7 @@ class sdgsSubIndikatorController extends Controller
     {
         SubIndikator_model::find($id_m_subindikator)->update([
             'subindikator' => $request->get('subindikator'),
-            'waktu_pengambilan'=>  implode(", " , $request->waktu_pengambilan),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
+            'waktu_pengambilan'=>  implode(", " , $request->get('waktu_pengambilan')),//ini untuk menjadikan array jadi kata(koma) gitu digabungkan///memisahkan string
              'fk_id_indikator' => $request->get('indikator'),
             'fk_id_m_sumberdata' => $request->get('fk_id_m_sumberdata'),
             'fk_id_goal'=>$request->get('goal'),

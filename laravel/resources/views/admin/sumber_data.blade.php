@@ -19,7 +19,7 @@
             <div class="form-group">
               <label class="control-label col-sm-8" for="sumberdata">Sumber Data:</label>
               <div class="col-sm-6">
-                <input name="sumberdata" type="text" class="form-control" id="sumberdata" required>
+                <input name="sumberdata" type="text" class="form-control" id="sumberdata" required oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
               </div>
             </div>
             <div class="form-group">

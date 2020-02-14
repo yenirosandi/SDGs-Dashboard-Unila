@@ -14,6 +14,18 @@
   <div class="card-body">
     <div class="card-body">
       <div class="table-responsive">
+
+              <!-- {{-- menampilkan error validasi --}} -->
+              @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+
         <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.update',$edit_pencapaian->id_pencapaian)}}">
           {{ csrf_field() }}
           {{ method_field('put') }}

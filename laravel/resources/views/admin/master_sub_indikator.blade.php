@@ -19,16 +19,26 @@
     <div class="card-body">
       <div class="card-body">
         <div class="table-responsive">
+                        <!-- {{-- menampilkan error validasi --}} -->
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
           <form class="form-horizontal" method="POST" action="{{ route('master_sub_indikator.store') }}">
           @csrf
             <div class="form-group">
               <label class="control-label col-sm-8" for="fk_id_goal">Goal ke:</label>
-                <div class="col-sm-4">
+                <div class="col-sm-10">
                   <select id="slgoal" class="form-control" name="fk_id_goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
                     <!-- <option value="">Pilih goal</option> -->
                     <option value="" >Pilih Goal</option>
                     @foreach($goals as $data_goals)
-                      <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
+                      <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}} - {{$data_goals->nama_goal}}</option>
                     @endforeach
                   </select>
                 </div>
@@ -45,14 +55,14 @@
             <div class="form-group">
               <label class="control-label col-sm-10" for="subindikator">Sub Indikator:</label>
               <div class="col-sm-10">
-                <input value=""type="text" class="form-control" id="subindikator" name="subindikator" disable>
+                <input type="text" class="form-control" id="subindikator" name="subindikator" value="{{old('subindikator')}} " required oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
               </div>
             </div>
             <div class="form-group">
             <label class="control-label col-sm-8" for="fk_id_m_sumberdata">Sumber Data:</label>
             <div class="col-sm-10">
               <select class="form-control" name="fk_id_m_sumberdata">
-              <option value="">-- Pilih Sumber Data --</option>
+              <option value="">Pilih Sumber Data</option>
                 @foreach($fk_sumberdatas as $id=>$fk_sumberdata)
                   <option value="{{$id}}">{{$fk_sumberdata}}</option>
                 @endforeach

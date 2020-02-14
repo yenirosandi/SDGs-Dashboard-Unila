@@ -39,7 +39,7 @@
             <div class="form-group">
               <label class="control-label col-sm-8" for="indikator">Indikator:</label>
               <div class="col-sm-10">
-                <input value="{{$master_indikator->indikator}}" name="indikator" type="text" class="form-control" required>
+                <input value="{{$master_indikator->indikator}}" name="indikator" type="text" class="form-control" required oninvalid="this.setCustomValidity('data tidak boleh kosong')" oninput="setCustomValidity('')">
               </div>
             </div>
             <div class="form-group">

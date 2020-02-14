@@ -132,6 +132,24 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        // 'tahun' => [
+        //     'tahun.required' => 'Tahun data pencapaian harus dipilih',
+        // ],
+        // 'fk_id_goal' => [
+        //     'fk_id_goal.required' => 'Goal harus dipilih',
+        // ],
+        // 'fk_id_indikator' => [
+        //     'fk_id_indikator.required' => 'Indikator harus dipilih',
+        // ],
+        // 'fk_id_m_subindikator' => [
+        //     'fk_id_m_subindikator.required' => 'Sub Indikator harus dipilih',
+        // ],
+        // 'nilai' => [
+        //     'nilai.required' => 'Nilai harus diisi',
+        // ],
+        // 'fk_id_trend' => [
+        //     'fk_id_trend.required' => 'Trend harus dipilih',
+        // ],
     ],
 
     /*
@@ -145,6 +163,19 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'tahun' => 'Tahun data pencapaian',
+        'goal' => 'Goal',
+        'indikator' => 'Indikator',
+        'sub' => 'Sub Indikator',
+        'nilai' => 'Nilai',
+        'trend' => 'Trend',
+        'sumberdata' => 'Sumber Data',
+        'isian' => 'Isian',
+        'subindikator' => 'Sub Indikator',
+        'fk_id_goal' => 'Goal',
+        'fk_id_indikator' => 'Indikator',
+        'fk_id_m_sumberdata' => 'Sumber Data'
+    ],
 
 ];

@@ -63,7 +63,7 @@ class SubTableSeeder extends Seeder
         ],
         [
           'subindikator'      => 'Program penjangkauan di masyarakat setempat untuk meningkatkan kesehatan dan kesejahteraan',
-          'waktu_pengambilan' => '3',
+          'waktu_pengambilan' => '',
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 1,
@@ -73,7 +73,7 @@ class SubTableSeeder extends Seeder
         ],
         [
           'subindikator'      => 'Program penjangkauan di masyarakat setempat untuk meningkatkan kesehatan dan kesejahteraan',
-          'waktu_pengambilan' => '3',
+          'waktu_pengambilan' => '',
           'fk_id_goal'        => 3,
           'fk_id_indikator'   => 3,
           'fk_id_m_sumberdata'=> 13,
