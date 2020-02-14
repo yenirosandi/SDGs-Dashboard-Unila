@@ -261,7 +261,7 @@ class sdgsCapaianIndiController extends Controller
             }
         }
 
-        return response()->json([ 'nilai' => 'nilai tidak ditemukan' ], 200);
+        return response()->json([ 'nilai' => 'Pilihan tidak lengkap' ], 200);
 
     }
 }

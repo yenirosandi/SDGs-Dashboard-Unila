@@ -73,7 +73,7 @@
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
                 <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
-                <h3 id="nilai_sebelumnya"></h3>
+                <h1 id="nilai_sebelumnya">0</h1>
               </div>
             </div>
             </div><br>
