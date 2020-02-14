@@ -243,4 +243,25 @@ class sdgsCapaianIndiController extends Controller
     $pencapaian->delete();
     return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah dihapus!');
   }
-  }
+
+    public function tahun_sebelum(Request $request)
+    {
+        $tahun      = !empty($request->tahun) ? ($request->tahun) : ('');
+        $slgoal     = !empty($request->slgoal) ? ($request->slgoal) : ('');
+        $slindi     = !empty($request->slindi) ? ($request->slindi) : ('');
+        $slsub      = !empty($request->slsub) ? ($request->slsub) : ('');
+
+        if($tahun && $slgoal && $slindi && $slsub){
+            try {
+                $year  = date('Y', strtotime('-1 year'));
+                $pencapaian = \App\Pencapaian_model::where('tahun', $year)->where('fk_id_goal', $slgoal)->where('fk_id_indikator', $slindi)->where('fk_id_m_subindikator', $slsub)->first();
+                return response()->json([ 'nilai' => $pencapaian->nilai ], 200);
+            } catch (\Exception $ex){
+                return response()->json([ 'nilai' => 'nilai tidak ditemukan' ], 200);
+            }
+        }
+
+        return response()->json([ 'nilai' => 'Pilihan tidak lengkap' ], 200);
+
+    }
+}

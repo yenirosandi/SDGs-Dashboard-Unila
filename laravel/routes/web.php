@@ -33,7 +33,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
   Route::get('pencapaian_indikator', 'sdgsCapaianIndiController@index');
 
-    Route::get('pencapaian_indikator/tahun_sebelum', 'sdgsCapaianIndiController@tahun_sebelum')->name('tahun.sebelum');
+  Route::get('pencapaian_indikator/tahun_sebelum', 'sdgsCapaianIndiController@tahun_sebelum')->name('tahun.sebelum');
 
   Route::get('pencapaian_indikator/{id_pencapaian}',  ['as' => 'pencapaian_indikator.edit', 'uses' => 'sdgsCapaianIndiController@edit']);
   Route::put('pencapaian_indikator/{id_pencapaian}/update',  ['as' => 'pencapaian_indikator.update', 'uses' => 'sdgsCapaianIndiController@update']);

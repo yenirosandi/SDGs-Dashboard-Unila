@@ -34,7 +34,7 @@
           <div class="form-group">
             <label class="control-label col-sm-8" for="tahun">Tahun:</label>
             <div class="col-sm-4">
-              <select class="form-control"name="tahun">
+              <select id="tahun" class="form-control"name="tahun">
                 <option value="">Pilih tahun</option>
                   <?php
                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
@@ -76,7 +76,7 @@
               <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
                 <i class="fas fa-angle-double-right prefix"></i>
                 <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
-                <textarea id="nilai_sebelumnya" class="md-textarea form-control" rows="3" disabled ></textarea>
+                <h2 id="nilai_sebelumnya">0</h2>
               </div>
             </div>
             </div><br>
