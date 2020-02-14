@@ -54,22 +54,22 @@ class sdgsCapaianIndiController extends Controller
     //GET THE ACCOUNT BASED ON TYPE
     $indis=Indikator_model::where('fk_id_goal', '=', $param)->get();
 
-     //CREATE AN ARRAY 
+     //CREATE AN ARRAY
 
-     $options = array();      
+     $options = array();
 
      foreach ($indis as $arrayForEach) {
 
-               $options += array($arrayForEach->id_indikator => $arrayForEach->indikator);                
+               $options += array($arrayForEach->id_indikator => $arrayForEach->indikator);
 
            }
 
 
 
-     return Response::json($options); 
+     return Response::json($options);
 
-  }    
-  
+  }
+
 
   public function getSubIndi($param)
   {
@@ -83,19 +83,19 @@ class sdgsCapaianIndiController extends Controller
         ->where('fk_id_indikator','=',$param)->get();
         // dd($subs);
 
-        //CREATE AN ARRAY 
+        //CREATE AN ARRAY
       //   @foreach($sub as $data_sub)
       //   <option value="{{$data_sub->id_m_subindikator}}"> {{$data_sub->subindikator}} - {{$data_sub->sumberdata}}</option>
       // @endforeach
-        $options = array();      
+        $options = array();
 
         foreach ($subs as $arrayForEach) {
 
-                  $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator . " - " . $arrayForEach->sumberdata);                
+                  $options += array($arrayForEach->id_m_subindikator => $arrayForEach->subindikator . " - " . $arrayForEach->sumberdata);
 
               }
 
-        
+
 
         return Response::json($options);
   }
@@ -116,7 +116,7 @@ class sdgsCapaianIndiController extends Controller
   }
 
 
-  
+
   public function show($id)
   {
       //
@@ -136,7 +136,7 @@ class sdgsCapaianIndiController extends Controller
       'min' => ':attribute harus diisi minimal :min',
       'max' => ':attribute harus diisi maksimal :max ',
     ];
-   
+
   $this->validate($request,[
       'tahun' => 'required',
       'goal' => 'required',
@@ -213,7 +213,7 @@ class sdgsCapaianIndiController extends Controller
         'min' => ':attribute harus diisi minimal :min',
         'max' => ':attribute harus diisi maksimal :max ',
     ];
-    
+
     $this->validate($request,[
       'tahun' => 'required',
       'goal' => 'required',
@@ -243,4 +243,25 @@ class sdgsCapaianIndiController extends Controller
     $pencapaian->delete();
     return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah dihapus!');
   }
-  }
+
+    public function tahun_sebelum(Request $request)
+    {
+        $tahun      = !empty($request->tahun) ? ($request->tahun) : ('');
+        $slgoal     = !empty($request->slgoal) ? ($request->slgoal) : ('');
+        $slindi     = !empty($request->slindi) ? ($request->slindi) : ('');
+        $slsub      = !empty($request->slsub) ? ($request->slsub) : ('');
+
+        if($tahun && $slgoal && $slindi && $slsub){
+            try {
+                $year  = date('Y', strtotime('-1 year'));
+                $pencapaian = \App\Pencapaian_model::where('tahun', $year)->where('fk_id_goal', $slgoal)->where('fk_id_indikator', $slindi)->where('fk_id_m_subindikator', $slsub)->first();
+                return response()->json([ 'nilai' => $pencapaian->nilai ], 200);
+            } catch (\Exception $ex){
+                return response()->json([ 'nilai' => 'nilai tidak ditemukan' ], 200);
+            }
+        }
+
+        return response()->json([ 'nilai' => 'nilai tidak ditemukan' ], 200);
+
+    }
+}

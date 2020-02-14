@@ -29,7 +29,7 @@
         @foreach($goals as $goal)
         <li class="nav-item">
           <a class="nav-link" href="{{url('admin/goalDetail', $goal->id_goal)}}">
-            <img src="{{asset($goal->icon)}}" alt=" SDG {{$goal->id_goal}}" width="20px">
+            <img src="{{asset($goal->gambar)}}" alt=" SDG {{$goal->id_goal}}" width="20px">
             <span>SDG {{$goal->id_goal}}</span></a>
         </li>
         @endforeach

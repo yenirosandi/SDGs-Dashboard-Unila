@@ -22,13 +22,15 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   //Indikator
   Route::resource('master_indikator','sdgsIndiMasterController');
   Route::resource('master_sub_indikator','sdgsSubIndikatorController');
- 
+
 //  Route::resource('pencapaian_indikator','sdgsCapaianIndiController');
 
   Route::get('pencapaian_indikator/getIndiList/{param?}','sdgsCapaianIndiController@getIndi')->name('get.list.capaian.indikator');
   Route::get('pencapaian_indikator/getSubIndiList/{param?}','sdgsCapaianIndiController@getSubIndi')->name('get.list.capaian.subindi');
 
   Route::get('pencapaian_indikator', 'sdgsCapaianIndiController@index');
+
+    Route::get('pencapaian_indikator/tahun_sebelum', 'sdgsCapaianIndiController@tahun_sebelum')->name('tahun.sebelum');
 
   Route::get('pencapaian_indikator/{id_pencapaian}',  ['as' => 'pencapaian_indikator.edit', 'uses' => 'sdgsCapaianIndiController@edit']);
   Route::put('pencapaian_indikator/{id_pencapaian}/update',  ['as' => 'pencapaian_indikator.update', 'uses' => 'sdgsCapaianIndiController@update']);
@@ -44,7 +46,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
 
   // Route::resource('profil', 'UserController');
-  
+
   Route::get('profil', ['as' => 'profil.index', 'uses' => 'UserController@index']);
 
   Route::get('profil/ubahprofil/{user}',  ['as' => 'profil.edit', 'uses' => 'UserController@edit']);

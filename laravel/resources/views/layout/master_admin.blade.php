@@ -127,7 +127,35 @@ background-color:#8ecfed;
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
-      <script type="text/javascript" src="{{asset('js/select-filteryo.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/select-filteryo.js')}}"></script>
+
+    <script>
+
+        $('select').on("change keyup", function(){
+            tahun_sebelumnya();
+        });
+
+        function tahun_sebelumnya() {
+            var tahun   = $('#tahun').val();
+            var slgoal  = $('#slgoal').val();
+            var slindi  = $('#slindi').val();
+            var slsub   = $('#slsub').val();
+
+            $.ajax({
+                type: "GET",
+                url: "{{ route('tahun.sebelum') }}",
+                data: {
+                    tahun:tahun,
+                    slgoal:slgoal,
+                    slindi:slindi,
+                    slsub:slsub,
+                },
+                success: function (data) {
+                    $('#nilai_sebelumnya').html(data.nilai);
+                }
+            });
+        }
+    </script>
 
   </body>
 </html>
