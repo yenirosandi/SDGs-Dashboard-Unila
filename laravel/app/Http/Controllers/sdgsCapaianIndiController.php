@@ -253,7 +253,8 @@ class sdgsCapaianIndiController extends Controller
 
         if($tahun && $slgoal && $slindi && $slsub){
             try {
-                $year  = date('Y', strtotime('-1 year'));
+                $date = $tahun.'-01-01 -1 year';
+                $year = date('Y', strtotime($date));
                 $pencapaian = \App\Pencapaian_model::where('tahun', $year)->where('fk_id_goal', $slgoal)->where('fk_id_indikator', $slindi)->where('fk_id_m_subindikator', $slsub)->first();
                 return response()->json([ 'nilai' => $pencapaian->nilai ], 200);
             } catch (\Exception $ex){
