@@ -64,8 +64,6 @@ class sdgsCapaianIndiController extends Controller
 
            }
 
-
-
      return Response::json($options);
 
   }
@@ -98,21 +96,6 @@ class sdgsCapaianIndiController extends Controller
 
 
         return Response::json($options);
-  }
-
-
-  public function getNilaiTahunLalu($param)
-  {
-
-    $tahun= DB::table('t_pencapaian')
-    ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-    ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-    ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-    ->select('t_pencapaian.*','t_m_subindikator.*')
-    ->where('tahun','=',$param)
-    ->get();
-
-    return json_encode($tahun);
   }
 
 
@@ -156,25 +139,7 @@ class sdgsCapaianIndiController extends Controller
     'nilai' => $request->get('nilai'),
     'keterangan' => $request->get('keterangan'),
 ]);
-    // $tahun=$request->tahun;
-    // $id_goal=$request->goal;
-    // $id_indikator=$request->indikator;
-    // $id_sub=$request->sub;
-    // $id_trend=$request->trend;
-    // $nilai=$request->nilai;
-    // $keterangan=$request->keterangan;
-    // // $berkas=$request->berkas;
 
-    // $pencapaian=new \App\Pencapaian_model;
-    // $pencapaian->tahun=$tahun;
-    // $pencapaian->fk_id_goal=$id_goal;
-    // $pencapaian->fk_id_indikator=$id_indikator;
-    // $pencapaian->fk_id_m_subindikator=$id_sub;
-    // $pencapaian->fk_id_trend=$id_trend;
-    // $pencapaian->nilai=$nilai;
-    // $pencapaian->keterangan=$keterangan;
-    // // $pencapaian->berkas=$berkas;
-    // $pencapaian->save();
     return redirect('/admin/pencapaian_indikator')->withSuccessMessage('Data telah disimpan!');
   }
 
@@ -194,8 +159,6 @@ class sdgsCapaianIndiController extends Controller
     $edit_fk_id_m_subindikators=SubIndikator_model::findOrFail($edit_pencapaian->fk_id_m_subindikator);
 
 
-    // dd ($fk_id_goal);
-    // return $edit_pencapaian;
     return view('admin.pencapaian_indikator_edit',
         compact('thn_skr','edit_pencapaian','fk_id_goals',
                 'fk_id_trends','fk_id_indikators',
@@ -258,7 +221,7 @@ class sdgsCapaianIndiController extends Controller
                 $pencapaian = \App\Pencapaian_model::where('tahun', $year)->where('fk_id_goal', $slgoal)->where('fk_id_indikator', $slindi)->where('fk_id_m_subindikator', $slsub)->first();
                 return response()->json([ 'nilai' => $pencapaian->nilai ], 200);
             } catch (\Exception $ex){
-                return response()->json([ 'nilai' => 'nilai tidak ditemukan' ], 200);
+                return response()->json([ 'nilai' => 'Nilai tidak ditemukan' ], 200);
             }
         }
 

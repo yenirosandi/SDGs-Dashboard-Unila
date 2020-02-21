@@ -125,14 +125,6 @@
             <br>
             <div class="form-group">
               <label class="control-label col-sm-8" for="waktu_pengambilan">Jenis Isian:</label>
-              <!-- <div class="col-sm-6">
-                <label class="form-check-inline">
-                  <input type="radio" name="isian[]" value="Angka" {{in_array("Angka", $waktu_pengambilan)? "checked":""  }}>Angka
-                </label>
-                <label class="form-check-inline">
-                  <input type="radio" name="isian[]" value="Teks" {{in_array("Teks", $waktu_pengambilan)? "checked":""  }}>Teks
-                </label>
-              </div> -->
               <div class="col-sm-6">
                 <label class="form-check-inline">        
               @if ($edit_subindikators->isian == 'Angka')

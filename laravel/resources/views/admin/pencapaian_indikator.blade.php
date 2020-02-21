@@ -29,78 +29,78 @@
                             @endif
 
 
-        <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
-          @csrf
-          <div class="form-group">
-            <label class="control-label col-sm-8" for="tahun">Tahun:</label>
-            <div class="col-sm-4">
-              <select id="tahun" class="form-control"name="tahun">
-                <option value="">Pilih tahun</option>
-                  <?php
-                   for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
-                  ?>
-                  <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
-                <?php } ?>
-              </select>
-            </div><br>
-            <label class="control-label col-sm-8" for="goal">Goal ke:</label>
-            <div class="col-sm-4">
-              <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
-                <!-- <option value="">Pilih goal</option> -->
-                <option value="" >Pilih Goal</option>
-                @foreach($goals as $data_goals)
-                  <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}}</option>
-                @endforeach
-              </select>
-            </div><br>
-            <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
-            <div class="col-sm-10">
-              <select id="slindi" class="form-control" name="indikator" data-urlreq="{{ route('get.list.capaian.subindi') }}">
-              <option value="">Pilih Indikator</option>
-              </select>
-            </div><br>
-            <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
-            <div class="col-sm-10">
-              <select id="slsub" class="form-control" name="sub">
-                <option value="">Pilih Sub Indikator</option>
-              </select>
-            </div><br>
-
-            <div class="col-sm-12">
-            <div class="form-row">
-              <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
-                <i class="fas fa-pencil-alt prefix"></i>
-                <label for="nilai">Nilai</label>
-                <textarea name="nilai" id="nilai" class="md-textarea form-control" rows="3" >{{ old('nilai') }}</textarea>
-              </div>
-              <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
-                <i class="fas fa-angle-double-right prefix"></i>
-                <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
-                <h2 id="nilai_sebelumnya">0</h2>
-              </div>
-            </div>
-            </div><br>
-            <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
-              <i class="fas fa-pencil-alt prefix"></i>
-              <label for="keterangan">Keterangan</label>
-              <textarea name="keterangan" id="keterangan" class="md-textarea form-control" rows="2" >{{ old('keterangan') }}</textarea>
-            </div>
-          </div>
-          <label class="control-label col-sm-8" for="trend">Trend:</label>
-          <div class="col-sm-4">
-            <select class="form-control" name="trend">
-              <option value="">Pilih pencapaian</option>
-              @foreach($trends as $data_tren)
-                <option value="{{$data_tren->id_trend}}">{{$data_tren->keterangan}}</option>
-              @endforeach
-            </select>
-          </div><br>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Tambahkan</button>
-            </div>
-          </div>
-        </form>
+              <form method="POST" class="form-horizontal" action="{{route('pencapaian_indikator.store')}}">
+                @csrf
+                <div class="form-group">
+                      <label class="control-label col-sm-8" for="tahun">Tahun:</label>
+                      <div class="col-sm-4">
+                            <select id="tahun" class="form-control"name="tahun">
+                              <option value="">Pilih tahun</option>
+                                <?php
+                                for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                ?>
+                                <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
+                              <?php } ?>
+                            </select>
+                      </div><br>
+                      <label class="control-label col-sm-10" for="goal">Goal ke:</label>
+                      <div class="col-sm-10">
+                            <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
+                              <!-- <option value="">Pilih goal</option> -->
+                              <option value="" >Pilih Goal</option>
+                              @foreach($goals as $data_goals)
+                                <option value="{{$data_goals->id_goal}}">SDG {{$data_goals->id_goal}} - {{$data_goals->nama_goal}}</option>
+                              @endforeach
+                            </select>
+                      </div><br>
+                      <label class="control-label col-sm-8" for="indikator">Indikator master:</label>
+                      <div class="col-sm-10">
+                            <select id="slindi" class="form-control" name="indikator" data-urlreq="{{ route('get.list.capaian.subindi') }}">
+                            <option value="">Pilih Indikator</option>
+                            </select>
+                      </div><br>
+                      <label class="control-label col-sm-8" for="sub">Sub-indikator master:</label>
+                      <div class="col-sm-10">
+                            <select id="slsub" class="form-control" name="sub">
+                              <option value="">Pilih Sub Indikator</option>
+                            </select>
+                      </div><br>
+                      <div class="col-sm-12">
+                          <div class="form-row">
+                            <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
+                              <i class="fas fa-pencil-alt prefix"></i>
+                              <label for="nilai">Nilai</label>
+                              <textarea name="nilai" id="nilai" class="md-textarea form-control" rows="3" >{{ old('nilai') }}</textarea>
+                            </div>
+                            <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
+                              <i class="fas fa-angle-double-right prefix"></i>
+                              <label for="nilai_sebelumnya">Nilai Sebelumnya</label>
+                              <h2 id="nilai_sebelumnya">0</h2>
+                            </div>
+                          </div>
+                      </div><br>
+                      <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
+                            <i class="fas fa-pencil-alt prefix"></i>
+                            <label for="keterangan">Keterangan</label>
+                            <textarea name="keterangan" id="keterangan" class="md-textarea form-control" rows="2" >{{ old('keterangan') }}</textarea>
+                      </div>
+                      <label class="control-label col-sm-8" for="trend">Trend:</label>
+                      <div class="col-sm-4">
+                        <select class="form-control" name="trend">
+                          <option value="">Pilih pencapaian</option>
+                          @foreach($trends as $data_tren)
+                            <option value="{{$data_tren->id_trend}}">{{$data_tren->keterangan}}</option>
+                          @endforeach
+                        </select>
+                      </div><br>
+                </div>
+            
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Tambahkan</button>
+                  </div>
+                </div>
+              </form>
       </div>
     </div>
   </div>

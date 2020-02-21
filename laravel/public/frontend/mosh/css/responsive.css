@@ -279,3 +279,60 @@
         max-width: 50%;
     }
 }
+
+
+@media (max-width:1600px) and (min-width:940px){ /* Tablets*/ 
+    h3 .sdgs-header {
+       font-size:20px;
+    }
+    .login-header{
+        font-size: 14px;
+    }
+    .header_area.sticky .navbar {
+        height: 70px;
+    }
+    }
+
+
+@media screen and (min-width: 800px) {
+    .logo-header {
+        width: 90px;
+        height:90px;
+
+    }
+    h3 .sdgs-header {
+        font-size:20px;
+     }
+}
+
+@media only screen and (max-width:762px){
+    .logo-header {
+        width: 30px;
+        height:30px;
+
+    }
+
+    h3 .sdgs-header {
+        font-size:15px;
+     }
+    }
+@media only screen and (max-width:500px){
+    .logo-header {
+        width: 50px;
+        height:50px;
+
+
+    }
+     .header_area .container {
+        width: 400px;
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+      
+    h3 .sdgs-header {
+        font-size:13px;
+     }
+
+}
