@@ -18,8 +18,8 @@ class sdgsIndiMasterController extends Controller
   {
     $no=1;
     $goals=Goals_model::all();
-    $master_indikator=Indikator_model::all();
-    
+    $master_indikator=Indikator_model::all()->sortByDesc('id_indikator');
+
     // if(session ('success_message') ){
     //   Alert::success('Berhasil!', session('success_message'));
     // }di controller.php

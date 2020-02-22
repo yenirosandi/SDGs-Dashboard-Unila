@@ -86,10 +86,9 @@ background-color:#8ecfed;
             </li>
             </ol>
             <h1 class="h3 mb-2 text-gray-800">@yield('Judul')</h1>
-            <p class="mb-4">@yield('JudulDesc')</a>.</p>
-            <br>
+            @yield('JudulDesc')
+            <br><br>
             @yield('content')
-            <br>
           </div>
           <!-- /.container-fluid -->
         </div>

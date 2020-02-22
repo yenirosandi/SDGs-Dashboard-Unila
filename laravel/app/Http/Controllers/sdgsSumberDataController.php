@@ -16,7 +16,7 @@ class sdgsSumberDataController extends Controller
   public function index()
   {
     $no=1;
-    $sumber=Sumberdata_model::all();
+    $sumber=Sumberdata_model::all()->sortByDesc('id_m_sumberdata');
     return view('admin.sumber_data',['no'=>$no, 'sumber'=>$sumber]);
   }
 

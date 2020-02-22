@@ -3,38 +3,34 @@
   @section('title')
     SDG {!!$goal->id_goal!!}
   @stop
-  @section('Judul')
-    SDGs {!!$goal->id_goal!!}:{!!$goal->nama_goal!!}
-  @stop
   @section('title_breadcrumb')
   SDGs {!!$goal->id_goal!!}
-
   @stop
 
-    <!-- @section('Judul','SDGs {{$goal->id_goal}}:{{$goal->nama_goal}}') -->
-  @section('JudulDesc')
-    {!!$goal->deskripsi_goal!!}
-  @stop
 @section('content')
-
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Data SDG {!!$goal->id_goal!!}</h6>
     </div>
     <div class="card-body">
       <div class="card-body">
-        <h4>Grafik</h4>
+        <h5 style="color:#323236;">Sustainable Development Goals</h5>
         <hr>
-
           <div class="row">
-
-
-              <img width="35%"; max-width: 300px; height: auto; src="/{{$goal->gambar}}">
+            <div class="col-md-3 col-xs-12">
+                <div class-"thumbnail">
+                  <img src="/{{$goal->gambar}}" style="width:225px; height:225px;"class="card-img">
+                </div>
+            </div>
+            <div style="color: #323236; width: 1px; height: 225px; border: 1.15px #000 solid;"></div>
+            <div class="col-md-8 col-md-offset-1">
+                <h2 style="color:#323236;"><?php echo ucwords($goal->nama_goal); ?></h2>
+                <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}}</p>
+            </div>
           </div>
-
-
         <br><br><br>
-        <h4>Tabel</h4>
+        <h5 style="color:#323236;">Tabel Pencapaian</h5>
+        <hr>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>

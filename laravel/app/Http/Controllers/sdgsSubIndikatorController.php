@@ -17,12 +17,13 @@ class sdgsSubIndikatorController extends Controller
     public function index()
     {
         $no=1;
-        $join=DB::table('t_m_subindikator')
-            ->join('t_goals','fk_id_goal','=','t_goals.id_goal')        
-          ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-          ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-          ->select('t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_m_sumberdata.*')
-          ->get();
+        $join= DB::table('t_m_subindikator')
+              ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+              ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+              ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+              ->select('t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_m_sumberdata.*')
+              ->orderBy('t_m_subindikator.id_m_subindikator','Desc')
+              ->get();
         $fk_id_indikators=Indikator_model::pluck ('indikator', 'id_indikator');//inisupaya atribut di model ini tidak muncul semua
         $fk_sumberdatas=Sumberdata_model::pluck('sumberdata', 'id_m_sumberdata');
         $datas=SubIndikator_model::get();
@@ -55,13 +56,13 @@ class sdgsSubIndikatorController extends Controller
 
           $this->validate($request,[
             'fk_id_goal' => 'required',
-            'fk_id_indikator' => 'required', 
+            'fk_id_indikator' => 'required',
             'subindikator' => 'required',
             'fk_id_m_sumberdata'=> 'required',
             'isian' => 'required'
 
         ],$messages);
-      
+
         SubIndikator_model::create([
           'fk_id_goal' => $request->get('fk_id_goal'),
           'fk_id_indikator' => $request->get('fk_id_indikator'),
@@ -127,11 +128,11 @@ class sdgsSubIndikatorController extends Controller
             ]);
 
             $edit_waktu_pengambilan=SubIndikator_model::findOrFail($id_m_subindikator);
-            
+
             // alert()->success('Berhasil.','Data telah diubah!');
-            
+
             return redirect()->route('master_sub_indikator.index')->withSuccessMessage('Data telah diubah!');
-            
+
     }
 
     public function destroy($id_m_subindikator)
