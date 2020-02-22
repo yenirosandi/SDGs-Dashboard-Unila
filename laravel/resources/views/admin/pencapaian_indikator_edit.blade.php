@@ -53,16 +53,16 @@
                 <?php } ?>
               </select>
             </div><br>
-            <label class="control-label col-sm-8" for="goal">Goal ke:</label>
-            <div class="col-sm-4">
+            <label class="control-label col-sm-10" for="goal">Goal ke:</label>
+            <div class="col-sm-10">
               <select id="slgoal" class="form-control" name="goal" data-urlreq="{{ route('get.list.capaian.indikator') }}">
                 @foreach($fk_id_goals as $key=>$value)
                     <?php
                     if($key!=0){
-                        $pencapaian_fk_goal=DB::table('t_goals')->select('id_goal','id_goal')->where('id_goal',$key)->get();
+                        $pencapaian_fk_goal=DB::table('t_goals')->select('t_goals.*')->where('id_goal',$key)->get();
                         if(count($pencapaian_fk_goal)>0){
                             foreach ($pencapaian_fk_goal as $capai_indi){?>
-                              <option value="{{$capai_indi->id_goal}}"{{$edit_fk_id_goals->id_goal==$capai_indi->id_goal?' selected':''}}>SDG {{$capai_indi->id_goal}}</option>
+                              <option value="{{$capai_indi->id_goal}}"{{$edit_fk_id_goals->id_goal==$capai_indi->id_goal?' selected':''}}>SDG {{$capai_indi->id_goal}} - {{$capai_indi->nama_goal}}</option>
                         <?php }
                       }
                     }

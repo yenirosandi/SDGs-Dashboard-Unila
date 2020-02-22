@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
 
     <link rel="icon" href="{{asset('frontend/gambar/sdgs.png')}}">
@@ -16,9 +16,6 @@
     <link href="{{asset('dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
-
-    <!-- Custom styles for this template
-    <link href="{{asset('dist/css/album.css')}}" rel="stylesheet"> -->
 
     <!-- Core Stylesheet -->
     <link href="{{asset('frontend/mosh/style.css')}}" rel="stylesheet">
@@ -31,6 +28,7 @@
 
    
       @include('frontend.navbar')
+      <br><br><br><br><br><br>
         <ol class="breadcrumb">
             <li class="active">
                 <i class="fa fa-dashboard"></i> {{ date('d M Y')}} / @yield('title_breadcrumb')

@@ -9,6 +9,9 @@
 
 SUSTAINABLE DEVELOPMENT GOALS <hr>
 
+
+<body>
+
         <div class="mosh-portfolio">
 
             @forelse($goals as $goal) 
@@ -33,7 +36,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
             @empty
                     <h3>Nothing</h3>
             @endforelse
-            <img src="{{asset('img/sdgs/sds.png')}}" alt="">
+            <!-- <img src="{{asset('img/sdgs/sds.png')}}" alt=""> -->
 
         </div>
 

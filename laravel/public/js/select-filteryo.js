@@ -119,6 +119,7 @@ $(document).ready(function(){
                 //APPEND INTO SELECT BOX
 
                 $('#slsub').empty();
+                $('#slsub').append('<option>Pilih Sub Indikator</option>');
 
                 $.each(temp, function(key, obj) {
 

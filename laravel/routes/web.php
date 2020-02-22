@@ -27,8 +27,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
 
   Route::get('pencapaian_indikator/getIndiList/{param?}','sdgsCapaianIndiController@getIndi')->name('get.list.capaian.indikator');
   Route::get('pencapaian_indikator/getSubIndiList/{param?}','sdgsCapaianIndiController@getSubIndi')->name('get.list.capaian.subindi');
-// Dicoba-coba YENI (baru)
-  Route::get('pencapaian_indikator/nilaiSebelumnya/{tahun?}/{sub?}','sdgsCapaianIndiController@getNilaiSebelumnya')->name('get.list.capaian.nilaiSebelumnya');
 
 
   Route::get('pencapaian_indikator', 'sdgsCapaianIndiController@index');
@@ -40,7 +38,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::post('pencapaian_indikator',  ['as' => 'pencapaian_indikator.store', 'uses' => 'sdgsCapaianIndiController@store']);
   Route::delete('pencapaian_indikator/{id_pencapaian}',  ['as' => 'pencapaian_indikator.destroy', 'uses' => 'sdgsCapaianIndiController@destroy']);
 
-  Route::get('pencapaian_indikator/nilaiTahunLalu','sdgsCapaianIndiController@getNilaiTahunLalu')->name('getNS');
 
   Route::resource('sumber_data','sdgsSumberDataController');
 
