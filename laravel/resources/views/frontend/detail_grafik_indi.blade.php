@@ -1,206 +1,362 @@
-<html>
+@extends('frontend.master')
+@section('title','Laporan SDGs')
+@section('title_breadcrumb','Detail Goal/Grafik SDGs Indikator')
+@section('content')
+
 <style>
-#grafikGoal, #area, #container {
+#grafikGoal, #area, #batang, #batang2, #pie {
 	min-width: 310px;
 	max-width: 1000px;
 	height: 400px;
 	margin: 0 auto
-
 }
 
 </style>
-
-<body>
-    
-
-       <div class="row">
-
-              <div id="grafikGoal">
-
-      </div>
-      <br><br>
-      <div class="row">
-
-                <div id="area">
-
-        </div>
-        <br><br>
-      <div class="row">
-
-                <div id="container">
-
-        </div>
-
-
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
-<!-- grafik basic line -->
-<script>
-Highcharts.chart('grafikGoal', {
-
-title: {
-		text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
-},
-
-subtitle: {
-    text: 'Indikator {!! json_encode($indi) !!}'
-},
-
-yAxis: {
-    title: {
-        text: 'Nilai'
-    }
-},
-legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle'
-},
-
-plotOptions: {
-    series: {
-        label: {
-            connectorAllowed: false
-        },
-        pointStart: 2017
-    }
-},
-
-series: {!! json_encode($dataGrafik) !!},
-
-responsive: {
-    rules: [{
-        condition: {
-            maxWidth: 1000
-        },
-        chartOptions: {
-            legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom'
-            }
-        }
-    }]
-}
-
-});
-
-// grafik basic area
-Highcharts.chart('area', {
-    chart: {
-        type: 'area'
-    },
-    accessibility: {
-        description: 'Image description: An area chart compares the nuclear stockpiles of the USA and the USSR/Russia between 1945 and 2017. The number of nuclear weapons is plotted on the Y-axis and the years on the X-axis. The chart is interactive, and the year-on-year stockpile levels can be traced for each country. The US has a stockpile of 6 nuclear weapons at the dawn of the nuclear age in 1945. This number has gradually increased to 369 by 1950 when the USSR enters the arms race with 6 weapons. At this point, the US starts to rapidly build its stockpile culminating in 32,040 warheads by 1966 compared to the USSR’s 7,089. From this peak in 1966, the US stockpile gradually decreases as the USSR’s stockpile expands. By 1978 the USSR has closed the nuclear gap at 25,393. The USSR stockpile continues to grow until it reaches a peak of 45,000 in 1986 compared to the US arsenal of 24,401. From 1986, the nuclear stockpiles of both countries start to fall. By 2000, the numbers have fallen to 10,577 and 21,000 for the US and Russia, respectively. The decreases continue until 2017 at which point the US holds 4,018 weapons compared to Russia’s 4,500.'
-    },
-    title: {
-        text: ''
-    },
-    subtitle: {
-        text: ''
-    },
-    xAxis: {
-        allowDecimals: false,
-        labels: {
-            formatter: function () {
-                return this.value; // clean, unformatted number for year
-            }
-        },
-        accessibility: {
-            rangeDescription: ''
-        }
-    },
-    yAxis: {
-        title: {
-            text: 'Nilai'
-        },
-        labels: {
-            formatter: function () {
-                return this.value;
-            }
-        }
-    },
-    tooltip: {
-        pointFormat: '{series.name} : <b>{point.y:,.0f}</b>'
-    },
-    plotOptions: {
-        area: {
-            pointStart: 2017,
-            marker: {
-                enabled: false,
-                symbol: 'circle',
-                radius: 2,
-                states: {
-                    hover: {
-                        enabled: true
-                    }
-                }
-            }
-        }
-    },
-
-    series: {!! json_encode($dataGrafik) !!},
-});
+SUSTAINABLE DEVELOPMENT GOALS <hr>
 
 
-Highcharts.chart('container', {
-    chart: {
-        type: 'column'
-    },
-    title: {
-        text: 'Monthly Average Rainfall'
-    },
-    subtitle: {
-        text: 'Source: WorldClimate.com'
-    },
-    xAxis: {
-        categories:  '{tahun}',
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Rainfall (mm)'
-        }
-    },
-    tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
-    },
-    plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
-    },
-    // series: [{
-    //     name: 'Tokyo',
-    //     data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+<body>
 
-    // }, {
-    //     name: 'New York',
-    //     data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+  <!-- Grafik garis -->
+  <div class="card shadow mb-4 w-100">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Grafik Garis</h6>
+    </div>
+    <div class="card-body">
+      <div class="card-body">
+        <div id="grafikGoal">
+					<script>
+					Highcharts.chart('grafikGoal', {
+					title: {
+							text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+					},
 
-    // }, {
-    //     name: 'London',
-    //     data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+					subtitle: {
+					    text: 'Indikator {!! json_encode($indi) !!}'
+					},
 
-    // }, {
-    //     name: 'Berlin',
-    //     data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+					yAxis: {
+					    title: {
+					        text: 'Nilai'
+					    }
+					},
+					legend: {
+					    layout: 'vertical',
+					    align: 'right',
+					    verticalAlign: 'middle'
+					},
 
-    // }]
-    series: {!! json_encode($dataGrafik) !!},
-});
-</script>
+					plotOptions: {
+					    series: {
+					        label: {
+					            connectorAllowed: false
+					        },
+					        pointStart: 2017
+					    }
+					},
+					series: {!! json_encode($dataGrafik) !!},
+					responsive: {
+					    rules: [{
+					        condition: {
+					            maxWidth: 1000
+					        },
+					        chartOptions: {
+					            legend: {
+					                layout: 'horizontal',
+					                align: 'center',
+					                verticalAlign: 'bottom'
+					            }
+					        }
+					    }]
+					}
+					});
+					</script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card shadow mb-4 w-100">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Grafik Area</h6>
+		</div>
+		<div class="card-body">
+			<div class="card-body">
+				<div id="area">
+                    <script>
+                    // grafik basic area
+                    Highcharts.chart('area', {
+                        chart: {
+                            type: 'area'
+                        },
+                        accessibility: {
+                            description: 'Image description: An area chart compares the nuclear stockpiles of the USA and the USSR/Russia between 1945 and 2017. The number of nuclear weapons is plotted on the Y-axis and the years on the X-axis. The chart is interactive, and the year-on-year stockpile levels can be traced for each country. The US has a stockpile of 6 nuclear weapons at the dawn of the nuclear age in 1945. This number has gradually increased to 369 by 1950 when the USSR enters the arms race with 6 weapons. At this point, the US starts to rapidly build its stockpile culminating in 32,040 warheads by 1966 compared to the USSR’s 7,089. From this peak in 1966, the US stockpile gradually decreases as the USSR’s stockpile expands. By 1978 the USSR has closed the nuclear gap at 25,393. The USSR stockpile continues to grow until it reaches a peak of 45,000 in 1986 compared to the US arsenal of 24,401. From 1986, the nuclear stockpiles of both countries start to fall. By 2000, the numbers have fallen to 10,577 and 21,000 for the US and Russia, respectively. The decreases continue until 2017 at which point the US holds 4,018 weapons compared to Russia’s 4,500.'
+                        },
+                        title: {
+                            text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+                        },
+                        subtitle: {
+                            text: 'Indikator {!! json_encode($indi) !!}'
+                        },
+                        xAxis: {
+                            allowDecimals: false,
+                            labels: {
+                                formatter: function () {
+                                    return this.value; // clean, unformatted number for year
+                                }
+                            },
+                            accessibility: {
+                                rangeDescription: ''
+                            }
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Nilai'
+                            },
+                            labels: {
+                                formatter: function () {
+                                    return this.value;
+                                }
+                            }
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name} : <b>{point.y:,.0f}</b>'
+                        },
+                        plotOptions: {
+                            area: {
+                                pointStart: 2017,
+                                marker: {
+                                    enabled: false,
+                                    symbol: 'circle',
+                                    radius: 2,
+                                    states: {
+                                        hover: {
+                                            enabled: true
+                                        }
+                                    }
+                                }
+                            }
+                        },
+
+                        series: {!! json_encode($dataGrafik) !!},
+                    });
+                    </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+	<div class="card shadow mb-4 w-100">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Grafik Batang</h6>
+		</div>
+		<div class="card-body">
+			<div class="card-body">
+				<div id="batang">
+					<script>
+					// grafik batang
+					Highcharts.chart('batang', {
+						chart: {
+							type: 'bar'
+						},
+						title: {
+							text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+						},
+						subtitle: {
+							text: 'Indikator {!! json_encode($indi) !!}'
+						},
+						xAxis: {
+								categories: {!! json_encode($subindi) !!},
+								title: {
+										text: null
+								}
+						},
+						yAxis: {
+								min: 0,
+								title: {
+										text: 'Banyaknya nilai',
+										align: 'high'
+								},
+								labels: {
+										overflow: 'justify'
+								}
+						},
+						tooltip: {
+								valueSuffix: ' '
+						},
+						plotOptions: {
+								bar: {
+										dataLabels: {
+												enabled: true
+										}
+								}
+						},
+						legend: {
+								layout: 'vertical',
+								align: 'left',
+								verticalAlign: 'bottom',
+								x: 40,
+								y: -30,
+								floating: true,
+								borderWidth: 1,
+								backgroundColor:
+										Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+								shadow: true
+						},
+						credits: {
+								enabled: false
+						},
+						series: {!! json_encode($dataGrafik2) !!},
+					});
+					</script>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="card shadow mb-4 w-100">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Grafik Batang</h6>
+		</div>
+		<div class="card-body">
+			<div class="card-body">
+				<div id="batang2">
+                        <script>
+
+                    Highcharts.chart('batang2', {
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+                        },
+                        subtitle: {
+                            text: 'Indikator {!! json_encode($indi) !!}'
+                        },
+                        xAxis: {
+                            categories:  {!! json_encode($subindi) !!},
+                            crosshair: true
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: 'Nilai'
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+                            footerFormat: '</table>',
+                            shared: true,
+                            useHTML: true
+                        },
+                        plotOptions: {
+                            column: {
+                                pointPadding: 0.2,
+                                borderWidth: 0
+                            }
+                        },
+                        
+                        series: {!! json_encode($dataGrafik2) !!},
+                    });
+                    </script>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="card shadow mb-4 w-100">
+		<div class="card-header py-3">
+			<h6 class="m-0 font-weight-bold text-primary">Grafik Pie</h6>
+		</div>
+		<div class="card-body">
+			<div class="card-body">
+				<div id="pie">
+					<script>
+					// grafik pie
+					Highcharts.chart('pie', {
+    			chart: {
+        		plotBackgroundColor: null,
+        		plotBorderWidth: null,
+        		plotShadow: false,
+        		type: 'pie'
+    			},
+    			title: {
+						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+    			},
+    			tooltip: {
+        			pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    			},
+    			plotOptions: {
+        			pie: {
+            			allowPointSelect: true,
+            			cursor: 'pointer',
+            			dataLabels: {
+                			enabled: true,
+                			format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            			}
+        			}
+    			},
+    			series: [{
+        			name: 'Brands',
+        			colorByPoint: true,
+        			data: [{
+            			name: 'Chrome',
+            			y: 61.41,
+            			sliced: true,
+            			selected: true
+        			}, {
+            			name: 'Internet Explorer',
+            			y: 11.84
+        			}, {
+            			name: 'Firefox',
+            			y: 10.85
+        			}, {
+            			name: 'Edge',
+            			y: 4.67
+        			}, {
+            			name: 'Safari',
+            			y: 4.18
+        			}, {
+            			name: 'Sogou Explorer',
+            			y: 1.64
+        			}, {
+            			name: 'Opera',
+            			y: 1.6
+        			}, {
+            			name: 'QQ',
+            			y: 1.2
+        			}, {
+            			name: 'Other',
+            			y: 2.61
+        			}]
+    				}]
+					});
+					</script>
+			</div>
+			</div>
+		</div>
+	</div>
+
+<br>
+
+@endsection
+
+
+
+
 
 </body>
-</html>
+
+

@@ -46,11 +46,13 @@ class HomeController extends Controller
       // dd($sub);
 
       //accu nih
+      //grafik garis
       $dataGrafik = [];
       $pt=0;
       foreach ($sub as $key => $data_persub){
         $nilai=[];
         $tahun=[];
+        $subindi[] = $data_persub->subindikator." (".$data_persub->sumberdata.")";
         $goal=$data_persub->nama_goal;
         $indi=$data_persub->indikator;
         $id_goal=$data_persub->fk_id_goal;
@@ -60,8 +62,8 @@ class HomeController extends Controller
         ->select('t_pencapaian.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
-        ->orderBy('t_pencapaian.fk_id_m_subindikator')
-        ->groupBy('tahun')
+        ->orderBy('t_pencapaian.tahun')
+        ->groupBy('t_pencapaian.tahun')
         ->get();
         // DD($pencapaian);
         foreach ($pencapaian as $key2 => $value) {
@@ -78,9 +80,57 @@ class HomeController extends Controller
         $dataGrafik[$key]['categories'] = $tahun;
         // DD($nilai);
       }
+
+
+        //start grafik batang
+        $dataGrafik2 = [];
+        $pt=0;
+        $pencapaian= DB::table('t_pencapaian')
+        ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+        ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+        ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
+        ->where('t_pencapaian.fk_id_indikator', $id_indi)
+        // ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->orderBy('t_pencapaian.tahun')
+        ->groupBy('t_pencapaian.tahun')
+        ->get();
+        // DD($pencapaian);
+        foreach ($pencapaian as $key => $data_persub){
+          $nilai=[];
+          $tahun=$data_persub->tahun;
+          $id_sub=$data_persub->fk_id_m_subindikator;
+          $pencapaian2= DB::table('t_pencapaian')
+          ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+          ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+          ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+          ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
+          ->where('t_pencapaian.fk_id_indikator', $id_indi)
+          ->where('t_pencapaian.tahun', $tahun)
+          // ->orderBy('t_pencapaian.fk_id_m_subindikator')
+          ->orderBy('t_pencapaian.tahun')
+          ->get();
+          // DD($pencapaian2);
+
+        foreach ($pencapaian2 as $key2 => $value) {
+          if($value->isian=='Angka'){
+            $nilai[]=(int)$value->nilai;
+          }
+          else {
+            $nilai[]=$value->poin+$pt;
+            $pt=$value->poin+$pt;
+          }
+          $tahun++;
+        }
+          $dataGrafik2[$key]['name'] = "Tahun ".$data_persub->tahun;
+          $dataGrafik2[$key]['data'] = $nilai;
+        }
+          // dd($dataGrafik2);
+        //end grafik batang
+
+
       // dd($dataGrafik);
      return view('frontend.detail_grafik_indi',
-            compact('id_goal','goal','indi','dataGrafik'));
+            compact('id_goal','goal','indi','dataGrafik', 'subindi', 'dataGrafik2'));
     }
 
 

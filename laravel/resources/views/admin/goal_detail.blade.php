@@ -22,7 +22,7 @@
                   <img src="/{{$goal->gambar}}" style="width:225px; height:225px;"class="card-img">
                 </div>
             </div>
-            <div style="color: #323236; width: 1px; height: 225px; border: 1.15px #000 solid;"></div>
+            <!-- <div style="color: #323236; width: 1px; height: 225px; border: 1.15px #000 solid;"></div> -->
             <div class="col-md-8 col-md-offset-1">
                 <h2 style="color:#323236;"><?php echo ucwords($goal->nama_goal); ?></h2>
                 <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}}</p>

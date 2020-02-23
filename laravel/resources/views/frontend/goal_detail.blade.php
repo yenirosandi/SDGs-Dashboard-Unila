@@ -5,8 +5,7 @@
 @section('content')
 
 
-
-SUSTAINABLE DEVELOPMENT GOALS <hr>
+SUSTAINABLE DEVELOPMENT GOALS HIIIII KENAPAPPPAP <hr>
       <!-- ***** Preloader Start ***** -->
       <div id="preloader">
         <div class="mosh-preloader"></div>
@@ -22,13 +21,15 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         <div style="width: 0px; height: 225px; border: 1px #000 solid;"></div>
         <div class="col-md-8 col-md-offset-1">
             <h2><?php echo ucwords($goal->nama_goal); ?></h2>
-            <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}}</p>
+            <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}} </p>
+
         </div>
 
         @endforeach
     </div>
+
     <br><br>
-    <h4>Tabel</h4>
+    <h4>Tabel kenapapaaaa hhhhz</h4>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="auto" cellspacing="0">
             <thead>
@@ -50,7 +51,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafik', $data_sub->id_indikator )}}"> <span style="background-color:cadetblue  ;width:30px; height:30px"><img src="{{url('img/profits.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
+                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafik', $data_sub->id_indikator )}}"> <span style="width:30px; height:30px"><img src="{{url('img/bars-chart.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator; ?>
               </tr>

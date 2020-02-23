@@ -56,7 +56,8 @@ class AdminController extends Controller
         ->select('t_pencapaian.*', 't_trends.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
-        ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->orderBy('t_pencapaian.tahun')
+        ->groupBy('t_pencapaian.tahun')
         ->get();
         // DD($pencapaian);
         foreach ($pencapaian as $key2 => $value) {
@@ -121,7 +122,7 @@ class AdminController extends Controller
         $dataGrafik2[$key]['data'] = $nilai;
       }
         // dd($dataGrafik2);
-      //end grafik garis
+      //end grafik batang
 
 
 
