@@ -121,8 +121,8 @@ class AdminController extends Controller
       //start grafik pie
       $dataGrafik3 = [];
       $pt=0;
-      // $tahun_now=date('Y');
-      $tahun_now=2019;
+      $tahun_now=date('Y');
+      // $tahun_now=2019;
 
       // $pencapaian= DB::table('t_pencapaian')
       // ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
@@ -159,12 +159,12 @@ class AdminController extends Controller
         $subindi = $data_persub->subindikator." (".$data_persub->sumberdata.")";
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
-        $tahun=2017;
-        $tahun_now=date("Y");
+        $tahun=2019;
         // start grafik garis
         $pencapaian= DB::table('t_pencapaian')
         ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
         ->select('t_pencapaian.*', 't_trends.*')
+        ->where('t_pencapaian.tahun', $tahun)
         ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->get();
@@ -181,12 +181,12 @@ class AdminController extends Controller
         $dataGrafik3[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik3[$key]['y'] = $nilai;
       }
-      dd($dataGrafik3);
+      // dd($dataGrafik3);
       //end grafik pie
 
 
      return view('admin.detail_grafik_indi',
-            compact('id_goal','goal','indi','dataGrafik','subindi','dataGrafik2', 'dataGrafik3'));
+            compact('id_goal','goal','indi','tahun_now','dataGrafik','subindi','dataGrafik2', 'dataGrafik3'));
     }
 
 

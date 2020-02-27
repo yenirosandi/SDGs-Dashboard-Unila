@@ -165,7 +165,7 @@
         		type: 'pie'
     			},
     			title: {
-						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} ({!!($tahun_now)!!})'
     			},
 					subtitle: {
 						text: 'Indikator {!! json_encode($indi) !!}'
