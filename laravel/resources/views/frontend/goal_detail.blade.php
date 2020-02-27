@@ -25,7 +25,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         </div>
         <!-- <div style="width: 0px; height: 225px; border: 1px #000 solid;"></div> -->
         <div class="col-md-8 col-md-offset-1">
-            <h2><?php echo ucwords($goal->nama_goal); ?>            
+            <h2><?php echo ucwords($goal->nama_goal); ?>
              <a href="{{action('HomeController@detailGoalPdf', $goal->id_goal)}}"  class="btn btn-info btn-circle btn-sm ">
                 <i class="fas fa-file-download"></i>
               </a> </h2>
@@ -100,7 +100,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                       </td>
                     @endif
                     <?php $tahun++ ?>
-                    
+
                   @endwhile
                 @endforeach
                 @endforeach
@@ -115,4 +115,3 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
     </main>
 
 @endsection
-

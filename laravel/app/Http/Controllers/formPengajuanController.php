@@ -23,7 +23,7 @@ class formPengajuanController extends Controller
 
   public function downloadPDF($id_m_sumberdata){
     $no=1;
-    $goal=null; $indikator=null; $subindi='';
+    $subindi='';
     $kolom=3;
     $sumberdata=Sumberdata_model::find($id_m_sumberdata);
     $join=DB::table('t_m_subindikator')
@@ -31,28 +31,17 @@ class formPengajuanController extends Controller
       ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
       ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
       ->select('t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_m_sumberdata.*')
-      ->where('fk_id_m_sumberdata', $id_m_sumberdata)
-      ->orderby('t_m_subindikator.fk_id_goal','asc')
+      ->where('t_m_subindikator.fk_id_m_sumberdata', $id_m_sumberdata)
+      ->orderBy('t_m_subindikator.fk_id_goal')
       ->get();
-      // DD($join);
-      $count=DB::table('t_m_subindikator')
-        ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-        ->select('t_m_subindikator.*','t_m_sumberdata.*')
-        ->where('fk_id_goal', $goal)
-        ->count();
-        // DD($sumberdata);
-
-      $count2=DB::table('t_m_subindikator')
-        ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-        ->select('t_m_subindikator.*','t_m_sumberdata.*')
-        ->where('fk_id_indikator','=',$indikator)
-        ->count();
-
+    $countJoin= count($join);
+    // DD($countJoin);
     $pdf = PDF::loadView('layout.pdf',
                 compact('join','sumberdata','no',
-                        'goal','indikator','subindi',
-                        'kolom','id_m_sumberdata',
-                      'count','count2'));
+                        'subindi','countJoin',
+                        'kolom','id_m_sumberdata'
+                      // 'goal','indikator','count','count2'
+                    ))->setPaper('a4', 'landscape');
     return $pdf->stream();
   }
 }

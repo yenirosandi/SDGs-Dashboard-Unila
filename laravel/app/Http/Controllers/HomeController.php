@@ -184,10 +184,7 @@ class HomeController extends Controller
     }
 
     public function detailGoalPdf($id){
-      $goal=Goals_model::find($id);
-
       $no=1;
-      $id='';
       $tahun=2017;
       $tahun_now=date('Y');
       $indikator='';
@@ -197,11 +194,13 @@ class HomeController extends Controller
       // $kolomtahun=$tahun_now-$tahun+2;
       // dd($kolomtahun);
       $kolomindi=$kolomtahun+5;
+      $goalTbl=Goals_model::find($id);
       $data=DB::table('t_m_subindikator')
         ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
         ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
         ->where('t_m_subindikator.fk_id_goal', $id)
         // ->where('t_m_subindikator.fk_id_indikator','=','t_m_indikator.id_indikator')
+        ->orderBy('t_m_subindikator.id_m_subindikator')
         ->get();
         // DD($data);
 
@@ -213,30 +212,30 @@ class HomeController extends Controller
           ->where('t_pencapaian.fk_id_goal', '=', $id)
           // ->where('tahun','=', $tahun_capai)
           ->orderBy('t_pencapaian.tahun')
-
+          ->orderBy('t_m_subindikator.id_m_subindikator')
           ->get();
           // DD($data_capai);
 
-
-
-      $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
-
-      $pdf = PDF::loadView('layout.pdfDetailGoal',
+      // $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
+      // return view('admin.goal_detail',
+      $goal_detail_pdf= PDF::loadView('layout.pdfDetailGoal',
         compact('id',
           'kolomindi',
           'kolomtahun',
           'subindi',
           'data',
+          // 'dataindi',
           // 'null',
           'tahun',
           'indikator',
           'tahun_now',
           'data_capai',
-          'no','goal_detail', 'goal'
+          'goalTbl',
+          'no'
           // 'sub',
-         ));
-          return $pdf->stream();
-  // return $pdf->download('laporan-pegawai-pdf');
+          ))->setPaper('a4', 'landscape');
+
+      return $goal_detail_pdf->stream();
 
     }
 
