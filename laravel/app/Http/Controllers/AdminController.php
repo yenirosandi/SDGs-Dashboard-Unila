@@ -19,12 +19,6 @@ class AdminController extends Controller
       return view('admin.index', compact('goals'));
     }
 
-    // public function navbar($id_goal)
-    // {
-    //   $goals= Goals_model::all();
-    //   return view('layout.master_admin', compact('goals'));
-    // }
-
     public function  linkGrafikIndi($id_indi)
     {
       $sub=  DB::table('t_m_subindikator')
@@ -123,13 +117,78 @@ class AdminController extends Controller
         $dataGrafik2[$key]['name'] = "Tahun ".$data_persub->tahun;
         $dataGrafik2[$key]['data'] = $nilai;
       }
-        // dd($dataGrafik2);
+      // dd($dataGrafik2);
       //end grafik batang
 
+      //start grafik pie
+      $dataGrafik3 = [];
+      $pt=0;
+      $tahun_now=date('Y');
+      // $tahun_now=2019;
+
+      // $pencapaian= DB::table('t_pencapaian')
+      // ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+      // ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+      // ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+      // ->select('t_pencapaian.*', 't_trends.*','t_m_sumberdata.*', 't_m_subindikator.*')
+      // ->where('t_pencapaian.fk_id_indikator', $id_indi)
+      // ->where('t_pencapaian.tahun', $tahun_now)
+      // ->orderBy('t_pencapaian.fk_id_m_subindikator')
+      // ->get();
+      //
+      // foreach ($pencapaian as $key => $data_persub) {
+      //   $subdata=$data_persub->id_m_subindikator;
+      //   if($data_persub->isian=='Angka'){
+      //     $nilai=(int)$value->nilai;
+      //   }
+      //   else {
+      //     $nilai=$value->poin+$pt;
+      //     $pt=$value->poin+$pt;
+      //   }
+      $sub=  DB::table('t_m_subindikator')
+      ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+      ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+      ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+      ->select('t_m_subindikator.*','t_goals.nama_goal','t_m_indikator.indikator', 't_m_sumberdata.*')
+      ->where('t_m_subindikator.fk_id_indikator', '=', $id_indi)
+      ->orderBy('t_m_subindikator.id_m_subindikator')
+      ->get();
+      // dd($sub);
+
+      foreach ($sub as $key => $data_persub){
+        $goal=$data_persub->nama_goal;
+        $indi=$data_persub->indikator;
+        $subindi = $data_persub->subindikator." (".$data_persub->sumberdata.")";
+        $id_goal=$data_persub->fk_id_goal;
+        $subdata=$data_persub->id_m_subindikator;
+        $tahun=2019;
+        // start grafik garis
+        $pencapaian= DB::table('t_pencapaian')
+        ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+        ->select('t_pencapaian.*', 't_trends.*')
+        ->where('t_pencapaian.tahun', $tahun)
+        ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
+        ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->get();
+        // DD($pencapaian);
+        foreach ($pencapaian as $key2 => $value) {
+          if($data_persub->isian=='Angka'){
+            $nilai=(int)$value->nilai;
+          }
+          else {
+            $nilai=$value->poin+$pt;
+            $pt=$value->poin+$pt;
+          }
+        }
+        $dataGrafik3[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
+        $dataGrafik3[$key]['y'] = $nilai;
+      }
+      // dd($dataGrafik3);
+      //end grafik pie
 
 
      return view('admin.detail_grafik_indi',
-            compact('id_goal','goal','indi','dataGrafik','subindi','dataGrafik2'));
+            compact('id_goal','goal','indi','tahun_now','dataGrafik','subindi','dataGrafik2', 'dataGrafik3'));
     }
 
 
