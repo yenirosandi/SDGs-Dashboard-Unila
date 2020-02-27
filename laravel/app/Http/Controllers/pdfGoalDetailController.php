@@ -17,6 +17,7 @@ class pdfGoalDetailController extends Controller
     }
 
 
+    
     public function detailGoalPdf($id){
         $no=1;
         // $id='';
