@@ -31,7 +31,7 @@
       <br><br><br><br><br><br>
         <ol class="breadcrumb">
             <li class="active">
-                <i class="fa fa-dashboard"></i> {{ date('d M Y')}} / @yield('title_breadcrumb')
+                <i class="fa fa-dashboard"></i> {{ date('d M Y')}}
             </li>
         </ol>
         <main role="main" style="background-color:#D3D3D3; padding: 40px;">

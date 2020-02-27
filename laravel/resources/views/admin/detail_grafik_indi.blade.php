@@ -19,7 +19,14 @@
 @section('Judul','Laporan SDGs per Indikator')
 @section('JudulDesc','Berikut adalah halaman pelaporan visual dalam bentuk beragam grafik yang dapat dilihat dibawah ini:')
 @section('content')
-@section('title_breadcrumb','Detail Goal/Laporan SDGs Indikator')
+
+<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+				<li class="breadcrumb-item"><a href="{{url()->previous()}}">Detail Goal {{$id_goal}}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Grafik  </li>
+			</ol>
+</nav>
 
   <!-- Grafik garis -->
   <div class="card shadow mb-4 w-75">

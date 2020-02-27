@@ -1,8 +1,14 @@
 @extends('frontend.master')
 @section('title','Laporan SDGs')
-@section('title_breadcrumb','Detail Goal/Grafik SDGs Indikator')
+@section('title_breadcrumb')
 @section('content')
-
+<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+				<li class="breadcrumb-item"><a href="{{url()->previous()}}">Detail Goal {{$id_goal}}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Grafik  </li>
+			</ol>
+</nav>
 <style>
 #grafikGoal, #area, #batang, #batang2, #pie {
 	min-width: 310px;

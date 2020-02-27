@@ -4,8 +4,12 @@
 
 @section('content')
 
-@section('title_breadcrumb','Home')	
-
+@section('title_breadcrumb','')	
+                <nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+			</ol>
+		</nav>
 
 SUSTAINABLE DEVELOPMENT GOALS <hr>
 

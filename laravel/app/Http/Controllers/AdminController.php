@@ -105,6 +105,8 @@ class AdminController extends Controller
         ->where('t_pencapaian.tahun', $tahun)
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->orderBy('t_pencapaian.tahun')
+        ->groupBy('t_pencapaian.fk_id_m_subindikator')
+
         ->get();
         // DD($pencapaian2);
 

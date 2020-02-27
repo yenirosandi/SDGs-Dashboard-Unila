@@ -29,7 +29,8 @@
             </div>
           </div>
         <br><br><br>
-        <h5 style="color:#323236;">Tabel Pencapaian</h5>
+        <h5 style="color:#323236;
+        ">Tabel Pencapaian</h5>
         <hr>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
