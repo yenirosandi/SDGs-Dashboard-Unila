@@ -158,7 +158,7 @@ class AdminController extends Controller
       foreach ($sub as $key => $data_persub){
         $goal=$data_persub->nama_goal;
         $indi=$data_persub->indikator;
-        $subindi = $data_persub->subindikator." (".$data_persub->sumberdata.")";
+        // $subindi = $data_persub->subindikator." (".$data_persub->sumberdata.")";
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
         $tahun=2019;

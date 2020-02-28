@@ -7,18 +7,44 @@
   </head>
   <body>
     <style type="text/css">
-		  table tr td,
+		  /* table tr td,
 		  table tr th{
 			  font-size: 12px;
         padding: 5px;
-		  }
+		  } */
+            table {
+          border-left: 0.0001em solid #ccc;
+          border-right: 0;
+          border-top: 0.0001em solid #ccc;
+          border-bottom: 0;
+          border-collapse: collapse;
+          /* page-break-inside: auto; */
+          /* page-break-inside: avoid; */
+          page-break-after: always;
+      }
+      table tr td,
+      table td th {
+          border-left: 0;
+          border-right: 0.0001em  solid #ccc;
+          border-top: 0;
+          border-bottom:0.0001em solid #ccc;
+          border-collapse: collapse;
+          /* page-break-inside: auto; */
+          page-break-inside: auto;
+
+
+
+      }
+      .rowspan {
+            border-left-width: 5px;
+        }
 	  </style>
     <img src="{{public_path('img/logo_sdgsunila.png')}}" width="15%">
     <!-- <hr style="color:#ababab;"> -->
     <h4>SUMBER DATA: {{$sumberdata->sumberdata}}</h4>
     Berikut adalah list data metrik SDGs untuk sumber data dari {{$sumberdata->sumberdata}}:
     <br><br>
-      <table class="table table-bordered" border="1" width="100%" cellspacing="0">
+      <table class="table table-bordered" border="1" width="100%"     cellpadding="10" cellspacing="0">
         <thead>
           <tr>
             <th width="10%"style="text-align:center; vertical-align:middle;">Goal</th>
@@ -49,7 +75,7 @@
               ->count();
              ?>
             @if($data->fk_id_goal!=$goal)
-              <td rowspan="{{$count}}">{{$data->id_goal}}: {{$data->nama_goal}}</td>
+              <td rowspan="{{$count}}" >{{$data->id_goal}}: {{$data->nama_goal}}</td>
             @else
             @endif
             <?php $goal=$data->fk_id_goal;?>
