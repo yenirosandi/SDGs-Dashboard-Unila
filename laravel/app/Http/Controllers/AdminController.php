@@ -207,8 +207,7 @@ class AdminController extends Controller
         ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
         ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
         ->where('t_m_subindikator.fk_id_goal', $id)
-        // ->where('t_m_subindikator.fk_id_indikator','=','t_m_indikator.id_indikator')
-        ->orderBy('t_m_subindikator.id_m_subindikator')
+        ->orderBy('t_m_subindikator.fk_id_indikator')
         ->get();
         // DD($data);
 

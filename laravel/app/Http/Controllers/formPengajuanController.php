@@ -42,6 +42,7 @@ class formPengajuanController extends Controller
                         'kolom','id_m_sumberdata'
                       // 'goal','indikator','count','count2'
                     ))->setPaper('a4', 'landscape');
-    return $pdf->stream();
+    // return $pdf->stream();
+    return $pdf->download('form');
   }
 }
