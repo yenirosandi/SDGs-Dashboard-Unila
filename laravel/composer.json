@@ -12,10 +12,12 @@
         "barryvdh/laravel-dompdf": "^0.8.5",
         "barryvdh/laravel-snappy": "^0.4.7",
         "fideloper/proxy": "^4.0",
+        "h4cc/wkhtmltopdf-amd64": "0.12.x",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "nesbot/carbon": "^2.25",
-        "realrashid/sweet-alert": "^2.0"
+        "realrashid/sweet-alert": "^2.0",
+        "wemersonjanuario/wkhtmltopdf-windows": "0.12.2.3"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
