@@ -259,7 +259,15 @@ class HomeController extends Controller
           ->orderBy('t_pencapaian.tahun')
           ->orderBy('t_m_subindikator.id_m_subindikator')
           ->get();
-          // DD($data_capai);
+
+        $ada_data_capai=DB::table('t_m_indikator')
+          ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+          ->select('t_m_indikator.*','t_goals.*')
+          ->where('t_m_indikator.fk_id_goal', '=', $id)
+          ->orderBy('t_m_indikator.id_indikator')
+          ->get();
+        $countCapai= count($ada_data_capai);
+          // DD($countCapai);
 
       // $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
       // return view('admin.goal_detail',
@@ -273,6 +281,7 @@ class HomeController extends Controller
           // 'null',
           'tahun',
           'indikator',
+          'countCapai',
           'tahun_now',
           'data_capai',
           'goalTbl',
