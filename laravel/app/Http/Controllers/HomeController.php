@@ -259,6 +259,8 @@ class HomeController extends Controller
           ->orderBy('t_pencapaian.tahun')
           ->orderBy('t_m_subindikator.id_m_subindikator')
           ->get();
+          // DD($data_capai);
+
 
         $ada_data_capai=DB::table('t_m_indikator')
           ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
