@@ -36,13 +36,16 @@ class formPengajuanController extends Controller
       ->get();
     $countJoin= count($join);
     // DD($countJoin);
+    // return view('layout.pdf',
     $pdf = PDF::loadView('layout.pdf',
                 compact('join','sumberdata','no',
                         'subindi','countJoin',
                         'kolom','id_m_sumberdata'
                       // 'goal','indikator','count','count2'
-                    ))->setPaper('a4', 'landscape');
-    // return $pdf->stream();
-    return $pdf->download('form');
+                    ))
+                    ->setPaper('a4', 'landscape')
+                    ;
+    return $pdf->stream();
+
   }
 }
