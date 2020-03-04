@@ -80,13 +80,32 @@
 
           <!-- Buat nilai pencapaian -->
           @foreach($data_capai as $capai)
-            <?php $tahun=2017; ?>
+            <?php
+            $tahun=2017;
+            // DD($trend);
+            ?>
             @while($tahun<=$tahun_now)
               @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
                 <td style="text-align:center;">{{$capai->nilai}}</td>
+                <?php
+                $trend= $capai->keterangan_trend;
+                // DD($trend);
+                //ubah data simbol trend
+                if ($trend=='Data Naik') {
+                  $ikonTrend='trend_up.png';
+                }elseif ($trend=='Data Konstan') {
+                  $ikonTrend=='trend_right.png';
+                }elseif ($trend=='Data Turun') {
+                  $ikonTrend='trend_down.png';
+                }elseif ($trend=='Tidak Ada Data') {
+                  $ikonTrend='trend not yet.png';
+                }else
+                $ikonTrend='trend not yet.png';
+                 ?>
                 <td>
                   <center>
-                    {!!$capai->simbol_trend!!}
+                    <!-- {!!$capai->simbol_trend!!} -->
+                    <img src="{{public_path('img/'.$ikonTrend)}}" width="80%">
                   </center>
                 </td>
               @else
