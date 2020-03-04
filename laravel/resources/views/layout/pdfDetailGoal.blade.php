@@ -19,10 +19,10 @@
     <table border ="0" cellpadding="2";>
       <tr>
         <?php  ?>
-        <td><img src="{{$goalTbl->gambar}}" style="width:30%;"></td>
+        <td><img src="{{$goalTbl->gambar}}" style="width:20%;"></td>
         <td>
-          <h4>{{$goalTbl->nama_goal}}</h4>
-          <p style="text-align:justify; color:black">{{$goalTbl->deskripsi_goal}} </p>
+          <h3>{{$goalTbl->nama_goal}}</h3>
+          <p style="text-align:justify; color:black; font-size: 16px">{{$goalTbl->deskripsi_goal}} </p>
         </td>
       </tr>
     </table>

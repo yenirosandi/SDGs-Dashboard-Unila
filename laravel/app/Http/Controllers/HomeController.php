@@ -287,7 +287,7 @@ class HomeController extends Controller
           'goalTbl',
           'no'
           // 'sub',
-          ))->setPaper('a4');
+          ))->setPaper('a4','landscape');
 
       return $goal_detail_pdf->stream();
 
