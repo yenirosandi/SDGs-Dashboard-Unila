@@ -10,6 +10,7 @@
         padding: 7px;
       }
     </style>
+
   </head>
   <body>
     <img src="{{public_path('img/logo_sdgsunila.png')}}" width="15%">
@@ -50,14 +51,14 @@
           <td bgcolor="#f0f0f0"colspan="5" align="center">Tidak ada Data</td>
         </tr>
         @endif
-
+        <?php $indikator=null; $subindi=null; ?>
         @foreach($data as $data_sub)
         <tr>
-          <?php $indikator=null; $subindi=null; ?>
           <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
+
             @if($data_sub->indikator!=$indikator)
               <td style="background-color:#e8f1ff;" colspan="{{$kolomindi}}">{{$data_sub->indikator}}</td>
-            @else
+            @else <td style="padding: 0px; border:0px;" colspan="{{$kolomindi}}"></td>
             @endif
           <?php $indikator=$data_sub->indikator; ?>
         </tr>
@@ -65,18 +66,16 @@
           @if($data_sub->subindikator!=$subindi)
             <td style='text-align:center;border-bottom:none;border-right:none;'>{{$no}}.</td>
             <?php $no++; ?>
-            <td style='border-left:none; border-bottom:none;'>{{$data_sub->subindikator}}</td>
-          @else <td style="border-bottom:none;border-top:none" colspan="2"></td>
+            <td style="border-bottom:none;">{{$data_sub->subindikator}}</td>
+          @else
+          <td style='text-align:center;border-top:none; border-bottom:none;'></td>
+          <td style="border-top:none; border-bottom:none;"></td>
           @endif
           <?php $subindi=$data_sub->subindikator; ?>
 
           @if($data_sub->fk_id_indikator==$data_sub->id_indikator)
-            <td>{{$data_sub->sumberdata}}</td>
+            <td style="border-bottom:none;">{{$data_sub->sumberdata}}</td>
           @endif
-
-          <style>
-            td:empty{border-radius: 1px} /* style css3 untuk kolom kosong */
-          </style>
 
           <!-- Buat nilai pencapaian -->
           @foreach($data_capai as $capai)
@@ -86,7 +85,7 @@
             ?>
             @while($tahun<=$tahun_now)
               @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
-                <td style="text-align:center;">{{$capai->nilai}}</td>
+                <td style="text-align:center; border-right:none; border-bottom:none;">{{$capai->nilai}}</td>
                 <?php
                 $trend= $capai->keterangan_trend;
                 // DD($trend);
@@ -102,7 +101,7 @@
                 }else
                 $ikonTrend='trend not yet.png';
                  ?>
-                <td>
+                <td style="border-bottom:none; border-left:none;">
                   <center>
                     <!-- {!!$capai->simbol_trend!!} -->
                     <img src="{{public_path('img/'.$ikonTrend)}}" width="80%">
