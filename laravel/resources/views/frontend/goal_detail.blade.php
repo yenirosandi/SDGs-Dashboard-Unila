@@ -108,11 +108,29 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 <div class="row">
                 <label for="from" class="col-form-label">Dari</label>
                     <div class="col-md-3">
-                    <input type="date" class="form-control input-sm" id="from" name="from">
+                    <!-- <input type="date" class="form-control input-sm" id="from" name="from"> -->
+                        <select id="from" class="form-control"name="from">
+                                  <option value="">Pilih tahun</option>
+                                    <?php
+                                    $thn_skr=  date('Y');
+                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                    ?>
+                                    <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
+                                  <?php } ?>
+                        </select>
                     </div>
                     <label for="from" class="col-form-label">Sampai </label>
                     <div class="col-md-3">
-                        <input type="date" class="form-control input-sm" id="to" name="to">
+                        <!-- <input type="date" class="form-control input-sm" id="to" name="to"> -->
+                        <select id="to" class="form-control" name="to">
+                                  <option value="">Pilih tahun</option>
+                                    <?php
+                                    $thn_skr=  date('Y');
+                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                    ?>
+                                    <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
+                                  <?php } ?>
+                        </select>
                     </div>
                     
                     <div class="col-md-4">
