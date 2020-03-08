@@ -280,6 +280,7 @@ class HomeController extends Controller
                 ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
                 ->where('t_pencapaian.fk_id_goal', '=', $id)
                 ->whereBetween('tahun', [$from, $to])
+                ->orWhere('tahun' , '=', $tahun)
                 // ->where('tahun','=', $tahun_capai)
                 ->orderBy('t_pencapaian.tahun')
                 ->orderBy('t_m_subindikator.id_m_subindikator')

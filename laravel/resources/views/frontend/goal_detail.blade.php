@@ -113,7 +113,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                                   <option value="">Pilih tahun</option>
                                     <?php
                                     $thn_skr=  date('Y');
-                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                    for ($tahun = $thn_skr; $tahun >= 2018; $tahun--) {
                                     ?>
                                     <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                                   <?php } ?>
@@ -126,7 +126,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                                   <option value="">Pilih tahun</option>
                                     <?php
                                     $thn_skr=  date('Y');
-                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                    for ($tahun = $thn_skr; $tahun >= 2018; $tahun--) {
                                     ?>
                                     <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                                   <?php } ?>
