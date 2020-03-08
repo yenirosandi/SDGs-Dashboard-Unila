@@ -200,8 +200,8 @@ class HomeController extends Controller
       {
           $from = $req->input('from');
           $to   = $req->input('to');
-          $kurangPdf=$to-$tahun;
-          $kolomtahunPdf=$kurangPdf+$kurangPdf;
+          $kurangPdf=$to-$from+1;
+          $kolomtahunPdf=$kurangPdf*2;
           $kolomindiPdf=$kolomtahunPdf+5;
 
 

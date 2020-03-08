@@ -39,7 +39,7 @@
           <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
         </tr>
         <tr>
-          @for ($thn=2018; $thn <= $to; $thn++)
+          @for ($thn=$from; $thn <= $to; $thn++)
             <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
           @endfor
         </tr>
