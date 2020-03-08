@@ -200,6 +200,9 @@ class HomeController extends Controller
       {
           $from = $req->input('from');
           $to   = $req->input('to');
+          $kurangPdf=$to-$tahun;
+          $kolomtahunPdf=$kurangPdf+$kurangPdf;
+          $kolomindiPdf=$kolomtahun+5;
 
 
           if ($req->has('search'))
@@ -214,7 +217,7 @@ class HomeController extends Controller
             // $kolomtahun=$tahun_now-$tahun+2;
             // dd($kolomtahun);
             $kolomindi=$kolomtahun+5;
-      
+
 
               // select search
               $data=DB::table('t_m_subindikator')
@@ -224,7 +227,7 @@ class HomeController extends Controller
               ->orderBy('t_m_subindikator.fk_id_indikator')
               ->get();
               // DD($data);
-      
+
               $viewdata_capai=DB::table('t_pencapaian')
                 ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
                 ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
@@ -237,14 +240,14 @@ class HomeController extends Controller
                 ->orderBy('t_m_subindikator.id_m_subindikator')
                 ->get();
                 // DD($data_capai);
-                
+
                 $goalTbl=Goals_model::find($id);
-              
+
                 $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
-              
-              return view('frontend.goal_detail',['data' => $data, 
+
+              return view('frontend.goal_detail',['data' => $data,
                                                   'viewdata_capai' => $viewdata_capai,
-                                                   'goal_detail'=> $goal_detail, 
+                                                   'goal_detail'=> $goal_detail,
                                                    'goalTbl' => $goalTbl,
                                                    'id'=>  $id,
                                                    'no' => $no,
@@ -256,7 +259,7 @@ class HomeController extends Controller
                                                    'kolomtahun' => $kolomtahun,
                                                    'kolomindi' => $kolomindi,
                                                    ]);
-          } 
+          }
 
 
           elseif ($req->has('exportPDF'))
@@ -269,7 +272,7 @@ class HomeController extends Controller
               ->orderBy('t_m_subindikator.fk_id_indikator')
               ->get();
               // DD($data);
-      
+
               $data_capai=DB::table('t_pencapaian')
                 ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
                 ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
@@ -282,8 +285,8 @@ class HomeController extends Controller
                 ->orderBy('t_m_subindikator.id_m_subindikator')
                 ->get();
                 // DD($data_capai);
-      
-      
+
+
               $ada_data_capai=DB::table('t_m_indikator')
                 ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
                 ->select('t_m_indikator.*','t_goals.*')
@@ -292,7 +295,7 @@ class HomeController extends Controller
                 ->get();
               $countCapai= count($ada_data_capai);
                 // DD($countCapai);
-      
+
             $goal_detail_pdf= PDF::loadView('layout.pdfDetailGoal',
               compact('id',
                 'kolomindi',
@@ -307,12 +310,16 @@ class HomeController extends Controller
                 'tahun_now',
                 'data_capai',
                 'goalTbl',
-                'no'
+                'no',
+                'from',
+                'to',
+                'kolomtahunPdf',
+                'kolomindiPdf'
                 // 'sub',
                 ))->setPaper('a4');
-      
+
             return $goal_detail_pdf->stream();
-          }  
+          }
       }
           else
       {
@@ -324,7 +331,7 @@ class HomeController extends Controller
           ->orderBy('t_m_subindikator.fk_id_indikator')
           ->get();
           // DD($data);
-  
+
           $viewdata_capai=DB::table('t_pencapaian')
             ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
             ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
@@ -335,9 +342,9 @@ class HomeController extends Controller
             ->orderBy('t_pencapaian.tahun')
             ->get();
             // DD($data_capai);
-  
-  
-  
+
+
+
         $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
         return view('frontend.goal_detail',
           compact('id',

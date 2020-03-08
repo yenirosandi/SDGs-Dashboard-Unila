@@ -36,10 +36,10 @@
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
           <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th>
-          <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahun}}">Realisasi Pencapaian</th>
+          <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
         </tr>
         <tr>
-          @for ($thn=2018; $thn <= $tahun_now; $thn++)
+          @for ($thn=2018; $thn <= $to; $thn++)
             <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
           @endfor
         </tr>
@@ -57,14 +57,14 @@
           <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
 
             @if($data_sub->indikator!=$indikator)
-              <td style="background-color:#e8f1ff;" colspan="{{$kolomindi}}">{{$data_sub->indikator}}</td>
-            @else <td style="padding: 0px; border:0px;" colspan="{{$kolomindi}}"></td>
+              <td style="background-color:#e8f1ff;" colspan="{{$kolomindiPdf}}">{{$data_sub->indikator}}</td>
+            @else <td style="padding: 0px; border:0px;" colspan="{{$kolomindiPdf}}"></td>
             @endif
           <?php $indikator=$data_sub->indikator; ?>
         </tr>
         <tr>
           @if($data_sub->subindikator!=$subindi)
-            <td style='text-align:center;border-bottom:none;border-right:none;'>{{$no}}.</td>
+            <td style='text-align:center;border-bottom:none;'>{{$no}}.</td>
             <?php $no++; ?>
             <td style="border-bottom:none;">{{$data_sub->subindikator}}</td>
           @else
@@ -83,7 +83,7 @@
             $tahun=2017;
             // DD($trend);
             ?>
-            @while($tahun<=$tahun_now)
+            @while($tahun<=$to)
               @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
                 <td style="text-align:center; border-right:none; border-bottom:none;">{{$capai->nilai}}</td>
                 <?php
