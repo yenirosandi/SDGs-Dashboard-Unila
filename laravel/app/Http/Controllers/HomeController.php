@@ -180,56 +180,7 @@ class HomeController extends Controller
     }
 
 
-    public function detailGoal($id){
-      $no=1;
-      $tahun=2017;
-      $tahun_now=date('Y');
-      $indikator='';
-      $subindi='';
-      $kurang=$tahun_now-$tahun;
-      $kolomtahun=$kurang+$kurang;
-      // $kolomtahun=$tahun_now-$tahun+2;
-      // dd($kolomtahun);
-      $kolomindi=$kolomtahun+5;
-      $data=DB::table('t_m_subindikator')
-        ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-        ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-        ->where('t_m_subindikator.fk_id_goal', $id)
-        ->orderBy('t_m_subindikator.fk_id_indikator')
-        ->get();
-        // DD($data);
-
-        $data_capai=DB::table('t_pencapaian')
-          ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-          ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-          ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
-          ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
-          ->where('t_pencapaian.fk_id_goal', '=', $id)
-          // ->where('tahun','=', $tahun_capai)
-          ->orderBy('t_pencapaian.tahun')
-          ->get();
-          // DD($data_capai);
-
-
-
-      $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
-      return view('frontend.goal_detail',
-        compact('id',
-          'kolomindi',
-          'kolomtahun',
-          'subindi',
-          'data',
-          // 'null',
-          'tahun',
-          'indikator',
-          'tahun_now',
-          'data_capai',
-          'no',
-          // 'sub',
-          'goal_detail'));
-    }
-
-    public function detailGoalPdf($id){
+    public function detailGoal(Request $req, $id){
       $no=1;
       $tahun=2017;
       $tahun_now=date('Y');
@@ -241,57 +192,168 @@ class HomeController extends Controller
       // dd($kolomtahun);
       $kolomindi=$kolomtahun+5;
       $goalTbl=Goals_model::find($id);
-      $data=DB::table('t_m_subindikator')
-        ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-        ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-        ->where('t_m_subindikator.fk_id_goal', $id)
-        ->orderBy('t_m_subindikator.fk_id_indikator')
-        ->get();
-        // DD($data);
 
-        $data_capai=DB::table('t_pencapaian')
-          ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-          ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-          ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
-          ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
-          ->where('t_pencapaian.fk_id_goal', '=', $id)
-          // ->where('tahun','=', $tahun_capai)
-          ->orderBy('t_pencapaian.tahun')
-          ->orderBy('t_m_subindikator.id_m_subindikator')
+
+      $method = $req->method();
+
+      if ($req->isMethod('post'))
+      {
+          $from = $req->input('from');
+          $to   = $req->input('to');
+
+
+          if ($req->has('search'))
+          {
+            $no=1;
+            $tahun=2017;
+            $tahun_now=date('Y');
+            $indikator='';
+            $subindi='';
+            $kurang=$tahun_now-$tahun;
+            $kolomtahun=$kurang+$kurang;
+            // $kolomtahun=$tahun_now-$tahun+2;
+            // dd($kolomtahun);
+            $kolomindi=$kolomtahun+5;
+      
+
+              // select search
+              $data=DB::table('t_m_subindikator')
+              ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+              ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+              ->where('t_m_subindikator.fk_id_goal', $id)
+              ->orderBy('t_m_subindikator.fk_id_indikator')
+              ->get();
+              // DD($data);
+      
+              $viewdata_capai=DB::table('t_pencapaian')
+                ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+                ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+                ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+                ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
+                ->where('t_pencapaian.fk_id_goal', '=', $id)
+                ->whereBetween('tahun', [$from, $to])
+                // ->where('tahun','=', $tahun_capai)
+                ->orderBy('t_pencapaian.tahun')
+                ->orderBy('t_m_subindikator.id_m_subindikator')
+                ->get();
+                // DD($data_capai);
+                
+                $goalTbl=Goals_model::find($id);
+              
+                $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
+              
+              return view('frontend.goal_detail',['data' => $data, 
+                                                  'viewdata_capai' => $viewdata_capai,
+                                                   'goal_detail'=> $goal_detail, 
+                                                   'goalTbl' => $goalTbl,
+                                                   'id'=>  $id,
+                                                   'no' => $no,
+                                                   'tahun' => $tahun,
+                                                   'tahun_now' => $tahun_now,
+                                                   'indikator' => $indikator,
+                                                   'subindi' => $subindi,
+                                                   'kurang' => $kurang,
+                                                   'kolomtahun' => $kolomtahun,
+                                                   'kolomindi' => $kolomindi,
+                                                   ]);
+          } 
+
+
+          elseif ($req->has('exportPDF'))
+          {
+              // select PDF
+              $data=DB::table('t_m_subindikator')
+              ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+              ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+              ->where('t_m_subindikator.fk_id_goal', $id)
+              ->orderBy('t_m_subindikator.fk_id_indikator')
+              ->get();
+              // DD($data);
+      
+              $data_capai=DB::table('t_pencapaian')
+                ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+                ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+                ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+                ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
+                ->where('t_pencapaian.fk_id_goal', '=', $id)
+                ->whereBetween('tahun', [$from, $to])
+                // ->where('tahun','=', $tahun_capai)
+                ->orderBy('t_pencapaian.tahun')
+                ->orderBy('t_m_subindikator.id_m_subindikator')
+                ->get();
+                // DD($data_capai);
+      
+      
+              $ada_data_capai=DB::table('t_m_indikator')
+                ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+                ->select('t_m_indikator.*','t_goals.*')
+                ->where('t_m_indikator.fk_id_goal', '=', $id)
+                ->orderBy('t_m_indikator.id_indikator')
+                ->get();
+              $countCapai= count($ada_data_capai);
+                // DD($countCapai);
+      
+            $goal_detail_pdf= PDF::loadView('layout.pdfDetailGoal',
+              compact('id',
+                'kolomindi',
+                'kolomtahun',
+                'subindi',
+                'data',
+                // 'dataindi',
+                // 'null',
+                'tahun',
+                'indikator',
+                'countCapai',
+                'tahun_now',
+                'data_capai',
+                'goalTbl',
+                'no'
+                // 'sub',
+                ))->setPaper('a4');
+      
+            return $goal_detail_pdf->stream();
+          }  
+      }
+          else
+      {
+          //select all
+          $data=DB::table('t_m_subindikator')
+          ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+          ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
+          ->where('t_m_subindikator.fk_id_goal', $id)
+          ->orderBy('t_m_subindikator.fk_id_indikator')
           ->get();
-          // DD($data_capai);
-
-
-        $ada_data_capai=DB::table('t_m_indikator')
-          ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-          ->select('t_m_indikator.*','t_goals.*')
-          ->where('t_m_indikator.fk_id_goal', '=', $id)
-          ->orderBy('t_m_indikator.id_indikator')
-          ->get();
-        $countCapai= count($ada_data_capai);
-          // DD($countCapai);
-
-      // $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
-      // return view('admin.goal_detail',
-      $goal_detail_pdf= PDF::loadView('layout.pdfDetailGoal',
-        compact('id',
-          'kolomindi',
-          'kolomtahun',
-          'subindi',
-          'data',
-          // 'dataindi',
-          // 'null',
-          'tahun',
-          'indikator',
-          'countCapai',
-          'tahun_now',
-          'data_capai',
-          'goalTbl',
-          'no'
-          // 'sub',
-          ))->setPaper('a4','landscape');
-
-      return $goal_detail_pdf->stream();
+          // DD($data);
+  
+          $viewdata_capai=DB::table('t_pencapaian')
+            ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
+            ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+            ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+            ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
+            ->where('t_pencapaian.fk_id_goal', '=', $id)
+            // ->where('tahun','=', $tahun_capai)
+            ->orderBy('t_pencapaian.tahun')
+            ->get();
+            // DD($data_capai);
+  
+  
+  
+        $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
+        return view('frontend.goal_detail',
+          compact('id',
+            'kolomindi',
+            'kolomtahun',
+            'subindi',
+            'data',
+            // 'null',
+            'tahun',
+            'indikator',
+            'tahun_now',
+            'viewdata_capai',
+            'no',
+            // 'sub',
+            'goal_detail'));
+      }
 
     }
 
