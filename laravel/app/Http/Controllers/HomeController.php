@@ -202,7 +202,7 @@ class HomeController extends Controller
           $to   = $req->input('to');
           $kurangPdf=$to-$tahun;
           $kolomtahunPdf=$kurangPdf+$kurangPdf;
-          $kolomindiPdf=$kolomtahun+5;
+          $kolomindiPdf=$kolomtahunPdf+5;
 
 
           if ($req->has('search'))
