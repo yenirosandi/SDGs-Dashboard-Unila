@@ -74,7 +74,7 @@
           <?php $subindi=$data_sub->subindikator; ?>
 
           @if($data_sub->fk_id_indikator==$data_sub->id_indikator)
-            <td>{{$data_sub->sumberdata}}</td>
+            <td style="border-bottom:none;">{{$data_sub->sumberdata}}</td>
           @endif
 
           <!-- Buat nilai pencapaian -->
@@ -85,7 +85,7 @@
             ?>
             @while($tahun<=$tahun_now)
               @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
-                <td style="text-align:center;">{{$capai->nilai}}</td>
+                <td style="text-align:center; border-right:none; border-bottom:none;">{{$capai->nilai}}</td>
                 <?php
                 $trend= $capai->keterangan_trend;
                 // DD($trend);
@@ -101,7 +101,7 @@
                 }else
                 $ikonTrend='trend not yet.png';
                  ?>
-                <td>
+                <td style="border-bottom:none; border-left:none;">
                   <center>
                     <!-- {!!$capai->simbol_trend!!} -->
                     <img src="{{public_path('img/'.$ikonTrend)}}" width="80%">
