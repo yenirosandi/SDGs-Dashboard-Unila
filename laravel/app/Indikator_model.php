@@ -27,4 +27,8 @@ class Indikator_model extends Model
     {
     	return $this->hasMany(Pencapaian_model::class);
     }
+
+    public function goal(){
+      return $this->belongsTo(Goals_model::class,'fk_id_goal','id_goal');
+  }
 }

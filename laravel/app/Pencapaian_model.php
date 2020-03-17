@@ -27,7 +27,7 @@ class Pencapaian_model extends Model
         return $this->belongsTo(Indikator_model::class,'fk_id_indikator','id_indikator');
     }
     public function subindikator(){
-        return $this->belongsTo(SubIndikator_model::class,'fk_id_m_subindikator','id_m_subindikator');
+        return $this->belongsToMany(SubIndikator_model::class,'fk_id_m_subindikator','id_m_subindikator');
     }
     public function trend(){
         return $this->belongsTo(Trend_model::class,'fk_id_trend','id_trend');

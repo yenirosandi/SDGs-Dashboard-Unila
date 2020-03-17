@@ -12,4 +12,9 @@ class Sumberdata_model extends Model
 
     public $timestamps=true;
 
+
+    public function subindikator()
+    {
+    	return $this->hasMany(SubIndikator_model::class);
+    }
 }

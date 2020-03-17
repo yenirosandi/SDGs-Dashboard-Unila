@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use App\Goals_model;//tambahan
+use App\Pencapaian_model;
+use App\SubIndikator_model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;//n
 use PDF;
@@ -199,10 +201,20 @@ class HomeController extends Controller
       if ($req->isMethod('post'))
       {
           $from = $req->input('from');
-          $to   = $req->input('to');
+          // $to   = $req->input('to');
+          $to   = $from+4;
           $kurangPdf=$to-$from+1;
           $kolomtahunPdf=$kurangPdf*2;
           $kolomindiPdf=$kolomtahunPdf+5;
+
+
+          // $from      = !empty($req->from) ? ($req->from) : ('');
+
+
+          // // return response('Isi',  200);
+          // return response()->json([ ' to' => 'Pilihan tidak lengkap' ], 200);
+
+
 
 
           if ($req->has('search'))
@@ -235,6 +247,8 @@ class HomeController extends Controller
                 ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
                 ->where('t_pencapaian.fk_id_goal', '=', $id)
                 ->whereBetween('tahun', [$from, $to])
+                ->orWhere('tahun' , '=', $tahun)
+
                 // ->where('tahun','=', $tahun_capai)
                 ->orderBy('t_pencapaian.tahun')
                 ->orderBy('t_m_subindikator.id_m_subindikator')
@@ -280,7 +294,6 @@ class HomeController extends Controller
                 ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
                 ->where('t_pencapaian.fk_id_goal', '=', $id)
                 ->whereBetween('tahun', [$from, $to])
-                ->orWhere('tahun' , '=', $tahun)
                 // ->where('tahun','=', $tahun_capai)
                 ->orderBy('t_pencapaian.tahun')
                 ->orderBy('t_m_subindikator.id_m_subindikator')
@@ -325,24 +338,15 @@ class HomeController extends Controller
           else
       {
           //select all
-          $data=DB::table('t_m_subindikator')
-          ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-          ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
-          ->where('t_m_subindikator.fk_id_goal', $id)
-          ->orderBy('t_m_subindikator.fk_id_indikator')
-          ->get();
-          // DD($data);
 
-          $viewdata_capai=DB::table('t_pencapaian')
-            ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
-            ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-            ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
-            ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
-            ->where('t_pencapaian.fk_id_goal', '=', $id)
-            // ->where('tahun','=', $tahun_capai)
-            ->orderBy('t_pencapaian.tahun')
-            ->get();
-            // DD($data_capai);
+          $data=SubIndikator_model::orderby('id_m_subindikator')->orderby('fk_id_indikator')
+          ->where('fk_id_goal', $id)
+          ->get();
+
+          $dcapai=Pencapaian_model::orderby('fk_id_indikator')->orderby('tahun')
+          ->where('fk_id_goal', $id)
+          ->get();
+          // dd($data);
 
 
 
@@ -357,10 +361,10 @@ class HomeController extends Controller
             'tahun',
             'indikator',
             'tahun_now',
-            'viewdata_capai',
+            
             'no',
             // 'sub',
-            'goal_detail'));
+            'goal_detail','dcapai'));
       }
 
     }

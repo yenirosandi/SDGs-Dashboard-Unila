@@ -7,7 +7,7 @@
 //front-end:free user
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/goalDetail/{id}','HomeController@detailGoal');
+Route::get('/goalDetail/{id}','HomeController@detailGoal')->name('cobafrom');
 Route::post('/goalDetail/{id}',['as' => 'goaldetail.search', 'uses' => 'HomeController@detailGoal']);
 // Route::get('/goalDetail/{id}/pdf','HomeController@detailGoalPdf')->name('goalPdf');
 Route::get('/goalDetail/indi/{id_indi}','HomeController@linkGrafikIndi')->name('grafik');

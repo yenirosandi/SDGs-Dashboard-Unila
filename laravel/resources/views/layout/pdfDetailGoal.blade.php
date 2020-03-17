@@ -35,11 +35,13 @@
           <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
-          <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th>
+          <!-- <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th> -->
           <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
         </tr>
         <tr>
           @for ($thn=$from; $thn <= $to; $thn++)
+          $to=$from+4;
+
             <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
           @endfor
         </tr>

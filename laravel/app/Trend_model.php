@@ -12,4 +12,8 @@ class Trend_model extends Model
                            'keterangan','poin',
 
 ];
+
+public function pencapaian(){
+    return $this->hasMany(Pencapaian_model::class);
+}
 }

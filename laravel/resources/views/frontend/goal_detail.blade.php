@@ -113,28 +113,16 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                                   <option value="">Pilih tahun</option>
                                     <?php
                                     $thn_skr=  date('Y');
-                                    for ($tahun = $thn_skr; $tahun >= 2018; $tahun--) {
+                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
                                     ?>
                                     <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                                   <?php } ?>
                         </select>
                     </div>
-                    <label for="from" class="col-form-label">Sampai </label>
-                    <div class="col-md-3">
-                        <!-- <input type="date" class="form-control input-sm" id="to" name="to"> -->
-                        <select id="to" class="form-control" name="to">
-                                  <option value="">Pilih tahun</option>
-                                    <?php
-                                    $thn_skr=  date('Y');
-                                    for ($tahun = $thn_skr; $tahun >= 2018; $tahun--) {
-                                    ?>
-                                    <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
-                                  <?php } ?>
-                        </select>
-                    </div>
+
                     
                     <div class="col-md-4">
-                       <button type="submit" class="btn btn-primary btn-sm" name="search" >Cari</button>
+                       <!-- <button type="submit" class="btn btn-primary btn-sm" name="search" >Cari</button> -->
                         <button type="submit" class="btn btn-secondary btn-sm" name="exportPDF">Unduh PDF</button>
                     </div>
                 </div>
@@ -163,10 +151,10 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
               @foreach($data as $data_sub)
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
-                  @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafik', $data_sub->id_indikator )}}"> <span style="width:30px; height:30px"><img src="{{url('img/bars-chart.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
+                  @if($data_sub->indikator->indikator!=$indikator)
+                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator->indikator}}<a href="{{route('grafik', $data_sub->indikator->id_indikator )}}"> <span style="width:30px; height:30px"><img src="{{url('img/bars-chart.png')}}" style="width:30px; height:30px" alt=""></span></a></th>
                   @endif
-                <?php $indikator=$data_sub->indikator; ?>
+                <?php $indikator=$data_sub->indikator->indikator; ?>
               </tr>
               <tr>
                 @if($data_sub->subindikator!=$subindi)
@@ -178,8 +166,8 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 @endif
                 <?php $subindi=$data_sub->subindikator; ?>
 
-                @if($data_sub->fk_id_indikator==$data_sub->id_indikator)
-                  <td>{{$data_sub->sumberdata}}</td>
+                @if($data_sub->fk_id_indikator==$data_sub->indikator->id_indikator)
+                  <td>{{$data_sub->fsumberdata->sumberdata}}</td>
                 @endif
                 <!-- Buat nilai pencapaian -->
 
@@ -189,21 +177,26 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 </style>
 
 
-                @foreach($viewdata_capai as $capai)
+                @foreach($dcapai as $data_subs)
 
                   <?php $tahun=2017; ?>
                   @while($tahun<=$tahun_now)
-                    @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
-                      <td>{{$capai->nilai}}</td>
+                    @if($tahun==$data_subs->tahun && $data_sub->id_m_subindikator==$data_subs->fk_id_m_subindikator)
+                      <td>{{$data_subs->nilai}}</td>
                       <td>
                         <center>
-                          {!!$capai->simbol_trend!!}
+                          {!!$data_subs->trend->simbol_trend!!}
                         </center>
                       </td>
+
+                      @elseif($data_subs->nilai=='')
+                      <td></td>
+                      <td></td>
                     @endif
                     <?php $tahun++ ?>
 
                   @endwhile
+
                 @endforeach
                 @endforeach
               </tr>
@@ -217,3 +210,4 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
     </main>
 
 @endsection
+

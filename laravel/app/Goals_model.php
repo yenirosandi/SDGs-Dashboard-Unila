@@ -14,6 +14,17 @@ class Goals_model extends Model
 ];
 public $incrementing = false;
 
+public function indikator(){
+    return $this->hasMany(Indikator_model::class);
+}
+
+public function subindikator(){
+    return $this->hasMany(SubIndikator_model::class);
+}
+
+public function pencapaian(){
+    return $this->hasMany(Pencapaian_model::class);
+}
 
 }
 

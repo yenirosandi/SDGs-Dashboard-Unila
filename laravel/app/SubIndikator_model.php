@@ -24,10 +24,13 @@ public function goal(){
 public function indikator(){
     return $this->belongsTo(Indikator_model::class,'fk_id_indikator','id_indikator');
 }
-public function sumberdata(){
+public function fsumberdata(){
     return $this->belongsTo(Sumberdata_model::class,'fk_id_m_sumberdata','id_m_sumberdata');
 }
-
+public function pencapaian()
+{
+    return $this->belongsToMany(Pencapaian_model::class);
+}
 public function getFacingsAttribute()
 {
   return explode(',', $this->waktu_pengambilan);//gakguna ini sebernernya ehhe
