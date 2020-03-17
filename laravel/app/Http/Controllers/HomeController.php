@@ -339,11 +339,11 @@ class HomeController extends Controller
       {
           //select all
 
-          $data=SubIndikator_model::orderby('id_m_subindikator')->orderby('fk_id_indikator')
+          $data=SubIndikator_model::orderby('fk_id_indikator')
           ->where('fk_id_goal', $id)
           ->get();
 
-          $dcapai=Pencapaian_model::orderby('fk_id_indikator')->orderby('tahun')
+          $dcapai=Pencapaian_model::orderby('tahun')->orderby('fk_id_m_subindikator')
           ->where('fk_id_goal', $id)
           ->get();
           // dd($data);
