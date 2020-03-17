@@ -23,13 +23,8 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 <img src="/{{$goal->gambar}}" style="width:225px; height:225px;"class="card-img">
             </div>
         </div>
-        <!-- <div style="width: 0px; height: 225px; border: 1px #000 solid;"></div> -->
         <div class="col-md-8 col-md-offset-1">
             <h2><?php echo ucwords($goal->nama_goal); ?>
-             <!-- <a href="{{action('HomeController@detailGoal', $goal->id_goal)}}"  class="btn btn-info btn-circle btn-sm ">
-                <i class="fas fa-file-download">Cetak PDF</i> -->
-              <!-- <a  data-toggle="modal" data-target="#cetakpdf" class="btn btn-info btn-circle btn-sm ">
-              <i class="fas fa-file-download">Cetak PDF</i> -->
               </a> </h2>
             <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}} </p>
 
@@ -38,65 +33,6 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         @endforeach
 
     </div>
-
-
-
-
-    <!-- <div id="cetakpdf" class= "modal fade" role= "dialog">
-    <div class="modal-dialog">
-        <div class="modal=content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"> &times;</button>
-                <h4 class=" modal-title"> Cetak PDF Pencapaian</h4>
-            </div>
-            <div class="modal-body">
-                <form action="{{url('HomeController@detailGoal', $goal->id_goal )}}" method="post" target="_blank">
-                    <table>
-                        <tr>
-                            <td>
-                                <div class="form-group">Dari tahun</div>
-                            </td>
-                            <td align="center" width="5%">
-                                <div class="form-group">:</div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <input type="date" class="form-control" name="thn1" required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="form-group">Sampai tahun</div>
-                            </td>
-                            <td align="center" width="5%">
-                                <div class="form-group">:</div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <input type="date" class="form-control" name="thn2" required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td>
-                            <input type="submit" name="pdfgoal" class="btn btn-primary btn-sm" value="Cetak">
-                          </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <a href="" target="_blank" class="btn btn-primary btn-sm">Cetak Semua Pencapaian Tahun</a>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
 
     <br><br>
     <h4>Tabel</h4>
@@ -120,14 +56,16 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                         </select>
                     </div>
 
-                    
                     <div class="col-md-4">
                        <!-- <button type="submit" class="btn btn-primary btn-sm" name="search" >Cari</button> -->
-                        <button type="submit" class="btn btn-secondary btn-sm" name="exportPDF">Unduh PDF</button>
+                        <button type="submit" class="btn btn-info btn-sm" name="exportPDF">Unduh PDF</button>
                     </div>
+
                 </div>
             </div>
     </form>
+		<label  style="margin-top:10px; font-size:12px; "> *Data dalam rentang waktu 5 tahun (Jika sudah diinputkan) </label>
+
 
     <br><br>
 

@@ -35,13 +35,11 @@
           <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
-          <!-- <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th> -->
+          <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline ({{$from}})</th>
           <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
         </tr>
         <tr>
-          @for ($thn=$from; $thn <= $to; $thn++)
-          $to=$from+4;
-
+          @for ($thn=$from+1; $thn <= $TahunMax; $thn++)
             <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
           @endfor
         </tr>
@@ -87,7 +85,7 @@
             ?>
             @while($tahun<=$to)
               @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
-                <td style="text-align:center; border-right:none; border-bottom:none;">{{$capai->nilai}}</td>
+                <td style="text-align:center; border-right:none;">{{$capai->nilai}}</td>
                 <?php
                 $trend= $capai->keterangan_trend;
                 // DD($trend);
@@ -103,7 +101,7 @@
                 }else
                 $ikonTrend='trend not yet.png';
                  ?>
-                <td style="border-bottom:none; border-left:none;">
+                <td style="border-left:none;">
                   <center>
                     <!-- {!!$capai->simbol_trend!!} -->
                     <img src="{{public_path('img/'.$ikonTrend)}}" width="80%">
