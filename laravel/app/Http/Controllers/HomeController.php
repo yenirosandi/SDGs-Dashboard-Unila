@@ -199,11 +199,9 @@ class HomeController extends Controller
       if ($req->isMethod('post'))
       {
           $from = $req->input('from');
-          $to   = $req->input('to');
-          $kurangPdf=$to-$from+1;
-          $kolomtahunPdf=$kurangPdf*2;
-          $kolomindiPdf=$kolomtahunPdf+5;
-
+          //sementara
+          $to=$from+4;
+          // $to   = $req->input('to');
 
           if ($req->has('search'))
           {
@@ -280,13 +278,23 @@ class HomeController extends Controller
                 ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
                 ->where('t_pencapaian.fk_id_goal', '=', $id)
                 ->whereBetween('tahun', [$from, $to])
-                ->orWhere('tahun' , '=', $tahun)
+                // ->orWhere('tahun' , '=', $tahun)
                 // ->where('tahun','=', $tahun_capai)
                 ->orderBy('t_pencapaian.tahun')
                 ->orderBy('t_m_subindikator.id_m_subindikator')
                 ->get();
-                // DD($data_capai);
 
+              $TahunMax=DB::table('t_pencapaian')
+                ->select('t_pencapaian.*')
+                ->where('t_pencapaian.fk_id_goal', '=', $id)
+                ->whereBetween('tahun', [$from, $to])
+                ->max('tahun');
+                // DD($TahunMax);
+
+              //kolomnya
+              $kurangPdf=$TahunMax-$from;
+              $kolomtahunPdf=$kurangPdf*2;
+              $kolomindiPdf=$kolomtahunPdf+5;
 
               $ada_data_capai=DB::table('t_m_indikator')
                 ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
@@ -303,8 +311,7 @@ class HomeController extends Controller
                 'kolomtahun',
                 'subindi',
                 'data',
-                // 'dataindi',
-                // 'null',
+                'TahunMax',
                 'tahun',
                 'indikator',
                 'countCapai',

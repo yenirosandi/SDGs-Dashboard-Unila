@@ -4,7 +4,7 @@
 
 @section('content')
 
-@section('title_breadcrumb','')	
+@section('title_breadcrumb','')
                 <nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -18,24 +18,24 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 
         <div class="mosh-portfolio">
 
-            @forelse($goals as $goal) 
+            @forelse($goals as $goal)
             <div class="single_gallery_item gd">
 
-            <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary ">
+            <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-light ">
              <img src="{{$goal->gambar}}" alt="">
-             </a>     
+             </a>
             <!-- <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
                     <div class="port-hover-text text-center">
                     <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary">
- 
+
                         <h4>"{{$goal->id_goal}}"</h4>
                         <a href="#">Goal 3</a>
-                          </a>     
-        
+                          </a>
+
                 </div>
                 </div> -->
-            
-            </div> 
+
+            </div>
 
             @empty
                     <h3>Nothing</h3>
