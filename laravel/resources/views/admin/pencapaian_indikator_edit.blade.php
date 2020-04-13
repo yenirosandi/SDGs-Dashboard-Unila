@@ -102,8 +102,9 @@
             <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
               <i class="fas fa-pencil-alt prefix"></i>
               <label for="form22">Nilai</label>
-              <textarea name="nilai" id="form22" class="md-textarea form-control" rows="3">{{$edit_pencapaian->nilai}}</textarea>
+              <textarea name="nilai" id="nilai" class="md-textarea form-control" rows="3">{{$edit_pencapaian->nilai}}</textarea>
             </div><br>
+            
             <div class="col-sm-6 md-form amber-textarea active-amber-textarea">
               <i class="fas fa-pencil-alt prefix"></i>
               <label for="form22">Keterangan</label>

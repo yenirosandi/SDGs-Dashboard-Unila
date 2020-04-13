@@ -16,7 +16,7 @@
     <!-- <link href="{{asset('dist/css/bootstrap.min.css')}}" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"> -->
     <!-- <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet"> -->
-    <!-- <link href="{{asset('css/app.css')}}" rel="stylesheet"> -->
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
@@ -51,10 +51,7 @@
     <!-- MOSH TEMPLT -->
         <!-- jQuery-2.2.4 js -->
     <script src="{{asset('frontend/mosh/js/jquery-2.2.4.min.js')}}"></script>
-    <!-- Popper js -->
-    <script src="{{asset('frontend/mosh/js/popper.min.js')}}"></script>
-    <!-- Bootstrap js -->
-    <script src="{{asset('frontend/mosh/js/bootstrap.min.js')}}"></script>
+
     <script src="{{asset('js/bootstrap.js')}}"></script>
     <!-- All Plugins js -->
     <script src="{{asset('frontend/mosh/js/plugins.js')}}"></script>

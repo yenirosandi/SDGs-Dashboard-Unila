@@ -147,7 +147,7 @@
         <form method="POST" action="{{ route('login') }}" class="login-form">
         @csrf
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                                 <input id="login" type="text" placeholder="Username / Email"
                                     class="form-control{{ $errors->has('username') || $errors->has('email') ? ' is-invalid' : '' }}"
                                     name="login" value="{{ old('username') ?: old('email') }}" required autofocus>
@@ -158,7 +158,25 @@
                                     </span>
                                 @endif
 
-                        </div> 
+                        </div>  -->
+                        <div class="form-group row">
+
+                                <input id="username" class="form-group{{ $errors->has('email') || $errors->has('username') ? ' has-error' : '' }}"
+                                 type="text"  name="username" placeholder="Username / Email" value="{{ old('username') }}" required autofocus>
+
+                                @if ($errors->has('username'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            
+                        </div>
                         <div class="form-group row">   
                         <!-- <input type="password" name="password" class="lock" placeholder="Password" required> -->
 

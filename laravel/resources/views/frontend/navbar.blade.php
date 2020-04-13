@@ -54,6 +54,7 @@
                                                             else {?>
                                                                 <div class="login_button">
                                                                   <a class= "login-header" href="{{url('/login')}}">Login</a></li>  </div>
+                                                                  
                                                             <?php  } ?>
                         </nav>
                     </div>

@@ -9,7 +9,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/goalDetail/{id}','HomeController@detailGoal')->name('cobafrom');
 Route::post('/goalDetail/{id}',['as' => 'goaldetail.search', 'uses' => 'HomeController@detailGoal']);
-// Route::get('/goalDetail/{id}/pdf','HomeController@detailGoalPdf')->name('goalPdf');
 Route::get('/goalDetail/indi/{id_indi}','HomeController@linkGrafikIndi')->name('grafik');
 
 
@@ -19,6 +18,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::resource('/', 'AdminController');
   Route::get('/', 'AdminController@index');
   Route::get('/goalDetail/{id}','AdminController@detailGoal')->name('goal');
+  Route::post('/goalDetail/{id}',['as' => 'goaldetail.search', 'uses' => 'AdminController@detailGoal']);
   Route::get('/goalDetail/indi/{id_indi}','AdminController@linkGrafikIndi')->name('grafikIndi');
 
   //Indikator

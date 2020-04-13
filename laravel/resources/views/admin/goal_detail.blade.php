@@ -22,18 +22,40 @@
                   <img src="/{{$goal->gambar}}" style="width:225px; height:225px;"class="card-img">
                 </div>
             </div>
-            <!-- <div style="color: #323236; width: 1px; height: 225px; border: 1.15px #000 solid;"></div> -->
             <div class="col-md-8 col-md-offset-1">
-                <h3 style="color:#323236;"><?php echo ucwords($goal->nama_goal); ?>
-                <a href="{{action('HomeController@detailGoalPdf', $goal->id_goal)}}"  class="btn btn-info btn-circle btn-sm ">
-                   <i class="fas fa-file-download"></i>
-                 </a> </h3>
+                <h3 style="color:#323236;"><?php echo ucwords($goal->nama_goal); ?></h3>
                 <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}}</p>
             </div>
           </div>
         <br><br><br>
         <h5 style="color:#323236;">Tabel Pencapaian</h5>
         <hr>
+        <form action="{{route('goaldetail.search', $goal->id_goal )}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <!-- <div class="container"> -->
+                <div class="row">
+                &nbsp;&nbsp;&nbsp;<label for="from" class="col-form-label">Dari</label>
+                    <div class="col-md-3">
+                        <select id="from" class="form-control"name="from">
+                                  <option value="">Pilih tahun</option>
+                                    <?php
+                                    $thn_skr=  date('Y');
+                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                    ?>
+                                    <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
+                                  <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4">
+                       <!-- <button type="submit" class="btn btn-primary btn-sm" name="search" >Cari</button> -->
+                        <button type="submit" class="btn btn-info btn-sm" name="exportPDF">Unduh PDF</button>
+                    </div>
+
+                </div>
+            <!-- </div> -->
+    </form>
+		<label  style="margin-top:10px; font-size:12px; "> *Data dalam rentang waktu 5 tahun (Jika sudah diinputkan) </label>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
@@ -54,10 +76,10 @@
               @foreach($data as $data_sub)
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
-                  @if($data_sub->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff;" colspan="{{$kolomindi}}">{{$data_sub->indikator}}<a href="{{route('grafikIndi', $data_sub->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/statistics.png')}}" style="width:15px;" alt="">)</span></a></th>
+                  @if($data_sub->indikator->indikator!=$indikator)
+                    <th style="background-color:#e8f1ff;" colspan="{{$kolomindi}}">{{$data_sub->indikator->indikator}}<a href="{{route('grafikIndi', $data_sub->indikator->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/statistics.png')}}" style="width:15px;" alt="">)</span></a></th>
                   @endif
-                <?php $indikator=$data_sub->indikator; ?>
+                <?php $indikator=$data_sub->indikator->indikator; ?>
               </tr>
               <tr>
                 @if($data_sub->subindikator!=$subindi)
@@ -68,22 +90,22 @@
                 @endif
                 <?php $subindi=$data_sub->subindikator; ?>
 
-                @if($data_sub->fk_id_indikator==$data_sub->id_indikator)
-                  <td>{{$data_sub->sumberdata}}</td>
+                @if($data_sub->fk_id_indikator==$data_sub->indikator->id_indikator)
+                  <td>{{$data_sub->fsumberdata->sumberdata}}</td>
                 @endif
                 <!-- <style>
                   td:empty{border-bottom:none;border-top:none} /* style css3 untuk kolom kosong */
                 </style> -->
 
                 <!-- Buat nilai pencapaian -->
-                @foreach($data_capai as $capai)
+                @foreach($dcapai as $capai)
                   <?php $tahun=2017; ?>
                   @while($tahun<=$tahun_now)
                     @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
                       <td style="text-align:center;">{{$capai->nilai}}</td>
                       <td>
                         <center>
-                          {!!$capai->simbol_trend!!}
+                          {!!$capai->trend->simbol_trend!!}
                         </center>
                       </td>
                     @else

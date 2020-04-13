@@ -25,7 +25,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         </div>
         <div class="col-md-8 col-md-offset-1">
             <h2><?php echo ucwords($goal->nama_goal); ?>
-              </a> </h2>
+              </h2>
             <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}} </p>
 
         </div>
