@@ -37,18 +37,18 @@
                                                 <ul class="main_nav">
 
                                                     <li class="nav-link dropdown">
-                                                    <!-- <a href="#">Register or Login</a></div> -->
-                                                                  <!-- ini untuk pengkondisian klau sudah login dia akan seperti di bawah ini menunya -->
-                                                                  <?php
-                                                            if (Auth::check())  { ?>
-                                                                <a class="nav-link dropdown-toggle  login-header fa fa-user-circle fa-3x" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                                                    <a class="dropdown-item" href="">{{Auth::user()->nama}}</a>
-                                                                    <a class="dropdown-item" href="{{url('/admin')}}">Kelola Dashboard</a>
-                                                                    <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
-                                                                </div>
-                                                              </li>
-
+                                                   
+                                                          <!-- ini untuk pengkondisian klau sudah login dia akan seperti di bawah ini menunya -->
+                                                          <?php
+                                                    if (Auth::check())  { ?>
+                                                        <a class="nav-link dropdown-toggle  login-header fa fa-user-circle fa-3x" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                                            <a class="dropdown-item" href="">{{Auth::user()->nama}}</a>
+                                                            <a class="dropdown-item" href="{{url('/admin')}}">Kelola Dashboard</a>
+                                                            <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
+                                                        </div>
+                                                      </li>
+                                                    </ul>
 
                                                         <?php }
                                                             else {?>
@@ -61,5 +61,5 @@
                 </div>
             </div>
         </div>
-    <img src="{{url('frontend/gambar/list.png')}}" style="width:100%; left: 0; position: absolute; z-index: 999;"alt="SDGs">
+    <img src="{{url('frontend/gambar/list.png')}}" style="width:100%; left: 0; position: absolute; z-index: 0;"alt="SDGs">
     </header>
