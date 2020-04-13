@@ -23,39 +23,45 @@
                 </div>
             </div>
             <div class="col-md-8 col-md-offset-1">
-                <h3 style="color:#323236;"><?php echo ucwords($goal->nama_goal); ?></h3>
-                <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}}</p>
+              <div class="col-md-10 col-md-offset-1">
+                  <h2 style="color:black;"><?php echo ucwords($goal->nama_goal); ?>
+                    </a> </h2>
+                  <p style="text-align:justify; color:black">{{$goal->deskripsi_goal}} </p>
+              </div>
             </div>
           </div>
         <br><br><br>
         <h5 style="color:#323236;">Tabel Pencapaian</h5>
         <hr>
         <form action="{{route('goaldetail.search', $goal->id_goal )}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <!-- <div class="container"> -->
-                <div class="row">
-                &nbsp;&nbsp;&nbsp;<label for="from" class="col-form-label">Dari</label>
-                    <div class="col-md-3">
-                        <select id="from" class="form-control"name="from">
-                                  <option value="">Pilih tahun</option>
-                                    <?php
-                                    $thn_skr=  date('Y');
-                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
-                                    ?>
-                                    <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
-                                  <?php } ?>
-                        </select>
-                    </div>
+                    @csrf
+                    <div class="container">
+                    <div class="row">
+                    <label for="from" class="col-form-label">Dari</label>
+                        <div class="col-md-3">
+                        <!-- <input type="date" class="form-control input-sm" id="from" name="from"> -->
+                            <select id="from" class="form-control"name="from">
+                                      <option value="">Pilih tahun</option>
+                                        <?php
+                                        $thn_skr=  date('Y');
+                                        for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                        ?>
+                                        <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
+                                      <?php } ?>
+                            </select>
+                        </div>
 
-                    <div class="col-md-4">
-                       <!-- <button type="submit" class="btn btn-primary btn-sm" name="search" >Cari</button> -->
-                        <button type="submit" class="btn btn-info btn-sm" name="exportPDF">Unduh PDF</button>
-                    </div>
+                        <div class="col-md-4">
+                           <!-- <button type="submit" class="btn btn-primary btn-sm" name="search" >Cari</button> -->
+                            <button type="submit" class="btn btn-info btn-sm" name="exportPDF">Unduh PDF</button>
+                        </div>
 
+                    </div>
                 </div>
-            <!-- </div> -->
-    </form>
-		<label  style="margin-top:10px; font-size:12px; "> *Data dalam rentang waktu 5 tahun (Jika sudah diinputkan) </label>
+        </form>
+        <label  style="margin-top:10px; font-size:12px; "> *Data dalam rentang waktu 5 tahun (Jika sudah diinputkan) </label>
+        <br><br>
+        
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
