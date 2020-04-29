@@ -16,7 +16,7 @@ Route::get('/goalDetail/indi/{id_indi}','HomeController@linkGrafikIndi')->name('
 Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['auth','admin']], function(){
   Route::resource('/', 'AdminController');
-  Route::get('/', 'AdminController@index');
+  Route::get('/', 'AdminController@index')->name('homeadmin');
   Route::get('/goalDetail/{id}','AdminController@detailGoal')->name('goal');
   Route::post('/goalDetail/{id}',['as' => 'goaldetail.search', 'uses' => 'AdminController@detailGoal']);
   Route::get('/goalDetail/indi/{id_indi}','AdminController@linkGrafikIndi')->name('grafikIndi');

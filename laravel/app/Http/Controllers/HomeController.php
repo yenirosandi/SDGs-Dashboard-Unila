@@ -61,7 +61,8 @@ class HomeController extends Controller
         $subdata=$data_persub->id_m_subindikator;
         // $tahun=2017;
         $pencapaian= DB::table('t_pencapaian')
-        ->select('t_pencapaian.*')
+        ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+        ->select('t_pencapaian.*', 't_trends.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
         ->orderBy('t_pencapaian.tahun')
@@ -72,7 +73,7 @@ class HomeController extends Controller
           if($data_persub->isian=='Angka'){
             $nilai[]=(int)$value->nilai;
           }
-          else {
+          elseif ($data_persub->isian=='Teks'){
             $nilai[]=$value->poin+$pt;
             $pt=$value->poin+$pt;
           }
@@ -204,14 +205,6 @@ class HomeController extends Controller
           //sementara
           $to=$from+4;
           // $to   = $req->input('to');
-
-          // $from      = !empty($req->from) ? ($req->from) : ('');
-
-
-          // // return response('Isi',  200);
-          // return response()->json([ ' to' => 'Pilihan tidak lengkap' ], 200);
-
-
 
 
           if ($req->has('search'))

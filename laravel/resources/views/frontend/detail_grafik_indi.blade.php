@@ -9,102 +9,116 @@
 				<li class="breadcrumb-item active" aria-current="page">Grafik  </li>
 			</ol>
 </nav>
+
 <style>
-#grafikGoal, #area, #batang, #batang2, #pie {
+#garis, #area, #batang, #batang2, #pie {
 	min-width: 310px;
 	max-width: 1000px;
 	height: 400px;
-	margin: 0 auto
+	margin: 0 auto;
 }
 
+.collapsible {
+  background-color: #f7f7f7;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: round;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin: 10px 0px 0px 0px;
+}
+
+.activegrafik, .collapsible:hover {
+  background-color: #FFF5EE;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 5px 5px 5px #f4f2fa;
+}
 </style>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 SUSTAINABLE DEVELOPMENT GOALS <hr>
 
 
+
 <body>
 
-  <!-- Grafik garis -->
-  <div class="card shadow mb-4 w-100">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Grafik Garis</h6>
-    </div>
-    <div class="card-body">
-      <div class="card-body">
-        <div id="grafikGoal">
-					<script>
-					Highcharts.chart('grafikGoal', {
-					title: {
-							text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
-					},
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Garis <img src="/img/garis.png" style="width:3%; alt=""></button>
+<div class="content">
+					<div class="card-body">
+					<div id="garis" >
+								<script>
+								Highcharts.chart('garis', {
+								title: {
+										text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
+								},
 
-					subtitle: {
-					    text: 'Indikator {!! json_encode($indi) !!}'
-					},
-					xAxis: {
-                            allowDecimals: false,
-                            labels: {
-                                formatter: function () {
-                                    return this.value; // clean, unformatted number for year
-                                }
-                            },
-                            accessibility: {
-                                rangeDescription: ''
-                            }
-                        },
-					yAxis: {
-					    title: {
-					        text: 'Nilai'
-					    }
-					},
-					legend: {
-					    layout: 'vertical',
-					    align: 'right',
-					    verticalAlign: 'middle'
-					},
+								subtitle: {
+									text: 'Indikator {!! json_encode($indi) !!}'
+								},
+								xAxis: {
+										allowDecimals: false,
+										labels: {
+											formatter: function () {
+												return this.value; // clean, unformatted number for year
+											}
+										},
+										accessibility: {
+											rangeDescription: ''
+										}
+									},
+								yAxis: {
+									title: {
+										text: 'Nilai'
+									}
+								},
+								legend: {
+									layout: 'vertical',
+									align: 'right',
+									verticalAlign: 'middle'
+								},
 
-					plotOptions: {
-					    series: {
-					        label: {
-					            connectorAllowed: false
-					        },
-					        pointStart: 2017
-					    }
-					},
-					series: {!! json_encode($dataGrafik) !!},
-					responsive: {
-					    rules: [{
-					        condition: {
-					            maxWidth: 1000
-					        },
-					        chartOptions: {
-					            legend: {
-					                layout: 'horizontal',
-					                align: 'center',
-					                verticalAlign: 'bottom'
-					            }
-					        }
-					    }]
-					}
-					});
-					</script>
-        </div>
-      </div>
-    </div>
-  </div>
+								plotOptions: {
+									series: {
+										label: {
+											connectorAllowed: false
+										},
+										pointStart: 2017
+									}
+								},
+								series: {!! json_encode($dataGrafik) !!},
+								responsive: {
+									rules: [{
+										condition: {
+											maxWidth: 1000
+										},
+										chartOptions: {
+											legend: {
+												layout: 'horizontal',
+												align: 'center',
+												verticalAlign: 'bottom'
+											}
+										}
+									}]
+								}
+								});
+								</script>
+					</div>
+					</div> 
+</div>
 
 
-  <div class="card shadow mb-4 w-100">
-		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">Grafik Area</h6>
-		</div>
-		<div class="card-body">
-			<div class="card-body">
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Area  <img src="/img/area.png" style="width:3%; alt=""> </button>
+<div class="content">
+				<div class="card-body">
 				<div id="area">
                     <script>
                     // grafik basic area
@@ -164,18 +178,13 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                         series: {!! json_encode($dataGrafik) !!},
                     });
                     </script>
-        </div>
-      </div>
-    </div>
-  </div>
+				</div>
+				</div>
+</div>
 
-
-	<div class="card shadow mb-4 w-100">
-		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">Grafik Batang</h6>
-		</div>
-		<div class="card-body">
-			<div class="card-body">
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Batang <img src="/img/batang.png" style="width:3%; transform: rotate(90deg);" alt=""></button>
+<div class="content">
+				<div class="card-body">
 				<div id="batang">
 					<script>
 					// grafik batang
@@ -233,18 +242,14 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 						series: {!! json_encode($dataGrafik2) !!},
 					});
 					</script>
-			</div>
-			</div>
-		</div>
-	</div>
+				</div>
+				</div> 
+</div>
 
 
-	<div class="card shadow mb-4 w-100">
-		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">Grafik Batang</h6>
-		</div>
-		<div class="card-body">
-			<div class="card-body">
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Batang <img src="/img/batang.png" style="width:3%;" alt=""></button>
+<div class="content">
+				<div class="card-body">
 				<div id="batang2">
                         <script>
 
@@ -286,18 +291,15 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                         series: {!! json_encode($dataGrafik2) !!},
                     });
                     </script>
-			</div>
-			</div>
-		</div>
+				</div>
+				</div>
+		
 	</div>
 
 
-	<div class="card shadow mb-4 w-100">
-		<div class="card-header py-3">
-			<h6 class="m-0 font-weight-bold text-primary">Grafik Pie</h6>
-		</div>
-		<div class="card-body">
-			<div class="card-body">
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Pie <img src="/img/pie.png" style="width:3%;" alt=""></button>
+<div class="content">
+				<div class="card-body">
 				<div id="pie">
 					<script>
 					// grafik pie
@@ -336,11 +338,28 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 					</script>
 			</div>
 			</div>
-		</div>
-	</div>
+</div>
 
 
 <br>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("activegrafik");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
 
 @endsection
 
@@ -350,4 +369,9 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 
 </body>
 
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
 

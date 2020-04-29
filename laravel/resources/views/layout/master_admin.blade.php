@@ -82,7 +82,7 @@ background-color:#8ecfed;
 
             <ol class="breadcrumb">
             <li class="active">
-                <i class="fa fa-dashboard"></i> {{ date('d M Y')}} / @yield('title_breadcrumb')
+                <i class="fa fa-dashboard"></i> {{ date('d M Y')}}  @yield('title_breadcrumb')  @yield('title_breadcrumb2')
             </li>
             </ol>
             <h1 class="h3 mb-2 text-gray-800">@yield('Judul')</h1>

@@ -44,8 +44,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 <div class="row">
                 <label for="from" class="col-form-label">Dari</label>
                     <div class="col-md-3">
-                    <!-- <input type="date" class="form-control input-sm" id="from" name="from"> -->
-                        <select id="from" class="form-control"name="from">
+                        <select id="from" class="form-control"name="from" required>
                                   <option value="">Pilih tahun</option>
                                     <?php
                                     $thn_skr=  date('Y');
@@ -90,7 +89,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator->indikator}}<a href="{{route('grafik', $data_sub->indikator->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/statistics.png')}}" style="width:15px;" alt="">)</span></a></th>
+                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator->indikator}}<a href="{{route('grafik', $data_sub->indikator->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/statistics.png')}}" style="width:1.5%;" alt="">)</span></a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator->indikator; ?>
               </tr>
