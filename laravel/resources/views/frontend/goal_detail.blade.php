@@ -46,12 +46,9 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                     <div class="col-md-3">
                         <select id="from" class="form-control"name="from" required>
                                   <option value="">Pilih tahun</option>
-                                    <?php
-                                    $thn_skr=  date('Y');
-                                    for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
-                                    ?>
-                                    <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
-                                  <?php } ?>
+                                  @foreach($thn_didb as $thn_skr)
+                                    <option type="number"value="{{$tahun}}">{{$thn_skr->tahun}}</option>
+                                  @endforeach
                         </select>
                     </div>
 

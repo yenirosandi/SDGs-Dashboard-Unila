@@ -88,7 +88,6 @@
                 <td style="text-align:center; border-right:none;">{{$capai->nilai}}</td>
                 <?php
                 $trend= $capai->keterangan_trend;
-                // DD($trend);
                 //ubah data simbol trend
                 if ($trend=='Data Naik') {
                   $ikonTrend='trend_up.png';
