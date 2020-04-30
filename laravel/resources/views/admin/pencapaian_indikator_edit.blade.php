@@ -4,7 +4,7 @@
 @section('Judul','Edit Pencapaian Indikator')
 @section('JudulDesc','Ini adalah halaman edit pencapaian indikator dimana admin dapat memperbarui data Pencapaian.')
 @section('content')
-@section('title_breadcrumb','Edit')
+@section('title_breadcrumb','/ Edit Pencapaian')
 
 <!-- Form -->
 <div class="card shadow mb-4 w-75">

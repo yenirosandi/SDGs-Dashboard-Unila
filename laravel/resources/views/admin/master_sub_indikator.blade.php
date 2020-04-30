@@ -4,6 +4,8 @@
 @section('Judul','Master Sub-Indikator')
 @section('JudulDesc','Ini adalah halaman master sub-indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data sub indikator.')
 @section('content')
+@section('title_breadcrumb','/ Sub Indikator')
+
   <!-- Form -->
 
 

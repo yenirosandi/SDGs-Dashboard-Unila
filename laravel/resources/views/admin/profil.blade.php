@@ -4,7 +4,9 @@
 @section('Judul','Profil')
 @section('JudulDesc','Profil Admin')
 @section('content')
-@section('title_breadcrumb','Profil')
+@section('title_breadcrumb')
+/ <a href="{{url()->previous()}}"> Profil </a>
+  @stop
 
   <!-- Form -->
   <div class="card shadow mb-4 w-50">

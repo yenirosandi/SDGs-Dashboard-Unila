@@ -4,7 +4,7 @@
 @section('Judul','Edit Master Indikator')
 @section('JudulDesc','Ini adalah halaman edit master indikator dimana terdapat form untuk memperbarui data master.')
 @section('content')
-@section('title_breadcrumb','Edit')
+@section('title_breadcrumb','/ Edit Indikator')
 
   <!-- Form -->
   <div class="card shadow mb-4 w-50">

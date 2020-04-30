@@ -3,7 +3,12 @@
 @section('title','Edit Profil')
 @section('Judul','Edit Profil')
 @section('content')
-@section('title_breadcrumb','Edit Profil')	
+@section('title_breadcrumb')
+/ <a href="{{url()->previous()}}"> Profil </a>
+  @stop
+@section('title_breadcrumb2')
+/ Edit Profil Admin
+@stop
 
 
 <div class="card shadow mb-4 w-75">

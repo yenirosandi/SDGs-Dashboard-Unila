@@ -33,15 +33,15 @@
         <br><br><br>
         <h5 style="color:#323236;">Tabel Pencapaian</h5>
         <hr>
+        <!-- <div class="container"> -->
+
         <form action="{{route('goaldetail.search', $goal->id_goal )}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="container">
                     <div class="row">
-                    <label for="from" class="col-form-label">Dari</label>
+                    &nbsp;&nbsp;&nbsp;<label for="from" class="col-form-label">Dari</label>
                         <div class="col-md-3">
-                        <!-- <input type="date" class="form-control input-sm" id="from" name="from"> -->
-                            <select id="from" class="form-control"name="from">
-                                      <option value="">Pilih tahun</option>
+                            <select id="from" class="form-control"name="from" required>
+                                      <option value="" >Pilih tahun</option>
                                         <?php
                                         $thn_skr=  date('Y');
                                         for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
@@ -57,8 +57,9 @@
                         </div>
 
                     </div>
-                </div>
+               
         </form>
+        <!-- </div> -->
         <label  style="margin-top:10px; font-size:12px; "> *Data dalam rentang waktu 5 tahun (Jika sudah diinputkan) </label>
         <br><br>
         

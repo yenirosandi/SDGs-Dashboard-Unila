@@ -4,7 +4,7 @@
 @section('Judul','Pencapaian Indikator')
 @section('JudulDesc','Ini adalah halaman pencapaian indikator dimana admin dapat melihat, menambah, memperbarui, dan menghapus data Pencapaian.')
 @section('content')
-@section('title_breadcrumb','Pencapaian')
+@section('title_breadcrumb','/ Pencapaian')
 
 
 
