@@ -196,6 +196,13 @@ class HomeController extends Controller
       $kolomindi=$kolomtahun+5;
       $goalTbl=Goals_model::find($id);
 
+      // Untuk select di goal detail
+      $thn_didb= DB::table('t_pencapaian')
+          ->select('t_pencapaian.tahun')
+          ->groupBy('tahun')
+          ->orderBy('tahun')
+          ->get();
+      // DD($thn_skr);
 
       $method = $req->method();
 
@@ -313,6 +320,7 @@ class HomeController extends Controller
 
             $goal_detail_pdf= PDF::loadView('layout.pdfDetailGoal',
               compact('id',
+                'thn_didb',
                 'kolomindi',
                 'kolomtahun',
                 'subindi',
@@ -354,6 +362,7 @@ class HomeController extends Controller
         return view('frontend.goal_detail',
           compact('id',
             'kolomindi',
+            'thn_didb',
             'kolomtahun',
             'subindi',
             'data',
@@ -361,7 +370,7 @@ class HomeController extends Controller
             'tahun',
             'indikator',
             'tahun_now',
-            
+
             'no',
             // 'sub',
             'goal_detail','dcapai'));

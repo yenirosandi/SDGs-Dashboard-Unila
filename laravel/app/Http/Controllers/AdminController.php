@@ -347,12 +347,19 @@ class AdminController extends Controller
           ->get();
           // dd($data);
 
-
+          // Untuk select di goal detail
+          $thn_didb= DB::table('t_pencapaian')
+              ->select('t_pencapaian.tahun')
+              ->groupBy('tahun')
+              ->orderBy('tahun')
+              ->get();
+          // DD($thn_skr);
 
         $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
         return view('admin.goal_detail',
           compact('id',
             'kolomindi',
+            'thn_didb',
             'kolomtahun',
             'subindi',
             'data',
@@ -360,7 +367,7 @@ class AdminController extends Controller
             'tahun',
             'indikator',
             'tahun_now',
-            
+
             'no',
             // 'sub',
             'goal_detail','dcapai'));
