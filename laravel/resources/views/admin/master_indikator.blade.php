@@ -77,13 +77,13 @@
                 <a href="{{route('master_indikator.edit', $data_master->id_indikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>
                 </a> Ubah
-                <form action="{{route('master_indikator.destroy',$data_master->id_indikator)}}" method="post">
+                <form id="data-{{$data_master->id_indikator}}" action="{{route('master_indikator.destroy',$data_master->id_indikator)}}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
-                <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                </form>
+                <button class="btn btn-danger btn-circle btn-sm delete-confirm" type="submit" onclick="deleteRow( {{$data_master->id_indikator}} )">
                     <i class="fas fa-trash"></i>
                   </button> Hapus
-                </form>
               </th>
             </tr>
             @endforeach

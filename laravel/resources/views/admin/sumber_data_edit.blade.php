@@ -4,7 +4,13 @@
 @section('Judul','Edit Sumber Data')
 @section('JudulDesc','Ini adalah halaman edit sumber data dimana terdapat form untuk memperbarui data sumber data yang telah didaftarkan.')
 @section('content')
-@section('title_breadcrumb','/ Edit Sumber Data')
+@section('title_breadcrumb')
+/ <a href="{{url()->previous()}}">Sumber Data</a>
+  @stop
+@section('title_breadcrumb2')
+/ Edit Sumber Data
+@stop
+
 
   <!-- Form -->
   <div class="card shadow mb-4 w-50">

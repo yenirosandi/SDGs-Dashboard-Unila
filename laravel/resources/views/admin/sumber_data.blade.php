@@ -58,13 +58,13 @@
                   <i class="fas fa-edit"></i>
                 </a> Edit
                 <a>
-                  <form action="{{route('sumber_data.destroy',$data_sumber ->id_m_sumberdata)}}" method="post">
-                    {{ csrf_field() }}
-                    {{ method_field('delete') }}
-                    <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                  <form id="data-{{$data_sumber ->id_m_sumberdata}}" action="{{route('sumber_data.destroy',$data_sumber ->id_m_sumberdata)}}" method="post">
+                  {{ csrf_field() }}
+                  {{ method_field('delete') }}
+                  </form>
+                  <button class="btn btn-danger btn-circle btn-sm delete-confirm" type="submit" onclick="deleteRow( {{$data_sumber ->id_m_sumberdata}} )">
                       <i class="fas fa-trash"></i>
                     </button> Hapus
-                  </form>
                 </a>
               </th>
             </tr>

@@ -186,13 +186,13 @@
                 <a href="{{route('master_sub_indikator.edit', $data->id_m_subindikator)}}" class="btn btn-warning btn-circle btn-sm">
                   <i class="fas fa-edit"></i>
                 </a>Ubah
-                <form action="{{route('master_sub_indikator.destroy',$data->id_m_subindikator)}}" method="post">
+                <form id="data-{{$data->id_m_subindikator}}" action="{{route('master_sub_indikator.destroy',$data->id_m_subindikator)}}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
-                <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
+                </form>
+                <button class="btn btn-danger btn-circle btn-sm delete-confirm" type="submit" onclick="deleteRow( {{$data->id_m_subindikator}} )">
                     <i class="fas fa-trash"></i>
                   </button> Hapus
-                </form>
               </td>
            </tr>
            @endforeach

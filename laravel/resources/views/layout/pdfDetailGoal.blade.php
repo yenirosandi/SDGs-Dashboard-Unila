@@ -93,7 +93,7 @@
                 if ($trend=='Data Naik') {
                   $ikonTrend='trend_up.png';
                 }elseif ($trend=='Data Konstan') {
-                  $ikonTrend=='trend_right.png';
+                  $ikonTrend='trend_right.png';
                 }elseif ($trend=='Data Turun') {
                   $ikonTrend='trend_down.png';
                 }elseif ($trend=='Tidak Ada Data') {

@@ -150,13 +150,13 @@
               <a href="{{route('pencapaian_indikator.edit', $data->id_pencapaian)}}" class="btn btn-warning btn-circle btn-sm">
                 <i class="fas fa-edit"></i>
               </a> Ubah
-              <form action="{{route('pencapaian_indikator.destroy',$data->id_pencapaian)}}" method="post">
-              {{ csrf_field() }}
-              {{ method_field('delete') }}
-              <button class="btn btn-danger btn-circle btn-sm" type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">
-                  <i class="fas fa-trash"></i>
-                </button> Hapus
-              </form>
+              <form id="data-{{$data->id_pencapaian}}" action="{{route('pencapaian_indikator.destroy',$data->id_pencapaian)}}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('delete') }}
+                </form>
+                <button class="btn btn-danger btn-circle btn-sm delete-confirm" type="submit" onclick="deleteRow( {{$data->id_pencapaian}} )">
+                    <i class="fas fa-trash"></i>
+                  </button> Hapus
             </th>
           </tr>
           @endforeach

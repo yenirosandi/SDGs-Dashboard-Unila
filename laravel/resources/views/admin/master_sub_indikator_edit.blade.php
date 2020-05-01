@@ -4,7 +4,12 @@
 @section('Judul','Edit Master Sub-Indikator')
 @section('JudulDesc','Ini adalah halaman edit master sub-indikator dimana terdapat form untuk memperbarui data master sub-indikator.')
 @section('content')
-@section('title_breadcrumb','/ Edit Sub Indikator')
+@section('title_breadcrumb')
+/ <a href="{{url()->previous()}}">Sub Indikator</a>
+  @stop
+@section('title_breadcrumb2')
+/ Edit Sub Indikator
+@stop
 
   
  <!-- Form -->

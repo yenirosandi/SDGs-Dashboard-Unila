@@ -21,6 +21,7 @@
 background-color:#8ecfed;
 }
 </style>
+
   </head>
   <body id="page-top">
     <!-- Page Wrapper -->
@@ -156,5 +157,25 @@ background-color:#8ecfed;
         }
     </script>
 
+<!-- konfirmasi hapus -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+function deleteRow(idnya)
+        {
+            swal({
+                title: "Yakin Hapus Data?",
+                text: "Apakah anda yakin ingin menghapus data ini?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#data-'+idnya).submit();
+                    }
+                });
+        }
+</script>
   </body>
 </html>
