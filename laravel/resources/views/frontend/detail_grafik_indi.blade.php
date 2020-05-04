@@ -288,7 +288,9 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                             }
                         },
                         
-                        series: {!! json_encode($dataGrafik2) !!},
+                        series: {!! json_encode($dataGrafik2) !!}
+
+						
                     });
                     </script>
 				</div>

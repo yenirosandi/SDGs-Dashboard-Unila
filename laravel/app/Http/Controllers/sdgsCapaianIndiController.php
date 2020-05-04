@@ -219,7 +219,7 @@ class sdgsCapaianIndiController extends Controller
                 $date = $tahun.'-01-01 -1 year';
                 $year = date('Y', strtotime($date));
                 $pencapaian = \App\Pencapaian_model::where('tahun', $year)->where('fk_id_goal', $slgoal)->where('fk_id_indikator', $slindi)->where('fk_id_m_subindikator', $slsub)->first();
-                return response()->json([ 'nilai' => $pencapaian->nilai ], 200);
+                return response()->json([ 'nilai' => $pencapaian->nilai], 200);
             } catch (\Exception $ex){
                 return response()->json([ 'nilai' => 'Nilai tidak ditemukan' ], 200);
             }

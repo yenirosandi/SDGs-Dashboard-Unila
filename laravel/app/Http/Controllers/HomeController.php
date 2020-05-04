@@ -92,7 +92,7 @@ class HomeController extends Controller
         ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
         ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
-        // ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->orderBy('t_pencapaian.tahun')
         ->groupBy('t_pencapaian.tahun')
         ->get();
@@ -108,7 +108,7 @@ class HomeController extends Controller
           ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
           ->where('t_pencapaian.fk_id_indikator', $id_indi)
           ->where('t_pencapaian.tahun', $tahun)
-          // ->orderBy('t_pencapaian.fk_id_m_subindikator')
+          ->orderBy('t_pencapaian.fk_id_m_subindikator')
           ->orderBy('t_pencapaian.tahun')
           ->get();
           // DD($pencapaian2);
@@ -151,6 +151,7 @@ class HomeController extends Controller
         // $subindi = $data_persub->subindikator." (".$data_persub->sumberdata.")";
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
+        // $tahun=date('Y');
         $tahun=2019;
         // start grafik garis
         $pencapaian= DB::table('t_pencapaian')
@@ -347,7 +348,7 @@ class HomeController extends Controller
       {
           //select all
 
-          $data=SubIndikator_model::orderby('fk_id_indikator')
+          $data=SubIndikator_model::orderby('fk_id_indikator')->orderby('subindikator')
           ->where('fk_id_goal', $id)
           ->get();
 

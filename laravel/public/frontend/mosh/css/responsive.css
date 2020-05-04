@@ -312,11 +312,13 @@
 
     }
 
+      
+
     h3 .sdgs-header {
         font-size:15px;
      }
     }
-@media only screen and (max-width:500px){
+@media only screen and (max-width:640px){
     .logo-header {
         width: 50px;
         height:50px;
@@ -334,5 +336,211 @@
     h3 .sdgs-header {
         font-size:13px;
      }
+@media only screen and (min-device-width:850px) and (max-device-width:2000px){
+.logo-header {
+    width: 20px;
+    height:50px;
 
+
+}
+    .header_area .container {
+    width: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+    
+h3 .sdgs-header {
+    font-size:13px;
+    }
+
+@media only screen and (max-width:1000px){
+    .logo-header {
+        width: 50px;
+        height:50px;
+
+
+    }
+        .header_area .container {
+        width: 400px;
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+        
+    h3 .sdgs-header {
+        font-size:13px;
+        }
+
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  /* Styles */
+  .logo-header {
+    width: 50px;
+    height:50px;
+
+
+}
+ .header_area .container {
+    width: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+div.container-fluid.h-100 {
+    margin:0px;
+}
+
+a#dropdown01.nav-link.dropdown-toggle.login-header.fa.fa-user-circle.fa-3x{
+    width:1px;
+    height:1px;
+
+}
+  
+h3 .sdgs-header {
+    font-size:1px;
+ }
+
+.container-fluid h-100{
+    padding:0px;
+}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+  /* Styles */
+    /* Styles */
+    .logo-header {
+        width: 60px;
+        height:60px;
+        
+    
+    }
+     .header_area .container {
+        width: 400px;
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .nav-link{
+        width:5px;
+        height:5px;
+    
+    }
+      
+    h3 .sdgs-header {
+        font-size:14px;
+     }
+    }
+    
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+    /* Styles */
+    .logo-header {
+        width: 90px;
+        height:90px;
+
+
+    }
+
+    h3 .sdgs-header {
+        font-size:20px;
+    }
+
+    }
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+  /* Styles */
+  .logo-header {
+    width: 50px;
+    height:50px;
+
+
+}
+ .header_area .container {
+    width: 400px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+h3 .sdgs-header {
+    font-size:13px;
+ }
+
+}
+
+/* iPhone 4 - 5s ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  /* Styles */
+}
+
+/* iPhone 6 ----------- */
+@media
+only screen and (max-device-width: 667px) 
+only screen and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6+ ----------- */
+@media
+only screen and (min-device-width : 414px) 
+only screen and (-webkit-device-pixel-ratio: 3) {
+  /*** You've spent way too much on a phone ***/
+}
+
+/* Samsung Galaxy S7 Edge ----------- */
+@media only screen
+and (-webkit-min-device-pixel-ratio: 3),
+and (min-resolution: 192dpi)and (max-width:640px) {
+ /* Styles */
 }

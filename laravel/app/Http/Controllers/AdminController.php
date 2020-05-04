@@ -273,6 +273,7 @@ class AdminController extends Controller
               ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
               ->where('t_m_subindikator.fk_id_goal', $id)
               ->orderBy('t_m_subindikator.fk_id_indikator')
+              ->orderBy('subindikator')
               ->get();
               // DD($data);
 
@@ -338,7 +339,7 @@ class AdminController extends Controller
       {
           //select all
 
-          $data=SubIndikator_model::orderby('fk_id_indikator')
+          $data=SubIndikator_model::orderby('fk_id_indikator')->orderby('subindikator')
           ->where('fk_id_goal', $id)
           ->get();
 
