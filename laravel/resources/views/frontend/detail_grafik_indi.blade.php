@@ -51,7 +51,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 
 <body>
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Garis <img src="/img/garis.png" style="width:3%; alt=""></button>
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Garis <img src="/img/garis.png" style="width:3%;" alt=""></button>
 <div class="content">
 					<div class="card-body">
 					<div id="garis" >
@@ -112,11 +112,11 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 								});
 								</script>
 					</div>
-					</div> 
+					</div>
 </div>
 
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Area  <img src="/img/area.png" style="width:3%; alt=""> </button>
+<button type="button" class="collapsible font-weight-bold text-primary">Grafik Area  <img src="/img/area.png" style="width:3%;" alt=""> </button>
 <div class="content">
 				<div class="card-body">
 				<div id="area">
@@ -129,7 +129,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                         accessibility: {
                             description:' '
                         },
-                        title: { 
+                        title: {
                             text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!}'
                         },
                         subtitle: {
@@ -243,7 +243,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 					});
 					</script>
 				</div>
-				</div> 
+				</div>
 </div>
 
 
@@ -287,15 +287,15 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                                 borderWidth: 0
                             }
                         },
-                        
+
                         series: {!! json_encode($dataGrafik2) !!}
 
-						
+
                     });
                     </script>
 				</div>
 				</div>
-		
+
 	</div>
 
 
@@ -376,4 +376,3 @@ for (i = 0; i < coll.length; i++) {
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-

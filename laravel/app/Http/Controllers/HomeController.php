@@ -69,6 +69,7 @@ class HomeController extends Controller
         ->groupBy('t_pencapaian.tahun')
         ->get();
         // DD($pencapaian);
+        $pt=0;
         foreach ($pencapaian as $key2 => $value) {
           if($data_persub->isian=='Angka'){
             $nilai[]=(int)$value->nilai;
@@ -86,21 +87,21 @@ class HomeController extends Controller
 
         //start grafik batang
         $dataGrafik2 = [];
-        $pt=0;
         $pencapaian= DB::table('t_pencapaian')
         ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
         ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
         ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
-        ->orderBy('t_pencapaian.fk_id_m_subindikator')
-        ->orderBy('t_pencapaian.tahun')
         ->groupBy('t_pencapaian.tahun')
+        ->orderBy('t_pencapaian.tahun')
+        ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->get();
         // DD($pencapaian);
-        foreach ($pencapaian as $key => $data_persub){
+
+        foreach ($pencapaian as $key => $data_persubs){
           $nilai=[];
-          $tahun=$data_persub->tahun;
-          $id_sub=$data_persub->fk_id_m_subindikator;
+          $tahun=$data_persubs->tahun;
+          $id_sub=$data_persubs->fk_id_m_subindikator;
           $pencapaian2= DB::table('t_pencapaian')
           ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
           ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
@@ -108,12 +109,12 @@ class HomeController extends Controller
           ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
           ->where('t_pencapaian.fk_id_indikator', $id_indi)
           ->where('t_pencapaian.tahun', $tahun)
-          ->orderBy('t_pencapaian.fk_id_m_subindikator')
           ->orderBy('t_pencapaian.tahun')
+          ->orderBy('t_pencapaian.fk_id_m_subindikator')
           ->get();
           // DD($pencapaian2);
-
         foreach ($pencapaian2 as $key2 => $value) {
+          $pt=0;
           if($value->isian=='Angka'){
             $nilai[]=(int)$value->nilai;
           }
@@ -121,12 +122,14 @@ class HomeController extends Controller
             $nilai[]=$value->poin+$pt;
             $pt=$value->poin+$pt;
           }
-          $tahun++;
+          $data1[]=$data_persubs->tahun;
+          $data2[]=$value->nilai;
         }
-          $dataGrafik2[$key]['name'] = "Tahun ".$data_persub->tahun;
+          $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          // dd($dataGrafik2);
+          dd($dataGrafik2);
+          // dd($data1);
         //end grafik batang
 
 
