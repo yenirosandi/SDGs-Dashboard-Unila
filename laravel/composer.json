@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "nesbot/carbon": "^2.25",
         "realrashid/sweet-alert": "^2.0",
-        "wemersonjanuario/wkhtmltopdf-windows": "0.12.2.3"
+        "wemersonjanuario/wkhtmltopdf-windows": "0.12.2.3",
+        "symfony/translation-contracts": "^1.1.6"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
