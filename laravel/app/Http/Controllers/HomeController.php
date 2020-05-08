@@ -360,6 +360,13 @@ class HomeController extends Controller
           ->get();
           // dd($data);
 
+          // Untuk select di goal detail
+          $thn_didb= DB::table('t_pencapaian')
+              ->select('t_pencapaian.tahun')
+              ->groupBy('tahun')
+              ->orderBy('tahun')
+              ->get();
+          // DD($thn_skr);
 
 
         $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
