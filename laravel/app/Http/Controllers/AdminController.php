@@ -200,6 +200,11 @@ class AdminController extends Controller
           // $from      = !empty($req->from) ? ($req->from) : ('');
 
 
+          // // return response('Isi',  200);
+          // return response()->json([ ' to' => 'Pilihan tidak lengkap' ], 200);
+
+
+
 
           if ($req->has('search'))
           {
@@ -243,7 +248,7 @@ class AdminController extends Controller
 
                 $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
 
-              return view('admin.goal_detail',['data' => $data,
+              return view('frontend.goal_detail',['data' => $data,
                                                   'viewdata_capai' => $viewdata_capai,
                                                    'goal_detail'=> $goal_detail,
                                                    'goalTbl' => $goalTbl,
