@@ -279,6 +279,7 @@ class HomeController extends Controller
 
           elseif ($req->has('exportPDF'))
           {
+
               // select PDF
               $data=DB::table('t_m_subindikator')
               ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')

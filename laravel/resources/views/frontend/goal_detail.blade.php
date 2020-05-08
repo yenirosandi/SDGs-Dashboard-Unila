@@ -47,7 +47,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                         <select id="from" class="form-control"name="from" required>
                                   <option value="">Pilih tahun</option>
                                   @foreach($thn_didb as $thn_skr)
-                                    <option type="number"value="{{$tahun}}">{{$thn_skr->tahun}}</option>
+                                    <option type="number"value="{{$thn_skr->tahun}}">{{$thn_skr->tahun}}</option>
                                   @endforeach
                         </select>
                     </div>
