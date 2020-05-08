@@ -128,7 +128,7 @@ class HomeController extends Controller
           $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          dd($dataGrafik2);
+          // dd($dataGrafik2);
           // dd($data1);
         //end grafik batang
 
@@ -155,7 +155,7 @@ class HomeController extends Controller
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
         // $tahun=date('Y');
-        $tahun=2019;
+        $tahun=2020;
         // start grafik garis
         $pencapaian= DB::table('t_pencapaian')
         ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
