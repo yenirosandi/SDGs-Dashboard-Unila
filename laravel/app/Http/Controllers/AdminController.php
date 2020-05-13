@@ -248,7 +248,7 @@ class AdminController extends Controller
 
                 $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
 
-              return view('frontend.goal_detail',['data' => $data,
+              return view('admin.goal_detail',['data' => $data,
                                                   'viewdata_capai' => $viewdata_capai,
                                                    'goal_detail'=> $goal_detail,
                                                    'goalTbl' => $goalTbl,

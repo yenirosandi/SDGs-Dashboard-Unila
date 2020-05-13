@@ -128,7 +128,7 @@ class HomeController extends Controller
           $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          dd($dataGrafik2);
+          // dd($dataGrafik2);
           // dd($data1);
         //end grafik batang
 
@@ -343,6 +343,7 @@ class HomeController extends Controller
                 'kolomindiPdf'
                 // 'sub',
                 ))->setPaper('a4');
+                
 
             return $goal_detail_pdf->stream();
           }
