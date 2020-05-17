@@ -12,20 +12,17 @@
 
     <title>@yield('title','Master Page')</title>
 
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="{{asset('dist/css/bootstrap.min.css')}}" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"> -->
-    <!-- <link href="{{asset('css/mdb.min.css')}}" rel="stylesheet"> -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 
     <!-- Core Stylesheet -->
+    <link href="{{asset('frontend/style.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/mosh/style.css')}}" rel="stylesheet">
 
     <!-- Responsive CSS -->
-    <link href="{{asset('frontend/mosh/css/responsive.css')}}" rel="stylesheet">
+    <!-- <link href="{{asset('frontend/mosh/css/responsive.css')}}" rel="stylesheet"> -->
   </head>
 
 <body>
@@ -38,9 +35,9 @@
                 <i class="fa fa-dashboard"></i> {{ date('d M Y')}}
             </li>
         </ol>
-        <main role="main" style="background-color:#D3D3D3; padding: 40px;">
+        <main role="main" class="main">
 
-        <div class="container" style=" border-radius: 30px; padding: 50px 50px 50px 50px; background: #FFFFFF;   box-shadow: 5px 10px 18px #888888;">
+            <div class="container">
 
    <!-- <div class="container"> -->
       @yield('content')
@@ -71,11 +68,22 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+        }
+    </script>
 
 
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script> -->
 </body>
 </html>

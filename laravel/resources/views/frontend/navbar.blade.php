@@ -1,16 +1,13 @@
 
- <!-- ***** Header Area Start ***** -->
-    <header class="header_area">
+<header class="header_area1" id="myHeader">
         <div class="container-fluid h-100">
             <div class="row h-100">
-                <!-- Menu Area Start -->
                 <div class="col-12 h-100">
                     <div class="menu_area h-100">
                         <nav class="navbar h-100 navbar-expand-lg align-items-center">
-
-                              <div class="container">
+                            <div class="container">
                                 <a class="navbar-brand" href="#"><img src="{{url('frontend/gambar/sdgs.png')}}" class= "logo-header" alt=""></a>
-                                <h3><a class="sdgs-header" href="{{url('home')}}" style="font-family:roboto ; position:relative; ">SDGs DASHBOARD <br>LAMPUNG UNIVERSITY</a></h3>
+                                <h3><a class="sdgs-header" href="{{url('home')}}" style=" ">SDGs DASHBOARD <br>LAMPUNG UNIVERSITY</a></h3>
 
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                   <span class="navbar-toggler-icon"></span>
@@ -61,5 +58,6 @@
                 </div>
             </div>
         </div>
-    <img src="{{url('frontend/gambar/list.png')}}" style="width:100%; left: 0; position: absolute; z-index: 0;"alt="SDGs">
-    </header>
+        <img class="list_sdg" src="{{url('frontend/gambar/list.png')}}" alt="SDGs">
+
+</header>

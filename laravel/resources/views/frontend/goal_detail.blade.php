@@ -38,11 +38,11 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
     <h4>Tabel</h4>
 
 
-    <form action="{{route('goaldetail.search', $goal->id_goal )}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('goaldetail.pdf', $goal->id_goal )}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="container">
+                <!-- <div class="container"> -->
                 <div class="row">
-                <label for="from" class="col-form-label">Dari</label>
+                <label for="from" class="col-form-label" style="margin-left:5%;">Dari</label>
                     <div class="col-md-3">
                         <select id="from" class="form-control"name="from" required>
                                   <option value="">Pilih tahun</option>
@@ -58,7 +58,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                     </div>
 
                 </div>
-            </div>
+            <!-- </div> -->
     </form>
 		<label  style="margin-top:10px; font-size:12px; "> *Data dalam rentang waktu 5 tahun (Jika sudah diinputkan) </label>
 

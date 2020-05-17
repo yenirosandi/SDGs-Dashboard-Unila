@@ -17,24 +17,16 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 <body>
 
         <div class="mosh-portfolio">
-
             @forelse($goals as $goal)
-            <div class="single_gallery_item gd">
-
-            <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-light ">
-             <img src="{{$goal->gambar}}" alt="">
-             </a>
-            <!-- <div class="gallery-hover-overlay d-flex align-items-center justify-content-center">
-                    <div class="port-hover-text text-center">
-                    <a href="{{url('goalDetail', $goal->id_goal)}}"  class="btn btn-sm btn-outline-secondary">
-
-                        <h4>"{{$goal->id_goal}}"</h4>
-                        <a href="#">Goal 3</a>
-                          </a>
-
-                </div>
-                </div> -->
-
+            <div class=" single_gallery_item">
+                <div class="hover14 column">
+                <figure>
+                <a href="{{url('goalDetail', $goal->id_goal)}}"  class=" btn btn-sm btn-outline-light ">
+                <img class= "hover14" src="{{$goal->gambar}}" alt="">
+                </a>
+                </figure>
+                
+            </div>
             </div>
 
             @empty

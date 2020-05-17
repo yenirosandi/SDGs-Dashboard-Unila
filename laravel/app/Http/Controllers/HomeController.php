@@ -344,6 +344,7 @@ class HomeController extends Controller
                 'kolomindiPdf'
                 // 'sub',
                 ))->setPaper('a4');
+                
 
             return $goal_detail_pdf->stream();
           }
