@@ -93,11 +93,11 @@ class HomeController extends Controller
         ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->groupBy('t_pencapaian.tahun')
-        ->orderBy('t_pencapaian.tahun')
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->orderBy('t_pencapaian.tahun')
         ->get();
         // DD($pencapaian);
-
+        $id_subindikatorakhir=null;
         foreach ($pencapaian as $key => $data_persubs){
           $nilai=[];
           $tahun=$data_persubs->tahun;
@@ -109,27 +109,38 @@ class HomeController extends Controller
           ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
           ->where('t_pencapaian.fk_id_indikator', $id_indi)
           ->where('t_pencapaian.tahun', $tahun)
-          ->orderBy('t_pencapaian.tahun')
           ->orderBy('t_pencapaian.fk_id_m_subindikator')
+          ->orderBy('t_pencapaian.tahun')
           ->get();
           // DD($pencapaian2);
         foreach ($pencapaian2 as $key2 => $value) {
-          $pt=0;
-          if($value->isian=='Angka'){
-            $nilai[]=(int)$value->nilai;
+          $id_subindikatorawal=$value->fk_id_m_subindikator;
+          $data1[]=$value->fk_id_m_subindikator;
+          if ($id_subindikatorawal!=$id_subindikatorakhir) {
+            $pt=0;
+            if($value->isian=='Angka'){
+              $nilai[]=(int)$value->nilai;
+            }
+            elseif($value->isian=='Teks') {
+              $nilai[]=$value->poin+$pt;
+              $pt=$value->poin+$pt;
+            }
           }
           else {
-            $nilai[]=$value->poin+$pt;
-            $pt=$value->poin+$pt;
+            if($value->isian=='Angka'){
+              $nilai[]=(int)$value->nilai;
+            }
+            elseif($value->isian=='Teks') {
+              $nilai[]=$value->poin+$pt;
+              $pt=$value->poin+$pt;
+            }
           }
-          $data1[]=$data_persubs->tahun;
-          $data2[]=$value->nilai;
         }
           $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          // dd($dataGrafik2);
-          // dd($data1);
+          dd($data1);
+          dd($dataGrafik2);
         //end grafik batang
 
 
@@ -344,7 +355,7 @@ class HomeController extends Controller
                 'kolomindiPdf'
                 // 'sub',
                 ))->setPaper('a4');
-                
+
 
             return $goal_detail_pdf->stream();
           }
