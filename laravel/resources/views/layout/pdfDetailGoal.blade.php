@@ -36,13 +36,26 @@
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
           <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
           <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline ({{$from}})</th>
-          <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
-        </tr>
-        <tr>
-          @for ($thn=$from+1; $thn <= $TahunMax; $thn++)
-            <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
-          @endfor
-        </tr>
+          <?php
+          $cek_Tahun=DB::table('t_pencapaian')
+            ->select('t_pencapaian.*')
+            ->where('t_pencapaian.fk_id_goal', '=', $id)
+            ->whereBetween('tahun', [$from, $to])
+            ->groupBy('tahun')
+            ->get();
+          $jmlTahun= count($cek_Tahun);
+          // DD($jmlTahun);
+           ?>
+          @if($jmlTahun!=1)
+            <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
+            </tr>
+            <tr>
+              @for ($thn=$from+1; $thn <= $TahunMax; $thn++)
+              <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
+              @endfor
+            </tr>
+          @else </tr>
+          @endif
       </thead>
       <tbody>
         <!-- Kalo ga ada isi -->

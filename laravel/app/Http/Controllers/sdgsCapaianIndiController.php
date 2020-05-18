@@ -34,6 +34,7 @@ class sdgsCapaianIndiController extends Controller
       ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
       ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
       ->select('t_pencapaian.*','t_goals.*','t_m_indikator.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend')
+      ->orderBy('t_pencapaian.id_pencapaian','DESC')
       ->get();
     // $goals=DB :: table('t_goals')->pluck('nama_goal','id_goal');
     $goals=Goals_model::all();

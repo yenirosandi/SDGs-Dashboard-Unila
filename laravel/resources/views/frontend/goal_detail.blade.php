@@ -72,11 +72,11 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
-                <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th>
+                <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2018)</th>
                 <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahun}}">Realisasi Pencapaian</th>
               </tr>
               <tr>
-                @for ($thn=2018; $thn <= $tahun_now; $thn++)
+                @for ($thn=2019; $thn <= $tahun_now; $thn++)
                   <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
                 @endfor
               </tr>

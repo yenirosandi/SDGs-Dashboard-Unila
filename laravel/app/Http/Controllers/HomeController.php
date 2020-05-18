@@ -97,7 +97,7 @@ class HomeController extends Controller
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->get();
         // DD($pencapaian);
-
+        $id_subindikatorakhir=null;
         foreach ($pencapaian as $key => $data_persubs){
           $nilai=[];
           $tahun=$data_persubs->tahun;
@@ -114,22 +114,36 @@ class HomeController extends Controller
           ->get();
           // DD($pencapaian2);
         foreach ($pencapaian2 as $key2 => $value) {
-          $pt=0;
-          if($value->isian=='Angka'){
-            $nilai[]=(int)$value->nilai;
+          $id_subindikatorawal=$value->fk_id_m_subindikator;
+          // $data1[]=$value->fk_id_m_subindikator;
+          if ($id_subindikatorawal!=$id_subindikatorakhir) {
+            $pt=0;
+            if($value->isian=='Angka'){
+              $nilai[]=(int)$value->nilai;
+            }
+            elseif($value->isian=='Teks') {
+              $nilai[]=$value->poin+$pt;
+              $pt=$value->poin+$pt;
+            }
+            $id_subindikatorakhir=$value->fk_id_m_subindikator;
           }
           else {
-            $nilai[]=$value->poin+$pt;
-            $pt=$value->poin+$pt;
+            if($value->isian=='Angka'){
+              $nilai[]=(int)$value->nilai;
+            }
+            elseif($value->isian=='Teks') {
+              $nilai[]=$value->poin+$pt;
+              $pt=$value->poin+$pt;
+            }
+            $id_subindikatorakhir=$value->fk_id_m_subindikator;
           }
-          $data1[]=$data_persubs->tahun;
-          $data2[]=$value->nilai;
+          $id[]=$value->id_m_subindikator;
         }
           $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          // dd($dataGrafik2);
-          // dd($data1);
+          dd($id);
+          dd($dataGrafik2);
         //end grafik batang
 
 
@@ -189,11 +203,11 @@ class HomeController extends Controller
 
     public function detailGoal(Request $req, $id){
       $no=1;
-      $tahun=2017;
+      $baseline=2018;
       $tahun_now=date('Y');
       $indikator='';
       $subindi='';
-      $kurang=$tahun_now-$tahun;
+      $kurang=$tahun_now-$baseline;
       $kolomtahun=$kurang+$kurang;
       // $kolomtahun=$tahun_now-$tahun+2;
       // dd($kolomtahun);
@@ -261,13 +275,14 @@ class HomeController extends Controller
                 $goal_detail= DB::table('t_goals')->where('id_goal', $id)->get();
 
               return view('frontend.goal_detail',['data' => $data,
+                                                  'baseline' => $baseline,
                                                   'viewdata_capai' => $viewdata_capai,
                                                    'goal_detail'=> $goal_detail,
                                                    'goalTbl' => $goalTbl,
                                                    'id'=>  $id,
                                                    'no' => $no,
                                                    'tahun' => $tahun,
-                                                   'tahun_now' => $tahun_now,
+                                                   // 'tahun_now' => $tahun_now,
                                                    'indikator' => $indikator,
                                                    'subindi' => $subindi,
                                                    'kurang' => $kurang,
@@ -296,8 +311,6 @@ class HomeController extends Controller
                 ->select('t_pencapaian.*','t_goals.*','t_m_subindikator.*','t_trends.keterangan as keterangan_trend','t_trends.simbol_trend')
                 ->where('t_pencapaian.fk_id_goal', '=', $id)
                 ->whereBetween('tahun', [$from, $to])
-                // ->orWhere('tahun' , '=', $tahun)
-                // ->where('tahun','=', $tahun_capai)
                 ->orderBy('t_pencapaian.tahun')
                 ->orderBy('t_m_subindikator.id_m_subindikator')
                 ->get();
@@ -323,6 +336,7 @@ class HomeController extends Controller
               $countCapai= count($ada_data_capai);
                 // DD($countCapai);
 
+
             $goal_detail_pdf= PDF::loadView('layout.pdfDetailGoal',
               compact('id',
                 'thn_didb',
@@ -331,7 +345,7 @@ class HomeController extends Controller
                 'subindi',
                 'data',
                 'TahunMax',
-                'tahun',
+                // 'tahun',
                 'indikator',
                 'countCapai',
                 'tahun_now',
@@ -344,7 +358,7 @@ class HomeController extends Controller
                 'kolomindiPdf'
                 // 'sub',
                 ))->setPaper('a4');
-                
+
 
             return $goal_detail_pdf->stream();
           }
@@ -373,7 +387,8 @@ class HomeController extends Controller
             'subindi',
             'data',
             // 'null',
-            'tahun',
+            // 'tahun',
+            'baseline',
             'indikator',
             'tahun_now',
 
