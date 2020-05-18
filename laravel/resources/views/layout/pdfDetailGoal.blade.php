@@ -31,12 +31,7 @@
 
     <table class="table table-bordered" border="1" width="100%" cellspacing="0">
       <thead>
-        <tr>
-          <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
-          <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
-          <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
-          <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline ({{$from}})</th>
-          <?php
+        <?php
           $cek_Tahun=DB::table('t_pencapaian')
             ->select('t_pencapaian.*')
             ->where('t_pencapaian.fk_id_goal', '=', $id)
@@ -46,17 +41,35 @@
           $jmlTahun= count($cek_Tahun);
           // DD($jmlTahun);
            ?>
+
           @if($jmlTahun!=1)
-            <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
-            </tr>
+        <tr>
+          <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
+          <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
+          <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
+          <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline ({{$from}})</th>
+          <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahunPdf}}">Realisasi Pencapaian</th>
+        </tr>
             <tr>
               @for ($thn=$from+1; $thn <= $TahunMax; $thn++)
               <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
               @endfor
             </tr>
-          @else </tr>
+          @elseif($jmlTahun=1)
+        <tr>
+          <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
+          <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
+          <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
+          <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baselineoyy ({{$from}})</th>
+          <td style="border: white; border-top:none; border-bottom:none; border-right:none;"></td>
+          <tr>
+          <td style="border-top:none; border-bottom:none; border-right:none;"></td>
+          </tr>
+        </tr>
+
           @endif
       </thead>
+
       <tbody>
         <!-- Kalo ga ada isi -->
         @if($countCapai==0)
@@ -64,6 +77,7 @@
           <td bgcolor="#f0f0f0"colspan="5" align="center">Tidak ada Data</td>
         </tr>
         @endif
+
         <?php $indikator=null; $subindi=null; ?>
         @foreach($data as $data_sub)
         <tr>
@@ -93,7 +107,7 @@
           <!-- Buat nilai pencapaian -->
           @foreach($data_capai as $capai)
             <?php
-            $tahun=2017;
+            $tahun=2018;
             // DD($trend);
             ?>
             @while($tahun<=$to)
