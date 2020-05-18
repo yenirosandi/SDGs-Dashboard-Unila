@@ -44,7 +44,7 @@ class AdminController extends Controller
 
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
-        $tahun=2017;
+        $tahun=2018;
         $tahun_now=date("Y");
         // start grafik garis
         $pencapaian= DB::table('t_pencapaian')
@@ -176,7 +176,7 @@ class AdminController extends Controller
 
     public function detailGoal(Request $req, $id){
       $no=1;
-      $tahun=2017;
+      $tahun=2018;
       $tahun_now=date('Y');
       $indikator='';
       $subindi='';
@@ -209,7 +209,7 @@ class AdminController extends Controller
           if ($req->has('search'))
           {
             $no=1;
-            $tahun=2017;
+            $tahun=2018;
             $tahun_now=date('Y');
             $indikator='';
             $subindi='';

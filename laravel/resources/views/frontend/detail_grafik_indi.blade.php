@@ -91,7 +91,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 										label: {
 											connectorAllowed: false
 										},
-										pointStart: 2017
+										pointStart: 2018
 									}
 								},
 								series: {!! json_encode($dataGrafik) !!},
@@ -161,7 +161,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                         },
                         plotOptions: {
                             area: {
-                                pointStart: 2017,
+                                pointStart: 2018,
                                 marker: {
                                     enabled: false,
                                     symbol: 'circle',
@@ -313,7 +313,8 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
         		type: 'pie'
     			},
     			title: {
-						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} ({!!($tahun_now)!!})'
+						// text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} ({!!($tahun_now)!!})'
+						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} (2019)'
     			},
 					subtitle: {
 						text: 'Indikator {!! json_encode($indi) !!}'

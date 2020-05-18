@@ -59,7 +59,7 @@ class HomeController extends Controller
         $indi=$data_persub->indikator;
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
-        // $tahun=2017;
+        // $tahun=2018;
         $pencapaian= DB::table('t_pencapaian')
         ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
         ->select('t_pencapaian.*', 't_trends.*')
@@ -189,7 +189,7 @@ class HomeController extends Controller
 
     public function detailGoal(Request $req, $id){
       $no=1;
-      $tahun=2017;
+      $tahun=2018;
       $tahun_now=date('Y');
       $indikator='';
       $subindi='';
@@ -221,7 +221,7 @@ class HomeController extends Controller
           if ($req->has('search'))
           {
             $no=1;
-            $tahun=2017;
+            $tahun=2018;
             $tahun_now=date('Y');
             $indikator='';
             $subindi='';

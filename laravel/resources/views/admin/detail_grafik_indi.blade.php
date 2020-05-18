@@ -96,7 +96,7 @@
 												label: {
 													connectorAllowed: false
 												},
-												pointStart: 2017
+												pointStart: 2018
 											}
 										},
 										series: {!! json_encode($dataGrafik) !!},
@@ -166,7 +166,7 @@
 								},
 								plotOptions: {
 									area: {
-										pointStart: 2017,
+										pointStart: 8,
 										marker: {
 											enabled: false,
 											symbol: 'circle',
