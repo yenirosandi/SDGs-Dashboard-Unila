@@ -59,7 +59,7 @@ class HomeController extends Controller
         $indi=$data_persub->indikator;
         $id_goal=$data_persub->fk_id_goal;
         $subdata=$data_persub->id_m_subindikator;
-        // $tahun=2017;
+        // $tahun=2018;
         $pencapaian= DB::table('t_pencapaian')
         ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
         ->select('t_pencapaian.*', 't_trends.*')
@@ -93,8 +93,8 @@ class HomeController extends Controller
         ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
         ->groupBy('t_pencapaian.tahun')
-        ->orderBy('t_pencapaian.tahun')
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->orderBy('t_pencapaian.tahun')
         ->get();
         // DD($pencapaian);
         $id_subindikatorakhir=null;
@@ -109,8 +109,8 @@ class HomeController extends Controller
           ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
           ->where('t_pencapaian.fk_id_indikator', $id_indi)
           ->where('t_pencapaian.tahun', $tahun)
-          ->orderBy('t_pencapaian.tahun')
           ->orderBy('t_pencapaian.fk_id_m_subindikator')
+          ->orderBy('t_pencapaian.tahun')
           ->get();
           // DD($pencapaian2);
         foreach ($pencapaian2 as $key2 => $value) {
@@ -142,7 +142,7 @@ class HomeController extends Controller
           $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          dd($id);
+          dd($data1);
           dd($dataGrafik2);
         //end grafik batang
 
@@ -203,6 +203,7 @@ class HomeController extends Controller
 
     public function detailGoal(Request $req, $id){
       $no=1;
+      $tahun=2018;
       $baseline=2018;
       $tahun_now=date('Y');
       $indikator='';
@@ -235,7 +236,7 @@ class HomeController extends Controller
           if ($req->has('search'))
           {
             $no=1;
-            $tahun=2017;
+            $tahun=2018;
             $tahun_now=date('Y');
             $indikator='';
             $subindi='';
@@ -345,7 +346,7 @@ class HomeController extends Controller
                 'subindi',
                 'data',
                 'TahunMax',
-                // 'tahun',
+                'tahun',
                 'indikator',
                 'countCapai',
                 'tahun_now',
@@ -387,7 +388,7 @@ class HomeController extends Controller
             'subindi',
             'data',
             // 'null',
-            // 'tahun',
+            'tahun',
             'baseline',
             'indikator',
             'tahun_now',

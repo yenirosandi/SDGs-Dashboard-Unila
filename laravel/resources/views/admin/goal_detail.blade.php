@@ -44,7 +44,7 @@
                                       <option value="" >Pilih tahun</option>
                                         <?php
                                         $thn_skr=  date('Y');
-                                        for ($tahun = $thn_skr; $tahun >= 2017; $tahun--) {
+                                        for ($tahun = $thn_skr; $tahun >= 2018; $tahun--) {
                                         ?>
                                         <option type="number"value="{{$tahun}}"><?php echo $tahun ?></option>
                                       <?php } ?>
@@ -70,11 +70,11 @@
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">No.</th>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">Indikator</th>
                 <th style="text-align:center; vertical-align:middle;" rowspan="2">Sumber Data</th>
-                <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2017)</th>
+                <th style="text-align:center; vertical-align:middle;" colspan="2" rowspan="2">Baseline (2018)</th>
                 <th style="text-align:center; vertical-align:middle;" colspan="{{$kolomtahun}}">Realisasi Pencapaian</th>
               </tr>
               <tr>
-                @for ($thn=2018; $thn <= $tahun_now; $thn++)
+                @for ($thn=2019; $thn <= $tahun_now; $thn++)
                   <th colspan="2" style="text-align:center; vertical-align:middle;" >{{$thn}}</th>
                 @endfor
               </tr>
@@ -106,7 +106,7 @@
 
                 <!-- Buat nilai pencapaian -->
                 @foreach($dcapai as $capai)
-                  <?php $tahun=2017; ?>
+                  <?php $tahun=2018; ?>
                   @while($tahun<=$tahun_now)
                     @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
                       <td style="text-align:center;">{{$capai->nilai}}</td>

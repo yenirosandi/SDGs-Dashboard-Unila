@@ -113,17 +113,17 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 
                 @foreach($dcapai as $data_subs)
 
-                  <?php $tahun=2017; ?>
+                  <?php $tahun=2018; ?>
                   @while($tahun<=$tahun_now)
                     @if($tahun==$data_subs->tahun && $data_sub->id_m_subindikator==$data_subs->fk_id_m_subindikator)
-                      <td>{{$data_subs->nilai}}</td>
+                      <td>{{$data_subs->nilai }}</td>
                       <td>
                         <center>
                           {!!$data_subs->trend->simbol_trend!!}
                         </center>
                       </td>
 
-                      @elseif($data_subs->nilai=='')
+                      @elseif($tahun==$data_subs->tahun && $data_sub->id_m_subindikator==$data_subs->fk_id_m_subindikator &&$data_subs->nilai!=NULL)
                       <td></td>
                       <td></td>
                     @endif
