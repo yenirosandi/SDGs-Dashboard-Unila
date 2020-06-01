@@ -29,7 +29,7 @@
     </table>
     <br><br>
 
-    <table class="table table-bordered" border="1" width="100%" cellspacing="0">
+    <table class="table table-bordered"  width="100%" cellspacing="0">
       <thead>
         <?php
           $cek_Tahun=DB::table('t_pencapaian')
@@ -137,9 +137,12 @@
               @endif
               <?php $tahun++ ?>
             @endwhile
+
             @endforeach
             @endforeach
         </tr>
+        
+        
 
         </tbody>
       </table>

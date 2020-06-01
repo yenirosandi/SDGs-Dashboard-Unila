@@ -142,8 +142,8 @@ class HomeController extends Controller
           $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
           $dataGrafik2[$key]['data'] = $nilai;
         }
-          dd($data1);
-          dd($dataGrafik2);
+          // dd($data1);
+          // dd($dataGrafik2);
         //end grafik batang
 
 
@@ -375,7 +375,20 @@ class HomeController extends Controller
           $dcapai=Pencapaian_model::orderby('tahun')->orderby('fk_id_m_subindikator')
           ->where('fk_id_goal', $id)
           ->get();
-          // dd($data);
+          // $dcapai=Pencapaian_model::distinct()->orderby('tahun')->orderby('fk_id_m_subindikator')
+          // ->where('fk_id_goal', $id)
+          // // ->groupBy('fk_id_m_subindikator')
+          // ->get();
+          // // dd($dcapai);
+
+          $groups = Pencapaian_model::orderBy('tahun')->groupBy('fk_id_m_subindikator')->get();
+
+          // $headers = MyModel->distinct()->orderBy('subject')->get();
+          // $groups = MyModel->orderBy('subject')->get()->groupBy('student');
+          
+          // //headers
+          // @foreach($headers as $header)
+          //     <th>{{  $header->subject }}</th>
 
 
 
