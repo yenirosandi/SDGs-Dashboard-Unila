@@ -10,7 +10,8 @@
 			</ol>
 		</nav>
 
-SUSTAINABLE DEVELOPMENT GOALS <hr>
+		<h6>SUSTAINABLE DEVELOPMENT GOALS</h6>
+		<hr>
       <!-- ***** Preloader Start ***** -->
       <div id="preloader">
         <div class="mosh-preloader"></div>
@@ -113,7 +114,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 
                 @foreach($dcapai as $data_subs)
 
-                  <?php $tahun=2018; ?>     
+                  <?php $tahun=2018; ?>
                   @while($tahun<=$tahun_now)
                     @if($tahun==$data_subs->tahun && $data_sub->id_m_subindikator==$data_subs->fk_id_m_subindikator)
                       <td>{{$data_subs->nilai }}</td>

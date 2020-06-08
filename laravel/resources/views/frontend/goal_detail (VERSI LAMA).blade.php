@@ -10,7 +10,8 @@
 			</ol>
 		</nav>
 
-SUSTAINABLE DEVELOPMENT GOALS <hr>
+<h3>SUSTAINABLE DEVELOPMENT GOALS</h3> 
+<hr>
       <!-- ***** Preloader Start ***** -->
       <div id="preloader">
         <div class="mosh-preloader"></div>

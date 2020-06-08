@@ -20,6 +20,7 @@
 
 .collapsible {
   background-color: #f7f7f7;
+	border-color: white;
   color: black;
   cursor: pointer;
   padding: 18px;
@@ -45,13 +46,14 @@
 </style>
 
 
-SUSTAINABLE DEVELOPMENT GOALS <hr>
+<h3>SUSTAINABLE DEVELOPMENT GOALS</h3>
+<hr>
 
 
 
 <body>
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Garis <img src="/img/garis.png" style="width:3%;" alt=""></button>
+<button type="button" class="collapsible font-weight-bold text-primary btn-light btn-lg btn-block">Grafik Garis <img src="/img/garis.png" style="width:3%;" alt=""></button>
 <div class="content">
 					<div class="card-body">
 					<div id="garis" >
@@ -116,7 +118,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 </div>
 
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Area  <img src="/img/area.png" style="width:3%;" alt=""> </button>
+<button type="button" class="collapsible font-weight-bold text-primary btn-light btn-lg btn-block">Grafik Area  <img src="/img/area.png" style="width:3%;" alt=""> </button>
 <div class="content">
 				<div class="card-body">
 				<div id="area">
@@ -182,7 +184,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 				</div>
 </div>
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Batang <img src="/img/batang.png" style="width:3%; transform: rotate(90deg);" alt=""></button>
+<button type="button" class="collapsible font-weight-bold text-primary btn-light btn-lg btn-block">Grafik Batang <img src="/img/batang.png" style="width:3%; transform: rotate(90deg);" alt=""></button>
 <div class="content">
 				<div class="card-body">
 				<div id="batang">
@@ -247,7 +249,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 </div>
 
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Batang <img src="/img/batang.png" style="width:3%;" alt=""></button>
+<button type="button" class="collapsible font-weight-bold text-primary btn-light btn-lg btn-block">Grafik Batang <img src="/img/batang.png" style="width:3%;" alt=""></button>
 <div class="content">
 				<div class="card-body">
 				<div id="batang2">
@@ -299,7 +301,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
 	</div>
 
 
-<button type="button" class="collapsible font-weight-bold text-primary">Grafik Pie <img src="/img/pie.png" style="width:3%;" alt=""></button>
+<button type="button" class="collapsible font-weight-bold text-primary btn-light btn-lg btn-block">Grafik Pie <img src="/img/pie.png" style="width:3%;" alt=""></button>
 <div class="content">
 				<div class="card-body">
 				<div id="pie">

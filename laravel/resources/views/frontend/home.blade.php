@@ -11,7 +11,8 @@
 			</ol>
 		</nav>
 
-SUSTAINABLE DEVELOPMENT GOALS <hr>
+    <h6>SUSTAINABLE DEVELOPMENT GOALS</h6>
+<hr>
 
 
 <body>
@@ -25,7 +26,7 @@ SUSTAINABLE DEVELOPMENT GOALS <hr>
                 <img class= "hover14" src="{{$goal->gambar}}" alt="">
                 </a>
                 </figure>
-                
+
             </div>
             </div>
 

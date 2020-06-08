@@ -34,13 +34,13 @@
                                                 <ul class="main_nav">
 
                                                     <li class="nav-link dropdown">
-                                                   
+
                                                           <!-- ini untuk pengkondisian klau sudah login dia akan seperti di bawah ini menunya -->
                                                           <?php
                                                     if (Auth::check())  { ?>
                                                         <a class="nav-link dropdown-toggle  login-header fa fa-user-circle fa-3x" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                                         <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                                            <a class="dropdown-item" href="">{{Auth::user()->nama}}</a>
+                                                            <a style="background-color:#3ed7ed;" class="dropdown-item">{{Auth::user()->nama}}</a>
                                                             <a class="dropdown-item" href="{{url('/admin')}}">Kelola Dashboard</a>
                                                             <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
                                                         </div>
@@ -51,7 +51,7 @@
                                                             else {?>
                                                                 <div class="login_button">
                                                                   <a class= "login-header" href="{{url('/login')}}">Login</a></li>  </div>
-                                                                  
+
                                                             <?php  } ?>
                         </nav>
                     </div>
