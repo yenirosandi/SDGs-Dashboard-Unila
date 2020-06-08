@@ -30,6 +30,7 @@
   outline: none;
   font-size: 15px;
   margin: 10px 0px 0px 0px;
+  border-color: white;
 }
 
 .activegrafik, .collapsible:hover {

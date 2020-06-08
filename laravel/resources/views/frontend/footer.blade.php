@@ -2,11 +2,18 @@
 
   <footer class="sticky-footer bg-white">
       <!-- <div class="container"> -->
+<<<<<<< HEAD
           <div class="copyrights">
             <center>
               <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <b style="color:#FC8213;"> Dashboard SDGs</b>. All Rights Reserved |
               </a>SDGs Center<a style="color:#68ae00;"> <a href="https://www.unila.ac.id/" target="_blank"> Universitas Lampung </p>
             </center>
           </div>
+=======
+        <div class="copyrights">
+              <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>  <b style="color:#FC8213;"> Dashboard SDGs</b>. All Rights Reserved |
+              </a>SDGs Center<a style="color:#68ae00;"> <a href="https://www.unila.ac.id/" target="_blank"> Universitas Lampung </p>
+            </div>
+>>>>>>> 66e334533ed35832a5482a945e484542e9a40fa1
       <!-- </div> -->
     </footer>
