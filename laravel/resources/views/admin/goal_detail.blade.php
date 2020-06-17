@@ -103,28 +103,30 @@
                 <!-- <style>
                   td:empty{border-bottom:none;border-top:none} /* style css3 untuk kolom kosong */
                 </style> -->
-
-                <!-- Buat nilai pencapaian -->
-                @foreach($dcapai as $capai)
-                  <?php $tahun=2018; ?>
-                  @while($tahun<=$tahun_now)
-                    @if($tahun==$capai->tahun && $data_sub->id_m_subindikator==$capai->fk_id_m_subindikator)
-                      <td style="text-align:center;">{{$capai->nilai}}</td>
-                      <td>
-                        <center>
-                          {!!$capai->trend->simbol_trend!!}
-                        </center>
-                      </td>
-                    @else
-                    @endif
-                    <?php $tahun++ ?>
-                  @endwhile
-                  @endforeach
-                  @endforeach
+                {{-- menampilkan jumlah colom berdasarkan range tahun --}}
+                @for($tahun = 2018; $tahun <= $tahun_now; $tahun++)
+                  <td>
+                    @foreach($dcapai as $capai)
+                      @if ($tahun == $capai->tahun && $data_sub->id_m_subindikator == $capai->fk_id_m_subindikator)
+                          {{ $capai->nilai }}
+                      @elseif(is_null($capai->tahun))
+                        <p> - </p>
+                      @endif
+                    @endforeach
+                  </td>
+                  <td>
+                    @foreach($dcapai as $capai)
+                      @if ($tahun == $capai->tahun && $data_sub->id_m_subindikator == $capai->fk_id_m_subindikator)
+                        <center>{!!$capai->trend->simbol_trend!!}</center>
+                      @elseif(is_null($capai->tahun))
+                        <p> - </p>
+                      @endif
+                    @endforeach
+                  </td>
+                @endfor
+                
+                @endforeach
               </tr>
-
-
-
             </tbody>
           </table>
         </div>
