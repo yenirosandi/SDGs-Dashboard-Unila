@@ -110,7 +110,7 @@
                       @if ($tahun == $capai->tahun && $data_sub->id_m_subindikator == $capai->fk_id_m_subindikator)
                           {{ $capai->nilai }}
                       @elseif(is_null($capai->tahun))
-                        <p> - </p>
+                        <p>  </p>
                       @endif
                     @endforeach
                   </td>
@@ -119,7 +119,7 @@
                       @if ($tahun == $capai->tahun && $data_sub->id_m_subindikator == $capai->fk_id_m_subindikator)
                         <center>{!!$capai->trend->simbol_trend!!}</center>
                       @elseif(is_null($capai->tahun))
-                        <p> - </p>
+                        <p>  </p>
                       @endif
                     @endforeach
                   </td>

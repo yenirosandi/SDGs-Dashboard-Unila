@@ -16,7 +16,6 @@ class Pencapaian_model extends Model
                             'nilai',
                             'keterangan',
                             'berkas'
-
                             ];
     public $timestamps=true;
     

@@ -14,10 +14,8 @@ class SubIndikator_model extends Model
                             'fk_id_indikator',
                             'fk_id_m_sumberdata',
                             'isian',
-
-
-
 ];
+
 public function goal(){
     return $this->belongsTo(Goals_model::class,'fk_id_goal','id_goal');
 }
@@ -33,7 +31,7 @@ public function pencapaian()
 }
 public function getFacingsAttribute()
 {
-  return explode(',', $this->waktu_pengambilan);//gakguna ini sebernernya ehhe
+    return explode(',', $this->waktu_pengambilan);//gakguna ini sebernernya ehhe
 }
 
 }

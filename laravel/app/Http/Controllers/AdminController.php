@@ -11,19 +11,17 @@ use App\Pencapaian_model;
 use Response;
 use PDF;
 
-
-
 class AdminController extends Controller
 {
     public function index()
     {
-      $goals= Goals_model::all();
+      $goals = Goals_model::all();
       return view('admin.index', compact('goals'));
     }
 
     public function  linkGrafikIndi($id_indi)
     {
-      $sub=  DB::table('t_m_subindikator')
+      $sub =  DB::table('t_m_subindikator')
       ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
       ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
       ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
@@ -31,48 +29,79 @@ class AdminController extends Controller
       ->where('t_m_subindikator.fk_id_indikator', '=', $id_indi)
       ->orderBy('t_m_subindikator.id_m_subindikator')
       ->get();
+      // $sub fix
       // dd($sub);
 
-      //accu nih
       $dataGrafik = [];
-      $pt=0;
+      $pt = 0;
+
       foreach ($sub as $key => $data_persub){
-        $nilai=[];
         // dd($data_persub);
-        $goal=$data_persub->nama_goal;
-        $indi=$data_persub->indikator;
-        $subindi[] = $data_persub->subindikator." (".$data_persub->sumberdata.")";
-        
-        $id_goal=$data_persub->fk_id_goal;
-        $subdata=$data_persub->id_m_subindikator;
+        $nilai = [];
+        $goal = $data_persub->nama_goal;
+        $indi = $data_persub->indikator;
+        $subindi[] = $data_persub->subindikator."(".$data_persub->sumberdata.")";
+        $id_goal = $data_persub->fk_id_goal;
+        $subdata = $data_persub->id_m_subindikator;
         // dd($subdata);
-        $tahun=2018;
-        $tahun_now=date("Y");
+        $tahun = 2018;
+        $tahun_now = date("Y");
+
         // start grafik garis
-        $pencapaian= DB::table('t_pencapaian')
-        ->join('t_trends','t_pencapaian.fk_id_trend','=','t_trends.id_trend')
+        $pencapaian = DB::table('t_pencapaian')
+        // ->join('t_trends','t_pencapaian.fk_id_trend','=','t_trends.id_trend')
+        ->join('t_trends', 'fk_id_trend', '=', 't_trends.id_trend')
         ->select('t_pencapaian.*', 't_trends.*')
-        ->where('t_pencapaian.fk_id_indikator', $id_indi)
-        ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
+        ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+        ->where('t_pencapaian.fk_id_m_subindikator', '=', $subdata)
         ->orderBy('t_pencapaian.tahun')
         ->groupBy('t_pencapaian.tahun')
         ->get();
         // dd($pencapaian);
-        foreach ($pencapaian as $key2 => $value) {
-          if($data_persub->isian=='Angka'){
-            $nilai[]=(int)$value->nilai;
-            // dd($value->poin);
-          }
-          else {
-            $nilai[]=$value->poin+$pt;
-            $pt=$value->poin+$pt;
-          }
 
-
+        // jika isian berupa angka maka eksekusi kode dibawah ini
+        if ($data_persub->isian=='Angka') {
+          // melakukan input null ke array $nilai1 berdasarkan index tahun
+          $nilai1 = [];
+          for ($tahun=2018; $tahun<= $tahun_now; $tahun++) {
+            $nilai1[$tahun] = null;
+          }
+          // melakukan input nilai capaian ke array $nilai1 berdasarkan index tahun
+          for ($tahun=2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                $nilai1[$tahun] = (int)$capai->nilai;
+              }
+            }
+          }
+        // jika isian berupa text maka eksekusi kode dibawah ini
+        } else {
+          // melakukan input null ke array $nilai1 berdasarkan index tahun
+          $nilai1 = [];
+          for ($tahun=2018; $tahun<= $tahun_now; $tahun++) {
+            $nilai1[$tahun] = null;
+          }
+          // melakukan input nilai capaian ke array $nilai1 berdasarkan index tahun
+          for ($tahun=2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                $nilai1[$tahun] = $capai->poin+$pt;
+              }
+              $pt=$capai->poin+$pt;
+            }
+          }
         }
+        // melakukan rebuild array dari $nilai1 ke $nilai
+        $i=0;
+        foreach($nilai1 as $n) {
+          $nilai[$i] = $n;
+          $i++;
+        }
+        // dd($data_persub);
         $dataGrafik[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik[$key]['data'] = $nilai;
         // dd($dataGrafik);
+        // dd($pt);
       }
       // dd($dataGrafik);
       //end grafik gariis
@@ -89,9 +118,9 @@ class AdminController extends Controller
       ->orderBy('t_pencapaian.tahun')
       ->groupBy('t_pencapaian.tahun')
       ->get();
-      // DD($pencapaian);
+      // dd($pencapaian);  
 
-      foreach ($pencapaian as $key => $data_persub){
+      foreach ($pencapaian as $key => $data_persub) {
         $nilai=[];
         $tahun=$data_persub->tahun;
         $id_sub=$data_persub->fk_id_m_subindikator;
@@ -105,12 +134,11 @@ class AdminController extends Controller
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->orderBy('t_pencapaian.tahun')
         ->groupBy('t_pencapaian.fk_id_m_subindikator')
-
         ->get();
         // DD($pencapaian2);
 
       foreach ($pencapaian2 as $key2 => $value) {
-        if($value->isian=='Angka'){
+        if($value->isian=='Angka') {
           $nilai[]=(int)$value->nilai;
         }
         else {
@@ -168,7 +196,8 @@ class AdminController extends Controller
         $dataGrafik3[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik3[$key]['y'] = $nilai;
       }
-      // dd($dataGrafik3);
+      // dd($dataGrafik2);  
+      // dd($indi);
       //end grafik pie
       // return dd($dataGrafik);
 
@@ -381,3 +410,4 @@ class AdminController extends Controller
     }
 
 }
+// 
