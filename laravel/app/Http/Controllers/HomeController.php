@@ -36,8 +36,8 @@ class HomeController extends Controller
 
     public function  linkGrafikIndi($id_indi)
     {
-
-      $sub=  DB::table('t_m_subindikator')
+      // mengambil data dari table t_m_subindikator dimana "fk_id_indikator" mengacu pada $id_indi
+      $sub =  DB::table('t_m_subindikator')
       ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
       ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
       ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
@@ -45,114 +45,169 @@ class HomeController extends Controller
       ->where('t_m_subindikator.fk_id_indikator', '=', $id_indi)
       ->orderBy('t_m_subindikator.id_m_subindikator')
       ->get();
-      // dd($sub);
 
-      //accu nih
-      //grafik garis
+      //##################################
+      // start grafik garis
+      //##################################
       $dataGrafik = [];
-      $pt=0;
+      $pt = 0;
+
       foreach ($sub as $key => $data_persub){
-        $nilai=[];
-        $tahun=[];
-        $subindi[] = $data_persub->subindikator." (".$data_persub->sumberdata.")";
-        $goal=$data_persub->nama_goal;
-        $indi=$data_persub->indikator;
-        $id_goal=$data_persub->fk_id_goal;
-        $subdata=$data_persub->id_m_subindikator;
-        // $tahun=2018;
-        $pencapaian= DB::table('t_pencapaian')
-        ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+        $nilai = [];
+        $goal = $data_persub->nama_goal;
+        $indi = $data_persub->indikator;
+        $subindi[] = $data_persub->subindikator."(".$data_persub->sumberdata.")";
+        $subindi1[] = $data_persub->subindikator;
+        $id_goal = $data_persub->fk_id_goal;
+        $subdata = $data_persub->id_m_subindikator;
+        $tahun = 2018;
+        $tahun_now = date("Y");
+
+        $pencapaian = DB::table('t_pencapaian')
+        // ->join('t_trends','t_pencapaian.fk_id_trend','=','t_trends.id_trend')
+        ->join('t_trends', 'fk_id_trend', '=', 't_trends.id_trend')
         ->select('t_pencapaian.*', 't_trends.*')
-        ->where('t_pencapaian.fk_id_indikator', $id_indi)
-        ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
+        ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+        ->where('t_pencapaian.fk_id_m_subindikator', '=', $subdata)
         ->orderBy('t_pencapaian.tahun')
         ->groupBy('t_pencapaian.tahun')
         ->get();
-        // DD($pencapaian);
-        $pt=0;
-        foreach ($pencapaian as $key2 => $value) {
-          if($data_persub->isian=='Angka'){
-            $nilai[]=(int)$value->nilai;
+        // dd($pencapaian);
+
+        // jika isian berupa angka maka eksekusi kode dibawah ini
+        if ($data_persub->isian=='Angka') {
+          // melakukan input null ke array $nilai1 berdasarkan index tahun
+          $nilai1 = [];
+          for ($tahun=2018; $tahun<= $tahun_now; $tahun++) {
+            $nilai1[$tahun] = null;
           }
-          elseif ($data_persub->isian=='Teks'){
-            $nilai[]=$value->poin+$pt;
-            $pt=$value->poin+$pt;
+          // melakukan input nilai capaian ke array $nilai1 berdasarkan index tahun
+          for ($tahun=2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                $nilai1[$tahun] = (int)$capai->nilai;
+              }
+            }
+          }
+        // jika isian berupa text maka eksekusi kode dibawah ini
+        } else {
+          // melakukan input null ke array $nilai1 berdasarkan index tahun
+          $nilai1 = [];
+          for ($tahun=2018; $tahun<= $tahun_now; $tahun++) {
+            $nilai1[$tahun] = null;
+          }
+          // melakukan input nilai capaian ke array $nilai1 berdasarkan index tahun
+          for ($tahun=2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                $nilai1[$tahun] = $capai->poin+$pt;
+              }
+              $pt=$capai->poin+$pt;
+            }
           }
         }
+        // melakukan rebuild array dari $nilai1 ke $nilai untuk mendapatkan urutan index array dari "0" bukan berdasarkan "tahun" lagi
+        $i=0;
+        foreach($nilai1 as $n) {
+          $nilai[$i] = $n;
+          $i++;
+        }
+        // melakukan input data array ke $dataGrafik
         $dataGrafik[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
         $dataGrafik[$key]['data'] = $nilai;
-        // DD($nilai);
       }
 
 
-        //start grafik batang
-        $dataGrafik2 = [];
-        $pencapaian= DB::table('t_pencapaian')
+      //##################################
+      // start grafik batang
+      //##################################
+      $dataGrafik2 = [];
+      $pt = 0;
+
+      $pencapaian = DB::table('t_pencapaian')
+      ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
+      ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
+      ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
+      ->where('t_pencapaian.fk_id_indikator', $id_indi)
+      ->orderBy('t_pencapaian.fk_id_m_subindikator')
+      ->orderBy('t_pencapaian.tahun')
+      ->groupBy('t_pencapaian.tahun')
+      ->get();
+
+      foreach ($pencapaian as $key => $data_persub) {
+        $nilai = [];
+        $tahun = $data_persub->tahun;
+        $id_sub = $data_persub->fk_id_m_subindikator;
+
+        $pencapaian2= DB::table('t_pencapaian')
+        ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
         ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
         ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-        ->select('t_pencapaian.*','t_m_indikator.id_indikator', 't_m_subindikator.*')
+        ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
         ->where('t_pencapaian.fk_id_indikator', $id_indi)
-        ->groupBy('t_pencapaian.tahun')
+        ->where('t_pencapaian.tahun', $tahun)
         ->orderBy('t_pencapaian.fk_id_m_subindikator')
         ->orderBy('t_pencapaian.tahun')
+        ->groupBy('t_pencapaian.fk_id_m_subindikator')
         ->get();
-        // DD($pencapaian);
-        $id_subindikatorakhir=null;
-        foreach ($pencapaian as $key => $data_persubs){
-          $nilai=[];
-          $tahun=$data_persubs->tahun;
-          $id_sub=$data_persubs->fk_id_m_subindikator;
-          $pencapaian2= DB::table('t_pencapaian')
-          ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
-          ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
-          ->join('t_m_subindikator','fk_id_m_subindikator','=','t_m_subindikator.id_m_subindikator')
-          ->select('t_pencapaian.*', 't_trends.*', 't_m_indikator.id_indikator','t_m_subindikator.*')
-          ->where('t_pencapaian.fk_id_indikator', $id_indi)
-          ->where('t_pencapaian.tahun', $tahun)
-          ->orderBy('t_pencapaian.fk_id_m_subindikator')
-          ->orderBy('t_pencapaian.tahun')
-          ->get();
-          // DD($pencapaian2);
-        foreach ($pencapaian2 as $key2 => $value) {
-          $id_subindikatorawal=$value->fk_id_m_subindikator;
-          // $data1[]=$value->fk_id_m_subindikator;
-          if ($id_subindikatorawal!=$id_subindikatorakhir) {
-            $pt=0;
-            if($value->isian=='Angka'){
-              $nilai[]=(int)$value->nilai;
-            }
-            elseif($value->isian=='Teks') {
-              $nilai[]=$value->poin+$pt;
-              $pt=$value->poin+$pt;
-            }
-            $id_subindikatorakhir=$value->fk_id_m_subindikator;
+
+        // jika isian berupa angka maka eksekusi kode dibawah ini
+        if ($data_persub->isian == 'Angka') {
+          // melakukan input null ke seluruh index pada array $nilai1
+          $nilai1 = [];
+          for ($index = 0; $index < count($subindi1); $index++) {
+            // serta mengubah parameter index pada array $nilai1 dengan array $subindi1
+            $nilai1[$subindi1[$index]] = null;
           }
-          else {
-            if($value->isian=='Angka'){
-              $nilai[]=(int)$value->nilai;
+          // melakukan input nilai capaian ke array $nilai1 berdasarkan tahun
+          for ($tahun = 2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian2 as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                // menginput data array berupa capaian dengan parameter index mengacu ke $capai->subindikator
+                $nilai1[$capai->subindikator] = (int)$capai->nilai;
+              }
             }
-            elseif($value->isian=='Teks') {
-              $nilai[]=$value->poin+$pt;
-              $pt=$value->poin+$pt;
-            }
-            $id_subindikatorakhir=$value->fk_id_m_subindikator;
           }
-          $id[]=$value->id_m_subindikator;
+        // jika isian berupa text maka eksekusi kode dibawah ini
+        } else {
+          // melakukan input null ke seluruh index pada array $nilai1
+          $nilai1 = [];
+          for ($index = 0; $index < count($subindi1); $index++) {
+            // serta mengubah parameter index pada array $nilai1 dengan array $subindi1
+            $nilai1[$subindi1[$index]] = null;
+          }
+          // melakukan input nilai capaian ke array $nilai1 berdasarkan tahun
+          for ($tahun = 2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian2 as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                // menginput data array berupa capaian dengan parameter index mengacu ke $capai->subindikator
+                $nilai1[$capai->subindikator] = $capai->poin+$pt;
+              }
+              $pt = $capai->poin+$pt;
+            }
+          }
         }
-          $dataGrafik2[$key]['name'] = "Tahun ".$data_persubs->tahun;
-          $dataGrafik2[$key]['data'] = $nilai;
+        // melakukan rebuild array dari $nilai1 ke $nilai untuk mendapatkan urutan index array dari "0" bukan berdasarkan "$subindi1" lagi
+        $i = 0;
+        foreach($nilai1 as $n) {
+          $nilai[$i] = $n;
+          $i++;
         }
-          // dd($data1);
-          // dd($dataGrafik2);
-        //end grafik batang
+
+        $dataGrafik2[$key]['name'] = "Tahun ".$data_persub->tahun;
+        $dataGrafik2[$key]['data'] = $nilai;
+      }
 
 
-      //start grafik pie
+      //##################################
+      // start grafik pie
+      //##################################
       $dataGrafik3 = [];
       $pt=0;
       $tahun_now=date('Y');
 
-      $sub=  DB::table('t_m_subindikator')
+      // mengambil data dari table t_m_subindikator dimana "fk_id_indikator" mengacu pada $id_indi
+      $sub = DB::table('t_m_subindikator')
       ->join('t_goals','fk_id_goal','=','t_goals.id_goal')
       ->join('t_m_indikator','fk_id_indikator','=','t_m_indikator.id_indikator')
       ->join('t_m_sumberdata','fk_id_m_sumberdata','=','t_m_sumberdata.id_m_sumberdata')
@@ -160,44 +215,64 @@ class HomeController extends Controller
       ->where('t_m_subindikator.fk_id_indikator', '=', $id_indi)
       ->orderBy('t_m_subindikator.id_m_subindikator')
       ->get();
-      // dd($sub);
 
       foreach ($sub as $key => $data_persub){
-        $goal=$data_persub->nama_goal;
-        $indi=$data_persub->indikator;
-        // $subindi = $data_persub->subindikator." (".$data_persub->sumberdata.")";
-        $id_goal=$data_persub->fk_id_goal;
-        $subdata=$data_persub->id_m_subindikator;
-        // $tahun=date('Y');
-        $tahun=2019;
-        // start grafik garis
-        $pencapaian= DB::table('t_pencapaian')
-        ->join('t_trends','fk_id_trend','=','t_trends.id_trend')
+        $goal = $data_persub->nama_goal;
+        $indi = $data_persub->indikator;
+        $id_goal = $data_persub->fk_id_goal;
+        $subdata = $data_persub->id_m_subindikator;
+        $tahun = 2018;
+
+        $pencapaian = DB::table('t_pencapaian')
+        ->join('t_trends', 'fk_id_trend', '=', 't_trends.id_trend')
         ->select('t_pencapaian.*', 't_trends.*')
-        ->where('t_pencapaian.tahun', $tahun)
-        ->where('t_pencapaian.fk_id_m_subindikator', $subdata)
-        ->orderBy('t_pencapaian.fk_id_m_subindikator')
+        ->where('t_pencapaian.fk_id_indikator', '=', $id_indi)
+        ->where('t_pencapaian.fk_id_m_subindikator', '=', $subdata)
+        ->orderBy('t_pencapaian.tahun')
+        ->groupBy('t_pencapaian.tahun')
         ->get();
-        // DD($pencapaian);
-        foreach ($pencapaian as $key2 => $value) {
-          if($data_persub->isian=='Angka'){
-            $nilai=(int)$value->nilai;
+
+        // jika isian berupa angka maka eksekusi kode dibawah ini
+        if ($data_persub->isian=='Angka') {
+          // melakukan input null ke array $nilai berdasarkan index tahun
+          $nilai = [];
+          for ($tahun=2018; $tahun<= $tahun_now; $tahun++) {
+            $nilai[$tahun] = null;
           }
-          else {
-            $nilai=$value->poin+$pt;
-            $pt=$value->poin+$pt;
+          // melakukan input nilai capaian ke array $nilai berdasarkan index tahun
+          for ($tahun=2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                $nilai[$tahun] = (int)$capai->nilai;
+              }
+            }
+          }
+        // jika isian berupa text maka eksekusi kode dibawah ini
+        } else {
+          // melakukan input null ke array $nilai berdasarkan index tahun
+          $nilai = [];
+          for ($tahun=2018; $tahun<= $tahun_now; $tahun++) {
+            $nilai[$tahun] = null;
+          }
+          // melakukan input nilai capaian ke array $nilai berdasarkan index tahun
+          for ($tahun=2018; $tahun <= $tahun_now; $tahun++) {
+            foreach ($pencapaian as $key2 => $capai) {
+              if ($capai->tahun == $tahun) {
+                $nilai[$tahun] = $capai->poin+$pt;
+              }
+              $pt=$capai->poin+$pt;
+            }
           }
         }
+
         $dataGrafik3[$key]['name'] = $data_persub->subindikator."-". $data_persub->sumberdata;
-        $dataGrafik3[$key]['y'] = $nilai;
+        // mengambil data capaian dari array $nilai dengan parameter index $tahun_now
+        $dataGrafik3[$key]['y'] = $nilai[$tahun_now];
       }
-      // dd($dataGrafik3);
-      //end grafik pie
 
-
-      // dd($dataGrafik);
-     return view('frontend.detail_grafik_indi',
-            compact('id_goal','goal','indi','dataGrafik', 'subindi', 'dataGrafik2', 'dataGrafik3', 'tahun_now'));
+      // passing data
+      return view('frontend.detail_grafik_indi',
+            compact('id_goal','goal','indi','tahun_now','dataGrafik','subindi','dataGrafik2', 'dataGrafik3'));
     }
 
 
