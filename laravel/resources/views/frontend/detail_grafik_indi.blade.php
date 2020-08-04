@@ -317,7 +317,7 @@
     			},
     			title: {
 						// text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} ({!!($tahun_now)!!})'
-						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} (2019)'
+						text: 'Goal {!! json_encode($id_goal) !!} : {!!($goal) !!} ({!!($tahun_now)!!})'
     			},
 					subtitle: {
 						text: 'Indikator {!! json_encode($indi) !!}'
