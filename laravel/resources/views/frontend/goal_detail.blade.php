@@ -83,64 +83,62 @@
               </tr>
             </thead>
             <tbody>
-              @foreach($data as $data_sub)
+            @foreach($data as $data_sub)
               <tr>
                 <!-- <td style="text-align:center; vertical-align:middle;" colspan="6" disable>Belum ada data</td> -->
                   @if($data_sub->indikator->indikator!=$indikator)
-                    <th style="background-color:#e8f1ff; " colspan="{{$kolomindi}}">{{$data_sub->indikator->indikator}}<a href="{{route('grafik', $data_sub->indikator->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/statistics.png')}}" style="width:1.5%;" alt="">)</span></a></th>
+                    <th style="background-color:#e8f1ff;" colspan="{{$kolomindi}}">{{$data_sub->indikator->indikator}}<a href="{{route('grafik', $data_sub->indikator->id_indikator )}}"> (Grafik <span style="width:30px; height:30px"><img src="{{url('img/statistics.png')}}" style="width:1.5%;" alt="">)</span></a></th>
                   @endif
                 <?php $indikator=$data_sub->indikator->indikator; ?>
               </tr>
               <tr>
                 @if($data_sub->subindikator!=$subindi)
-                  <td>{{$no}}</td>
+                  <td style='text-align:center;border-bottom:none;border-right:none;'>{{$no}}.</td>
                   <?php $no++; ?>
-
-                  <td>{{$data_sub->subindikator}}</td>
-                @else<td style="background-color:#f5f5f5;" colspan="2"></td>
+                  <td style='border-left:none; border-bottom:none;'>{{$data_sub->subindikator}}</td>
+                @else <td style="border-bottom:none;border-top:none" colspan="2"></td>
                 @endif
                 <?php $subindi=$data_sub->subindikator; ?>
 
                 @if($data_sub->fk_id_indikator==$data_sub->indikator->id_indikator)
                   <td>{{$data_sub->fsumberdata->sumberdata}}</td>
                 @endif
-                <!-- Buat nilai pencapaian -->
-
-
-                <style>
-                  td:empty{background:grey;} /* style css3 untuk kolom kosong */
-                </style>
-
-
-                @foreach($dcapai as $data_subs)
-
-                  <?php $tahun=2018; ?>
-                  @while($tahun<=$tahun_now)
-                    @if($tahun==$data_subs->tahun && $data_sub->id_m_subindikator==$data_subs->fk_id_m_subindikator)
-                      <td>{{$data_subs->nilai }}</td>
-                      <td>
-                        <center>
-                          {!!$data_subs->trend->simbol_trend!!}
-                        </center>
-                      </td>
-
-                      @elseif($tahun==$data_subs->tahun && $data_sub->id_m_subindikator==$data_subs->fk_id_m_subindikator &&$data_subs->nilai!=NULL)
-                      <td></td>
-                      <td></td>
-                    @endif
-                    <?php $tahun++ ?>
-
-                  @endwhile
-
+                <!-- <style>
+                  td:empty{border-bottom:none;border-top:none} /* style css3 untuk kolom kosong */
+                </style> -->
+                {{-- menampilkan jumlah colom berdasarkan range tahun --}}
+                @for($tahun = 2018; $tahun <= $tahun_now; $tahun++)
+                  <td>
+                    @foreach($dcapai as $capai)
+                      @if ($tahun == $capai->tahun && $data_sub->id_m_subindikator == $capai->fk_id_m_subindikator)
+                          {{ $capai->nilai }}
+                      @elseif(is_null($capai->tahun))
+                        <p> - </p>
+                      @endif
+                    @endforeach
+                  </td>
+                  <td>
+                    @foreach($dcapai as $capai)
+                      @if ($tahun == $capai->tahun && $data_sub->id_m_subindikator == $capai->fk_id_m_subindikator)
+                        <center>{!!$capai->trend->simbol_trend!!}</center>
+                      @elseif(is_null($capai->tahun))
+                        <p> - </p>
+                      @endif
+                    @endforeach
+                  </td>
+                @endfor
+                
                 @endforeach
-                @endforeach
+
+
               </tr>
-
-
-
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+  </div>
+
 
     </main>
 
